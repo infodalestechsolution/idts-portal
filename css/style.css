@@ -32,6 +32,9 @@ li{
 	line-height:0;
 	visibility:hidden;
 }
+body{
+	background: url(../images/testimonials-bg.jpg) no-repeat;
+}
 .btn {
 	background: url(../images/bg-button.png) no-repeat;
 	background-position: 0 -70px;
@@ -48,6 +51,35 @@ li{
 	background-position: 0 0;
 }
 /*------------------------------ HEADER ------------------------------*/
+.infodales-header {
+	background-color: #282836;
+	border-bottom: 1px solid #e6e6e6;
+	
+}
+.logo {
+	float: left;
+	margin-right: 20px;
+	color: #000;
+	display: block;
+	font: 15px/30px 'Play';
+	height: 20px;
+	width: 76px;
+	padding-top: 68px;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+header .logo {
+	float: left;
+	margin-right: 20px;
+	color: #000;
+	display: block;
+	font: 15px/30px 'Play';
+	height: 20px;
+	width: 76px;
+	padding-top: 68px;
+	text-decoration: none;
+	text-transform: uppercase;
+}
 #header {
 	background-color: #282836;
 	border-bottom: 1px solid #e6e6e6;
@@ -92,14 +124,30 @@ li{
 	width: 125px;
 	text-align: center;
 }
+
 #navigation li a {
 	color: #59c6e5;
 	font-size: 18px;
 	line-height: 30px;
 	text-decoration: none;
 }
-#navigation li a:hover {
-	color: #000;
+ .nav-link{
+	color: #59c6e5 !important;
+	font-size: 18px;
+	line-height: 30px;
+	text-decoration: none;
+}
+.nav-link:hover {
+    color: rgb(255, 255, 255) !important;
+}
+.nav-link.active {
+    color: #f99600 !important;
+}
+.navbar-nav a:hover {
+	color: rgb(255, 255, 255);
+}
+.a active{
+	color: #f99600;
 }
 #navigation li.active a {
 	color: #f99600;
@@ -114,6 +162,12 @@ a:-webkit-any-link {
 	padding: 60px 0;
 }
 #adbox > div {
+	width: 728px;
+	margin: 0 auto;
+	padding: 0 80px;
+	float: left;
+}
+.infodales-banner > div{
 	width: 728px;
 	margin: 0 auto;
 	padding: 0 80px;
@@ -409,3 +463,112 @@ p a {
 #connect a.tumbler:hover {
 	background-position: -40px -120px;
 }
+
+.infodales-banner{
+	background: url(../images/banners/business-3528035_1920.jpg) repeat-x left;
+	height: 360px;
+	padding: 60px 0;
+	width: 100%;
+    
+}
+infodales-banner:hover{
+	
+}
+html,body {
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden;
+}
+@media (min-width: 992px){
+.navbar-expand-lg .navbar-collapse {
+    display: flex!important;
+    flex-basis: auto;
+    justify-content: flex-end;
+}
+}
+/*------------------------------ Cards ------------------------------*/
+.cards{
+	margin: 10px;
+}
+.card{
+    border-radius: 4px;
+    background: #fff;
+    box-shadow: 0 6px 10px rgba(0,0,0,.08), 0 0 6px rgba(0,0,0,.05);
+      transition: .3s transform cubic-bezier(.155,1.105,.295,1.12),.3s box-shadow,.3s -webkit-transform cubic-bezier(.155,1.105,.295,1.12);
+  padding: 14px 80px 18px 36px;
+  cursor: pointer;
+  max-height: 228px;
+
+}
+
+.card:hover{
+     transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
+}
+
+.card h3{
+  font-weight: 600;
+}
+
+.card img{
+  position: absolute;
+  top: 20px;
+  right: 15px;
+  max-height: 120px;
+}
+
+.card-1{
+  background-image: url('../images/public/aem2.png');
+      background-repeat: no-repeat;
+    background-position: right;
+    background-size: 80px;
+}
+
+.card-2{
+   background-image: url('../images/public/java.png');
+      background-repeat: no-repeat;
+    background-position: right;
+    background-size: 80px;
+}
+
+.card-3{
+   background-image: url('../images/public/salesforce.png');
+      background-repeat: no-repeat;
+    background-position: right;
+    background-size: 80px;
+}
+.card-4{
+	background-image: url('../images/public/aem2.png');
+	   background-repeat: no-repeat;
+	 background-position: right;
+	 background-size: 80px;
+ }
+ .card-5{
+	background-image: url('../images/public/aem2.png');
+	   background-repeat: no-repeat;
+	 background-position: right;
+	 background-size: 80px;
+ }
+ .card-6{
+	background-image: url('../images/public/aem2.png');
+	   background-repeat: no-repeat;
+	 background-position: right;
+	 background-size: 80px;
+ }
+ .cards-layout{
+	display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: row;
+}
+ main{
+	padding: 0px !important;
+ }
+ @media(max-width: 990px){
+  .card{
+    margin: 20px;
+	
+  }
+} 

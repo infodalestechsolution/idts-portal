@@ -1,0 +1,11 @@
+@media (max-width: 992px){
+    
+    .infodales-banner{
+        background: url(../images/banners/business-3528035_1280.jpg) repeat-x left;
+        height: 360px;
+        padding: 60px 0;
+        width: 100%;
+        
+    }
+
+    }
