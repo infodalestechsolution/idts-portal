@@ -21,6 +21,9 @@ body {
 img {
 	border: 0;
 }
+li{
+ color:#fff;
+}
 .clearfix:after, #contents:after {
 	clear:both;
 	content:"";
@@ -101,8 +104,12 @@ img {
 #navigation li.active a {
 	color: #f99600;
 }
+a:-webkit-any-link {
+	cursor: pointer;
+	color:#fff;
+}
 #adbox {
-	background: url(../images/banner-home-2.jpg) repeat-x left;
+	background: url(../images/banners/business-3528035_1920.jpg) repeat-x left;
 	height: 240px;
 	padding: 60px 0;
 }
