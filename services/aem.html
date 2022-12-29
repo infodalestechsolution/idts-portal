@@ -12,10 +12,9 @@
 	  "sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"crossorigin="anonymous" />
 	  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
 	  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
-	  <script src="https://smtpjs.com/v3/smtp.js"></script>
-	<link rel="stylesheet" href="css/style.css" type="text/css">
-	<link rel="stylesheet" href="css/mobile.css" type="text/css">
-	<link rel="stylesheet" href="css/tablet.css" type="text/css">
+	<link rel="stylesheet" href="../css/style.css" type="text/css">
+	<link rel="stylesheet" href="../css/mobile.css" type="text/css">
+	<link rel="stylesheet" href="../css/tablet.css" type="text/css">
 
 	
 </head>
@@ -53,7 +52,7 @@
 			<nav class="navbar navbar-expand-lg navbar-light ">
 				<div class="container">
 					<div style="width:25%;float:left;margin-top:-10px;">
-					<a href="#" class=""><img src="./images/logo-4.png" style="width:275px;"></img></a></div>
+					<a href="#" class=""><img src="../images/logo-4.png" style="width:275px;"></img></a></div>
 
 					<button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
 						<span class="navbar-toggler-icon"></span>
@@ -71,10 +70,22 @@
 				</div>
 			</nav>
 		</section>
-		<section class="infodales-banner-contact" style="background: url(./images/banners/contact-us1280.png) no-repeat; height: 400px;">
-
-			
-		
+		<section class="infodales-banner">
+			<div class="clearfix">
+				<div>
+					<p>
+					We at InfoDales are positioned as one of the top engineers of the IT
+					industry offering quick, concise, and reliable services catering to various industries
+					like and other industries verticals.
+					<br>&nbsp;
+					<br>
+					We design, develop and customize web platforms that are maintainable and
+					technical debt-free in long term, which requires years and years of hands-on
+					development experience. Our customer-centric solutions and architecting
+					experience help organizations to make a global footprint.
+					</p>
+				</div>
+			</div>
 		</section>
 		
 	
@@ -82,64 +93,16 @@
 
 
 	<main class="container-fluid">
-		<section class="section2 clearfix" style="background-color: #00b0f0;">
-			<div class="container-fluid">
-			<div class="col2 column1 first">
-				<iframe style="margin-top: 37px; width: 100%;height: 86%;" 
-				src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14879.0897934412!2d79.05490381811423!3d21.201196629935836!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd4c1748a9288c5%3A0xab1aeb07c66dabe2!2sZingabai%20Takli%2C%20Nagpur%2C%20Maharashtra%20441501!5e0!3m2!1sen!2sin!4v1670765882049!5m2!1sen!2sin" 
-				 style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-            
-			</div>
-			<div class="col2 column2 last">
-				<div class="sec2innercont">
-					
-				</div>
-				<div class="sec2contactform">
-					<h3 class="sec2frmtitle">Want to Know More?? Drop Us a Mail</h3>
-					<form action="javascript:sendEmail()">
-						<div class="clearfix">
-							<input class="col2 first firstName" type="text" name="FirstName" placeholder="FirstName">
-							<input class="col2 last lastName" type="text" name="LastName" placeholder="LastName">
-						</div>
-						<div class="clearfix">
-							<input  class="col2 first email" type="Email" name="email" placeholder="Email">
-							<input class="col2 last phone" type="text" name="phone" placeholder="Contact Number">
-						</div>
-						<div class="clearfix">
-							<textarea class=" message" name="textarea" id="" cols="30" rows="7" name="message">Your message here...</textarea>
-						</div>
-						<div class="clearfix"><input type="submit" value="Send"></div>
-					</form>
-				</div>
-
-			</div>
-			</div>
-			</section>
-			<script>
-				var FirstName = document.getElementsByClassName('firstName');
-				var LastName = document.getElementsByClassName('lastName');
-				var phone = document.getElementsByClassName('phone');
-				var email = document.getElementsByClassName('email');
-				var message = document.getElementsByClassName('message');
-
-
-				function sendEmail() {
-					console.log(FirstName);
-					Email.send({
-				 SecureToken:"00aa52af-a526-4111-a866-63be03775776",
-							   To: 'rojadhav91@gmail.com',
-							   From: 'rojadhav91@gmail.com',
-							   Subject: "Enquiry for atraining.",
-				   Body : message
-			   }).then(
-				 message => alert(message)
-			   );
-				   }
-			   
-			   </script>
+	
+	
+		
 	
 	
 	
+		
+
+	
+
  </main>
  <footer>
 	<div id="footer">

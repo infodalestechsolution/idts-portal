@@ -1,4 +1,5 @@
-@media (max-width: 992px){
+
+    @media only screen and (min-width : 641px) and (max-width : 992px){
     
     .infodales-banner{
         background: url(../images/banners/business-3528035_1280.jpg) repeat-x left;
@@ -6,6 +7,9 @@
         padding: 60px 0;
         width: 100%;
         
+    }
+    .cards{
+        width : 47% !important;
     }
 
     }
