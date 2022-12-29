@@ -118,13 +118,13 @@
 	
 		
 		<section class="container-fluid" style="padding: 60px 0; background-color: transparent;">
-			<div class="container">
-				<div class="cards-layout">
+			<div class="container marquee">
+				<div class="cards-layout inner">
 				  <div class="col-md-3 cards">
 					<div class="card card-1">
 					  <h3>AEM</h3>
 					  <p>A curated set of   ES5/ES6/TypeScript wrappers for plugins brand </p>
-					  <div> <a href="./services/aem.html" style="color: #0385c2;text-decoration: none;" >Learm More <strong><span style="font-weight: bold;">&#8594;</span></strong></a></div>
+					  <div style="margin-top: auto;"> <a href="./services/aem.html" style="color: #0385c2;text-decoration: none;" >Learm More <strong><span style="font-weight: bold;">&#8594;</span></strong></a></div>
 					 
 						
 					</div>
@@ -133,7 +133,7 @@
 					<div class="card card-2">
 					  <h3>Java</h3>
 					  <p>A curated set of   ES5/ES6/TypeScript wrappers for plugins brand </p>
-					  <div> <a href="#" style="color: #0385c2;text-decoration: none;" >Learm More <strong><span style="font-weight: bold;">&#8594;</span></strong></a></div>
+					  <div style="margin-top: auto;"> <a href="#" style="color: #0385c2;text-decoration: none;" >Learm More <strong><span style="font-weight: bold;">&#8594;</span></strong></a></div>
 					 
 					</div>
 				  </div>
@@ -141,7 +141,7 @@
 					<div class="card card-3">
 					  <h3>Salesforce</h3>
 					  <p>A curated set of   ES5/ES6/TypeScript wrappers for plugins brand </p>
-					  <div> <a href="#" style="color: #0385c2;text-decoration: none;" >Learm More <strong><span style="font-weight: bold;">&#8594;</span></strong></a></div>
+					  <div style="margin-top: auto;"> <a href="#" style="color: #0385c2;text-decoration: none;" >Learm More <strong><span style="font-weight: bold;">&#8594;</span></strong></a></div>
 					 
 					</div>
 				  </div>
@@ -149,7 +149,7 @@
 					<div class="card card-4">
 					  <h3>Software Testing</h3>
 					  <p>A curated set of   ES5/ES6/TypeScript wrappers for plugins brand </p>
-					  <div> <a href="#" style="color: #0385c2;text-decoration: none;" >Learm More <strong><span style="font-weight: bold;">&#8594;</span></strong></a></div>
+					  <div style="margin-top: auto;"> <a href="#" style="color: #0385c2;text-decoration: none;" >Learm More <strong><span style="font-weight: bold;">&#8594;</span></strong></a></div>
 					 
 					</div>
 				  </div>
@@ -157,7 +157,7 @@
 					<div class="card card-5">
 					  <h3>AEM Authoring</h3>
 					  <p>A curated set of   ES5/ES6/TypeScript wrappers for plugins brand </p>
-					  <div> <a href="#" style="color: #0385c2;text-decoration: none;" >Learm More <strong><span style="font-weight: bold;">&#8594;</span></strong></a></div>
+					  <div style="margin-top: auto;"> <a href="#" style="color: #0385c2;text-decoration: none;" >Learm More <strong><span style="font-weight: bold;">&#8594;</span></strong></a></div>
 					 
 					</div>
 				  </div>
@@ -165,7 +165,7 @@
 					<div class="card card-6">
 					  <h3>AEM Authoring</h3>
 					  <p>A curated set of   ES5/ES6/TypeScript wrappers for plugins brand </p>
-					  <div> <a href="#" style="color: #0385c2;text-decoration: none;" >Learm More <strong><span style="font-weight: bold;">&#8594;</span></strong></a></div>
+					  <div style="margin-top: auto;">  <a href="#" style="color: #0385c2;text-decoration: none;" >Learm More <strong><span style="font-weight: bold;">&#8594;</span></strong></a></div>
 					 
 					</div>
 				  </div>
@@ -173,6 +173,48 @@
 			  </div>
 
 		</section>
+		<script>
+			function handleMarquee() {
+			  const marquee = document.querySelectorAll('.marquee');
+			  let speed = 1;
+			  let lastScrollPos = 0;
+			  let timer;
+			  marquee.forEach(function(el) {
+				const container = el.querySelector('.inner');
+				const content = el.querySelector('.inner > *');
+				//Get total width
+				const elWidth = content.offsetWidth;
+				//Duplicate content
+				let clone = content.cloneNode(true);
+				container.appendChild(clone);
+				let progress = 1;
+				function loop() {
+				  progress = progress - speed;
+				  if(progress <= elWidth * -1) {
+					progress = 0;
+				  }
+				  container.style.transform = 'translateX(' + progress + 'px)';
+				  container.style.transform += 'skewX(' + speed * 0.4 + 'deg)';
+				  window.requestAnimationFrame(loop);
+				}
+				loop();
+			  });
+			  window.addEventListener('scroll', function() {
+				const maxScrollValue = 12;
+				const newScrollPos = window.scrollY;
+				let scrollValue = newScrollPos - lastScrollPos;
+				if(scrollValue > maxScrollValue) scrollValue = maxScrollValue;
+				else if(scrollValue < -maxScrollValue) scrollValue = -maxScrollValue;
+				speed = scrollValue;
+				clearTimeout(timer);
+				timer = setTimeout(handleSpeedClear, 10);
+			  });
+			  function handleSpeedClear() {
+				speed = 4;
+			  }
+			};
+			handleMarquee();
+		  </script>
 		<section class="infodales-bios" style="background-color: #e6e6e6;">
 			<div class="container py-5">
 				<div class="row text-center text-white">
