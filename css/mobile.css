@@ -18,4 +18,10 @@
   .cards{
     width : 100% !important;
 }
+.col-md-7,.col-sm-12{
+  padding : 40px;
+}
+.infodales-includes-mobile{
+  padding : 0 ;
+}
 }

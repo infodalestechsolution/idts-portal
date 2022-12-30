@@ -11,5 +11,10 @@
     .cards{
         width : 47% !important;
     }
-
+    .col-md-7{
+        width : 100%;
+    }
+    .training-divider-vertical{
+        display: none;
+    }
     }
