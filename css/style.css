@@ -1036,3 +1036,26 @@ input:focus, textarea:focus, keygen:focus, select:focus {
 .training-feature-text{
 	padding-top: 25px;
 }
+.services-banner-header > h1{
+	color: #ffffff;
+    font-size: 44px;
+    font-weight: 700;
+    line-height: 36px;
+    text-transform: capitalize;
+}
+.service-header{
+
+}
+.infodales-banner-service{
+	padding-left: 188px;
+    padding-top: 108px;	
+	height: 300px;
+}
+.servilce-ul{
+	margin-left: 40px;	
+}
+.servilce-ul > li{
+	display: list-item;
+    list-style-type: disc;
+	color: #000;
+}
