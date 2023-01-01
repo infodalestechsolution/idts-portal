@@ -2,7 +2,7 @@
     @media only screen and (min-width : 641px) and (max-width : 992px){
     
     .infodales-banner{
-        background: url(../images/banners/background-1201003_1920.jpg) repeat-x left;
+        background: url(../images/banners/business-3528035_1280.jpg) repeat-x left;
         height: 360px;
         padding: 60px 0;
         width: 100%;
@@ -11,5 +11,41 @@
     .cards{
         width : 47% !important;
     }
-
+    .col-md-7{
+        width : 100%;
+    }
+    .training-divider-vertical{
+        display: none;
+    }
+    .training-logo {
+        background-color: #ffffff;
+        border-radius: 25px;
+        /* padding-top: 20px; */
+        padding: 28px 1px;
+        margin-top: 25px;
+        height: 175px !important;
+    }
+    .training-logo > img {
+        width: 115px;
+        height: 115px;
+    }
+    .infodales-banner-training{
+        padding : 0;
+    }
+    .navbar-toggler-icon {
+        display: inline-block;
+        vertical-align: middle;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 100%;
+        color: #ffffff;
+        background-color: #57c5e1;
+        border-radius: 6px;
+        width: 52px;
+        height: 47px;
+        left: 36px;
+    }
+    .navbar-nav {
+        padding-left: 30px;
+    }
     }
