@@ -23,22 +23,40 @@
 	<header >
 		<section class="m-0 infodales-header" style="background-color: #282836;border-bottom: 1px solid #e6e6e6;">
 			<nav class="navbar navbar-expand-lg navbar-light ">
-				<div class="container">
+				<div class="container" style="padding-bottom: 0 !important;">
 					<div style="width:25%;float:left;margin-top:-10px;">
-					<a href="#" class=""><img src="./images/logo-4.png" style="width:275px;"></img></a></div>
+						<a href="#" class=""><img src="../images/logo-4.png" style="width:275px;"></img></a>
+					</div>
 
-					<button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+					<button type="button" class="navbar-toggler" data-bs-toggle="collapse"
+						data-bs-target="#navbarCollapse">
 						<span class="navbar-toggler-icon"></span>
 					</button>
 					<div class="collapse navbar-collapse" id="navbarCollapse">
 						<div class="navbar-nav">
-									<a class="nav-item nav-link nav-link-infodales active" href="index.html">Home</a>
-									<a class="nav-item nav-link" href="services.html">Services</a>
-									<a class="nav-item nav-link" href="trainings.html">Trainings</a>
-									<a class="nav-item nav-link "href="about.html">About Us</a>
-									<a class="nav-item nav-link " href="contact.html">Contact</a>
+							<a class="nav-item nav-link nav-link-infodales active" href="index.html">Home</a>
+							<div class="nav-item dropdown">
+								<a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Services</a>
+								<div class="dropdown-menu" style="background-color: #282836;">
+									<a href="../services/aem.html" class="dropdown-item">AEM</a>
+									<a href="../services/testing.html" class="dropdown-item">Software Testing</a>
+									<a href="../services/devops.html" class="dropdown-item">Dev-ops</a>
+								</div>
+							</div>
+							<div class="nav-item dropdown">
+								<a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Trainings</a>
+								<div class="dropdown-menu" style="background-color: #282836;">
+									<a href="../trainings/aem.html" class="dropdown-item">AEM</a>
+									<a href="../trainings/testing.html" class="dropdown-item">Software Testing</a>
+									<a href="../trainings/devops.html" class="dropdown-item">Dev-ops</a>
+								</div>
+							</div>
+							
+							
+							<a class="nav-item nav-link " href="../about.html">About Us</a>
+							<a class="nav-item nav-link " href="../contact.html">Contact</a>
 						</div>
-						
+
 					</div>
 				</div>
 			</nav>
