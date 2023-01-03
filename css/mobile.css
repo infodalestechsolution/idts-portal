@@ -71,4 +71,30 @@
 .training-logo{
   width: 34%;
 }
+.infodales-banner-service{
+  padding-left: 0px;
+    padding-right: 0px
+}
+.servilce-ul{
+  margin-left: 0px;
+}
+.infodales-training-overview {
+  font-weight: bold;
+  font-size: 28px;
+  padding: 20px 0;
+  line-height: 40px;
+}
+.services-banner-header > h1 {
+  color: #ffffff;
+  font-size: 44px;
+  font-weight: 700;
+  line-height: 52px;
+  text-transform: capitalize;
+}
+.training-content-wrapper{
+  padding-top: 0px;
+}
+.mobile-hr{
+	display: block;
+}
 }
