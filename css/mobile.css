@@ -97,4 +97,11 @@
 .mobile-hr{
 	display: block;
 }
+.cards-layout {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+  width: auto;
+}
 }

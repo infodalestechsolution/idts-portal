@@ -9,7 +9,7 @@
         
     }
     .cards{
-        width : 47% !important;
+        width : 44% !important;
     }
     .col-md-7{
         width : 100%;
@@ -55,4 +55,12 @@
     .mobile-hr{
         display: block;
     }
+    .cards-layout {
+        display: inline-flex;
+        -ms-flex-pack: distribute;
+        justify-content: space-around;
+        margin: 40px auto;
+        flex-wrap: wrap;
+        width: auto;
     }
+}

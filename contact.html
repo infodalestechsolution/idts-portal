@@ -19,7 +19,7 @@
 
 	
 </head>
-<body>
+<body >
 
 	<!--
 	<div id="header">
@@ -51,38 +51,71 @@
 	<header >
 		<section class="m-0 infodales-header" style="background-color: #282836;border-bottom: 1px solid #e6e6e6;">
 			<nav class="navbar navbar-expand-lg navbar-light ">
-				<div class="container">
+				<div class="container" style="padding-bottom: 0 !important;">
 					<div style="width:25%;float:left;margin-top:-10px;">
-					<a href="#" class=""><img src="./images/logo-4.png" style="width:275px;"></img></a></div>
+						<a href="#" class=""><img src="./images/logo-4.png" style="width:275px;"></img></a>
+					</div>
 
-					<button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+					<button type="button" class="navbar-toggler" data-bs-toggle="collapse"
+						data-bs-target="#navbarCollapse">
 						<span class="navbar-toggler-icon"></span>
 					</button>
 					<div class="collapse navbar-collapse" id="navbarCollapse">
 						<div class="navbar-nav">
-									<a class="nav-item nav-link nav-link-infodales active" href="index.html">Home</a>
-									<a class="nav-item nav-link" href="services.html">Services</a>
-									<a class="nav-item nav-link" href="trainings.html">Trainings</a>
-									<a class="nav-item nav-link "href="about.html">About Us</a>
-									<a class="nav-item nav-link " href="contact.html">Contact</a>
+							<a class="nav-item nav-link nav-link-infodales active" href="./index.html">Home</a>
+							<div class="nav-item dropdown">
+								<a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Services</a>
+								<div class="dropdown-menu" style="background-color: #282836;">
+									<a href="./services/aem.html" class="dropdown-item">AEM</a>
+									<a href="./services/testing.html" class="dropdown-item">Software Testing</a>
+									<a href="./services/devops.html" class="dropdown-item">Dev-ops</a>
+								</div>
+							</div>
+							<div class="nav-item dropdown">
+								<a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Trainings</a>
+								<div class="dropdown-menu" style="background-color: #282836;">
+									<a href="./trainings/aem.html" class="dropdown-item">AEM</a>
+									<a href="./trainings/testing.html" class="dropdown-item">Software Testing</a>
+									<a href="./trainings/devops.html" class="dropdown-item">Dev-ops</a>
+								</div>
+							</div>
+							
+							
+							<a class="nav-item nav-link " href="../about.html">About Us</a>
+							<a class="nav-item nav-link " href="../contact.html">Contact</a>
 						</div>
-						
+
 					</div>
 				</div>
 			</nav>
 		</section>
-		<section class="infodales-banner-contact" style="background: url(./images/banners/contact-us1280.png) no-repeat; height: 400px;">
+		<section class="infodales-banner-training" style="background: transparent; height: 400px;background: url(./images/banners/training2.jpg) no-repeat;">
 
-			
-		
+			<div class="container infodales-banner-training">
+				<div class="row training-header-mobile">
+					<div class="col-md-9 training-header">
+						<div class="container">
+							
+						
+						</div>
+
+					</div>
+					<div class="col-md-1"></div>
+					<div class="col-md-2 training-logo" >
+						
+					</div>
+
+				</div>
+			</div>
+
 		</section>
 		
 	
 	</header>
 
 
-	<main class="container-fluid">
-		<section class="section2 clearfix" style="background-color: #00b0f0;">
+	<main class="container">
+		<section class="section2 clearfix" style="background-color: #00b0f0; margin-top: -130px;">
 			<div class="container-fluid">
 			<div class="col2 column1 first">
 				<iframe style="margin-top: 37px; width: 100%;height: 86%;" 
@@ -97,18 +130,39 @@
 				<div class="sec2contactform">
 					<h3 class="sec2frmtitle">Want to Know More?? Drop Us a Mail</h3>
 					<form action="javascript:sendEmail()">
-						<div class="clearfix">
-							<input class="col2 first firstName" type="text" name="FirstName" placeholder="FirstName">
-							<input class="col2 last lastName" type="text" name="LastName" placeholder="LastName">
+						<div class="form-group" >
+							<input type="text" id="name" class="form-control " placeholder="Name" style="margin: 0;">
 						</div>
-						<div class="clearfix">
-							<input  class="col2 first email" type="Email" name="email" placeholder="Email">
-							<input class="col2 last phone" type="text" name="phone" placeholder="Contact Number">
+						<div class="form-group">
+							<input type="email" id="email" class="form-control " placeholder="Email" style="margin: 0;">
 						</div>
-						<div class="clearfix">
-							<textarea class=" message" name="textarea" id="" cols="30" rows="7" name="message">Your message here...</textarea>
+						<div class="row">
+							<div class="col-4" style="padding-right: 2px;">
+								<div class="form-group">
+									<input type="text"  class="form-control " placeholder=""
+										value="+91-India" style="margin: 0;">
+								</div>
+							</div>
+							<div class="col-8" style="padding-left: 2px;">
+								<div class="form-group">
+									<input type="text" id="phone" class="form-control " placeholder="Phone number" style="margin: 0;">
+								</div>
+							</div>
 						</div>
-						<div class="clearfix"><input type="submit" value="Send"></div>
+						<div class="form-group">
+							<textarea class="form-control" id="message" rows="5" id="comment" name="text"
+								placeholder="Message..." style="margin: 0;"></textarea>
+						</div>
+						<div class="form-group">
+							<div class="infodales-center-button">
+								<button type="submit" class="button infodales-training-button">Get details</button>
+							</div>
+
+						</div>
+						<div class="form-group">
+							<label id ="form-message" class="form-message" style="display:none;">infodales team will reach out to you shortly</label>
+
+						</div>
 					</form>
 				</div>
 
@@ -116,23 +170,26 @@
 			</div>
 			</section>
 			<script>
-				var FirstName = document.getElementsByClassName('firstName');
-				var LastName = document.getElementsByClassName('lastName');
-				var phone = document.getElementsByClassName('phone');
-				var email = document.getElementsByClassName('email');
-				var message = document.getElementsByClassName('message');
+				
 
 
 				function sendEmail() {
+					var FirstName = document.getElementById('name').value;
+				var phone = document.getElementById('phone').value;
+				var email = document.getElementById('email').value;
+				var message = document.getElementById('message').value;
+				var mailBody = '\n Name = '+FirstName+'\n Phone = ' +phone+'\n Email id = '+email+'\n message = '+message;
 					console.log(FirstName);
 					Email.send({
-				 SecureToken:"00aa52af-a526-4111-a866-63be03775776",
-							   To: 'rojadhav91@gmail.com',
-							   From: 'rojadhav91@gmail.com',
-							   Subject: "Enquiry for atraining.",
-				   Body : message
+				 SecureToken:"e4c2c799-72b6-4f2e-ae23-3991e2a408f6",
+							   To: "infodalestechsolutions@gmail.com",
+							   From: "infodalestechsolutions@gmail.com",
+							   Subject: "Enquiry for training.",
+				 			   Body : mailBody
 			   }).then(
-				 message => alert(message)
+				message => {
+					document.getElementById("form-message").style.display = "block";
+				}
 			   );
 				   }
 			   

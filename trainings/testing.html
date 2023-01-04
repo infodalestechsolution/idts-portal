@@ -74,7 +74,7 @@
 			<nav class="navbar navbar-expand-lg navbar-light ">
 				<div class="container" style="padding-bottom: 0 !important;">
 					<div style="width:25%;float:left;margin-top:-10px;">
-						<a href="#" class=""><img src="../images/logo-4.png" style="width:275px;"></img></a>
+						<a href="#" class=""><img src="./images/logo-4.png" style="width:275px;"></img></a>
 					</div>
 
 					<button type="button" class="navbar-toggler" data-bs-toggle="collapse"
@@ -83,21 +83,21 @@
 					</button>
 					<div class="collapse navbar-collapse" id="navbarCollapse">
 						<div class="navbar-nav">
-							<a class="nav-item nav-link nav-link-infodales active" href="index.html">Home</a>
+							<a class="nav-item nav-link nav-link-infodales active" href="./index.html">Home</a>
 							<div class="nav-item dropdown">
 								<a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Services</a>
 								<div class="dropdown-menu" style="background-color: #282836;">
-									<a href="../services/aem.html" class="dropdown-item">AEM</a>
-									<a href="../services/testing.html" class="dropdown-item">Software Testing</a>
-									<a href="../services/devops.html" class="dropdown-item">Dev-ops</a>
+									<a href="./services/aem.html" class="dropdown-item">AEM</a>
+									<a href="./services/testing.html" class="dropdown-item">Software Testing</a>
+									<a href="./services/devops.html" class="dropdown-item">Dev-ops</a>
 								</div>
 							</div>
 							<div class="nav-item dropdown">
 								<a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Trainings</a>
 								<div class="dropdown-menu" style="background-color: #282836;">
-									<a href="../trainings/aem.html" class="dropdown-item">AEM</a>
-									<a href="../trainings/testing.html" class="dropdown-item">Software Testing</a>
-									<a href="../trainings/devops.html" class="dropdown-item">Dev-ops</a>
+									<a href="./trainings/aem.html" class="dropdown-item">AEM</a>
+									<a href="./trainings/testing.html" class="dropdown-item">Software Testing</a>
+									<a href="./trainings/devops.html" class="dropdown-item">Dev-ops</a>
 								</div>
 							</div>
 							
@@ -606,12 +606,12 @@
 						<div class="container training-form-container"
 							style="border-radius: 5px;box-shadow: 0 0 7px #e4e2e2!important;border: 1px solid #e0dddd!important; ">
 							<h5 class="" style="font-weight: bold;">Request for more information</h2>
-								<form action="/action_page.php">
+								<form action="javascript:sendEmail()">
 									<div class="form-group">
-										<input type="text" class="form-control " placeholder="Name">
+										<input type="text" id = "name" class="form-control " placeholder="Name">
 									</div>
 									<div class="form-group">
-										<input type="email" class="form-control " placeholder="Email">
+										<input type="email" id="email" class="form-control " placeholder="Email">
 									</div>
 									<div class="row">
 										<div class="col-4" style="padding-right: 2px;">
@@ -622,12 +622,12 @@
 										</div>
 										<div class="col-8" style="padding-left: 2px;">
 											<div class="form-group">
-												<input type="text" class="form-control " placeholder="Phone number">
+												<input type="text" id="phone" class="form-control " placeholder="Phone number">
 											</div>
 										</div>
 									</div>
 									<div class="form-group">
-										<textarea class="form-control" rows="5" id="comment" name="text"
+										<textarea class="form-control" id = "message" rows="5" id="comment" name="text"
 											placeholder="Message..."></textarea>
 									</div>
 									<div class="form-group">
@@ -636,6 +636,10 @@
 										</div>
 
 									</div>
+									<div class="form-group">
+										<label id ="form-message" class="form-message" style="display:none;">infodales team will reach out to you shortly</label>
+			
+									</div>
 
 								</form>
 						</div>
@@ -643,6 +647,28 @@
 					</div>
 				</div>
 		</section>
+		<script>
+			function sendEmail() {
+				var FirstName = document.getElementById('name').value;
+			var phone = document.getElementById('phone').value;
+			var email = document.getElementById('email').value;
+			var message = document.getElementById('message').value;
+			var mailBody = '\n Name = '+FirstName+'\n Phone = ' +phone+'\n Email id = '+email+'\n message = '+message;
+				console.log(FirstName);
+				Email.send({
+			 SecureToken:"e4c2c799-72b6-4f2e-ae23-3991e2a408f6",
+						   To: "infodalestechsolutions@gmail.com",
+						   From: "infodalestechsolutions@gmail.com",
+						   Subject: "Enquiry for Software Testing Training.",
+							Body : mailBody
+		   }).then(
+			message => {
+				document.getElementById("form-message").style.display = "block";
+			}
+		   );
+			   }
+		   
+		   </script>
 		<div>
 
 

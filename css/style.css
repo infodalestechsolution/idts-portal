@@ -496,7 +496,7 @@ html,body {
     background: #fff;
     box-shadow: 0 6px 10px rgba(0,0,0,.08), 0 0 6px rgba(0,0,0,.05);
       transition: .3s transform cubic-bezier(.155,1.105,.295,1.12),.3s box-shadow,.3s -webkit-transform cubic-bezier(.155,1.105,.295,1.12);
-  padding: 14px 80px 18px 36px;
+  padding: 14px 20px 18px 36px;
   cursor: pointer;
   height: 300px;
   max-height: 300px;
@@ -562,8 +562,8 @@ html,body {
 	display: flex;
     flex-wrap: nowrap;
     flex-direction: row;
-    justify-content: space-evenly;
-
+    justify-content: space-between;
+    width: 78%;
 }
  main{
 	padding: 0px !important;
@@ -814,9 +814,7 @@ input:focus, textarea:focus, keygen:focus, select:focus {
 	}
 }
 @media only screen and (max-width: 960px) {
-	.container {
-		padding: 0 30px 70px;
-	}
+	
 	.section2 .col2 {
 		width: 100%;
 		display: block;
@@ -1065,4 +1063,20 @@ input:focus, textarea:focus, keygen:focus, select:focus {
 
 .dropdown-item:hover {
     background-color: #59c6e5;
+}
+.infodales-wrap-text{
+	display: -webkit-box;
+    -webkit-line-clamp: 6;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.infodales-index-card{
+	max-width: none;
+}
+.infodales-card-wrapper{
+	padding-right: 62px;
+}
+.infodales-card-wrapper-heading{
+	height: 68px;
 }
