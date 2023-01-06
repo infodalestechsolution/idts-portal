@@ -104,4 +104,31 @@
   justify-content: space-between;
   width: auto;
 }
+.servilce-ul > li {
+  display: list-item;
+  list-style-type: disc;
+  color: #585858;
+  font-size: 16px;
+  line-height: 24px;
+  margin: 0 0 15px;
+}
+.infodales-banner-service {
+  /* padding-left: 188px; */
+  padding-top: 40px;
+  height: 300px;
+}
+.contact-img{
+  display: none;
+}
+.contact-form {
+  background: #fff;
+  margin-bottom: 5%;
+  width: 100%;
+}
+.contact-image img {
+  border-radius: 6rem;
+  width: 20%;
+  margin-top: -8%;
+  transform: rotate(29deg);
+}
 }

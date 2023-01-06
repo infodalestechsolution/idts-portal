@@ -63,4 +63,64 @@
         flex-wrap: wrap;
         width: auto;
     }
+    .infodales-banner{
+        background: url(../images/banners/business-3528035_1920.jpg) repeat-x left;
+        height: 400px;
+        padding: 60px 0;
+        width: 100%;
+        
+    }
+    .clearfix-subheading {
+        width: 100%; 
+        margin: 0 auto;
+        padding: 0 80px;
+        float: left;
+        font-weight: 600;
+    }
+    .clearfix {
+         width: 100%; 
+        margin: 0 auto;
+        padding: 0 20px;
+        float: left;
+        padding-bottom: 15px;
+    }
+    .clearfix-subheading {
+        width: 100%;
+        margin: 0 auto;
+        padding: 0 20px;
+        float: left;
+        font-weight: 600;
+    }
+    .infodales-banner {
+        background: url(../images/banners/business-3528035_1920.jpg) repeat-x left;
+        height: 610px;
+        padding: 20px 0;
+        width: 100%;
+    }
+    .infodales-banner-service{
+        width: 100%;
+    padding: 40px 0;
+    }
+    .servilce-ul > li {
+        display: list-item;
+        list-style-type: disc;
+        color: #585858;
+        font-size: 16px;
+        line-height: 24px;
+        margin: 0 0 15px;
+    }
+    .infodales-banner-service{
+        padding-top: 120px;
+    }
+    .contact-form {
+        background: #fff;
+        margin-bottom: 5%;
+        width: 100%;
+    }
+    .contact-image img {
+        border-radius: 6rem;
+        width: 20%;
+        margin-top: -8%;
+        transform: rotate(29deg);
+    }
 }
