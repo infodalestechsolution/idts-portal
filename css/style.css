@@ -165,12 +165,7 @@ a:-webkit-any-link {
 	padding: 0 80px;
 	float: left;
 }
-.infodales-banner > div{
-	width: 728px;
-	margin: 0 auto;
-	padding: 0 80px;
-	float: left;
-}
+
 #adbox > div img {
 	float: right;
 	margin-left: 60px;
@@ -1153,4 +1148,33 @@ input:focus, textarea:focus, keygen:focus, select:focus {
 }
 .contact-image {
     text-align: center;
+}
+.banner-subheading{
+
+}
+.clearfix {
+	width: 728px;
+    margin: 0 auto;
+    padding: 0 80px;
+    float: left;
+    padding-bottom: 15px;
+}
+.clearfix-subheading{
+	width: 75%;
+    margin: 0 auto;
+    padding: 0 80px;
+    float: left;
+	font-weight: 600;
+	
+}
+.left > p{
+	color: #000;
+}
+#footer {
+    background-color: #eee;
+    border-top: 1px solid #d8d8d8;
+    padding: 65px 0;
+}
+.services-banner-header{
+	text-align: center;
 }
