@@ -1112,7 +1112,8 @@ input:focus, textarea:focus, keygen:focus, select:focus {
 .contact-image{
     text-align: center;
 }
-.contact-image img{
+
+.contact-image img {
     border-radius: 6rem;
     width: 11%;
     margin-top: -3%;
@@ -1149,4 +1150,7 @@ input:focus, textarea:focus, keygen:focus, select:focus {
     background-color: #0062cc;
     border: none;
     cursor: pointer;
+}
+.contact-image {
+    text-align: center;
 }
