@@ -1351,3 +1351,9 @@ ul {
 	margin-top: -26px;
     margin-left: -22px
 }
+.clearfix {
+    margin: 0 auto;
+    padding: 0 20px;
+    float: left;
+    padding-bottom: 15px;
+}

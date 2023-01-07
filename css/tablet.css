@@ -3,7 +3,7 @@
     
     .infodales-banner{
         background: url(../images/banners/business-3528035_1280.jpg) repeat-x left;
-        height: 360px;
+        height: 400px;
         padding: 60px 0;
         width: 100%;
         
@@ -20,7 +20,6 @@
     .training-logo {
         background-color: #ffffff;
         border-radius: 25px;
-        /* padding-top: 20px; */
         padding: 28px 1px;
         margin-top: 25px;
         height: 175px !important;
@@ -91,12 +90,7 @@
         float: left;
         font-weight: 600;
     }
-    .infodales-banner {
-        background: url(../images/banners/business-3528035_1920.jpg) repeat-x left;
-        height: 610px;
-        padding: 20px 0;
-        width: 100%;
-    }
+    
     .infodales-banner-service{
         width: 100%;
     padding: 40px 0;

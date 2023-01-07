@@ -131,4 +131,44 @@
   margin-top: -8%;
   transform: rotate(29deg);
 }
+.clearfix-subheading {
+  margin: 0 auto;
+  padding: 0 20px;
+  float: left;
+  font-weight: 600;
+}
+.infodales-banner {
+  background: url(../images/banners/business-3528035_1920.jpg) repeat-x left;
+  height: 672px;
+  padding: 60px 0;
+  width: 100%;
+}
+.clearfix-subheading {
+  margin: 0 auto;
+  padding: 0 20px;
+  float: left;
+  font-weight: 600;
+  width: 100%;
+}
+.clearfix {
+  margin: 0 auto;
+  padding: 0 20px;
+  float: left;
+  padding-bottom: 15px;
+  width: 100%;
+}
+.footer-cta {
+  border-bottom: 1px solid #373636;
+  padding: 0 20px;
+}
+.mb-50{
+  padding: 0 40px;
+}
+.infodales-index-card{
+  padding: 0 20px;
+}
+.cards {
+   margin: unset;
+  
+}
 }
