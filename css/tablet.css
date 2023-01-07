@@ -123,4 +123,8 @@
     .infodales-card-wrapper {
         padding-right: 97px;
     }
+    .contact-img {
+        display: flex;
+        margin-bottom: 45px;
+    }
 }

@@ -1207,15 +1207,17 @@ ul {
 .cta-text {
   padding-left: 15px;
   display: inline-block;
+  padding-top: 31px;
+ 
 }
 .cta-text h4 {
-  color: #fff;
+  color: #000;
   font-size: 20px;
   font-weight: 600;
   margin-bottom: 2px;
 }
 .cta-text span {
-  color: #757575;
+  color: #000;
   font-size: 15px;
 }
 .footer-content {
@@ -1351,4 +1353,21 @@ ul {
 	margin-top: -26px;
     margin-left: -22px
 }
+.address-card{
+	display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+}
+.single-cta i {
+    color: #ff5e14;
+    font-size: 41px;
+    float: left;
+    
+	padding: 22px;
+
+}
+.single-cta{
+	display: flex;
+}
+
 
