@@ -117,4 +117,10 @@
         margin-top: -8%;
         transform: rotate(29deg);
     }
+    .card-1, .card-2, .card-3, .card-4{
+        background-size: 125px;
+    }
+    .infodales-card-wrapper {
+        padding-right: 97px;
+    }
 }

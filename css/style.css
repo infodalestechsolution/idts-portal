@@ -516,30 +516,30 @@ html,body {
 }
 
 .card-1{
-  background-image: url('../images/public/aem2.png');
+  background-image: url('../images/logo/aem.png');
       background-repeat: no-repeat;
     background-position: right;
-    background-size: 80px;
+    background-size: 100px;
 }
 
 .card-2{
-   background-image: url('../images/public/java.png');
+   background-image: url('../images/logo/java.png');
       background-repeat: no-repeat;
     background-position: right;
-    background-size: 80px;
+    background-size: 100px;
 }
 
 .card-3{
-   background-image: url('../images/public/salesforce.png');
+   background-image: url('../images/logo/salesforce.png');
       background-repeat: no-repeat;
     background-position: right;
-    background-size: 80px;
+    background-size: 100px;
 }
 .card-4{
-	background-image: url('../images/public/aem2.png');
+	background-image: url('../images/logo/testing.png');
 	   background-repeat: no-repeat;
 	 background-position: right;
-	 background-size: 80px;
+	 background-size: 100px;
  }
  .card-5{
 	background-image: url('../images/public/aem2.png');
@@ -1069,7 +1069,7 @@ input:focus, textarea:focus, keygen:focus, select:focus {
 	max-width: none;
 }
 .infodales-card-wrapper{
-	padding-right: 62px;
+	padding-right: 75px;
 }
 .infodales-card-wrapper-heading{
 	height: 68px;
@@ -1351,9 +1351,4 @@ ul {
 	margin-top: -26px;
     margin-left: -22px
 }
-.clearfix {
-    margin: 0 auto;
-    padding: 0 20px;
-    float: left;
-    padding-bottom: 15px;
-}
+
