@@ -24,33 +24,29 @@
 
 <body style="color:#fff;">
 
-	<!--
-	<div id="header">
-		<div>
-			<div style="width:25%;float:left;margin-top:-10px;">
-				<a href="index.html">
-				<img src="./images/logo-4.png" style="width:275px;"></img></a>
-			</div>
-			<ul id="navigation">
-				<li class="active">
-					<a href="index.html">Home</a>
-				</li>
-				<li>
-					<a href="services.html">Services</a>
-				</li>
-				<li>
-					<a href="trainings.html">Trainings</a>
-				</li>
-				<li>
-					<a href="about.html">About Us</a>
-				</li>
-				<li>
-					<a href="contact.html">Contact</a>
-				</li>
-				
-			</ul>
-		</div>
-	</div>-->
+	<button onclick="topFunction()" id="myBtn-arrow" title="Go to top"><img class="arrow-icon"
+		src="./images/icon/up-arrow.png"></button>
+<script>
+	// Get the button
+	let mybutton = document.getElementById("myBtn");
+
+	// When the user scrolls down 20px from the top of the document, show the button
+	window.onscroll = function () { scrollFunction() };
+
+	function scrollFunction() {
+		if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+			mybutton.style.display = "block";
+		} else {
+			mybutton.style.display = "none";
+		}
+	}
+
+	// When the user clicks on the button, scroll to the top of the document
+	function topFunction() {
+		document.body.scrollTop = 0;
+		document.documentElement.scrollTop = 0;
+	}
+</script>
 	<header>
 		<section class="m-0 infodales-header" style="background-color: #282836;border-bottom: 1px solid #e6e6e6;">
 			<nav class="navbar navbar-expand-lg navbar-light ">
@@ -116,61 +112,7 @@
 	</header>
 
 
-	<main class="container-fluid" style="background-color: #e6e6e6;"><!--
-		<section class="section2 clearfix" style="background-color: #00b0f0; margin-top: -130px;">
-			<div class="container-fluid">
-			<div class="col2 column1 first">
-				<iframe style="margin-top: 37px; width: 100%;height: 86%;" 
-				src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14879.0897934412!2d79.05490381811423!3d21.201196629935836!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd4c1748a9288c5%3A0xab1aeb07c66dabe2!2sZingabai%20Takli%2C%20Nagpur%2C%20Maharashtra%20441501!5e0!3m2!1sen!2sin!4v1670765882049!5m2!1sen!2sin" 
-				 style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-            
-			</div>
-			<div class="col2 column2 last">
-				<div class="sec2innercont">
-					
-				</div>
-				<div class="sec2contactform">
-					<h3 class="sec2frmtitle">Want to Know More?? Drop Us a Mail</h3>
-					<form action="javascript:sendEmail()">
-						<div class="form-group" >
-							<input type="text" id="name" class="form-control " placeholder="Name" style="margin: 0;">
-						</div>
-						<div class="form-group">
-							<input type="email" id="email" class="form-control " placeholder="Email" style="margin: 0;">
-						</div>
-						<div class="row">
-							<div class="col-4" style="padding-right: 2px;">
-								<div class="form-group">
-									<input type="text"  class="form-control " placeholder=""
-										value="+91-India" style="margin: 0;">
-								</div>
-							</div>
-							<div class="col-8" style="padding-left: 2px;">
-								<div class="form-group">
-									<input type="text" id="phone" class="form-control " placeholder="Phone number" style="margin: 0;">
-								</div>
-							</div>
-						</div>
-						<div class="form-group">
-							<textarea class="form-control" id="message" rows="5" id="comment" name="text"
-								placeholder="Message..." style="margin: 0;"></textarea>
-						</div>
-						<div class="form-group">
-							<div class="infodales-center-button">
-								<button type="submit" class="button infodales-training-button">Get details</button>
-							</div>
-
-						</div>
-						<div class="form-group">
-							<label id ="form-message" class="form-message" style="display:none;">infodales team will reach out to you shortly</label>
-
-						</div>
-					</form>
-				</div>
-
-			</div>
-			</div>
-			</section>-->
+	<main class="container-fluid" style="background-color: #e6e6e6;">
 		
 		<section class="contact_us container-fluid"
 			style=" background: -webkit-linear-gradient(left, #ffffff, #ffffff);">
@@ -329,13 +271,16 @@
                         </div>
                     </div>
                     <div class="col-xl-3 col-lg-3 col-md-6 mb-50">
-                        <div class="footer-widget">
+						<div class="footer-widget">
                             <div class="footer-widget-heading">
                                 <h3>Follow Us</h3>
                             </div>
-                            <a href="#"><i class="fab fa-facebook-f facebook-bg"></i></a>
-                                <a href="#"><i class="fab fa-twitter twitter-bg"></i></a>
-                                <a href="#"><i class="fab fa-google-plus-g google-bg"></i></a>
+                            <a href="#"><img class="social-icon"
+								src="../images/icon/facebook.png"></a>
+                                <a href="#"><img class="social-icon"
+									src="../images/icon/instagram.png"></a>
+                                <a href="#"><img class="social-icon"
+									src="../images/icon/google-plus.png"></a>
                         </div>
                     </div>
                 </div>
