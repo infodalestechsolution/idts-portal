@@ -18,40 +18,31 @@
 <link rel="stylesheet" href="../css/tablet.css" type="text/css">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/fontawesome.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script>
+        $(function () {
+            $('#myBtn-arrow').click(function () {
+                $('html,body').animate({
+                    scrollTop: 0
+                }, 1000);
+                return false;
+            });
+        });
 
+    </script>
 
 </head>
 
 <body style="background: url(../images/banners/training2.jpg) no-repeat; background-size: cover;">
 	<button onclick="topFunction()" id="myBtn-arrow" title="Go to top"><img class="arrow-icon"
 		src="../images/icon/up-arrow.png"></button>
-	<script>
-		// Get the button
-		let mybutton = document.getElementById("myBtn");
-		
-		// When the user scrolls down 20px from the top of the document, show the button
-		window.onscroll = function() {scrollFunction()};
-		
-		function scrollFunction() {
-		  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-			mybutton.style.display = "block";
-		  } else {
-			mybutton.style.display = "none";
-		  }
-		}
-		
-		// When the user clicks on the button, scroll to the top of the document
-		function topFunction() {
-		  document.body.scrollTop = 0;
-		  document.documentElement.scrollTop = 0;
-		}
-		</script>
+	
 	<header>
 		<section class="m-0 infodales-header" style="background-color: #282836;border-bottom: 1px solid #e6e6e6;">
 			<nav class="navbar navbar-expand-lg navbar-light ">
 				<div class="container" style="padding-bottom: 0 !important;">
 					<div style="width:25%;float:left;margin-top:-10px;">
-						<a href="#" class=""><img src="../images/logo-4.png" style="width:275px;"></img></a>
+						<a href="#" class=""><img src="../images/logo/main-logo.png" style="width:275px;"></img></a>
 					</div>
 
 					<button type="button" class="navbar-toggler" data-bs-toggle="collapse"
@@ -600,7 +591,7 @@
                     <div class="col-xl-3 col-lg-3 mb-50">
                         <div class="footer-widget">
                             <div class="footer-logo">
-                                <a href="./index.html"><img src="../images/logo-4.png" class="img-fluid" alt="logo"></a>
+                                <a href="./index.html"><img src="../images/logo/main-logo.png" class="img-fluid" alt="logo"></a>
                             </div>
                             <div class="footer-text">
                                 <p>We design, develop and customize web platforms that are maintainable and

@@ -1356,7 +1356,6 @@ ul {
 }
 .footer-logo{
 	margin-top: -26px;
-    margin-left: -22px
 }
 .address-card{
 	display: flex;
@@ -1399,7 +1398,22 @@ ul {
 	width: 50px;
 }
 .nav-item{
-	margin: 0 20px;
+	margin: 0 10px;
 }
-
+p{
+	font-size: 16px !important;
+}
+.infodales-header{
+	padding: 20px 0;
+}
+@media screen and (min-width: 1900px) {
+	.footer-logo img {
+		max-width: 260px;
+	}
+	.nav-item, .nav-link{
+		margin: 0 20px;
+		font-size: large;
+	}
+	
+  }
 
