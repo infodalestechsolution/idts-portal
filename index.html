@@ -1,26 +1,14 @@
+<!DOCTYPE html>
 <html>
-
 <head>
-    <meta charset="UTF-8" />
-    <title>Home | InfoDales Tech Solution</title>
-    <meta name="description" content="IT Consulting Services" />
-    <meta property="og:title" content="Home | InfoDales Tech Solutions" />
-    <meta property="og:description" content="IT Consulting Services" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" />
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
-    <link rel="stylesheet" href="css/style.css" type="text/css" />
-    <link rel="stylesheet" href="css/mobile.css" type="text/css" />
-    <link rel="stylesheet" href="css/tablet.css" type="text/css" />
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
-    <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/fontawesome.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-    <script>
+	<title>Home | Infodales Tech Solution</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="style.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;600;700&display=swap" rel="stylesheet">
+	
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	
+	 <script>
         $(function () {
             $('#myBtn-arrow').click(function () {
                 $('html,body').animate({
@@ -33,208 +21,321 @@
     </script>
 
 </head>
-
+ 
 <body>
-  
-        <button id="myBtn-arrow" title="Go to top"><img class="arrow-icon" src="./images/icon/up-arrow.png"></button>
+<!-- <button id="myBtn-arrow" title="Go to top"><img class="arrow-icon" src="./images/icon/up-arrow.png"></button> -->
+	<section class="header">
+		<nav>
+			<a href="index.html"><img src="images/infodales/Info Dales Main Logo 03.png"></a>
+			<div class="nav-links" id="navLinks">
+			<i class="fa fa-times" onclick="hideMenu()"></i>
+				<ul>
+					<li><a href="index.html">HOME</a></li>
+					<li><a href="about.html">ABOUT</a></li>
+					<li><a href="services.html">SERVICES</a></li>
+					<li><a href="career.html">CAREER</a></li>
+					<li><a href="contact.html">CONTACT</a></li>
+				<ul>
+			</div>
+			<i class="fa fa-bars" onclick="showMenu()"></i>
+		</nav>
+		
+		<div class="text-box">
+			<h1>Valley of Information</h1>
+			<p>We at InfoDales Provide solutions for niche technologies like Adobe Experience Manager, Cypress, Salesforce and DevOps.<br>We have highly skilled consulting team who help us meet high standards in the above mentioned niche technologies.
+			<br>Our consulting team assists you in the AEM, Cypress, Salesforce and DevOps for building flawless experience.</p>
+			<a href="contact.html" class="hero-btn">Visit Us to Know More</a>
+		</div>
+		
+	</section>
+	<section class="about-us">
+		<div class=row>
+		<div class="about-col home-col-left">
+				<h1> Who we are?</h1>
+				<p>We at InfoDales are positioned as one of the top engineers of the IT industry offering quick, concise, and reliable services.
+				</p>
+				<p>
+				At our company, we go beyond mere web development. We craft meticulously tailored digital ecosystems that stand the test of time, embodying years of unwavering expertise, ensuring unrivaled maintainability and absolute freedom from technical debt. Our customer-centric solutions and architecting experience help organizations to make a global footprint.
+				</p>
+				<a href="./index.html" class="hero-btn red-btn">Explore Now</a>
+		</div>
+		<div class="about-col home-col-right" >
+			
+			<img src="images/team2.jpg">
 
-    <header>
-        <section class="m-0 infodales-header" style="background-color: #282836;border-bottom: 1px solid #e6e6e6;">
-            <nav class="navbar navbar-expand-lg navbar-light ">
-                <div class="container" style="padding-bottom: 0 !important;">
-                    <div style="width:25%;float:left;margin-top:-10px;">
-                        <a href="#" class=""><img src="./images/logo/main-logo.png" style="width:275px;"></img></a>
-                    </div>
+		</div>
+	</div>
+	</section>
 
-                    <button type="button" class="navbar-toggler" data-bs-toggle="collapse"
-                        data-bs-target="#navbarCollapse">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarCollapse">
-                        <div class="navbar-nav">
-                            <a class="nav-item nav-link nav-link-infodales active" href="./index.html">Home</a>
-                            <a class="nav-item nav-link " href="../about.html">About Us</a>
-                            <div class="nav-item dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Services</a>
-                                <div class="dropdown-menu" style="background-color: #282836;">
-                                    <a href="./services/aem.html" class="dropdown-item">AEM</a>
-                                    <a href="./services/testing.html" class="dropdown-item">Software Testing</a>
-                                    <a href="./services/devops.html" class="dropdown-item">Dev-ops</a>
-                                </div>
-                            </div>
-                            <div class="nav-item dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Trainings</a>
-                                <div class="dropdown-menu" style="background-color: #282836;">
-                                    <a href="./trainings/aem.html" class="dropdown-item">AEM</a>
-                                    <a href="./trainings/testing.html" class="dropdown-item">Software Testing</a>
-                                    <a href="./trainings/devops.html" class="dropdown-item">Dev-ops</a>
-                                </div>
-                            </div>
-                            <a class="nav-item nav-link " href="./contact.html">Contact</a>
-                        </div>
-
-                    </div>
-                </div>
-            </nav>
-        </section>
-        <section class="infodales-banner">
-            <div class="clearfix">
-                <div class="left">
-                    <div style="color:#282836;font-size:35px;font-weight:900;">
-                        <span>
-                            Accelerating your solution with our Knowledge and Resources.
-                        </span>
-                    </div>
-
-                </div>
-            </div>
-            <div class="clearfix-subheading">
-                <div class="left">
-                    <p>
-                        We at InfoDales are positioned as one of the top engineers of the IT
-                        industry offering quick, concise, and reliable services catering to various industries
-                        like and other industries verticals.
-                        <br>&nbsp;
-                        <br>
-                        We design, develop and customize web platforms that are maintainable and
-                        technical debt-free in long term, which requires years and years of hands-on
-                        development experience. Our customer-centric solutions and architecting
-                        experience help organizations to make a global footprint.
-                    </p>
+<section class="vision">
+    <div class="row clearfix">
+        <div class="col-md-6 tile-container">
+            <div class="row tile-container-row">
+                <div class="col-md-6 tile-child-container tile-child-container-left" >
+				<img class="image_css" src="images/infodales/tile/mision.jpg">
+				</div>
+                <div class="col-md-6 tile-child-container tile-child-container-right">
+				<div class="tile-container-text">
+                    <h4>OUR MISSION</h4>
+                    <p>Our mission is to customized technology solutions and strategic advice to businesses of all sizes to improve their operations, productivity, and overall success.</p>
+					</div>
                 </div>
             </div>
-        </section>
-    </header>
-
-    <main class="container-fluid">
-
-        <section style="background-color: #ffffff; height: auto; padding: 40px 0;">
-            <div class="container">
-                <div class="infodales-heading" style="color: #000;">
-                    Who we are
-                </div>
-                <div class="infodales-text" style="color: #000;">
-                    Our team has a solid programming foundation and in-depth knowledge. Our team has acquired various
-                    difficult certifications, which makes us one of the best in the market.
-                    We have proven abilities to design solutions according to customer needs with best practices and
-                    solutions flexible enough to expand further.
-                    Being a full-stack team, we have worked on frontend technologies, automation frameworks for quality
-                    control, and production deployments using the Jenkins CI/CD pipelines.
+        </div>
+        <div class="col-md-6 tile-container">
+            <div class="row tile-container-row">
+                <div class="col-md-6 tile-child-container tile-child-container-left" >
+				<img class="image_css" src="images/infodales/tile/vision.jpg">
+				</div>
+                <div class="col-md-6 tile-child-container tile-child-container-right">
+				<div class="tile-container-text">
+                    <h4>OUR VISION</h4>
+                    <p>The vision includes staying at the forefront of technological innovation, building strong relationships with clients as a trusted advisor, and having a positive impact on society.</p>
+					</div>
                 </div>
             </div>
-        </section>
-
-        <section class="" style="padding: 60px 0; background: url(./images/geometric-g46801d394_1920.jpg);">
-            <div class="container">
-                <h4 style="color:white; margin-bottom: 30px;text-align: center;"> Our Trainings </h4>
-            </div>
-
-            <div class="container infodales-index-card">
-                <div class="cards-layout">
-                    <div class="col-md-3 cards">
-                        <div class="card card-1">
-                            <div class="infodales-card-wrapper-heading">
-                                <h3>Adobe Experiece Manager</h3>
-                            </div>
-                            <div class="infodales-card-wrapper">
-                                <p class="infodales-wrap-text">We deliver AEM development services and solutions to
-                                    adapt to your future business needs. The unique AEM CMS solutions that we craft are
-                                    each designed to maximize your engagement impact.</p>
-                                <div style="margin-top: auto;">
-                                    <a href="./trainings/aem.html" style="color: #0385c2; text-decoration: none; position: absolute;
-                                    bottom: 18px;">
-                                        See More <strong><span style="font-weight: bold;">&#8594;</span></strong>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 cards">
-                        <div class="card card-2">
-                            <div class="infodales-card-wrapper-heading">
-                                <h3>Salesforce</h3>
-                            </div>
-
-                            <div class="infodales-card-wrapper">
-                                <p class="infodales-wrap-text">We deploy robust Salesforce cloud solutions to automate
-                                    and manage marketing, sales, and customer service functions and drive digital
-                                    transformation and innovation of enterprises.</p>
-                                <div style="margin-top: auto;">
-                                    <a href="./trainings/salesforce.html"
-                                        style="color: #0385c2; text-decoration: none; position: absolute;
-                                        bottom: 18px;">
-                                        See More <strong><span style="font-weight: bold;">&#8594;</span></strong>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 cards">
-                        <div class="card card-3">
-                            <div class="infodales-card-wrapper-heading">
-                                <h3>Dev Ops</h3>
-                            </div>
-                            <div class="infodales-card-wrapper">
-                                <p class="infodales-wrap-text">Optimize business infrastructures by leveraging our
-                                    continuous delivery expertise to create full-fledged DevOps solutions with shorter
-                                    time-to-market. Take advantage of the benefits of an automated cloud environment and
-                                    save money on maintenance.</p>
-                                <div style="margin-top: auto;">
-                                    <a href="./trainings/devops.html" style="color: #0385c2; text-decoration: none; position: absolute;
-                                    bottom: 18px;">
-                                        See More <strong><span style="font-weight: bold;">&#8594;</span></strong>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 cards">
-                        <div class="card card-4">
-                            <div class="infodales-card-wrapper-heading">
-                                <h3>Software Testing</h3>
-                            </div>
-                            <div class="infodales-card-wrapper">
-                                <p class="infodales-wrap-text">We provide high Quality of product and services through
-                                    modern automation process in Testing.</p>
-                                <div style="margin-top: auto;">
-                                    <a href="./trainings/testing.html" style="color: #0385c2; text-decoration: none; position: absolute;
-                                    bottom: 18px;">
-                                        See More <strong><span style="font-weight: bold;">&#8594;</span></strong>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+        </div>
+    </div>
+    <div class="row clearfix">
+        <div class="col-md-6 tile-container">
+            <div class="row tile-container-row">
+                <div class="col-md-6 tile-child-container tile-child-container-left">
+				<img class="image_css" src="images/infodales/tile/strategy.jpg">
+				</div>
+                <div class="col-md-6 tile-child-container tile-child-container-right">
+				<div class="tile-container-text">
+                    <h4>OUR STRATEGY</h4>
+                    <p>Our Strategy is to provide high-quality technology solutions and consulting services to a targeted market, build a talented and experienced team, establish partnerships with other industry players and focus on customer satisfaction.</p>
+					</div>
                 </div>
             </div>
-        </section>
-
-        <section class="infodales-bios" style="background-color: #000; height: auto; padding: 40px 0;">
-            <div class="container">
-                <div class="infodales-heading" style="color: #ffffff;">
-                    Our Team
-                </div>
-                <div class="infodales-text" style="color: #ffffff;">
-                    We at InfoDales are positioned as one of the top engineers of the IT industry offering quick,
-                    concise, and reliable services catering to various industries like and other industries verticals.
-                    We design, develop and
-                    customize web platforms that are maintainable and technical debt-free in long term, which requires
-                    years and years of hands-on development experience. Our customer-centric solutions and architecting
-                    experience help
-                    organizations to make a global footprint.
+        </div>
+        <div class="col-md-6 tile-container">
+            <div class="row tile-container-row">
+                <div class="col-md-6 tile-child-container tile-child-container-left">
+				<img class="image_css" src="images/infodales/tile/core-values2.jpg">
+				</div>
+                <div class="col-md-6 tile-child-container tile-child-container-right">
+				<div class="tile-container-text">
+                    <h4>OUR VALUES</h4>
+                    <p>Our Values are the principles and beliefs that guide the behavior and decision-making of the organization. </p>
+					</div>
                 </div>
             </div>
-        </section>
-    </main>
-    <footer class="footer-section">
-        <div class="container">
+        </div>
+    </div>
+</section>
 
-            <div class="footer-content pt-5 pb-5">
-                <div class="row">
-                    <div class="col-xl-3 col-lg-3 mb-50">
-                        <div class="footer-widget">
+	<!--- Course  -->
+		<section class="course">
+			<h1>Our Services</h1>
+			<p> We design, develop, customize and test web platforms that are maintainable and technical debt-free in long term, which requires years and years of hands-on development experience.</p>
+			
+			<div class="row">
+			<div class="campus-col">
+					<img src="images/infodales/tile/AEM-651.jpg">
+					<div class="layer">
+						<h3>Web Development With Adobe Experience Manager</h3>
+					</div>
+			</div>
+
+			<div class="campus-col">
+					<img src="images/infodales/tile/Cy.jpg">
+					<div class="layer">
+						<h3>Automation Testing with Cypress</h3>
+					</div>
+			</div>
+			<div class="campus-col">
+					<img src="images/infodales/tile/salesforce-review2.jpg">
+					<div class="layer">
+						<h3>Salesforce Development</h3>
+					</div>
+
+			</div>
+		</div>
+	</section>
+	
+
+	
+
+	
+	
+	
+	
+	<!--- Campus 
+	<section class="campus">
+		<h1>Our Global Campus</h1>
+		<p> Th us are the dsaf saf asfdadf dsaf dsa fdsa fdsa fdsa f dsaf dsaf dsa fsafSDSADd ds dsfdsaf dsaf dsaf dsa fdsa fdsa fdsaf dsaf dsa fdsa f df saf dsa f dsaf dsaf dsa fdsa f ddsa</p>
+		<div class="row">
+			<div class="campus-col">
+					<img src="images/infodales/tile/AEM-651.jpg">
+					<div class="layer">
+						<h3>Adobe Experience Manager</h3>
+					</div>
+			</div>
+
+			<div class="campus-col">
+					<img src="images/infodales/tile/Cy.jpg">
+					<div class="layer">
+						<h3>Automation Testing with Cypress</h3>
+					</div>
+			</div>
+			<div class="campus-col">
+					<img src="images/infodales/tile/cloud.jpg">
+					<div class="layer">
+						<h3>Salesforce Development</h3>
+					</div>
+
+			</div>
+		</div>
+	</section> -->
+	<!--
+	
+		<section class="course">
+			<h1>What to expect from Adobe Experience Manager?</h1>
+			<p> Th us are the dsaf saf asfdadf dsaf dsa fdsa fdsa fdsa f dsaf dsaf dsa f</p>
+		
+		<div class="row">
+			<div class="course-col">
+				<h3>Adobe AEM Sites</h3>
+				<p> Build and manage multiple responsively designed sites, tailored across different regions & languages from a central platform. Optimize your eCommerce site, launch marketing campaigns and deliver unified experiences across touchpoints with Adobe AEM Sites.</p>
+			</div>
+
+			<div class="course-col">
+				<h3>Adobe AEM Digital Asset Management</h3>
+				<p>Manage and deliver images, videos and content across devices and screens while automatically assigning metadata and tags to all your assets. Develop customized versions of your assets to deliver personalized and targeted experiences to your users.</p>
+			</div>
+
+			<div class="course-col">
+				<h3>Adobe CMS Mobile</h3>
+				<p>The easy drag-and-drop interface of  Adobe CMS empowers you to quickly develop and update mobile apps using a single codebase for multiple platforms. You can even Analyze your app’s performance & metrics by leveraging the built-in Adobe Analytics. </p>
+			</div>
+		</div>
+			<div class="row">
+			<div class="course-col">
+				<h3>Headless CMS</h3>
+				<p>Integrate Adobe Experience Manager with various third-party tools to deliver consistent content experiences across all channels. Its headless capabilities help you establish complete ownership of your content and flexibly update it as per user demographics and statistics. </p>
+			</div>
+
+			<div class="course-col">
+				<h3>Workflow Management</h3>
+				<p>Streamline workflows for different projects by assigning role-based access and setting up individual workspaces in Adobe Experience Manager. Adobe Experience Manager (AEM) features like comments and annotations help improve site quality and productivity. </p>
+			</div>
+
+			<div class="course-col">
+				<h3>Adobe AEM Forms</h3>
+				<p>Create forms based on your user’s location, device, and browsing behavior and deliver dynamic experiences anytime and anywhere. Users can leverage pre-filled fields, responsive designs, help text, and electronic signatures to easily and quickly fill forms.</p>
+			</div>
+		</div>
+	</section>
+	
+	-->
+	
+	
+	
+	
+
+<!--- Faclities 
+
+<section class="facilities">
+	<h1>What to expect from Adobe Experience Manager?</h1>
+	<p>asfd dsadsa fdsa fdsa f dsaf dsa f dsaf dsaf sa</p>
+
+	<div class="row">
+		<div class="facilities-col">
+				 <img src="images/library.png"> 
+				
+				<h3>Adobe AEM Sites</h3>
+				<p>Build and manage multiple responsively designed sites, tailored across different regions & languages from a central platform. Optimize your eCommerce site, launch marketing campaigns and deliver unified experiences across touchpoints with Adobe AEM Sites.</p>
+		</div>
+
+		<div class="facilities-col">
+				 <img src="images/basketball.png"> 
+				<h3>Adobe AEM Digital Asset Management</h3>
+				<p>Manage and deliver images, videos and content across devices and screens while automatically assigning metadata and tags to all your assets. Develop customized versions of your assets to deliver personalized and targeted experiences to your users.</p>
+		</div>
+
+		<div class="facilities-col">
+				 <img src="images/cafeteria.png"> 
+				<h3>Adobe CMS Mobile</h3>
+				<p>The easy drag-and-drop interface of  Adobe CMS empowers you to quickly develop and update mobile apps using a single codebase for multiple platforms. You can even Analyze your app’s performance & metrics by leveraging the built-in Adobe Analytics. </p>
+		</div>
+		
+		
+
+
+	</div>
+	<div class="row">
+	<div class="facilities-col">
+				 <img src="images/cafeteria.png"> 
+				<h3>Headless CMS</h3>
+				<p>Integrate Adobe Experience Manager with various third-party tools to deliver consistent content experiences across all channels. Its headless capabilities help you establish complete ownership of your content and flexibly update it as per user demographics and statistics. </p>
+		</div>
+		<div class="facilities-col">
+				 <img src="images/cafeteria.png"> 
+				<h3>Workflow Management</h3>
+				<p>Streamline workflows for different projects by assigning role-based access and setting up individual workspaces in Adobe Experience Manager. Adobe Experience Manager (AEM) features like comments and annotations help improve site quality and productivity. </p>
+		</div>
+		<div class="facilities-col">
+				<img src="images/cafeteria.png"> 
+				<h3>Adobe AEM Forms</h3>
+				<p>Create forms based on your user’s location, device, and browsing behavior and deliver dynamic experiences anytime and anywhere. Users can leverage pre-filled fields, responsive designs, help text, and electronic signatures to easily and quickly fill forms.</p>
+		</div>
+	
+	</div>
+
+</section>-->
+
+<!--- Testimonials -->
+
+
+<section class="expertise" style="background-color:#f7f9fa; margin-top:0px; padding-top: 20px;">
+			<div class="row expertise-row">
+			<div class="container">
+			<h1 style="color:black; text-align: center;">Hire Adobe AEM experts to offer better web content management </h1>
+			<p style="color:black; text-align: center;"> <strong>Here’s what you get -</strong></p>
+			</div>
+			</div>
+		<div class="row" style="margin-top: 20px;">
+			<div class="course-col" style="background: #f7f9fa;border-radius: unset;border-left: 2px solid black;padding: 0px 12px;">
+				<!--<h3 style="color:black; padding-left: 9px; text-align: left">Lorum Ispum</h3>-->
+				<p> Proven expertise and experience in building editable and scalable Adobe CMS websites for your growing business </p>
+
+			</div>
+
+			<div class="course-col" style="background: #f7f9fa;border-radius: unset;border-left: 2px solid black; padding: 0px 12px;">
+				<!--<h3 style="color:black; padding-left: 9px; text-align: left">Lorum ispum</h3> -->
+				<p> In-depth knowledge of the Adobe AEM platform, its core components, OOTB features, experience fragments, and editable templates </p>
+				
+			</div>
+
+
+			<div class="course-col" style="background: #f7f9fa;border-radius: unset;border-left: 2px solid black; padding: 0px 12px;">
+				<!--<h3 style="color:black; padding-left: 9px; text-align: left">Our Expertise</h3> -->
+				<p> Certified Adobe multi-site manager consultants & developers across the Adobe ecosystem</p>
+
+			</div>
+
+		</div>
+		</section>
+
+<!--  Call to Action--->
+
+<section class="cta">
+	<!-- <h1>Enroll For our courses from any part of the world</h1> -->
+	<h1>Reach out to us and let's create something incredible.</h1>
+	<a href="contact.html" class="hero-btn">Contact Us</a>
+</section>
+
+
+<!--  Footer
+
+<section class="footer" style="background-color: black;">
+	<div class="row">
+	<div class="campus-col">
+		<div class="footer-widget">
                             <div class="footer-logo">
-                                <a href="./index.html"><img src="./images/logo/main-logo.png" class="img-fluid" alt="logo"></a>
+                                <a href="./index.html"><img src="images/infodales/Info Dales Main Logo 03.png" class="img-fluid" alt="logo"></a>
                             </div>
                             <div class="footer-text">
                                 <p>We design, develop and customize web platforms that are maintainable and
@@ -243,60 +344,92 @@
                             </div>
 
                         </div>
-                    </div>
-                    <div class="col-xl-6 col-lg-6 col-md-6 mb-30">
-                        <div class="footer-widget">
+	</div>
+	<div class="campus-col">
+	 <div class="footer-widget">
                             <div class="footer-widget-heading">
                                 <h3>Useful Links</h3>
                             </div>
                             <ul>
-                                <li>Services</li>
-                                <li>Trainings</li>
                                 <li><a href="./services/aem.html">Aem Services</a></li>
-                                <li><a href="./trainings/aem.html">Aem Trainings</a></li>
+                                <li><a href="./trainings/aem.html"></a></li>
                                 <li><a href="./services/testing.html">Software Testing Services</a></li>
-                                <li><a href="./trainings/testing.html">Software Testing Trainings</a></li>
+                                <li><a href="./trainings/testing.html"></a></li>
                                 <li><a href="./services/devops.html">Devops Services</a></li>
-                                <li><a href="./trainings/devops.html">Devops Trainings</a></li>
+                                <li><a href="./trainings/devops.html"></a></li>
 
                             </ul>
                         </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-3 col-md-6 mb-50">
-                        <div class="footer-widget">
-                            <div class="footer-widget-heading">
+	
+	</div>
+	<div class="campus-col">
+	<div class="footer-widget-heading">
                                 <h3>Follow Us</h3>
                             </div>
-                            <a href="#"><img class="social-icon" src="./images/icon/facebook.png"></a>
-                            <a href="#"><img class="social-icon" src="./images/icon/instagram.png"></a>
-                            <a href="#"><img class="social-icon" src="./images/icon/google-plus.png"></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="copyright-area">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xl-6 col-lg-6 text-center text-lg-left">
+							<div class="icons">
+		<i class="fa fa-facebook"></i>
+		<i class="fa fa-instagram"></i>
+		<i class="fa fa-linkedin"></i>
+</div>
+	
+	</div>
+	
+	
+	</div>
+
+<div class="icons">
+		<i class="fa fa-facebook"></i>
+		<i class="fa fa-instagram"></i>
+		<i class="fa fa-linkedin"></i>
+</div>
+</section> --->
+<div class="copyright-area">
+            <div class="footer">
+                <div class="row" style="margin-top: 0px;">
+                    <div class="col-xl-4 col-lg-4 text-center text-lg-left">
                         <div class="copyright-text">
                             <p>Copyright &copy; 2023, All Right Reserved <a href="./index.html">Infodales Tech
                                     Solution</a></p>
                         </div>
-                    </div>
-                    <div class="col-xl-6 col-lg-6 d-none d-lg-block text-right">
-                        <div class="footer-menu">
+					</div>
+                    
+                    <div class="col-xl-4 col-lg-4 d-none d-lg-block text-right">
+                        <div class="footer-menu" style="margin-top:10px;">
                             <ul>
-                                <li><a href="./index.html">Home</a></li>
-                                <li><a href="./about.html">About</a></li>
-                                <li><a href="./contact.html">Contact</a></li>
+                                <li><a href="index.html">Home</a></li>
+                                <li><a href="about.html">About</a></li>
+                                <li><a href="contact.html">Contact</a></li>
                             </ul>
                         </div>
                     </div>
+					<div class="col-xl-4 col-lg-4 d-none d-lg-block text-right">
+                       <div class="icons">
+							<i class="fa fa-facebook"></i>
+							<i class="fa fa-instagram"></i>
+							<i class="fa fa-linkedin"></i>
+						</div>
+                    </div>
                 </div>
+				</div>
             </div>
-        </div>
-    </footer>
+        
+
+
+
+<!--- Java Script-->	
+	<script>
+			var navLinks = document.getElementById("navLinks");
+
+			function showMenu(){
+					navLinks.style.right="0";
+			}
+
+			function hideMenu(){
+					navLinks.style.right="-200px";
+			}
+	
+	</script>
+	
 </body>
 
 </html>
