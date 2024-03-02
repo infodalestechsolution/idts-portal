@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Blogs | Getting started with AEM SPA</title>
+	<link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="style.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;600;700&display=swap"
+		rel="stylesheet">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+
+	<!-- Header -->
+	<section class="sub-header"
+		style="background-image: linear-gradient(rgba(4, 9, 30, 0.5), rgba(4, 9, 30, 0.5)), url('images/Cover\ SPA.jpg');">
+		<nav>
+			<a href="index.html"><img src="images/infodales/Info Dales Main Logo 03.webp" alt="logo"></a>
+			<div class="nav-links" id="navLinks">
+				<i class="fa fa-times" onclick="hideMenu()"></i>
+				<ul>
+					<li><a href="index.html">HOME</a></li>
+					<li><a href="about.html">ABOUT</a></li>
+					<li><a href="services.html">SERVICES</a></li>
+					<li><a href="blog.html">BLOGS</a></li>
+					<li><a href="career.html">CAREER</a></li>
+					<li><a href="contact.html">CONTACT</a></li>
+					<ul>
+			</div>
+			<i class="fa fa-bars" onclick="showMenu()"></i>
+		</nav>
+		<!-- <p style="color: lightgray; margin-left: 17%;"><a href="./blog.html" style="text-decoration: none; color: white; cursor: pointer;">Blogs</a> <span> > </span> Getting started with SPA</p> -->
+		<!-- <h1>Blogs</h1> -->
+	</section>
+	<!--  Blog Page Content --->
+	<section class="blog-content">
+		<div>
+			<div class="blog spa-blog">
+				
+				<p style="color: rgb(133, 133, 133); padding: 0 0 10px 0;"><a href="./blog.html" style="text-decoration: none; cursor: pointer;">Blogs</a> <span> > </span> Getting started with SPA</p>
+
+				<p class="spaTag" style="margin-top: 7px; margin-bottom: 7px; font-size: 13px; border-radius: 20px; 
+				width: fit-content; padding: 3px 15px;">AEM SPA</p>
+				<h1 class="title">Getting started with AEM SPA</h1>
+      				<span class="author">Infodales Tech Solutions</span> |
+      				<span class="date">February 21, 2024</span>
+    			
+					<div class="share-icons">
+					<a href="https://www.linkedin.com/company/infodales-tech-solution/" target="_blank" class="linkedin-icon"><i class="fa fa-linkedin"></i></a>
+                    <a href="mailto:info@infodales.com" target="_blank" class="email-icon"><i class="fa fa-envelope"></i></a>
+					</div>
+
+				<hr style="margin: 20px 0 10px 0;">
+
+				<!-- <div class="image-container">
+					<img src="images/SPA-Blogs/SPA banner.webp" alt="SPA banner">
+				</div> -->
+				<div class="blog-items">
+					<p>Welcome to the blog designed for developers new to the AEM SPA concept. This blog will walk you through some of the well known questions like <b>What is SPA?</b> <b>Why SPA?</b> and mainly <b>Why SPA with AEM?</b> We'll cover these questions in this blog.</p>
+					<p>Firstly we'll look into the approches that we have with us to build a web application.</p>
+					<div>
+					<h3 style="text-align: left;">Approaches</h3>
+						<ul style="margin-left: auto; width: 93%;">
+							<li>
+								<p style="margin: 3px 0;">Traditional Approach ( Client - Server )</p>
+								<img class="spa-image" src="images/SPA-Blogs/Initial Request 1.webp" alt="traditional approach" width="700" height="280">
+								<p>In traditional approach, the client makes a request of a page to the server and the server will return the HTML i.e., the content, and when the client needs another page, he makes another request to the server and the server will return the different responses for the specified content.
+								</p>
+							</li>
+							<li>
+								<p style="margin: 3px 0;">Single Page Application (SPA)</p>
+								<img class="spa-image" src="images/SPA-Blogs/Initial Request 2.webp" alt="SPA approach" width="700" height="310">
+								<p>In SPA, the client makes the initial request and the server responds with the content and as much as possible content with the initial request. When a client has some content and it&apos;s moving from page to page, so when we move from page to page we don't make any request to the server and all the content is present at the client side only.
+								</p>
+								<p>If a client makes some request which is not present at the client side, in that case the client will make the request to the server for the specific content and the server will return the content in the form of Json.
+								</p>
+								<p>With SPA, the initial request is a bit slow as the server tries to dump the content as much as possible as per the SPA configurations, but the subsequent request is faster as the client serves the content from the client side only and not the server side.
+								</p>
+							</li>
+						</ul>
+					</div>
+					<div>
+						<h3 style="text-align: left;">What is SPA?</h3>
+						<p>SPA stands for Single Page Application. It is a web application or website that interacts with the user by dynamically rewriting the current page rather than loading entire new pages from the server. In a traditional multi-page application, when you navigate from one page to another, the browser requests a new page from the server, and the entire page is reloaded.</p>
+						<p>In contrast, a Single Page Application loads a single HTML page and dynamically updates it's content as the user interacts with the application. This is often achieved using JavaScript frameworks or libraries such as Angular, React, or Vue.js. SPAs provide a smoother and more seamless user experience because they can update specific parts of the page without requiring a full page reload.</p>
+					</div>
+					<div>
+						<h3 style="text-align: left;">Why SPA?</h3>
+						<p>Single Page Applications (SPAs) are favored for several reasons, and their adoption is driven by the desire to enhance user experiences and streamline web development. Here are some key reasons why SPAs are often preferred:</p>
+						<ul style="margin-left: auto; width: 93%;">
+							<li><p><i>Seamless User Experience:</i>&nbsp;&nbsp;SPAs provide a smoother and more seamless user experience by dynamically updating content without the need for full page reloads. This	leads to faster response times and a more fluid interaction, creating a more engaging and enjoyable user interface.</p>
+							</li>
+							<li><p><i>Reduced Loading Time:</i>&nbsp;&nbsp;Traditional multi-page applications often involve reloading the entire page, resulting in longer loading times. SPAs, on the other hand, load initial resources upfront and fetch additional data asynchronously, reducing latency and making the application feel more responsive.</p>
+							</li>
+							<li><p><i>Asynchronous Data Loading:</i>&nbsp;&nbsp;SPAs leverage asynchronous data loading, often using AJAX or similar techniques. This allows for fetching data in the background, updating the content without requiring a complete page refresh. It contributes to a dynamic and interactive user experience.</p>
+							</li>
+							<li><p><i>Efficient Resource Utilization:</i>&nbsp;&nbsp;SPAs can be more resource-efficient as they load resources, such as scripts and stylesheets, only once during the initial page load. Subsequent interactions with the application involve fetching only the necessary data, minimizing redundant requests to the server.</p>
+							</li>
+							<li><p><i>Client-Side Routing:</i>&nbsp;&nbsp;SPAs handle navigation on the client side, updating the URL and rendering content dynamically. This reduces the need for server requests during navigation, contributing to a more responsive and fluid application.</p>
+							</li>
+							<li><p><i>Mobile Responsiveness:</i>&nbsp;&nbsp;SPAs are well-suited for mobile devices due to their ability to load content dynamically and provide a responsive user interface. This is crucial in the current era where a significant portion of web traffic comes from mobile devices.</p>
+							</li>
+							<li><p><i>Support for Offline Mode:</i>&nbsp;&nbsp;Some SPAs can incorporate service workers and caching strategies, enabling them to function partially or entirely offline. This is particularly beneficial for users with intermittent internet connectivity.</p>
+							</li>
+						</ul>
+					</div>
+					<div>
+						<h3 style="text-align: left;">Why SPA with AEM?</h3>
+						<img class="spa-image" src="images/SPA-Blogs/Initial Request 3.webp" alt="SPA with AEM" width="600" height="250">
+						<p>Both SPA & AEM have different architectures and the advantage of SPA is high performance, AEM has a client server architecture and we must say that one of the biggest advantages of AEM is authoring. So, if we integrate these things together i.e the capability of SPA and the capability of AEM, would result in a very powerful AEM SPA application.</p>
+						<h3 style="text-align: left;">How can we implement SPA in AEM?</h3>
+						<p>There are basically four technologies/frameworks to develop SPA :</p>
+						<ul style="margin-left: auto; width: 93%;">
+							<li><p>React JS</p></li>
+							<li><p>Angular JS</p></li>
+							<li><p>Vue JS</p></li>
+							<li><p>Handlebar & Ember</p></li>
+						</ul>
+						<p>We would be working with React js to develop an AEM SPA application.</p>
+					</div>
+					<div>
+						<h3 style="text-align: left;">Creating an AEM SPA Project</h3>
+						<p style="font-size: small; color: darkslategray; background-color: rgb(255, 255, 129); padding: 4px 10px; margin: 5px 0;">Note : Ensure that a fresh instance of AEM, started in Author mode, is running locally.</p>
+						<p>Create the project :</p>
+						<ol style="margin-left: auto; width: 93%;">
+							<li>
+								<p>Open the command line terminal and enter the following maven command.</p>
+								<pre>
+<code>mvn -B org.apache.maven.plugins:maven-archetype-plugin:3.2.1:generate -D
+archetypeGroupId=com.adobe.aem -D archetypeArtifactId=aem-project-archetype -D
+archetypeVersion=35 -D appTitle="SPA React" -D appId="spa-react" -D
+artifactId="aem-spa.react" -D groupId="com.adobe.aem.spa.react" -D
+frontendModule="react" -D aemVersion=6.5.0</code><p style="margin-top: 10px;">[ Replace the AEM version accordingly ]</p>
+								</pre>
+							</li>
+							<li>
+								<p>The following folder and file structure is generated by the maven archetype on our local file system & each folder represents an individual Maven module.</p>
+								<img class="spa-image" src="images/SPA-Blogs/SPA Folder structure.webp" alt="SPA folder structure" width="450" height="470">
+								<p>We will primarily be working with the ui.frontend module, which is the React app.</p>
+							</li>
+							<li>
+								<p>Deploy and build the project using the following command :</p>
+								<p style="background-color: lightgrey; width: fit-content; padding: 10px 20px; color: darkslateblue; font-weight: 600;" class="command">mvn clean install -PautoInstallSinglePackage</p>
+								<p>The build will take around a minute and should end with the <span style="color: green; font-weight: 600;">BUILD SUCCESS</span> message.</p>
+							</li>
+						</ol>
+					</div>
+					<div>
+						<h3 style="text-align: left;">Ui.Frontend Module</h3>
+						<p>Ui.frontend module has the following folder structure</p>
+						<img class="spa-image" src="images/SPA-Blogs/UI Frontend FS.webp" alt="UI frontend folder structure" width="510" height="350">
+						<p>There are few important files that we should know in this structure i.e., <i>.env.development</i>, <i>package.json</i> & <i>clientlib.config.js</i></p>
+						<p style="background-color: lightblue; color: black; width: fit-content; padding: 1px 10px; margin: 5px 0px;">❖ .env.development</p>
+						<img class="spa-image" src="images/SPA-Blogs/env.webp" alt="env development" width="580" height="200">
+						<p>This file contains the path of the JSON API which is consumed by the react app to display the content on the frontend module and also the root path of the frontend module.</p>
+						<p>We can provide the content to the frontend in two ways :</p>
+						<ol style="margin-left: auto; width: 93%;">
+							<li>
+								<p style="color: black; font-weight: 600;">via AEM</p>
+								<p>We need to provide the proxy path to the AEM which is added in the package.json file.</p>
+								<img class="spa-image" src="images/SPA-Blogs/proxy path.webp" alt="proxy path" width="400" height="40">
+							</li>
+							<li>
+								<p style="color: black; font-weight: 600;">via static mock file</p>
+								<p>The static mock json file is added under the public folder.</p>
+								<img class="spa-image" src="images/SPA-Blogs/mock file path.webp" alt="mock file path" width="400" height="150">
+							</li>
+						</ol>
+						<p style="background-color: lightblue; color: black; width: fit-content; padding: 1px 10px; margin: 5px 0px;">❖  package.json</p>
+						<p>This file consists of all the dependencies and the scripts required for the frontend module.</p>
+						<p style="background-color: lightblue; color: black; width: fit-content; padding: 1px 10px; margin: 5px 0px;">❖   clientlib.config.js</p>
+						<p>This file has the configuration for the clientlib generator, i.e., the clientlibs are generated in this file.</p>
+						<p style="background-color: lightblue; color: black; width: fit-content; padding: 1px 10px; margin: 5px 0px;">❖  src folder</p>
+						<p>All the React components, images and styles are kept in this folder</p>
+						<img class="spa-image" src="images/SPA-Blogs/src folder.webp" alt="src folder" width="400" height="250">
+					</div>
+					<div>
+						<h3 style="text-align: left;">How to create an SPA component?</h3>
+						<img class="spa-image" src="images/SPA-Blogs/Initial Request 4.webp" alt="SPA component creation" width="600" height="250">
+						<p>In normal cases, AEM components render at server side, but SPA components should be rendered at client side as per the concept. So we&apos;ll be creating a React component and then we&apos;ll map the AEM component to the React component.</p>
+						<p>The AEM component will not be having any rendering script, it will only have the dialog and the SPA component will have the rendering logic and this SPA component will get content from the AEM repository in the form of Json, and this complete client side application will be deployed in AEM in the form of client libraries.</p>
+						<p>Our SPA component should have the capability of authoring as well, as per the AEM basic principles. So, for authoring, the SPA development framework provides an <b>SPA editor.</b></p>
+						<p><i>SPA Editor : It adds the capability of authoring to the SPA component.</i></p>
+						<p>Now, coming to the creation of the SPA component, so basically SPA component has two parts i.e, AEM component and React component and when we combine these two it makes a complete SPA component</p>
+						<img class="spa-image" src="images/SPA-Blogs/Initial Request 5.webp" alt="SPA component" width="500" height="300">
+						<p>These two sections have different responsibilities :</p>
+						<p><b>AEM component</b> is used to create <i>dialog</i> and <i>sling model</i> (used for content exporter) and the <b>React component</b> is used for <i>rendering</i> and the content for rendering is provided by the sling model in the form of json.</p>
+						<p>But these two sections must be mapped as AEM component is at server side and React component is at client side. So, now the SPA framework comes into picture i.e., the React framework as it provides the functionality to map the AEM component to the React component.</p>
+						<p>So, once we have a React component and an AEM component, we map both the components using MapTo() functionality which has two sections, the first section has the resource type of the AEM component & the other section is for the React component</p>
+						<img class="spa-image" src="images/SPA-Blogs/Initial Request 6.webp" alt="SPA component mapping" width="600" height="200">
+					</div>
+					<div>
+						<p style="color: rgb(3, 7, 26);">Hope you all understood the basic concept of AEM SPA. In the next blog, we'll look into how to create AEM components and React components and implement the mapping and rendering of the SPA components on the page.</p>
+						<p style="color: rgb(3, 7, 26);">Thanks for reading! :)</p>
+					</div>
+				</div>
+                <hr style="margin-top: 30px;">
+				<div class="author-details">
+					<div id="like-icon" class="like-icon">
+						<span id="like-count" class="like-count">0</span>
+						<span id="like-btn" class="like-btn">
+							<img src="images/clap.webp" alt="Like">
+						</span>
+					</div>
+					<div>
+						<span class="author-name">Suchita Mishra | </span>
+						<span class="author-designation">AEM Developer</span>
+					</div>
+				</div>
+				<div style="display: flex; justify-content: center;">
+					<div class="comment-box" >
+						<h3> Leave a Comment</h3>
+						<form class="comment-form">
+							<input type="text" placeholder="Enter Name"/>
+							<input type="email" placeholder="Enter Email"/>
+							<textarea  rows="5" placeholder="Your Comments"></textarea>
+							<button type="submit" class="hero-btn red-btn">Your Comment</button>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+<div class="social-icons">
+         
+        <a href="https://www.linkedin.com/company/infodales-tech-solution/" class="linkedin"><img src="images/linkedin.webp" alt="LinkedIn"></a>
+        <a href="mailto:info@infodales.com" class="email"><img src="images/email.webp" alt="Email"></a>
+    </div>
+
+	<!--  Footer --->
+	<div class="copyright-area">
+		<div class="footer">
+			<div class="row" style="margin-top: 0px;">
+				<div class="col-xl-4 col-lg-4 text-center text-lg-left">
+					<div class="copyright-text">
+						<p>Copyright &copy; 2023, All Right Reserved <a href="./index.html">Infodales Tech
+								Solution</a></p>
+					</div>
+				</div>
+				
+				<div class="col-xl-4 col-lg-4 d-none d-lg-block text-right">
+					<div class="footer-menu" style="margin-top:10px;">
+						<ul>
+							<li><a href="index.html">Home</a></li>
+							<li><a href="about.html">About</a></li>
+							<li><a href="contact.html">Contact</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<!--- Java Script-->
+	<script>
+		var navLinks = document.getElementById("navLinks");
+
+		function showMenu() {
+			navLinks.style.right = "0";
+		}
+
+		function hideMenu() {
+			navLinks.style.right = "-200px";
+		}
+
+		document.addEventListener("DOMContentLoaded", () => {
+    const likeBtn = document.getElementById('like-btn');
+    const likeCount = document.getElementById('like-count');
+
+    let count = parseInt(localStorage.getItem('clapCount')) || 0;
+    likeCount.textContent = count;
+
+    likeBtn.addEventListener('click', () => {
+        count++;
+        likeCount.textContent = count;
+        localStorage.setItem('clapCount', count);
+
+        const likeAnimation = document.createElement('div');
+        likeAnimation.classList.add('like-animation');
+        likeAnimation.innerHTML = '🎉';
+        document.getElementById('like-icon').appendChild(likeAnimation);
+        likeAnimation.addEventListener('animationend', () => {
+            likeAnimation.remove();
+        });
+    });
+});
+
+		// function relatedFilter() {
+		// 	var retString = localStorage.getItem("allBlogs");
+		// 	console.log(retString);
+		// }
+
+
+	</script>
+
+</body>
+
+</html>

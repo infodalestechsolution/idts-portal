@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Blogs | Getting started with AEM SPA</title>
+	<link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="style.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;600;700&display=swap"
+		rel="stylesheet">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+
+	<!-- Header -->
+	<section class="sub-header"
+		style="background-image: linear-gradient(rgba(4, 9, 30, 0.3), rgba(4, 9, 30, 0.3)), url('images/Cover\ Forms.jpg');">
+		<nav>
+			<a href="index.html"><img src="images/infodales/Info Dales Main Logo 03.webp" alt="logo"></a>
+			<div class="nav-links" id="navLinks">
+				<i class="fa fa-times" onclick="hideMenu()"></i>
+				<ul>
+					<li><a href="index.html">HOME</a></li>
+					<li><a href="about.html">ABOUT</a></li>
+					<li><a href="services.html">SERVICES</a></li>
+					<li><a href="blog.html">BLOGS</a></li>
+					<li><a href="career.html">CAREER</a></li>
+					<li><a href="contact.html">CONTACT</a></li>
+					<ul>
+			</div>
+			<i class="fa fa-bars" onclick="showMenu()"></i>
+		</nav>
+		<!-- <h1>Blogs</h1> -->
+	</section>
+	<!--  Blog Page Content --->
+	<section class="blog-content">
+		<div>
+			<div class="blog">
+				
+				<p style="color: rgb(133, 133, 133); padding: 0 0 10px 0;"><a href="./blog.html" style="text-decoration: none; cursor: pointer;">Blogs</a> <span> > </span> Submitting Adaptive Form using Form Data Model</p>
+
+				<p class="formsTag" style="margin-top: 7px; margin-bottom: 7px; font-size: 13px; border-radius: 20px; 
+				width: fit-content; padding: 3px 15px;">AEM Forms</p>
+				<h1 class="title">Submitting Adaptive Form using Form Data Model</h1>
+				<span class="author">Owais Pathan</span> |
+				<span class="date">February 21, 2024</span>
+
+				<div class="share-icons">
+					<a href="https://www.linkedin.com/company/infodales-tech-solution/" class="linkedin-icon"><i
+							class="fa fa-linkedin"></i></a>
+					<a href="mailto:info@infodales.com" class="email-icon"><i class="fa fa-envelope"></i></a>
+				</div>
+
+				<hr style="margin: 20px 0 10px 0;">
+				<!-- <div class="image-container">
+					<img src="images/cover.webp" alt="Image Description">
+				</div> -->
+				<div class="blog-items">
+					<p>
+						This blog will help you understand how to connect a database to your AEM adaptive forms to
+						retrieve and insert form values.When integrating Adaptive Forms with a Database, establishing
+						seamless connections to data sources becomes essential for retrieving customer data during form
+						rendering. Various scenarios may require data retrieval from these sources based on user inputs
+						within Adaptive Forms. Additionally, upon submitting an Adaptive Form to a database, the
+						captured data can be efficiently updated back into the corresponding data sources.
+					</p>
+					<p>
+					<h2>We are going to achieve below flow as a part of this blog</h2>
+					<ol class="list-styling">
+						<li>Setting up Database in this case its MySQL.</li><br>
+						<li>Creating Form Data Model</li><br>
+						<li>Submitting Form to the Database using Form data model</li>
+					</ol>
+					</p>
+					<img class="form-flow" src="images/forms/flowchart.webp" height="300px" alt="form-data-model-flow">
+
+					<h2>Setting up Database</h2>
+					<p>
+						Go the official website to download the bundle of your rescpective database in this case it is
+						MySQL.Click the hilighted link and your bundle get's downloaded.
+						<img class="form-flow" src="images/forms/mysql-connector.webp">
+
+						Now got to the <a href="http://localhost:4502/system/console/bundles"
+							target="_blank">http://localhost:4502/system/console/bundles</a> and upload the bundle.
+						<img class="form-flow" src="images/forms/system-console.webp">
+						<img class="form-flow" src="images/forms/system-console-2.webp">
+						After uploading the bundle if it appears in system/console/bundles then it has successfully
+						uploaded.
+						<img class="form-flow" src="images/forms/system-console-3.webp">
+					</p>
+					<p>
+						After successfully installing the respective database connector you then need to create database
+						so that what ever form you submit, that needs to be submitted to the database created. In this
+						iam creating a databse name <label style="color: blue;">adaptiveform_db</label>.
+						<img class="form-flow" src="images/forms/Database.webp">
+						After creating a database, a configuration needs to be done so that our form model knows in
+						which database he need to submit the data.
+						<img class="form-flow hover-zoom" src="images/forms/configuration.webp">
+					<ul>
+						<li>
+							In Datasource name you can provide any name that you wanted to keep.
+						</li><br>
+						<li>
+							In JDBC Driver class you need to provide the driver class of your respective database.
+						</li><br>
+						<li>
+							In JDBC Connection URI you need to provide the url of database and proper database name as
+							well.
+						</li><br>
+						<li>
+							Then click on save and your configuration is done.
+						</li>
+					</ul>
+					</p>
+
+					<div>
+						<h2>Creating Form Data Model</h2>
+
+						<p>
+						<div class="list-styling">
+							<li>To create a form data model go to forms.</li><br>
+							<li>Then click on data integrations.</li><br>
+							<li>Then click on create option.</li><br>
+							<li>inside that you will see <b>form data model</b> option click on that.</li><br>
+							<li>After clicking on the that add the title for form data model and click on next.</li><br>
+							<li>Then select the data source which you cnfigured in data pooled configuration.</li><br>
+							<li>And your form data model is created</li><br>
+						</div>
+
+						After creating the form data model you need to do the required configuration. First you need
+						to add the services GET,INSERT and UPDATE and after adding the services and database you need to
+						test the individual service. After that you need to configure the default services you need for
+						the form data model in this we configured GET,Insert this needs to configured because whenever
+						you create a form your form uses this defualt services to submit the data in to the database.
+
+						<video class="form-video" width="1000" height="500" controls>
+							<source src="images/forms/data-model-creation.mp4" type="video/mp4">
+						</video>
+
+						</p>
+					</div>
+
+					<div>
+						<h2>Submitting Form to the Database using Form data model</h2>
+
+						<p>
+							<b>To submit form submit form using form data model we need to follow the below
+								steps</b><br><br>
+						<div class="list-styling">
+							<li>We need to create an adpative form.</li><br>
+							<li>While creating a adaptive form we need to select the proper form data model model which
+								we created.</li><br>
+							<li>After creating form we need to map the fields of form with data model fields so that
+								proper data gets submitted
+								to respective fields in database</li><br>
+							<li>Need to map submit button with form data model this confiuration is done when we edit
+								the button in submissions we need to elect submission type in that we need to select
+								form data model below that we need to provide the frm data model end point</li><br>
+							<li>After this your form is ready when you fill the data and submit the form it will get
+								submitted to the database</li><br>
+						</div>
+
+						<video class="form-video" width="1000" height="500" controls>
+							<source src="images/forms/form submission.mp4" type="video/mp4">
+						</video>
+
+
+						</p>
+					</div>
+				</div>
+				<hr style="margin-top: 30px;">
+				<div class="author-details">
+					<div id="like-icon" class="like-icon">
+						<span id="like-count" class="like-count">0</span>
+						<span id="like-btn" class="like-btn">
+							<img src="images/clap.webp" alt="Like">
+						</span>
+					</div>
+					<div>
+						<span class="author-name">Owais Pathan | </span>
+						<span class="author-designation">AEM Developer</span>
+					</div>
+				</div>
+				<div style="display: flex; justify-content: center;">
+					<div class="comment-box">
+						<h3>Leave a Comment</h3>
+						<form class="comment-form">
+							<input type="text" placeholder="Enter Name" />
+							<input type="email" placeholder="Enter Email" />
+							<textarea rows="5" placeholder="Your Comments"></textarea>
+							<button type="submit" class="hero-btn red-btn">Your Comment</button>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+    <div class="social-icons">
+         
+        <a href="https://www.linkedin.com/company/infodales-tech-solution/" class="linkedin"><img src="images/linkedin.webp" alt="LinkedIn"></a>
+        <a href="mailto:info@infodales.com" class="email"><img src="images/email.webp" alt="Email"></a>
+    </div>
+
+
+	<!--  Footer --->
+	<div class="copyright-area">
+		<div class="footer">
+			<div class="row" style="margin-top: 0px;">
+				<div class="col-xl-4 col-lg-4 text-center text-lg-left">
+					<div class="copyright-text">
+						<p>Copyright &copy; 2023, All Right Reserved <a href="./index.html">Infodales Tech
+								Solution</a></p>
+					</div>
+				</div>
+				
+				<div class="col-xl-4 col-lg-4 d-none d-lg-block text-right">
+					<div class="footer-menu" style="margin-top:10px;">
+						<ul>
+							<li><a href="index.html">Home</a></li>
+							<li><a href="about.html">About</a></li>
+							<li><a href="contact.html">Contact</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<!--- Java Script-->
+	<script>
+		var navLinks = document.getElementById("navLinks");
+
+		function showMenu() {
+			navLinks.style.right = "0";
+		}
+
+		function hideMenu() {
+			navLinks.style.right = "-200px";
+		}
+
+		document.addEventListener("DOMContentLoaded", () => {
+    const likeBtn = document.getElementById('like-btn');
+    const likeCount = document.getElementById('like-count');
+
+    let count = parseInt(localStorage.getItem('clapCount')) || 0;
+    likeCount.textContent = count;
+
+    likeBtn.addEventListener('click', () => {
+        count++;
+        likeCount.textContent = count;
+        localStorage.setItem('clapCount', count);
+
+        const likeAnimation = document.createElement('div');
+        likeAnimation.classList.add('like-animation');
+        likeAnimation.innerHTML = '🎉';
+        document.getElementById('like-icon').appendChild(likeAnimation);
+        likeAnimation.addEventListener('animationend', () => {
+            likeAnimation.remove();
+        });
+    });
+});
+
+		// function relatedFilter() {
+		// 	var retString = localStorage.getItem("allBlogs");
+		// 	console.log(retString);
+		// }
+
+
+	</script>
+
+</body>
+
+</html>

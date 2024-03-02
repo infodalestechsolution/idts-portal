@@ -1,157 +1,162 @@
-<html>
-	<meta charset="UTF-8">
-	<title>InfoDales Tech Solution</title>
-	<meta name="description" content="IT Consulting Services" />
-	<meta property="og:title" content="InfoDales Tech Solutions" />
-	<meta property="og:description" content="IT Consulting Services" />
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Contact Us | Infodales Tech Solution</title>
+	<link rel="icon" type="image/x-icon" href="/images/favicon.ico">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="style.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;600;700&display=swap" rel="stylesheet">
 	
-	
-	  <!-- Bootstrap CSS -->
-	  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"rel="stylesheet" integrity=
-	  "sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"crossorigin="anonymous" />
-	  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
-	  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
-	  <script src="https://smtpjs.com/v3/smtp.js"></script>
-	<link rel="stylesheet" href="css/style.css" type="text/css">
-	<link rel="stylesheet" href="css/mobile.css" type="text/css">
-	<link rel="stylesheet" href="css/tablet.css" type="text/css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
-	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://smtpjs.com/v3/smtp.js"></script>
+	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
 </head>
+ 
 <body>
 
-	<!--
-	<div id="header">
-		<div>
-			<div style="width:25%;float:left;margin-top:-10px;">
-				<a href="index.html">
-				<img src="./images/logo-4.png" style="width:275px;"></img></a>
+	<!-- Header -->
+	<section class="sub-header" style="background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url('images/contact.jpeg');">
+		<nav>
+			<a href="index.html"><img src="images/infodales/Info Dales Main Logo 03.webp" alt="logo"></a>
+			<div class="nav-links" id="navLinks">
+			<i class="fa fa-times" onclick="hideMenu()"></i>
+				<ul>
+					<li><a href="index.html">HOME</a></li>
+					<li><a href="about.html">ABOUT</a></li>
+					<li><a href="services.html">SERVICES</a></li>
+					<li><a href="blog.html">BLOGS</a></li>
+					<li><a href="career.html">CAREER</a></li>
+					<li><a href="contact.html">CONTACT</a></li>
+				<ul>
 			</div>
-			<ul id="navigation">
-				<li class="active">
-					<a href="index.html">Home</a>
-				</li>
-				<li>
-					<a href="services.html">Services</a>
-				</li>
-				<li>
-					<a href="trainings.html">Trainings</a>
-				</li>
-				<li>
-					<a href="about.html">About Us</a>
-				</li>
-				<li>
-					<a href="contact.html">Contact</a>
-				</li>
-				
-			</ul>
+			<i class="fa fa-bars" onclick="showMenu()"></i>
+		</nav>
+		<h1>Contact Us</h1>
+	</section>
+
+	<!-- Contact Us -->
+	<section class="location">
+		<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14880.16963548435!2d79.0723297!3d21.1904742!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2923b255aa955cf3%3A0xd8c371d12fa585d2!2sInfoDales%20Tech%20Solutions!5e0!3m2!1sen!2sin!4v1677931975509!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+	</section>
+
+
+	<section class="contact-us">
+		<div class="row">
+			<div class="contact-col contact-col-left">
+				<div>
+					<i class="fa fa-home"></i>
+					<span>
+						<h5>64, Doye layout, Geeta nagar</h5>
+						<p>Godhani road, Zingabai takli, Nagpur-440030</p>
+					</span>
+				</div>
+				<div>
+					<i class="fa fa-phone"></i>
+					<span>
+						<h5>+91 7770018820</h5>
+						<p>Monday to Saturday </p>
+					</span>
+				</div>
+				<div>
+					<i class="fa fa-envelope-o"></i>
+					<span>
+						<h5>info@infodales.com</h5>
+						<p>Email us for enquiry</p>
+					</span>
+				</div>
+			</div>
+			<div class="contact-col contact-col-right">
+				<form id="contactForm" method="post" onsubmit="sendEmail(); return false;"> 
+					<input id="name" name="name" type="text" placeholder="Enter your name" required> 
+					<input id="email" name="email" type="email" placeholder="Enter your email address" required> 
+					<input id="subject" name="subject" type="text" placeholder="Enter your subject"  required> 
+					<textarea id="message" name="message" rows="8" placeholder="Message" required></textarea>
+					<button type="submit" class="hero-btn red-btn">Send Message</button>
+				</form>
+			</div>
+
 		</div>
-	</div>-->
-	<header >
-		<section class="m-0 infodales-header" style="background-color: #282836;border-bottom: 1px solid #e6e6e6;">
-			<nav class="navbar navbar-expand-lg navbar-light ">
-				<div class="container">
-					<div style="width:25%;float:left;margin-top:-10px;">
-					<a href="#" class=""><img src="./images/logo-4.png" style="width:275px;"></img></a></div>
+		
+	</section>
 
-					<button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-						<span class="navbar-toggler-icon"></span>
-					</button>
-					<div class="collapse navbar-collapse" id="navbarCollapse">
-						<div class="navbar-nav">
-									<a class="nav-item nav-link nav-link-infodales active" href="index.html">Home</a>
-									<a class="nav-item nav-link" href="services.html">Services</a>
-									<a class="nav-item nav-link" href="trainings.html">Trainings</a>
-									<a class="nav-item nav-link "href="about.html">About Us</a>
-									<a class="nav-item nav-link " href="contact.html">Contact</a>
-						</div>
-						
-					</div>
+
+<div class="social-icons">
+	 
+	<a href="https://www.linkedin.com/company/infodales-tech-solution/" class="linkedin"><img src="images/linkedin.webp" alt="LinkedIn"></a>
+	<a href="mailto:info@infodales.com" class="email"><img src="images/email.webp" alt="Email"></a>
+</div>
+
+<!--  Footer --->
+<div class="copyright-area">
+	<div class="footer">
+		<div class="row" style="margin-top: 0px;">
+			<div class="col-xl-4 col-lg-4 text-center text-lg-left">
+				<div class="copyright-text">
+					<p>Copyright &copy; 2023, All Right Reserved <a href="./index.html">Infodales Tech
+							Solution</a></p>
 				</div>
-			</nav>
-		</section>
-		<section class="infodales-banner-contact" style="background: url(./images/banners/contact-us1280.png) no-repeat; height: 400px;">
-
+			</div>
 			
-		
-		</section>
-		
-	
-	</header>
-
-
-	<main class="container-fluid">
-		<section class="section2 clearfix" style="background-color: #00b0f0;">
-			<div class="container-fluid">
-			<div class="col2 column1 first">
-				<iframe style="margin-top: 37px; width: 100%;height: 86%;" 
-				src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14879.0897934412!2d79.05490381811423!3d21.201196629935836!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd4c1748a9288c5%3A0xab1aeb07c66dabe2!2sZingabai%20Takli%2C%20Nagpur%2C%20Maharashtra%20441501!5e0!3m2!1sen!2sin!4v1670765882049!5m2!1sen!2sin" 
-				 style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-            
-			</div>
-			<div class="col2 column2 last">
-				<div class="sec2innercont">
-					
+			<div class="col-xl-4 col-lg-4 d-none d-lg-block text-right">
+				<div class="footer-menu" style="margin-top:10px;">
+					<ul>
+						<li><a href="index.html">Home</a></li>
+						<li><a href="about.html">About</a></li>
+						<li><a href="contact.html">Contact</a></li>
+					</ul>
 				</div>
-				<div class="sec2contactform">
-					<h3 class="sec2frmtitle">Want to Know More?? Drop Us a Mail</h3>
-					<form action="javascript:sendEmail()">
-						<div class="clearfix">
-							<input class="col2 first firstName" type="text" name="FirstName" placeholder="FirstName">
-							<input class="col2 last lastName" type="text" name="LastName" placeholder="LastName">
-						</div>
-						<div class="clearfix">
-							<input  class="col2 first email" type="Email" name="email" placeholder="Email">
-							<input class="col2 last phone" type="text" name="phone" placeholder="Contact Number">
-						</div>
-						<div class="clearfix">
-							<textarea class=" message" name="textarea" id="" cols="30" rows="7" name="message">Your message here...</textarea>
-						</div>
-						<div class="clearfix"><input type="submit" value="Send"></div>
-					</form>
-				</div>
-
 			</div>
-			</div>
-			</section>
-			<script>
-				var FirstName = document.getElementsByClassName('firstName');
-				var LastName = document.getElementsByClassName('lastName');
-				var phone = document.getElementsByClassName('phone');
-				var email = document.getElementsByClassName('email');
-				var message = document.getElementsByClassName('message');
-
-
-				function sendEmail() {
-					console.log(FirstName);
-					Email.send({
-				 SecureToken:"00aa52af-a526-4111-a866-63be03775776",
-							   To: 'rojadhav91@gmail.com',
-							   From: 'rojadhav91@gmail.com',
-							   Subject: "Enquiry for atraining.",
-				   Body : message
-			   }).then(
-				 message => alert(message)
-			   );
-				   }
-			   
-			   </script>
-	
-	
-	
- </main>
- <footer>
-	<div id="footer">
-		<div class="clearfix">
-			<!--div id="connect">
-				<a href="http://freewebsitetemplates.com/go/facebook/" target="_blank" class="facebook"></a><a href="http://freewebsitetemplates.com/go/googleplus/" target="_blank" class="googleplus"></a><a href="http://freewebsitetemplates.com/go/twitter/" target="_blank" class="twitter"></a><a href="http://www.freewebsitetemplates.com/misc/contact/" target="_blank" class="tumbler"></a>
-			</div-->
-			<p>
-				© 2023 InfoDales. All Rights Reserved.
-			</p>
 		</div>
 	</div>
- </footer>
+</div>
+
+
+<!--- Java Script-->	
+	<script>
+			var navLinks = document.getElementById("navLinks");
+
+			function showMenu(){
+					navLinks.style.right="0";
+			}
+
+			function hideMenu(){
+					navLinks.style.right="-200px";
+			}
+
+			function sendEmail() {
+				var name = $('#name').val();
+				var email = $('#email').val();
+				var subject = $('#subject').val();
+				var message = $('#message').val();
+
+				var body = 'Name: ' + name + '<br> Email: ' + email + '<br> Subject: ' + subject + '<br>Message: ' + message;
+
+				Email.send({
+					Host: "smtp.elasticemail.com",
+					Username: "suchitamishra318@gmail.com",
+					Password: "665BC4C9A7215D3A6905C7B77C28E117B088",
+					To: "suchitamishra318@gmail.com",
+					From: "suchitamishra318@gmail.com",
+					Subject: subject,
+					Body: body,
+				}).then(
+					message => {
+						if (message === "OK") {
+							document.getElementById('contactForm').reset();
+							swal("Sent!", "Thanks for contacting us!", "success");
+						} else {
+							console.error(message);
+							alert("Error sending email.");
+						}
+					}
+				);
+			}
+	
+	</script>
+	
 </body>
+
 </html>
