@@ -40,8 +40,10 @@
 	<section class="blog-content">
 		<div>
 			<div class="blog">
-				
-				<p style="color: rgb(133, 133, 133); padding: 0 0 10px 0;"><a href="./blog.html" style="text-decoration: none; cursor: pointer;">Blogs</a> <span> > </span> Submitting Adaptive Form using Form Data Model</p>
+
+				<p style="color: rgb(133, 133, 133); padding: 0 0 10px 0;"><a href="./blog.html"
+						style="text-decoration: none; cursor: pointer;">Blogs</a> <span> > </span> Submitting Adaptive
+					Form using Form Data Model</p>
 
 				<p class="formsTag" style="margin-top: 7px; margin-bottom: 7px; font-size: 13px; border-radius: 20px; 
 				width: fit-content; padding: 3px 15px;">AEM Forms</p>
@@ -80,8 +82,8 @@
 
 					<h2>Setting up Database</h2>
 					<p>
-						Go the official website to download the bundle of your rescpective database in this case it is
-						MySQL.Click the hilighted link and your bundle get's downloaded.
+						Go to the official website to download the bundle of your respective database in this case it is
+						MySQL. Click the highlighted link and your bundle get's downloaded.
 						<img class="form-flow" src="images/forms/mysql-connector.webp">
 
 						Now got to the <a href="http://localhost:4502/system/console/bundles"
@@ -108,7 +110,7 @@
 							In JDBC Driver class you need to provide the driver class of your respective database.
 						</li><br>
 						<li>
-							In JDBC Connection URI you need to provide the url of database and proper database name as
+							In JDBC Connection URL you need to provide the url of database and proper database name as
 							well.
 						</li><br>
 						<li>
@@ -127,7 +129,7 @@
 							<li>Then click on create option.</li><br>
 							<li>inside that you will see <b>form data model</b> option click on that.</li><br>
 							<li>After clicking on the that add the title for form data model and click on next.</li><br>
-							<li>Then select the data source which you cnfigured in data pooled configuration.</li><br>
+							<li>Then select the data source which you configured in data pooled configuration.</li><br>
 							<li>And your form data model is created</li><br>
 						</div>
 
@@ -200,11 +202,12 @@
 		</div>
 	</section>
 
-    <div class="social-icons">
-         
-        <a href="https://www.linkedin.com/company/infodales-tech-solution/" class="linkedin"><img src="images/linkedin.webp" alt="LinkedIn"></a>
-        <a href="mailto:info@infodales.com" class="email"><img src="images/email.webp" alt="Email"></a>
-    </div>
+	<div class="social-icons">
+
+		<a href="https://www.linkedin.com/company/infodales-tech-solution/" class="linkedin"><img
+				src="images/linkedin.webp" alt="LinkedIn"></a>
+		<a href="mailto:info@infodales.com" class="email"><img src="images/email.webp" alt="Email"></a>
+	</div>
 
 
 	<!--  Footer --->
@@ -217,7 +220,7 @@
 								Solution</a></p>
 					</div>
 				</div>
-				
+
 				<div class="col-xl-4 col-lg-4 d-none d-lg-block text-right">
 					<div class="footer-menu" style="margin-top:10px;">
 						<ul>
@@ -245,26 +248,26 @@
 		}
 
 		document.addEventListener("DOMContentLoaded", () => {
-    const likeBtn = document.getElementById('like-btn');
-    const likeCount = document.getElementById('like-count');
+			const likeBtn = document.getElementById('like-btn');
+			const likeCount = document.getElementById('like-count');
 
-    let count = parseInt(localStorage.getItem('clapCount')) || 0;
-    likeCount.textContent = count;
+			let count = parseInt(localStorage.getItem('clapCount')) || 0;
+			likeCount.textContent = count;
 
-    likeBtn.addEventListener('click', () => {
-        count++;
-        likeCount.textContent = count;
-        localStorage.setItem('clapCount', count);
+			likeBtn.addEventListener('click', () => {
+				count++;
+				likeCount.textContent = count;
+				localStorage.setItem('clapCount', count);
 
-        const likeAnimation = document.createElement('div');
-        likeAnimation.classList.add('like-animation');
-        likeAnimation.innerHTML = '🎉';
-        document.getElementById('like-icon').appendChild(likeAnimation);
-        likeAnimation.addEventListener('animationend', () => {
-            likeAnimation.remove();
-        });
-    });
-});
+				const likeAnimation = document.createElement('div');
+				likeAnimation.classList.add('like-animation');
+				likeAnimation.innerHTML = '🎉';
+				document.getElementById('like-icon').appendChild(likeAnimation);
+				likeAnimation.addEventListener('animationend', () => {
+					likeAnimation.remove();
+				});
+			});
+		});
 
 		// function relatedFilter() {
 		// 	var retString = localStorage.getItem("allBlogs");
