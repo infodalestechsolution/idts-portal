@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Blogs | Mapping AEM Component to SPA Component</title>
+	<link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="style.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;600;700&display=swap"
+		rel="stylesheet">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+
+	<!-- Header -->
+	<section class="sub-header"
+		style="background-image: linear-gradient(rgba(4, 9, 30, 0.3), rgba(4, 9, 30, 0.3)), url('images/Cover\ SPA.jpg');">
+		<nav>
+			<a href="index.html"><img src="images/infodales/Info Dales Main Logo 03.webp" alt="logo"></a>
+			<div class="nav-links" id="navLinks">
+				<i class="fa fa-times" onclick="hideMenu()"></i>
+				<ul>
+					<li><a href="index.html">HOME</a></li>
+					<li><a href="about.html">ABOUT</a></li>
+					<li><a href="services.html">SERVICES</a></li>
+					<li><a href="blog.html">BLOGS</a></li>
+					<li><a href="career.html">CAREER</a></li>
+					<li><a href="contact.html">CONTACT</a></li>
+					<ul>
+			</div>
+			<i class="fa fa-bars" onclick="showMenu()"></i>
+		</nav>
+		<!-- <h1>Blogs</h1> -->
+	</section>
+	<!--  Blog Page Content --->
+	<section class="blog-content">
+		<div>
+			<div class="blog">
+				
+				<p style="color: rgb(133, 133, 133); padding: 0 0 10px 0;"><a href="./blog.html" style="text-decoration: none; cursor: pointer;">Blogs</a> <span> > </span> Mapping AEM Component to SPA Component</p>
+
+				<p class="spaTag" style="margin-top: 7px; margin-bottom: 7px; font-size: 13px; border-radius: 20px; 
+				width: fit-content; padding: 3px 15px;">AEM SPA</p>
+				<h1 class="title">Mapping AEM Component to SPA Component</h1>
+      				<span class="author">Infodales Tech Solution</span> |
+      				<span class="date">February 21, 2024</span>
+    			
+					<div class="share-icons">
+						<a href="https://www.linkedin.com/company/infodales-tech-solution/" target="_blank" class="linkedin-icon"><i class="fa fa-linkedin"></i></a>
+						<a href="mailto:info@infodales.com" target="_blank" class="email-icon"><i class="fa fa-envelope"></i></a>
+					</div>
+				
+				<hr style="margin: 20px 0 10px 0;">
+				<!-- <div class="image-container">
+					<img src="images/cover.webp" alt="Image Description">
+				</div> -->
+				<div class="blog-items">
+					<div class="blog-items-content">
+						<p>
+							<i class="content-text">
+								The Basic concept is to map the AEM component to React component, Basically AEM Component runs at Server side and it exports the content in the form of JSON Model API.so that JSON file - for e.g (en.model.json) is consumed by
+								our React Component running at an Client side in the browser. We'll know more about the following concept with the help of the following diagram.
+							</i>
+						</p>
+						<div class="content-image">
+							<img src="images/component mapping/flowchart.png" alt="AEMFlowchart" class="content-image-flowchart" />
+						</div ><br>
+						 <div style="padding-left: 6px;"><p class="content-text">Steps to map AEM component to React component :</p></div>
+						<ul>
+						<div style="padding-left: 25px; "><li><p class="content-text">Create an AEM component by right clicking on components folder under wknd-spa-react project -> create -> create component. Add label, title and component group to the component and create it.</p><div class="image-container">
+							<img src="images/component mapping/createaemcomponent.png" alt="Creating AEM Component"  />
+						</div></li></div>
+						
+						<br/><br/>
+						<div style="padding-left: 25px; "><li><p class="content-text"> Let's consider, 'test' is our component in wknd-spa-react project and its path will be wknd-spa-react/components/test. Create the dialog box through which author can author the fields.</p><div class="image-container">
+								<img src="images/component mapping/testcomponent.png" alt="Test Component Image"  />
+							</div></li></div>
+							<br/><br/>
+							<div style="padding-left: 25px; "><li><p class="content-text">
+							 Create a sling model so that you can map the authored values with backend. Add adaptables, adapters & resourceType to the @Model annotation. Inherit the ComponentExporter interface to the serviceImpl class, and we need to override the getExporterType() method which will return the resourceType of the component.
+						</p></li></div><br>
+						<div class="java-code-container">
+						<pre>
+							<code class="java-code"><br>
+								<!-- Java Code-->
+package com.adobe.aem.guides.wknd.spa.react.core.models.impl;
+
+import com.adobe.aem.guides.wknd.spa.react.core.models.Test;
+import com.adobe.aem.guides.wknd.spa.react.core.pojos.NavigationBarPojo;
+import com.adobe.cq.export.json.ComponentExporter;
+import com.adobe.cq.export.json.ExporterConstants;
+import org.apache.sling.api.SlingHttpServletRequest;
+import org.apache.sling.models.annotations.DefaultInjectionStrategy;
+import org.apache.sling.models.annotations.Exporter;
+import org.apache.sling.models.annotations.Model;
+import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
+@Model(adaptables = SlingHttpServletRequest.class,
+	    adapters = {Test.class,ComponentExporter.class},
+		defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL,
+		resourceType = TestModelImpl.RESOURCE_TYPE)
+@Exporter(name = ExporterConstants.SLING_MODEL_EXPORTER_NAME, 
+extensions = ExporterConstants.SLING_MODEL_EXTENSION)
+public class TestModelImpl implements Test {
+
+	static final String RESOURCE_TYPE = "wknd-spa-react/components/test";
+
+@ValueMapValue
+private String name;
+
+@Override
+public String getName() {
+	return name;
+     }							
+@Override
+public String getExportedType() {
+	return TestModelImpl.RESOURCE_TYPE;
+	}
+									
+}
+							</code>
+						</pre>
+						</div>
+						<br>
+						<div style="padding-left: 25px; "><li><p class="content-text">It is mandatory to implement ComponentExporter as it is used to export the content of our component in JSON format.</p><div>
+							<img src="images/component mapping/GetExporterType Method.png" alt="Component Exporter Method" class="exporterimage" />
+						</div></li></div><br>
+						
+						<div style="padding-left: 25px; "><li><p class="content-text">On hitting test.model.json you will find the response in json format.</p><div class="image-container">
+							<img src="images/component mapping/jsonfile.png" alt="en.model.json Url Image" />
+						</div></li></div>
+						
+						<div style="padding-left: 25px; "><li><p class="content-text">In ui.frontend folder/src right click on components folder and create Test.js file. Import the React and MapTo from &apos;react&apos; and @adobe/aem-react-editable-components libraries.</p><div>
+							<img src="images/component mapping/reactcomponent.png" alt="Creating React Component" class="react-component-image" />
+						</div></li></div>
+						<br />
+						
+						<br>
+						<br>
+						<div style="padding-left: 24px; "><li><p  class="content-text">
+							 Create a class component & write a JSX script in render() method, at last add MapTo() function and export the class e.g MapTo("wknd-spa-react/components/test")(Test, TestEditConfig);
+						</p></li></div>
+						<br>
+						<div class="react-code-container">
+						      <pre> 
+						           <code class="react-component-code">
+									<!--React code -->
+import React, { Component } from "react";
+import  { useState } from 'react';
+import { MapTo } from "@adobe/aem-react-editable-components";
+							
+export const TestEditConfig = {
+	emptyLabel: "Test",
+	isEmpty: function (props) {
+   return !props || !props.name ;
+	},
+};
+export default class Test extends Component {
+	render() {
+		if (TestEditConfig.isEmpty(this.props)) {
+			return null;
+		}
+		return (
+			&lt;p&gt;className="TestComponents"&gt;
+			{this.props.name}
+			&lt;/p&gt;
+			);
+		}
+	}
+MapTo("wknd-spa-react/components/test")(Test,TestEditConfig);
+						        </code>
+					        </pre>
+						</div>
+						<br>
+						<div style="padding-left: 25px; "><li><p class="content-text"> With MapTo() you can map your React component to Sling Model using the resourceType</p><div>
+							<img src="images/component mapping/maptomethod.png" alt="Map To Method Image" class="mapTo-img" />
+						</div></li></div><br>
+						
+						<br />
+						<div style="padding-left: 25px; "><li><p class="content-text">Import your React component in import-component.js file and similarly import your import-component.js file in index.js</p><div class="image-container">
+							<img src="images/component mapping/importreactcomponent.png" alt="Imoprt-Component.js Image"  />
+						</div></li></div>
+						
+						<br />
+						<div style="padding-left: 25px; "><li><p class="content-text">
+							 MapTo() will look for sling model registered with the same resource type that we have passed in MapTo().
+						</p></li></div><br>
+						<div style="padding-left: 25px; "><li><p class="content-text">
+							 Build ui.frontend folder with <span style="background-color: aqua">$ mvn clean install -PautoInstallPackage</span> Search for your component, you will find minified form of js in ui.apps folder.
+						</p><div class="image-container">
+							<img src="images/component mapping/minifiedjs.png" alt="Minified Js Image" />
+						</div></li></div>
+						
+						<div style="padding-left: 25px; "><li><p class="content-text">
+							 Deploy the SPA code to AEM using Maven<br><br>
+							<span style="background-color: aqua">$ mvn clean install -PautoInstallSinglePackage</span>.
+						</p></li></div><br>
+						<div style="padding-left: 25px; "><li><p class="content-text">
+							 Open AEM, On Navigation select Sites, click on create button and select Page, Choose the template, add title to the page and click on Done.
+						</p><div class="image-container">
+							<img src="images/component mapping/createaempage.png" alt="Creating AEM Page" />
+						</div></li></div>
+						
+						<br>
+						<div style="padding-left: 25px; "><li><p class="content-text">
+							 Add Component 'test', author it and you will find the data rendered on your page.
+						</p><div  class="image-container">
+							<img src="images/component mapping/Add component on page.png" alt="Adding Component To Page"  />
+						</div></li></div>
+						
+						<br>
+						<div style="padding-left: 25px; "><li><p class="content-text">
+							 Click On Preview, inspect your page, In Network tab you will find 'en.model.json' .The Layout Container has a sling:resourceType of your component and is recognized by the SPA Editor using the :type property, just like the Text and Image components.
+						</p><div class="image-container" style="padding-left: 5px;">
+							<img src="images/component mapping/responsivegrid.png" alt="Inspect test.model.json Image"/>
+						</div></li></div>
+						
+						<br>
+						</ul>
+					</div>					
+				</div>
+				<hr style="margin-top: 30px;">
+<div class="author-details">
+	<div id="like-icon" class="like-icon">
+		<span id="like-count" class="like-count">0</span>
+		<span id="like-btn" class="like-btn">
+			<img src="images/clap.webp" alt="Like">
+		</span>
+	</div>
+	<div>
+		<span class="author-name">Yash Sakharkar | </span>
+		<span class="author-designation">AEM Developer</span>
+	</div>
+</div>
+				<div style="display: flex; justify-content: center;">
+					<div class="comment-box" >
+						<h3> Leave a Comment</h3>
+						<form class="comment-form">
+							<input type="text" placeholder="Enter Name"/>
+							<input type="email" placeholder="Enter Email"/>
+							<textarea  rows="5" placeholder="Your Comments"></textarea>
+							<button type="submit" class="hero-btn red-btn">Your Comment</button>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+<div class="social-icons">
+         
+        <a href="https://www.linkedin.com/company/infodales-tech-solution/" class="linkedin"><img src="images/linkedin.webp" alt="LinkedIn"></a>
+        <a href="mailto:info@infodales.com" class="email"><img src="images/email.webp" alt="Email"></a>
+    </div>
+	<!--  Footer --->
+	<div class="copyright-area">
+		<div class="footer">
+			<div class="row" style="margin-top: 0px;">
+				<div class="col-xl-4 col-lg-4 text-center text-lg-left">
+					<div class="copyright-text">
+						<p>Copyright &copy; 2024, All Right Reserved <a href="./index.html">Infodales Tech
+								Solution</a></p>
+					</div>
+				</div>
+				
+				<div class="col-xl-4 col-lg-4 d-none d-lg-block text-right">
+					<div class="footer-menu" style="margin-top:10px;">
+						<ul>
+							<li><a href="index.html">Home</a></li>
+							<li><a href="about.html">About</a></li>
+							<li><a href="contact.html">Contact</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<!--- Java Script-->
+	<script>
+		var navLinks = document.getElementById("navLinks");
+
+		function showMenu() {
+			navLinks.style.right = "0";
+		}
+
+		function hideMenu() {
+			navLinks.style.right = "-200px";
+		}
+
+		document.addEventListener("DOMContentLoaded", () => {
+    const likeBtn = document.getElementById('like-btn');
+    const likeCount = document.getElementById('like-count');
+
+    let count = parseInt(localStorage.getItem('clapCount')) || 0;
+    likeCount.textContent = count;
+
+    likeBtn.addEventListener('click', () => {
+        count++;
+        likeCount.textContent = count;
+        localStorage.setItem('clapCount', count);
+
+        const likeAnimation = document.createElement('div');
+        likeAnimation.classList.add('like-animation');
+        likeAnimation.innerHTML = '🎉';
+        document.getElementById('like-icon').appendChild(likeAnimation);
+        likeAnimation.addEventListener('animationend', () => {
+            likeAnimation.remove();
+        });
+    });
+});
+
+	</script>
+
+</body>
+
+</html>

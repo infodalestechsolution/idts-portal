@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Blogs | Getting started with AEM SPA</title>
+	<link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="style.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;600;700&display=swap"
+		rel="stylesheet">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+
+	<!-- Header -->
+	<section class="sub-header"
+		style="background-image: linear-gradient(rgba(4, 9, 30, 0.5), rgba(4, 9, 30, 0.5)), url('images/Cover\ Forms.jpg');">
+		<nav>
+			<a href="index.html"><img src="images/infodales/Info Dales Main Logo 03.webp" alt="logo"></a>
+			<div class="nav-links" id="navLinks">
+				<i class="fa fa-times" onclick="hideMenu()"></i>
+				<ul>
+					<li><a href="index.html">HOME</a></li>
+					<li><a href="about.html">ABOUT</a></li>
+					<li><a href="services.html">SERVICES</a></li>
+					<li><a href="blog.html">BLOGS</a></li>
+					<li><a href="career.html">CAREER</a></li>
+					<li><a href="contact.html">CONTACT</a></li>
+					<ul>
+			</div>
+			<i class="fa fa-bars" onclick="showMenu()"></i>
+		</nav>
+		<!-- <p style="color: lightgray; margin-left: 17%;"><a href="./blog.html" style="text-decoration: none; color: white; cursor: pointer;">Blogs</a> <span> > </span> Getting started with SPA</p> -->
+		<!-- <h1>Blogs</h1> -->
+	</section>
+	<!--  Blog Page Content --->
+	<section class="blog-content">
+		<div>
+			<div class="blog spa-blog">
+				
+				<p style="color: rgb(133, 133, 133); padding: 0 0 10px 0;"><a href="./blog.html" style="text-decoration: none; cursor: pointer;">Blogs</a> <span> > </span> How to Add Custom Functions in Rule Editor</p>
+
+				<p class="formsTag" style="margin-top: 7px; margin-bottom: 7px; font-size: 13px; border-radius: 20px; 
+				width: fit-content; padding: 3px 15px;">AEM Forms</p>
+				<h1 class="title">How to Add Custom Functions in Rule Editor</h1>
+      				<span class="author">Infodales Tech Solutions</span> |
+      				<span class="date">February 21, 2024</span>
+    			
+					<div class="share-icons">
+					<a href="https://www.linkedin.com/company/infodales-tech-solution/" target="_blank" class="linkedin-icon"><i class="fa fa-linkedin"></i></a>
+                    <a href="mailto:info@infodales.com" target="_blank" class="email-icon"><i class="fa fa-envelope"></i></a>
+					</div>
+
+				<hr style="margin: 20px 0 10px 0;">
+
+				<!-- <div class="image-container">
+					<img src="images/SPA-Blogs/SPA banner.webp" alt="SPA banner">
+				</div> -->
+				<div class="blog-items blog-form">
+					
+					<p>Adobe Experience Manager (AEM) Forms provides a powerful rule editor that allows you to create dynamic and interactive forms.
+					By adding custom JavaScript functions, you can extend the functionality of your forms and create more sophisticated logic.
+					In this blog post, we’ll walk through the steps to add custom functions to the rule editor.</p>
+					<h4>Prerequisites :</h4>
+					<p>Before we begin, make sure you have access to AEM Forms and are familiar with basic AEM concepts.</p>
+					<strong>Understanding the Rule Editor:</strong>
+					<p>Before diving into adding custom functions, it is essential to understand the Rule Editor's role in AEM Forms. The Rule Editor enables form designers to create rules based on conditions and actions, facilitating dynamic form behavior. These rules can be applied to form fields, buttons, and other elements to control visibility, enable/disable features, validate data, and more.</p>
+					<strong> Need for Custom Functions:</strong>
+					<p>While AEM Forms offers a comprehensive set of built-in functions, there are situations where you may require additional functionality specific to your organization's requirements. These could include complex calculations, data manipulation, integration with external systems, or specialized validation rules. Custom functions allow you to extend the Rule Editor's capabilities to address these needs.</p>
+					<strong>Steps to Add Custom Functions :</strong><br>
+					<b>Step 1:</b><p>Login to CRXDE and navigate to the apps folder.</p>
+					<b>Step 2:</b><p>Create a new folder under the apps folder, let’s call it customfunction-in-forms (you can choose any name you like). Then save your changes.</p>
+					
+				
+
+					<b>Step 3:</b><p>Create client libraries</p>
+					<ul>
+					   <li><p> Within the customfuction-in-forms folder, create a new node of type cq:ClientLibraryFolder called clientlibs.</p></li>
+					   <li><p>Set the properties for the clientlibs folder by adding the following
+						<ul>
+							<li>
+								<p><b>allowProxy:</b> Set to true.</p>
+							</li>
+							<li>
+								<p><b>categories:</b> Specify relevant categories (e.g., customfunction.form).</p>
+							</li>
+						</ul>
+				
+				    </ul>
+					<img src="images/function_rule_editor/clientlib_property.webp" style="width: 80%;" alt="properties"/>
+					<br>
+					
+					<b>Step 4:</b><p>Structure your files:</p>
+					<p>Create a folder called js under the clientlibs folder.</p>
+					<p>Within the js folder, create a file named customfunction.js.</p>
+					<p>Create another file named js.txt under the clientlibs folder and add entry of your js file</p>
+					<img src="images/function_rule_editor/folder_Structure.webp" alt="folder structure" width="80%">
+					<p>add below code in customfunction.js file </p>
+					<img src="images/function_rule_editor/blog_js.webp" style="width:80%; height:40%" alt="js code"/>
+					<br>
+					<strong>Step 5:</strong>
+					<p>Create adaptive form with three fields drop down list , number and text field</p>
+					<img src="images/function_rule_editor/form_image.webp" style="width:80%; height:40%" alt="form image"/>
+					<br>
+					<strong>Step 6:</strong>
+					<p>Add clientlibs category in root panel(Adaptive form container) properties.  </p>
+					<img src="images/function_rule_editor/propertyadded.webp" style="width:80%; height:40%" alt="form image"/>
+					<br>
+					<strong>Step 7:</strong>
+					<p>Go to Rule Editor of dropdown list. </p>
+					<p>Click on plus icon for create a  rule. </p>
+					<img src="images/function_rule_editor/functiovisible.webp" style="width:80%; height:40%" alt="form image"/>
+					<p>You can see your function in left side after clicking functions tab. </p>
+					<strong>Step 8:</strong>
+					<p>(8.1)  Click on dropdown and select [SET OPTIONS OF].</p>
+					<p>(8.2)  Select your object </p>
+					<p>(8.3)  Select function output </p>
+					<p>(8.4)  select your function</p>
+
+					<img src="images/function_rule_editor/funnctionset.webp" style="width:50%; height:40%" alt="form image"/>
+					<br>
+					<p>(8.5)  Save your changes.</p>
+					<strong>Step 9:</strong>
+					<p>Same thing you need to do for age field you can refer from below image. </p>
+					<p>Follow the following steps that are mention in below.</p>
+					<img src="images/function_rule_editor/agefiled.webp" style="width:50%; height:40%" alt="form image"/>
+					<p>Save your changes.</p>
+					<strong>Step 10:</strong>
+					<p>Rules are defined now we need to test the form. </p>
+					<video width="100%" height="60%"  controls>
+						<source src="images/function_rule_editor/screen-capture.webm" type="video/webm">
+					  </video>
+				</div>
+                <hr style="margin-top: 30px;">
+				<div class="author-details">
+					<div id="like-icon" class="like-icon">
+						<span id="like-count" class="like-count">0</span>
+						<span id="like-btn" class="like-btn">
+							<img src="images/clap.webp" alt="Like">
+						</span>
+					</div>
+					<div>
+						<span class="author-name">Ankit Pardhi | </span>
+						<span class="author-designation">AEM Developer</span>
+					</div>
+				</div>
+				<div style="display: flex; justify-content: center;">
+					<div class="comment-box" >
+						<h3> Leave a Comment</h3>
+						<form class="comment-form">
+							<input type="text" placeholder="Enter Name"/>
+							<input type="email" placeholder="Enter Email"/>
+							<textarea  rows="5" placeholder="Your Comments"></textarea>
+							<button type="submit" class="hero-btn red-btn">Your Comment</button>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+<div class="social-icons">
+         
+        <a href="https://www.linkedin.com/company/infodales-tech-solution/" class="linkedin"><img src="images/linkedin.webp" alt="LinkedIn"></a>
+        <a href="mailto:info@infodales.com" class="email"><img src="images/email.webp" alt="Email"></a>
+    </div>
+
+	<!--  Footer --->
+	<div class="copyright-area">
+		<div class="footer">
+			<div class="row" style="margin-top: 0px;">
+				<div class="col-xl-4 col-lg-4 text-center text-lg-left">
+					<div class="copyright-text">
+						<p>Copyright &copy; 2024, All Right Reserved <a href="./index.html">Infodales Tech
+								Solution</a></p>
+					</div>
+				</div>
+				
+				<div class="col-xl-4 col-lg-4 d-none d-lg-block text-right">
+					<div class="footer-menu" style="margin-top:10px;">
+						<ul>
+							<li><a href="index.html">Home</a></li>
+							<li><a href="about.html">About</a></li>
+							<li><a href="contact.html">Contact</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<!--- Java Script-->
+	<script>
+		var navLinks = document.getElementById("navLinks");
+
+		function showMenu() {
+			navLinks.style.right = "0";
+		}
+
+		function hideMenu() {
+			navLinks.style.right = "-200px";
+		}
+
+		document.addEventListener("DOMContentLoaded", () => {
+    const likeBtn = document.getElementById('like-btn');
+    const likeCount = document.getElementById('like-count');
+
+    let count = parseInt(localStorage.getItem('clapCount')) || 0;
+    likeCount.textContent = count;
+
+    likeBtn.addEventListener('click', () => {
+        count++;
+        likeCount.textContent = count;
+        localStorage.setItem('clapCount', count);
+
+        const likeAnimation = document.createElement('div');
+        likeAnimation.classList.add('like-animation');
+        likeAnimation.innerHTML = '🎉';
+        document.getElementById('like-icon').appendChild(likeAnimation);
+        likeAnimation.addEventListener('animationend', () => {
+            likeAnimation.remove();
+        });
+    });
+});
+
+		// function relatedFilter() {
+		// 	var retString = localStorage.getItem("allBlogs");
+		// 	console.log(retString);
+		// }
+
+
+	</script>
+
+</body>
+
+</html>

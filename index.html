@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 	<title>Home | Infodales Tech Solution</title>
+	<link rel="icon" type="image/x-icon" href="/images/favicon.ico">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="style.css">
 	<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;600;700&display=swap" rel="stylesheet">
@@ -23,16 +24,16 @@
 </head>
  
 <body>
-<!-- <button id="myBtn-arrow" title="Go to top"><img class="arrow-icon" src="./images/icon/up-arrow.png"></button> -->
 	<section class="header">
 		<nav>
-			<a href="index.html"><img src="images/infodales/Info Dales Main Logo 03.png"></a>
+			<a href="index.html"><img src="images/infodales/Info Dales Main Logo 03.webp" alt="logo"></a>
 			<div class="nav-links" id="navLinks">
 			<i class="fa fa-times" onclick="hideMenu()"></i>
 				<ul>
 					<li><a href="index.html">HOME</a></li>
 					<li><a href="about.html">ABOUT</a></li>
 					<li><a href="services.html">SERVICES</a></li>
+					<li><a href="blog.html">BLOGS</a></li>
 					<li><a href="career.html">CAREER</a></li>
 					<li><a href="contact.html">CONTACT</a></li>
 				<ul>
@@ -49,22 +50,20 @@
 		
 	</section>
 	<section class="about-us">
-		<div class=row>
-		<div class="about-col home-col-left">
-				<h1> Who we are?</h1>
-				<p>We at InfoDales are positioned as one of the top engineers of the IT industry offering quick, concise, and reliable services.
-				</p>
-				<p>
-				At our company, we go beyond mere web development. We craft meticulously tailored digital ecosystems that stand the test of time, embodying years of unwavering expertise, ensuring unrivaled maintainability and absolute freedom from technical debt. Our customer-centric solutions and architecting experience help organizations to make a global footprint.
-				</p>
-				<a href="./index.html" class="hero-btn red-btn">Explore Now</a>
+		<div class="flex">
+			<div class="about-col home-col-left">
+					<h1> Who we are?</h1>
+					<p>We at InfoDales are positioned as one of the top engineers of the IT industry offering quick, concise, and reliable services.
+					</p>
+					<p>
+					At our company, we go beyond mere web development. We craft meticulously tailored digital ecosystems that stand the test of time, embodying years of unwavering expertise, ensuring unrivaled maintainability and absolute freedom from technical debt. Our customer-centric solutions and architecting experience help organizations to make a global footprint.
+					</p>
+					<a href="./index.html" class="hero-btn red-btn">Explore Now</a>
+			</div>
+			<div class="about-col home-col-right" style="background-image: url('images/team2.webp'); background-size: cover;">
+				<img src="images/team2.webp" alt="about">
+			</div>
 		</div>
-		<div class="about-col home-col-right" >
-			
-			<img src="images/team2.jpg">
-
-		</div>
-	</div>
 	</section>
 
 <section class="vision">
@@ -72,12 +71,12 @@
         <div class="col-md-6 tile-container">
             <div class="row tile-container-row">
                 <div class="col-md-6 tile-child-container tile-child-container-left" >
-				<img class="image_css" src="images/infodales/tile/mision.jpg">
+				<img class="image_css" src="images/infodales/tile/mission.webp" alt="mission">
 				</div>
                 <div class="col-md-6 tile-child-container tile-child-container-right">
 				<div class="tile-container-text">
                     <h4>OUR MISSION</h4>
-                    <p>Our mission is to customized technology solutions and strategic advice to businesses of all sizes to improve their operations, productivity, and overall success.</p>
+                    <p>Our mission is to customize technology solutions and strategic advice to businesses of all sizes to improve their operations, productivity, and overall success.</p>
 					</div>
                 </div>
             </div>
@@ -85,12 +84,12 @@
         <div class="col-md-6 tile-container">
             <div class="row tile-container-row">
                 <div class="col-md-6 tile-child-container tile-child-container-left" >
-				<img class="image_css" src="images/infodales/tile/vision.jpg">
+					<img class="image_css" src="images/infodales/tile/vision.webp" alt="vision">
 				</div>
                 <div class="col-md-6 tile-child-container tile-child-container-right">
-				<div class="tile-container-text">
-                    <h4>OUR VISION</h4>
-                    <p>The vision includes staying at the forefront of technological innovation, building strong relationships with clients as a trusted advisor, and having a positive impact on society.</p>
+					<div class="tile-container-text">
+						<h4>OUR VISION</h4>
+						<p>The vision includes staying at the forefront of technological innovation, building strong relationships with clients as a trusted advisor, and having a positive impact on society.</p>
 					</div>
                 </div>
             </div>
@@ -100,7 +99,7 @@
         <div class="col-md-6 tile-container">
             <div class="row tile-container-row">
                 <div class="col-md-6 tile-child-container tile-child-container-left">
-				<img class="image_css" src="images/infodales/tile/strategy.jpg">
+				<img class="image_css" src="images/infodales/tile/strategy.webp" alt="strategy" height="100%">
 				</div>
                 <div class="col-md-6 tile-child-container tile-child-container-right">
 				<div class="tile-container-text">
@@ -113,7 +112,7 @@
         <div class="col-md-6 tile-container">
             <div class="row tile-container-row">
                 <div class="col-md-6 tile-child-container tile-child-container-left">
-				<img class="image_css" src="images/infodales/tile/core-values2.jpg">
+				<img class="image_css" src="images/infodales/tile/ourvalues.webp" alt="our values" >
 				</div>
                 <div class="col-md-6 tile-child-container tile-child-container-right">
 				<div class="tile-container-text">
@@ -132,28 +131,28 @@
 			<p> We design, develop, customize and test web platforms that are maintainable and technical debt-free in long term, which requires years and years of hands-on development experience.</p>
 			
 			<div class="row">
-			<div class="campus-col">
-					<img src="images/infodales/tile/AEM-651.jpg">
-					<div class="layer">
-						<h3>Web Development With Adobe Experience Manager</h3>
-					</div>
-			</div>
+				<div class="campus-col">
+						<img src="images/infodales/tile/AEM-651.webp" alt="AEM">
+						<div class="layer">
+							<h3>Web Development With Adobe Experience Manager</h3>
+						</div>
+				</div>
 
-			<div class="campus-col">
-					<img src="images/infodales/tile/Cy.jpg">
-					<div class="layer">
-						<h3>Automation Testing with Cypress</h3>
-					</div>
-			</div>
-			<div class="campus-col">
-					<img src="images/infodales/tile/salesforce-review2.jpg">
-					<div class="layer">
-						<h3>Salesforce Development</h3>
-					</div>
+				<div class="campus-col">
+						<img src="images/infodales/tile/Cy.webp" alt="cypress">
+						<div class="layer">
+							<h3>Automation Testing with Cypress</h3>
+						</div>
+				</div>
+				<div class="campus-col">
+						<img src="images/infodales/tile/salesforce-review2.webp" alt="salesforce">
+						<div class="layer">
+							<h3>Salesforce Development</h3>
+						</div>
 
+				</div>
 			</div>
-		</div>
-	</section>
+		</section>
 	
 
 	
@@ -351,7 +350,7 @@
                                 <h3>Useful Links</h3>
                             </div>
                             <ul>
-                                <li><a href="./services/aem.html">Aem Services</a></li>
+                                <li><a href="./services/aem.html">AEM Services</a></li>
                                 <li><a href="./trainings/aem.html"></a></li>
                                 <li><a href="./services/testing.html">Software Testing Services</a></li>
                                 <li><a href="./trainings/testing.html"></a></li>
@@ -383,12 +382,12 @@
 		<i class="fa fa-linkedin"></i>
 </div>
 </section> --->
-<div class="copyright-area">
+<!-- <div class="copyright-area">
             <div class="footer">
                 <div class="row" style="margin-top: 0px;">
                     <div class="col-xl-4 col-lg-4 text-center text-lg-left">
                         <div class="copyright-text">
-                            <p>Copyright &copy; 2023, All Right Reserved <a href="./index.html">Infodales Tech
+                            <p>Copyright &copy; 2024, All Right Reserved <a href="./index.html">Infodales Tech
                                     Solution</a></p>
                         </div>
 					</div>
@@ -404,14 +403,44 @@
                     </div>
 					<div class="col-xl-4 col-lg-4 d-none d-lg-block text-right">
                        <div class="icons">
-							<i class="fa fa-facebook"></i>
-							<i class="fa fa-instagram"></i>
-							<i class="fa fa-linkedin"></i>
+							<a href=""><i class="fa fa-facebook"></i></a>
+							<a href=""><i class="fa fa-instagram"></i></a>
+							<a href="https://in.linkedin.com/company/infodales-tech-solution" target="_blank"><i class="fa fa-linkedin"></i></a>
 						</div>
                     </div>
                 </div>
 				</div>
-            </div>
+            </div> -->
+
+			<div class="social-icons">
+                     
+                    <a href="https://www.linkedin.com/company/infodales-tech-solution/" class="linkedin"><img src="images/linkedin.webp" alt="LinkedIn"></a>
+                    <a href="mailto:info@infodales.com" class="email"><img src="images/email.webp" alt="Email"></a>
+                </div>
+
+<!--  Footer --->
+<div class="copyright-area">
+	<div class="footer">
+		<div class="row" style="margin-top: 0px;">
+			<div class="col-xl-4 col-lg-4 text-center text-lg-left">
+				<div class="copyright-text">
+					<p>Copyright &copy; 2024, All Right Reserved <a href="./index.html">Infodales Tech
+							Solution</a></p>
+				</div>
+			</div>
+			
+			<div class="col-xl-4 col-lg-4 d-none d-lg-block text-right">
+				<div class="footer-menu" style="margin-top:10px;">
+					<ul>
+						<li><a href="index.html">Home</a></li>
+						<li><a href="about.html">About</a></li>
+						<li><a href="contact.html">Contact</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
         
 
 
