@@ -1,34 +1,48 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 	<title>Contact Us | Infodales Tech Solution</title>
+	<link rel="icon" type="image/x-icon" href="/images/favicon.ico">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Infodales Tech Solutions, 64 Doye layout, Geeta nagar">
+  	<meta name="keywords" content="Infodales, Adobe AEM Sites, Adobe AEM Assets, Adobe AEM Forms, Adobe Experience Manager">
+	<meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Contact Us | Infodales Tech Solution" />
+    <meta property="og:description" content="64, Doye layout, Geeta nagar" />
+    <meta property="og:url" content="https://infodales.com/contact.html" />
+    <meta property="og:site_name" content="Contact Us | Infodales Tech Solution" />
 	<link rel="stylesheet" href="style.css">
 	<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;600;700&display=swap" rel="stylesheet">
 	
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://smtpjs.com/v3/smtp.js"></script>
+	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
 </head>
  
 <body>
 
 	<!-- Header -->
-	<section class="sub-header">
+	<section class="sub-header" style="background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url('images/contact.jpeg');">
 		<nav>
-			<a href="index.html"><img src="images/infodales/Info Dales Main Logo 03.png"></a>
+			<a href="index.html"><img src="images/infodales/Info Dales Main Logo 03.webp" alt="logo"></a>
 			<div class="nav-links" id="navLinks">
 			<i class="fa fa-times" onclick="hideMenu()"></i>
 				<ul>
 					<li><a href="index.html">HOME</a></li>
 					<li><a href="about.html">ABOUT</a></li>
 					<li><a href="services.html">SERVICES</a></li>
+					<li><a href="blog.html">BLOGS</a></li>
 					<li><a href="career.html">CAREER</a></li>
 					<li><a href="contact.html">CONTACT</a></li>
 				<ul>
 			</div>
 			<i class="fa fa-bars" onclick="showMenu()"></i>
 		</nav>
-		<h1>Contact US</h1>
+		<h1>Contact Us</h1>
 	</section>
 
 	<!-- Contact Us -->
@@ -39,7 +53,7 @@
 
 	<section class="contact-us">
 		<div class="row">
-			<div class="contact-col">
+			<div class="contact-col contact-col-left">
 				<div>
 					<i class="fa fa-home"></i>
 					<span>
@@ -62,12 +76,12 @@
 					</span>
 				</div>
 			</div>
-			<div class="contact-col">
-				<form action=""> 
-					<input type="text" placeholder="Enter your name" required> 
-					<input type="email" placeholder="Enter your email address" name="" required> 
-					<input type="text" placeholder="Enter your subject"  required> 
-					<textarea rows="8" placeholder="Message" name="" required></textarea>
+			<div class="contact-col contact-col-right">
+				<form id="contactForm" method="post" onsubmit="sendEmail(); return false;"> 
+					<input id="name" name="name" type="text" placeholder="Enter your name" required> 
+					<input id="email" name="email" type="email" placeholder="Enter your email address" required> 
+					<input id="subject" name="subject" type="text" placeholder="Enter your subject"  required> 
+					<textarea id="message" name="message" rows="8" placeholder="Message" required></textarea>
 					<button type="submit" class="hero-btn red-btn">Send Message</button>
 				</form>
 			</div>
@@ -77,39 +91,35 @@
 	</section>
 
 
-
+<div class="social-icons">
+	 
+	<a href="https://www.linkedin.com/company/infodales-tech-solution/" class="linkedin"><img src="images/linkedin.webp" alt="LinkedIn"></a>
+	<a href="mailto:info@infodales.com" class="email"><img src="images/email.webp" alt="Email"></a>
+</div>
 
 <!--  Footer --->
 <div class="copyright-area">
-            <div class="footer">
-                <div class="row" style="margin-top: 0px;">
-                    <div class="col-xl-4 col-lg-4 text-center text-lg-left">
-                        <div class="copyright-text">
-                            <p>Copyright &copy; 2023, All Right Reserved <a href="./index.html">Infodales Tech
-                                    Solution</a></p>
-                        </div>
-						</div>
-                    
-                    <div class="col-xl-4 col-lg-4 d-none d-lg-block text-right">
-                        <div class="footer-menu" style="margin-top:10px;">
-                            <ul>
-                                <li><a href="index.html">Home</a></li>
-                                <li><a href="about.html">About</a></li>
-                                <li><a href="contact.html">Contact</a></li>
-                            </ul>
-                        </div>
-                    </div>
-					 <div class="col-xl-4 col-lg-4 d-none d-lg-block text-right">
-                       <div class="icons">
-							<i class="fa fa-facebook"></i>
-							<i class="fa fa-instagram"></i>
-							<i class="fa fa-linkedin"></i>
-					</div>
-                    </div>
-                </div>
+	<div class="footer">
+		<div class="row" style="margin-top: 0px;">
+			<div class="col-xl-4 col-lg-4 text-center text-lg-left">
+				<div class="copyright-text">
+					<p>Copyright &copy; 2023, All Right Reserved <a href="./index.html">Infodales Tech
+							Solution</a></p>
 				</div>
-            </div>
-
+			</div>
+			
+			<div class="col-xl-4 col-lg-4 d-none d-lg-block text-right">
+				<div class="footer-menu" style="margin-top:10px;">
+					<ul>
+						<li><a href="index.html">Home</a></li>
+						<li><a href="about.html">About</a></li>
+						<li><a href="contact.html">Contact</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
 
 
 <!--- Java Script-->	
@@ -122,6 +132,35 @@
 
 			function hideMenu(){
 					navLinks.style.right="-200px";
+			}
+
+			function sendEmail() {
+				var name = $('#name').val();
+				var email = $('#email').val();
+				var subject = $('#subject').val();
+				var message = $('#message').val();
+
+				var body = 'Name: ' + name + '<br> Email: ' + email + '<br> Subject: ' + subject + '<br>Message: ' + message;
+
+				Email.send({
+					Host: "smtp.elasticemail.com",
+					Username: "infodalestechsolutions@gmail.com",
+					Password: "754E1F535F3BB2E0445C01A9AA5736227925",
+					To: "info@infodales.com",
+					From: "infodalestechsolutions@gmail.com",
+					Subject: subject,
+					Body: body,
+				}).then(
+					message => {
+						if (message === "OK") {
+							document.getElementById('contactForm').reset();
+							swal("Sent!", "Thanks for contacting us!", "success");
+						} else {
+							console.error(message);
+							alert("Error sending email.");
+						}
+					}
+				);
 			}
 	
 	</script>

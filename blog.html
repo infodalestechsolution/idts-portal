@@ -1,193 +1,281 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
 	<title>Blogs | Infodales Tech Solution</title>
+	<link rel="icon" type="image/x-icon" href="/images/favicon.ico">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Exploring AEM through Blogs">
+  	<meta name="keywords" content="Infodales, AEM Blogs, Adobe AEM Sites, Adobe AEM Assets, Adobe AEM Forms, Adobe Experience Manager">
+	<meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Blogs | Infodales Tech Solution" />
+    <meta property="og:description" content="Exploring AEM through Blogs" />
+    <meta property="og:url" content="https://infodales.com/blog.html" />
+    <meta property="og:site_name" content="Blogs | Infodales Tech Solution" />
 	<link rel="stylesheet" href="style.css">
-	<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;600;700&display=swap" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;600;700&display=swap"
+		rel="stylesheet">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-
 </head>
- 
+
 <body>
 
 	<!-- Header -->
-	<section class="sub-header">
+	<section class="sub-header"
+		style="background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url('images/SPA-Blogs/blog1.webp');">
 		<nav>
-			<a href="index.html"><img src="images/infodales/Info Dales Main Logo 03.png"></a>
+			<a href="index.html"><img src="images/infodales/Info Dales Main Logo 03.webp" alt="logo"></a>
 			<div class="nav-links" id="navLinks">
-			<i class="fa fa-times" onclick="hideMenu()"></i>
+				<i class="fa fa-times" onclick="hideMenu()"></i>
 				<ul>
 					<li><a href="index.html">HOME</a></li>
 					<li><a href="about.html">ABOUT</a></li>
 					<li><a href="services.html">SERVICES</a></li>
-					<li><a href="blog.html">BLOG</a></li>
+					<li><a href="blog.html">BLOGS</a></li>
+					<li><a href="career.html">CAREER</a></li>
 					<li><a href="contact.html">CONTACT</a></li>
-				<ul>
+					<ul>
 			</div>
 			<i class="fa fa-bars" onclick="showMenu()"></i>
 		</nav>
-		<h1>Our Certification & Online Programs for 2011</h1>
+		<h1>Exploring AEM through Blogs</h1>
 	</section>
-<!--  Blog Page Content --->
-	<section class="blog-content">
-		<div class="row">
-			<div class="blog-left">
-				<img src="images/certificate.jpg">
-				<h2>Our Certificates & Online Programs for 2011</h2>
-			<p>
-				SDAFASDFDSAFDSAF  sdfdsafdsf
-				dsaf
-				dsaf
-				dsa
-				f
-				dsaf
-				dsaf
-				dsafdsafdsafdsafdsafdsafdsafdsafdsaf
-
-				sadfdsafdsafdsafdsafdsafdsafdsa
-
-				dsfsadfsf asdfdsf adsf adsfdsf asdf ds 
-				dsa fdsaf 
-				sa dfdsaf dsafdsafdsaf
-			</p>
-			<p>
-				SDAFASDFDSAFDSAF  sdfdsafdsf
-				dsaf
-				dsaf
-				dsa
-				f
-				dsaf
-				dsaf
-				dsafdsafdsafdsafdsafdsafdsafdsafdsaf
-
-				sadfdsafdsafdsafdsafdsafdsafdsa
-
-				dsfsadfsf asdfdsf adsf adsfdsf asdf ds 
-				dsa fdsaf 
-				sa dfdsaf dsafdsafdsaf
-			</p>
-			<p>
-				SDAFASDFDSAFDSAF  sdfdsafdsf
-				dsaf
-				dsaf
-				dsa
-				f
-				dsaf
-				dsaf
-				dsafdsafdsafdsafdsafdsafdsafdsafdsaf
-
-				sadfdsafdsafdsafdsafdsafdsafdsa
-
-				dsfsadfsf asdfdsf adsf adsfdsf asdf ds 
-				dsa fdsaf 
-				sa dfdsaf dsafdsafdsaf
-			</p>
-
-			<div class="comment-box">
-				
-				<h3> Leave a Comment</h3>
-				<form class="comment-form">
-					<input type="text" placeholder="Enter Name"/>
-					<input type="email" placeholder="Enter Email"/>
-					<textarea  rows="5" placeholder="Your Comments"></textarea>
-					<button type="submit" class="hero-btn red-btn">Your Comment</button>
-				</form>
-
-			</div>
-
-			</div>
-			<div class="blog-right">
-					<h3>Post Catergories</h3>
-					<div>
-						<span>Business Catergories</span>
-						<span>21</span>
+	<!--  Blog Page Content --->
+	<section class="blog-tiles">
+		<p style="padding: 0; margin-bottom: 20px;">Categories :</p>
+		<div class="categoriesList">
+			<a class="blog-button" onclick="categoryFilter(event)">All</a>
+			<a class="blog-button" onclick="categoryFilter(event)">AEM Sites</a>
+			<a class="blog-button" onclick="categoryFilter(event)">AEM SPA</a>
+			<a class="blog-button" onclick="categoryFilter(event)">AEM Forms</a>
+			<a class="blog-button" onclick="categoryFilter(event)">Dispatcher</a>
+		</div>
+		<h2 class="blog-category" style="margin-top: 15px; margin-bottom: 15px;">All Blogs</h2>
+		<div class="blog-tiles-list" style="display: flex; flex-wrap: wrap;">
+			<a href="./blogs/dispatcher.html" style="text-decoration: none;" class="blog-item">
+				<div id="dispatcher" class="blog-item-div"
+					style="border: 1px solid #ccc; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+					<img src="images/Tile Dispatcher.jpg" alt="Card Image" style="width: 100%; height: auto; display: block;">
+					<div style="padding: 16px;">
+						<p class="dispatcherTag"
+							style="margin-top: 7px; margin-bottom: 7px; font-size: 13px; border-radius: 20px; width: fit-content; padding: 3px 15px;">
+							Dispatcher</p>
+						<p class="blog-title" style="font-size: 1em; color: #555;">Working with Dispatcher</p>
+						<p>April 25, 2023</p>
 					</div>
-					<div>
-						<span>Business Catergories</span>
-						<span>21</span>
+				</div>
+			</a>
+			<a href="./blogs/spa-component-mapping.html" style="text-decoration: none;" class="blog-item">
+				<div id="spa" class="blog-item-div"
+					style="border: 1px solid #ccc; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+					<img src="images/Tile SPA.jpg" alt="Card Image" style="width: 100%; height: auto; display: block;">
+					<div style="padding: 16px;">
+						<p class="spaTag"
+							style="margin-top: 7px; margin-bottom: 7px; font-size: 13px; border-radius: 20px; width: fit-content; padding: 3px 15px;">
+							AEM SPA</p>
+						<p class="blog-title" style="font-size: 1em; color: #555;">Mapping AEM Component to SPA Component</p>
+						<p>April 11, 2023</p>
 					</div>
-					<div>
-						<span>Business Catergories</span>
-						<span>21</span>
+				</div>
+			</a>
+			<a href="./blogs/spa-getting-started.html" style="text-decoration: none;" class="blog-item">
+				<div id="spa" class="blog-item-div"
+					style="border: 1px solid #ccc; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+					<img src="images/Tile SPA.jpg" alt="Card Image" style="width: 100%; height: auto; display: block;">
+					<div style="padding: 16px;">
+						<p class="spaTag"
+							style="margin-top: 7px; margin-bottom: 7px; font-size: 13px; border-radius: 20px; width: fit-content; padding: 3px 15px;">
+							AEM SPA</p>
+						<p class="blog-title" style="font-size: 1em; color: #555;">Getting started with AEM SPA</p>
+						<p>March 29, 2023</p>
 					</div>
-
-					<div>
-						<span>Business Catergories</span>
-						<span>21</span>
+				</div>
+			</a>
+			<a href="./blogs/form-rule-editor.html" style="text-decoration: none;" class="blog-item">
+				<div id="forms" class="blog-item-div"
+					style="border: 1px solid #ccc; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+					<img src="images/Tile Forms.jpg" alt="Card Image" style="width: 100%; height: auto; display: block;">
+					<div style="padding: 16px;">
+						<p class="formsTag"
+							style="margin-top: 7px; margin-bottom: 7px; font-size: 13px; border-radius: 20px; width: fit-content; padding: 3px 15px;">
+							AEM Forms</p>
+						<p class="blog-title" style="font-size: 1em; color: #555;">How to Add Custom Functions in Rule Editor</p>
+						<p>March 15, 2023</p>
 					</div>
-					<div>
-						<span>Business Catergories</span>
-						<span>21</span>
+				</div>
+			</a>
+			<a href="./blogs/submitting-adaptive-form.html" style="text-decoration: none;" class="blog-item">
+				<div id="forms" class="blog-item-div"
+					style="border: 1px solid #ccc; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+					<img src="images/Tile Forms.jpg" alt="Card Image" style="width: 100%; height: auto; display: block;">
+					<div style="padding: 16px;">
+						<p class="formsTag"
+							style="margin-top: 7px; margin-bottom: 7px; font-size: 13px; border-radius: 20px; width: fit-content; padding: 3px 15px;">
+							AEM Forms</p>
+						<p class="blog-title" style="font-size: 1em; color: #555;">Submitting Adaptive Form using Form Data Model</p>
+						<p>February 28, 2023</p>
 					</div>
-					<div>
-						<span>Business Catergories</span>
-						<span>21</span>
+				</div>
+			</a>
+			<a href="./blogs/aem-graphql.html" style="text-decoration: none;" class="blog-item">
+				<div id="sites" class="blog-item-div"
+					style="border: 1px solid #ccc; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+					<img src="images/Tile Sites.jpg" alt="Card Image" style="width: 100%; height: auto; display: block;">
+					<div style="padding: 16px;">
+						<p class="sitesTag"
+							style="margin-top: 7px; margin-bottom: 7px; font-size: 13px; border-radius: 20px; width: fit-content; padding: 3px 15px;">
+							AEM Sites</p>
+						<p class="blog-title" style="font-size: 1em; color: #555;">AEM GraphQL</p>
+						<p>February 14, 2023</p>
 					</div>
-					<div>
-						<span>Business Catergories</span>
-						<span>21</span>
+				</div>
+			</a>
+			<a href="./blogs/form-submission.html" style="text-decoration: none;" class="blog-item">
+				<div id="forms" class="blog-item-div"
+					style="border: 1px solid #ccc; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+					<img src="images/Tile Forms.jpg" alt="Card Image" style="width: 100%; height: auto; display: block;">
+					<div style="padding: 16px;">
+						<p class="formsTag"
+							style="margin-top: 7px; margin-bottom: 7px; font-size: 13px; border-radius: 20px; width: fit-content; padding: 3px 15px;">
+							AEM Forms</p>
+						<p class="blog-title" style="font-size: 1em; color: #555;">Sending Email on Submission of Adaptive Form</p>
+						<p>January 31, 2023</p>
 					</div>
-					<div>
-						<span>Business Catergories</span>
-						<span>21</span>
+				</div>
+			</a>
+			<a href="./blogs/forms-introduction.html" style="text-decoration: none;" class="blog-item">
+				<div id="forms" class="blog-item-div"
+					style="border: 1px solid #ccc; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+					<img src="images/Tile Forms.jpg" alt="Card Image" style="width: 100%; height: auto; display: block;">
+					<div style="padding: 16px;">
+						<p class="formsTag"
+							style="margin-top: 7px; margin-bottom: 7px; font-size: 13px; border-radius: 20px; width: fit-content; padding: 3px 15px;">
+							AEM Forms</p>
+						<p class="blog-title" style="font-size: 1em; color: #555;">Introduction to AEM Forms</p>
+						<p>January 17, 2023</p>
 					</div>
-
-			</div>
+				</div>
+			</a>
+			<a href="./blogs/aem-introduction.html" style="text-decoration: none;" class="blog-item">
+				<div id="sites" class="blog-item-div"
+					style="border: 1px solid #ccc; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+					<img src="images/Tile Sites.jpg" alt="Card Image" style="width: 100%; height: auto; display: block;">
+					<div style="padding: 16px;">
+						<p class="sitesTag"
+							style="margin-top: 7px; margin-bottom: 7px; font-size: 13px; border-radius: 20px; width: fit-content; padding: 3px 15px;">
+							AEM Sites</p>
+						<p class="blog-title" style="font-size: 1em; color: #555;">Introduction to AEM Sites</p>
+						<p>January 3, 2023</p>
+					</div>
+				</div>
+			</a>
 		</div>
 	</section>
-	
 
 
+<div class="social-icons">
+	 
+	<a href="https://www.linkedin.com/company/infodales-tech-solution/" class="linkedin"><img src="images/linkedin.webp" alt="LinkedIn"></a>
+	<a href="mailto:info@infodales.com" class="email"><img src="images/email.webp" alt="Email"></a>
+</div>
 
 
-<!--  Footer --->
-<div class="copyright-area">
-            <div class="footer">
-                <div class="row" style="margin-top: 0px;">
-                    <div class="col-xl-4 col-lg-4 text-center text-lg-left">
-                        <div class="copyright-text">
-                            <p>Copyright &copy; 2023, All Right Reserved <a href="./index.html">Infodales Tech
-                                    Solution</a></p>
-                        </div>
-						</div>
-                    
-                    <div class="col-xl-4 col-lg-4 d-none d-lg-block text-right">
-                        <div class="footer-menu" style="margin-top:10px;">
-                            <ul>
-                                <li><a href="index.html">Home</a></li>
-                                <li><a href="about.html">About</a></li>
-                                <li><a href="contact.html">Contact</a></li>
-                            </ul>
-                        </div>
-                    </div>
-					 <div class="col-xl-4 col-lg-4 d-none d-lg-block text-right">
-                       <div class="icons">
-							<i class="fa fa-facebook"></i>
-							<i class="fa fa-instagram"></i>
-							<i class="fa fa-linkedin"></i>
+	<!--  Footer --->
+	<div class="copyright-area">
+		<div class="footer">
+			<div class="row" style="margin-top: 0px;">
+				<div class="col-xl-4 col-lg-4 text-center text-lg-left">
+					<div class="copyright-text">
+						<p>Copyright &copy; 2023, All Right Reserved <a href="./index.html">Infodales Tech
+								Solution</a></p>
 					</div>
-                    </div>
-                </div>
 				</div>
-            </div>
+				
+				<div class="col-xl-4 col-lg-4 d-none d-lg-block text-right">
+					<div class="footer-menu" style="margin-top:10px;">
+						<ul>
+							<li><a href="index.html">Home</a></li>
+							<li><a href="about.html">About</a></li>
+							<li><a href="contact.html">Contact</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 
 
 
-<!--- Java Script-->	
+	<!--- Java Script-->
 	<script>
-			var navLinks = document.getElementById("navLinks");
+		var navLinks = document.getElementById("navLinks");
 
-			function showMenu(){
-					navLinks.style.right="0";
-			}
+		function showMenu() {
+			navLinks.style.right = "0";
+		}
 
-			function hideMenu(){
-					navLinks.style.right="-200px";
+		function hideMenu() {
+			navLinks.style.right = "-200px";
+		}
+
+		function categoryFilter(event) {
+			event.preventDefault();
+			var filterValue = event.target.innerHTML;
+			if(filterValue == "AEM Sites"){
+				var sitesMarkup = document.querySelectorAll("#sites");
+				var allItems = document.querySelectorAll(".blog-item-div");
+				allItems.forEach(function (div){
+					div.parentElement.setAttribute("hidden", true);
+				});
+				sitesMarkup.forEach(function (div){
+					div.parentElement.removeAttribute("hidden");
+				});
+				document.querySelector(".blog-category").innerHTML = "AEM Sites Blogs";
+			} else if(filterValue == "AEM SPA"){
+				var spaMarkup = document.querySelectorAll("#spa");
+				var allItems = document.querySelectorAll(".blog-item-div");
+				allItems.forEach(function (div){
+					div.parentElement.setAttribute("hidden", true);
+				});
+				spaMarkup.forEach(function (div){
+					div.parentElement.removeAttribute("hidden");
+				});
+				document.querySelector(".blog-category").innerHTML = "AEM SPA Blogs";
+			} else if(filterValue == "AEM Forms"){
+				var formsMarkup = document.querySelectorAll("#forms");
+				var allItems = document.querySelectorAll(".blog-item-div");
+				allItems.forEach(function (div){
+					div.parentElement.setAttribute("hidden", true);
+				});
+				formsMarkup.forEach(function (div){
+					div.parentElement.removeAttribute("hidden");
+				});
+				document.querySelector(".blog-category").innerHTML = "AEM Forms Blogs";
+			} else if(filterValue == "Dispatcher"){
+				var formsMarkup = document.querySelectorAll("#dispatcher");
+				var allItems = document.querySelectorAll(".blog-item-div");
+				allItems.forEach(function (div){
+					div.parentElement.setAttribute("hidden", true);
+				});
+				formsMarkup.forEach(function (div){
+					div.parentElement.removeAttribute("hidden");
+				});
+				document.querySelector(".blog-category").innerHTML = "Dispatcher Blogs";
+			}	else if(filterValue == "All"){
+				var allItems = document.querySelectorAll(".blog-item-div");
+				allItems.forEach(function (div){
+					div.parentElement.setAttribute("hidden", true);
+					div.parentElement.removeAttribute("hidden");
+				});
+				document.querySelector(".blog-category").innerHTML = "All Blogs";
 			}
-	
+		}
+
 	</script>
-	
+
 </body>
 
 </html>

@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Blogs | Sending Email on Submission of Adaptive Form</title>
+	<link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="This blog aims to guide you through the process of setting up email notifications upon submitting an adaptive form. When users submit an adaptive form, it's essential to acknowledge their submission promptly.">
+    <meta name="keywords" content="Infodales, Adobe AEM Forms,Email Integration, Email Submission, Form Processing, Email Submission by AEM Forms, AEM Forms Sending Email,Sending Email by AEM Form, SMTP, Adaptive Form">
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Blogs | Sending Email on Submission of Adaptive Form" />
+    <meta property="og:description" content="Learn how to configure AEM Forms to send emails automatically upon submission of Adaptive Forms. Streamline your form processing with our step-by-step guide." />
+    <meta property="og:url" content="https://infodales.com/form-submission.html" />
+    <meta property="og:site_name" content="Blogs | Sending Email on Submission of Adaptive Form" />
+	<link rel="stylesheet" href="/style.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;600;700&display=swap"
+		rel="stylesheet">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+
+	<!-- Header -->
+	<section class="sub-header"
+		style="background-image: linear-gradient(rgba(4, 9, 30, 0.5), rgba(4, 9, 30, 0.5)), url('/images/Cover\ Forms.jpg');">
+		<nav>
+			<a href="/index.html"><img src="/images/infodales/Info Dales Main Logo 03.webp" alt="logo"></a>
+			<div class="nav-links" id="navLinks">
+				<i class="fa fa-times" onclick="hideMenu()"></i>
+				<ul>
+					<li><a href="/index.html">HOME</a></li>
+					<li><a href="/about.html">ABOUT</a></li>
+					<li><a href="/services.html">SERVICES</a></li>
+					<li><a href="/blog.html">BLOGS</a></li>
+					<li><a href="/career.html">CAREER</a></li>
+					<li><a href="/contact.html">CONTACT</a></li>
+					<ul>
+			</div>
+			<i class="fa fa-bars" onclick="showMenu()"></i>
+		</nav>
+		<!-- <h1>Blogs</h1> -->
+	</section>
+	<!--  Blog Page Content --->
+	<section class="blog-content">
+		<div>
+			<div class="blog">
+
+				<p style="color: rgb(133, 133, 133); padding: 0 0 10px 0;"><a href="/blog.html" style="text-decoration: none; cursor: pointer;">Blogs</a> <span> > </span> Sending Email on Submission of Adaptive Form</p>
+
+				<p class="formsTag" style="margin-top: 7px; margin-bottom: 7px; font-size: 13px; border-radius: 20px; 
+				width: fit-content; padding: 3px 15px;">AEM Forms</p>
+				<h1 class="title">Sending Email on Submission of Adaptive Form </h1>
+      				<span class="author">Infodales Tech Solutions | </span>
+      				<span class="date">January 31, 2023</span>
+    			
+					<div class="share-icons">	
+					<a href="https://www.linkedin.com/company/infodales-tech-solution/" target="_blank" class="linkedin-icon"><i class="fa fa-linkedin"></i></a>
+					<a href="mailto:info@infodales.com" target="_blank" class="email-icon"><i class="fa fa-envelope"></i></a>
+					</div>
+				
+				<hr style="margin: 20px 0 10px 0;">
+				<!-- <div class="image-container">
+					<img src="images/cover.webp" alt="Image Description">
+				</div> -->
+				<div class="blog-items">
+					<p>
+					This blog aims to guide you through the process of setting up email notifications upon submitting an adaptive form.
+					When users submit an adaptive form, it's essential to acknowledge their submission promptly. By setting up email notifications, 
+					you can ensure users receive confirmation and administrators stay informed. A common practice after receiving a 
+					submission through an Adaptive Form is to send a confirmation email to the submitter. To set this up, we'll choose the "Send Email" option as the submit action.	
+					</p>
+					<h2>Email Submission Methods</h2>
+        			<p>Methods to submit the form via email:</p>
+        			<ol style="margin-left: auto; width: 93%;">
+            			<li><p>Through an SMTP Server.</p></li>
+        			</ol>
+        			<p>For testing purposes, we utilize a Fake SMTP Server. Here's how to set it up:</p>
+        			<ol style="margin-left: auto; width: 93%;">
+            			<li> <p>Download the Fake SMTP Server by searching for it on Google. </p></li>
+            			<li> <p>Find a reliable source and download the Fake SMTP Server software.</p></li>
+        			</ol>
+					<div class="image-container">
+						<img src="/images/form submission/server.webp" alt="Fake SMTP Server">
+					</div>
+
+					<h2>Configuration Needed</h2>
+        			<p>Before we begin, we need to configure mail services by navigating to the Felix Configuration Manager in your browser.
+						The below screenshot shows you the configuration properties for Adobe mail server.
+					</p>
+					<p>Configure your Email Configuration</p>
+					<div class="image-container">
+						<img src="/images/form submission/configuration2.webp" alt="Configuration">
+					</div>
+					<p>In your Day CQ Mail Service, add your hostname (which may be localhost) and set the server 
+					 port according to your server specifications. Then, provide a username and password, and specify the email address to 
+					 be used in the "From:" field of messages sent by the mailer.</p>
+					
+					 <h2>Create an Adaptive Form</h2>
+					 <p> After completing the configuration, it's time to create an Adaptive Form. Simply design a form according to your 
+						requirements. We've created a registration form. </p>
+					<div class="image-container">
+						<img src="/images/form submission/regform.webp" alt="registration">
+					</div>
+					<p>Now configure the form properties to enable submission and receive email notifications. Follow the below steps: </p>
+        			<ol style="margin-left: auto; width: 93%;">
+            			<li><p>Navigate to the form and select 'Edit.'</p></li>
+						<li><p>Choose the submission properties.</p></li>
+						<li><p>Select 'Send Email' as the submit action.</p></li>
+						<li><p>In the Action Configuration, input your email address in the 'From' section as specified in the configuration settings.</p></li>
+						<li><p>In the 'To' section, enter ${email} to dynamically capture the recipient's email address.</p></li>
+						<li><p>Provide a suitable subject in the 'Subject' section, such as '${firstName} Form Submission,' ensuring personalization.</p></li>
+						<li><p>Save it</p></li>
+        			</ol>
+					<div class="image-container">
+						<img src="/images/form submission/formprop.webp" alt="Form properties">
+						<img src="/images/form submission/formprop2.webp" alt="Form properties">
+					</div>
+					<p>In the subject, I've included ${firstName} Form Submission. This means that the "firstName" corresponds to the name 
+						property of the First Name textbox. After receiving the email, you'll see the user's first name in the subject line.
+						Once all properties are configured, start your fake SMTP server and submit the form.</p>
+
+					<div class="image-container">
+						<img src="/images/form submission/formtest.webp" alt="Test Form">
+						<img src="/images/form submission/smtp.webp" alt="SMTP Server">
+					</div>
+
+					<p>I'm glad you found this article interesting and informative! Feel free to share it with your friends to spread the 
+						knowledge. <br> Don't forget to follow me for upcoming blogs. Thank you!</p>
+				</div>
+					<hr style="margin-top: 30px;">
+
+					<div class="author-details">
+						<div id="like-icon" class="like-icon">
+							<span id="like-count" class="like-count">0</span>
+							<span id="like-btn" class="like-btn">
+							  	<img src="/images/clap.webp" alt="Like">
+							</span>
+						</div>
+						<div>
+							<span class="author-name">Nitish Bisen | </span>
+							<span class="author-designation">AEM Developer</span>
+						</div>
+					</div>
+
+					<div style="display: flex; justify-content: center;">
+						<div class="comment-box" >
+							<h3> Leave a Comment</h3>
+							<form class="comment-form">
+								<input type="text" placeholder="Enter Name"/>
+								<input type="email" placeholder="Enter Email"/>
+								<textarea  rows="5" placeholder="Your Comments"></textarea>
+								<button type="submit" class="hero-btn red-btn">Your Comment</button>
+							</form>
+						</div>
+					</div>
+			</div>
+		</div>
+	</section>
+
+<div class="social-icons">
+	 
+	<a href="https://www.linkedin.com/company/infodales-tech-solution/" class="linkedin"><img src="/images/linkedin.webp" alt="LinkedIn"></a>
+	<a href="mailto:info@infodales.com" class="email"><img src="/images/email.webp" alt="Email"></a>
+</div>
+
+	<!--  Footer --->
+	<div class="copyright-area">
+		<div class="footer">
+			<div class="row" style="margin-top: 0px;">
+				<div class="col-xl-4 col-lg-4 text-center text-lg-left">
+					<div class="copyright-text">
+						<p>Copyright &copy; 2023, All Right Reserved <a href="/index.html">Infodales Tech
+								Solution</a></p>
+					</div>
+				</div>
+				
+				<div class="col-xl-4 col-lg-4 d-none d-lg-block text-right">
+					<div class="footer-menu" style="margin-top:10px;">
+						<ul>
+							<li><a href="/index.html">Home</a></li>
+							<li><a href="/about.html">About</a></li>
+							<li><a href="/contact.html">Contact</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<!--- Java Script-->
+	<script>
+		var navLinks = document.getElementById("navLinks");
+
+		function showMenu() {
+			navLinks.style.right = "0";
+		}
+
+		function hideMenu() {
+			navLinks.style.right = "-200px";
+		}
+
+		document.addEventListener("DOMContentLoaded", () => {
+    const likeBtn = document.getElementById('like-btn');
+    const likeCount = document.getElementById('like-count');
+
+    let count = parseInt(localStorage.getItem('clapCount')) || 0;
+    likeCount.textContent = count;
+
+    likeBtn.addEventListener('click', () => {
+        count++;
+        likeCount.textContent = count;
+        localStorage.setItem('clapCount', count);
+
+        const likeAnimation = document.createElement('div');
+        likeAnimation.classList.add('like-animation');
+        likeAnimation.innerHTML = '🎉';
+        document.getElementById('like-icon').appendChild(likeAnimation);
+        likeAnimation.addEventListener('animationend', () => {
+            likeAnimation.remove();
+        });
+    });
+});
+
+		// function relatedFilter() {
+		// 	var retString = localStorage.getItem("allBlogs");
+		// 	console.log(retString);
+		// }
+
+
+	</script>
+
+</body>
+
+</html>

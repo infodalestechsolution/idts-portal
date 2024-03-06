@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>AEM | Infodales Tech Solution</title>
+	<link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Apply by filling the form below or mail us at career@infodales.com">
+  	<meta name="keywords" content="Infodales, Jobs, AEM Developer, Adobe Experience Manager">
+	<meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="AEM | Infodales Tech Solution" />
+    <meta property="og:description" content="Apply by filling the form below or mail us at career@infodales.com" />
+    <meta property="og:url" content="https://infodales.com/aem-apply.html" />
+    <meta property="og:site_name" content="AEM | Infodales Tech Solution" />
+	<link rel="stylesheet" href="style.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;600;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://smtpjs.com/v3/smtp.js"></script>
+
+</head>
+ 
+<body>
+
+	<!-- Header -->
+	<section class="sub-header" style="background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(5, 11, 36, 0.795)), url('images/career-banner.webp');">
+		<nav>
+			<a href="index.html"><img src="images/infodales/Info Dales Main Logo 03.webp" alt="logo"></a>
+			<div class="nav-links" id="navLinks">
+			<i class="fa fa-times" onclick="hideMenu()"></i>
+				<ul>
+					<li><a href="index.html">HOME</a></li>
+					<li><a href="about.html">ABOUT</a></li>
+					<li><a href="services.html">SERVICES</a></li>
+					<li><a href="blog.html">BLOGS</a></li>
+					<li><a href="career.html">CAREER</a></li>
+					<li><a href="contact.html">CONTACT</a></li>
+				<ul>
+			</div>
+			<i class="fa fa-bars" onclick="showMenu()"></i>
+		</nav>
+		<h1>AEM</h1>
+		<!-- <p style="color: rgb(201, 201, 201);">What to expect as you interview with us!</p> -->
+	</section>
+<!--  Blog Page Content --->
+	<section >
+		<div class="career-content ">
+			<div style="margin-top: 0px; width: 98%; display: flex; flex-direction: column; justify-content: center;">
+				<h1 id="positionHeader" style="font-size: x-large; margin: 0; padding: 0; text-align: center;">AEM Developer</h1>
+			</div>
+
+			<div class="apply-form" style="margin-top: 10px;">
+				<p>Apply by filling the form below or mail us at <span style="color: rgb(12, 13, 20); font-weight: 600;">career@infodales.com</span></p>
+			</div>
+
+			<div class="comment-box" style="margin-top: 30px; margin-bottom: 0;">
+				<h3 style="font-size: 23px; margin-bottom: 25px;">Personal Information</h3>
+				<form id="applicationForm" class="comment-form" method="post" onsubmit="sendEmail(); return false;">
+					<p style="color: rgb(70, 70, 70); padding: 0; font-weight: 600;">Name</p>
+					<input type="text" id="name" placeholder="Enter Name" required/>
+
+					<p style="color: rgb(70, 70, 70); padding: 0; font-weight: 600;">Email</p>
+					<input type="email" id="email" placeholder="Enter Email" required/>
+
+					<p style="color: rgb(70, 70, 70); padding: 0; font-weight: 600;">Phone number</p>
+					<input type="tel" id="phone" placeholder="Enter phone no." required/>
+
+					<p style="padding-left: 0; margin-bottom: 10px;">
+						<label for="position" style="color: rgb(70, 70, 70); font-weight: 600;">Applying for position:</label>
+						<br/>
+						<select id="position" style="margin-top: 16px;">
+							<option value="AEM Developer">AEM Developer</option>
+							<option value="Testing">Testing</option>
+							<option value="Salesforce Developer">Salesforce Developer</option>
+						</select>
+					</p>
+
+					<p style="color: rgb(70, 70, 70); padding: 0; font-weight: 600;">Resume</p>
+					<input type="file" id="resume" accept=".pdf, .doc, .docx" required/>
+
+					<p style="color: rgb(70, 70, 70); padding: 0; margin-bottom: 0; font-weight: 600;">Cover letter to Hiring Manager</p>
+					<textarea id="coverLetter" rows="5" placeholder="Let the company know why you would be the best fit"></textarea>
+					
+					<button type="submit" class="hero-btn red-btn" style="font-weight: 600;">Apply</button>
+				</form>
+
+			</div>
+			
+		</div>
+			
+	</section>
+	
+
+<div class="social-icons">
+	 
+	<a href="https://www.linkedin.com/company/infodales-tech-solution/" class="linkedin"><img src="images/linkedin.webp" alt="LinkedIn"></a>
+	<a href="mailto:info@infodales.com" class="email"><img src="images/email.webp" alt="Email"></a>
+</div>
+
+
+<!--  Footer --->
+<div class="copyright-area">
+	<div class="footer">
+		<div class="row" style="margin-top: 0px;">
+			<div class="col-xl-4 col-lg-4 text-center text-lg-left">
+				<div class="copyright-text">
+					<p>Copyright &copy; 2023, All Right Reserved <a href="./index.html">Infodales Tech
+							Solution</a></p>
+				</div>
+			</div>
+			
+			<div class="col-xl-4 col-lg-4 d-none d-lg-block text-right">
+				<div class="footer-menu" style="margin-top:10px;">
+					<ul>
+						<li><a href="index.html">Home</a></li>
+						<li><a href="about.html">About</a></li>
+						<li><a href="contact.html">Contact</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+<!--- Java Script-->	
+	<script>
+			var navLinks = document.getElementById("navLinks");
+
+			function showMenu(){
+					navLinks.style.right="0";
+			}
+
+			function hideMenu(){
+					navLinks.style.right="-200px";
+			}
+
+			document.addEventListener('DOMContentLoaded', function () {
+            // Get the h1 element
+            var positionHeader = document.getElementById('positionHeader');
+            
+            // Get the select element
+            var positionSelect = document.getElementById('position');
+            
+            // Get the current position value from h1
+            var currentPosition = positionHeader.innerText.trim();
+            
+            // Loop through options and disable or remove accordingly
+            for (var i = 0; i <= positionSelect.options.length; i++) {
+                var option = positionSelect.options[i];
+                
+                if (option.value === currentPosition) {
+                    // If the option matches the current position, keep it enabled and selected
+                    option.disabled = false;
+                    option.selected = true;
+                } else {
+                    // If the option does not match, disable or remove it
+                    // option.disabled = true; // Use this line to disable options
+                    option.disabled = true; // Use this line to remove options
+                }
+            }
+        });
+	
+			function sendEmail() {
+				var name = document.getElementById('name').value;
+				var email = document.getElementById('email').value;
+				var phone = document.getElementById('phone').value;
+				var position = document.getElementById('position').value;
+				var resume = document.getElementById('resume').files[0];
+				var coverLetter = document.getElementById('coverLetter').value;
+
+				if(coverLetter){
+					var Body = 'Name: ' + name + '<br>Email: ' + email + '<br>Phone: ' + phone + '<br>Applying for position: ' + position + '<br>Cover letter: ' + coverLetter;
+				}else{
+					var Body = 'Name: ' + name + '<br>Email: ' + email + '<br>Phone: ' + phone + '<br>Applying for position: ' + position;
+				}
+
+				var reader = new FileReader();
+				reader.onload = function(event) {
+					var resumeData = event.target.result.split(',')[1];
+					Email.send({
+						Host: "smtp.elasticemail.com",
+						Username: "infodalestechsolutions@gmail.com",
+						Password: "754E1F535F3BB2E0445C01A9AA5736227925",
+						To: 'career@infodales.com',
+						From: "infodalestechsolutions@gmail.com",
+						Subject: name,
+						Body: Body,
+						Attachments: [
+							{
+								name: "resume.pdf",
+								data: resumeData
+							}
+						]
+					}).then(
+						message => {
+							if (message === 'OK') {
+								swal("Form submitted!", "Thanks for applying!", "success");
+								document.getElementById('applicationForm').reset();
+							} else {
+								console.error(message);
+								alert('Error submitting application.');
+							}
+						}
+					);
+				};
+				reader.readAsDataURL(resume);
+			}
+
+	</script>
+	
+</body>
+
+</html>
