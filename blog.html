@@ -52,8 +52,20 @@
 			<a class="blog-button" onclick="categoryFilter(event)">AEM SPA</a>
 			<a class="blog-button" onclick="categoryFilter(event)">AEM Forms</a>
 			<a class="blog-button" onclick="categoryFilter(event)">Dispatcher</a>
+		</div>       
+
+		<div style="display: flex; align-items: center; justify-content: space-between; margin: 0 5px;">
+			<h2 class="blog-category" style="margin-top: 15px; margin-bottom: 15px; width: fit-content;">All Blogs</h2>
+			<div class="sortBlogs">
+				<label for="order" style="color: #555;">Sort By : </label>
+				<select name="order" id="order" onchange="sortBlogs()" style="padding: 3px 8px;">
+					<option value="latest">Latest</option>
+					<option value="oldest">Oldest</option>
+				</select>
+			</div>
 		</div>
-		<h2 class="blog-category" style="margin-top: 15px; margin-bottom: 15px;">All Blogs</h2>
+		<!-- <button style="width: fit-content;" onclick="sortBlogs('latest')">Sort By Latest</button>
+		<button style="width: fit-content;" onclick="sortBlogs('oldest')">Sort By Oldest</button> -->
 		<div class="blog-tiles-list" style="display: flex; flex-wrap: wrap;">
 			<a href="./blogs/dispatcher.html" style="text-decoration: none;" class="blog-item">
 				<div id="dispatcher" class="blog-item-div"
@@ -64,7 +76,7 @@
 							style="margin-top: 7px; margin-bottom: 7px; font-size: 13px; border-radius: 20px; width: fit-content; padding: 3px 15px;">
 							Dispatcher</p>
 						<p class="blog-title" style="font-size: 1em; color: #555;">Working with Dispatcher</p>
-						<p>April 25, 2023</p>
+						<p class="publishDate">April 25, 2023</p>
 					</div>
 				</div>
 			</a>
@@ -77,7 +89,7 @@
 							style="margin-top: 7px; margin-bottom: 7px; font-size: 13px; border-radius: 20px; width: fit-content; padding: 3px 15px;">
 							AEM SPA</p>
 						<p class="blog-title" style="font-size: 1em; color: #555;">Mapping AEM Component to SPA Component</p>
-						<p>April 11, 2023</p>
+						<p class="publishDate">April 11, 2023</p>
 					</div>
 				</div>
 			</a>
@@ -90,7 +102,7 @@
 							style="margin-top: 7px; margin-bottom: 7px; font-size: 13px; border-radius: 20px; width: fit-content; padding: 3px 15px;">
 							AEM SPA</p>
 						<p class="blog-title" style="font-size: 1em; color: #555;">Getting started with AEM SPA</p>
-						<p>March 29, 2023</p>
+						<p class="publishDate">March 29, 2023</p>
 					</div>
 				</div>
 			</a>
@@ -103,7 +115,7 @@
 							style="margin-top: 7px; margin-bottom: 7px; font-size: 13px; border-radius: 20px; width: fit-content; padding: 3px 15px;">
 							AEM Forms</p>
 						<p class="blog-title" style="font-size: 1em; color: #555;">How to Add Custom Functions in Rule Editor</p>
-						<p>March 15, 2023</p>
+						<p class="publishDate">March 15, 2023</p>
 					</div>
 				</div>
 			</a>
@@ -116,7 +128,7 @@
 							style="margin-top: 7px; margin-bottom: 7px; font-size: 13px; border-radius: 20px; width: fit-content; padding: 3px 15px;">
 							AEM Forms</p>
 						<p class="blog-title" style="font-size: 1em; color: #555;">Submitting Adaptive Form using Form Data Model</p>
-						<p>February 28, 2023</p>
+						<p class="publishDate">February 28, 2023</p>
 					</div>
 				</div>
 			</a>
@@ -129,7 +141,7 @@
 							style="margin-top: 7px; margin-bottom: 7px; font-size: 13px; border-radius: 20px; width: fit-content; padding: 3px 15px;">
 							AEM Sites</p>
 						<p class="blog-title" style="font-size: 1em; color: #555;">AEM GraphQL</p>
-						<p>February 14, 2023</p>
+						<p class="publishDate">February 14, 2023</p>
 					</div>
 				</div>
 			</a>
@@ -142,7 +154,7 @@
 							style="margin-top: 7px; margin-bottom: 7px; font-size: 13px; border-radius: 20px; width: fit-content; padding: 3px 15px;">
 							AEM Forms</p>
 						<p class="blog-title" style="font-size: 1em; color: #555;">Sending Email on Submission of Adaptive Form</p>
-						<p>January 31, 2023</p>
+						<p class="publishDate">January 31, 2023</p>
 					</div>
 				</div>
 			</a>
@@ -155,7 +167,7 @@
 							style="margin-top: 7px; margin-bottom: 7px; font-size: 13px; border-radius: 20px; width: fit-content; padding: 3px 15px;">
 							AEM Forms</p>
 						<p class="blog-title" style="font-size: 1em; color: #555;">Introduction to AEM Forms</p>
-						<p>January 17, 2023</p>
+						<p class="publishDate">January 17, 2023</p>
 					</div>
 				</div>
 			</a>
@@ -168,7 +180,20 @@
 							style="margin-top: 7px; margin-bottom: 7px; font-size: 13px; border-radius: 20px; width: fit-content; padding: 3px 15px;">
 							AEM Sites</p>
 						<p class="blog-title" style="font-size: 1em; color: #555;">Introduction to AEM Sites</p>
-						<p>January 3, 2023</p>
+						<p class="publishDate">January 3, 2023</p>
+					</div>
+				</div>
+			</a>
+			<a href="./blogs/aem-msm.html" style="text-decoration: none;" class="blog-item">
+				<div id="sites" class="blog-item-div"
+					style="border: 1px solid #ccc; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+					<img src="images/Tile Sites.jpg" alt="Card Image" style="width: 100%; height: auto; display: block;">
+					<div style="padding: 16px;">
+						<p class="sitesTag"
+							style="margin-top: 7px; margin-bottom: 7px; font-size: 13px; border-radius: 20px; width: fit-content; padding: 3px 15px;">
+							AEM Sites</p>
+						<p class="blog-title" style="font-size: 1em; color: #555;">MSM (Multi Site Manager)</p>
+						<p class="publishDate">May 9, 2023</p>
 					</div>
 				</div>
 			</a>
@@ -189,7 +214,7 @@
 			<div class="row" style="margin-top: 0px;">
 				<div class="col-xl-4 col-lg-4 text-center text-lg-left">
 					<div class="copyright-text">
-						<p>Copyright &copy; 2024, All Right Reserved <a href="./index.html">Infodales Tech
+						<p>Copyright &copy; 2023, All Right Reserved <a href="./index.html">Infodales Tech
 								Solution</a></p>
 					</div>
 				</div>
@@ -211,6 +236,10 @@
 
 	<!--- Java Script-->
 	<script>
+		document.addEventListener("DOMContentLoaded", function() {
+			sortBlogs();
+		});
+
 		var navLinks = document.getElementById("navLinks");
 
 		function showMenu() {
@@ -272,6 +301,33 @@
 				});
 				document.querySelector(".blog-category").innerHTML = "All Blogs";
 			}
+		}
+
+		function sortBlogs() {
+
+			var order = document.getElementById('order').value;
+
+			var parentDiv = document.querySelector('.blog-tiles-list');
+
+			var anchorTags = Array.from(parentDiv.querySelectorAll('a.blog-item'));
+
+			anchorTags.sort(function(a, b) {
+				var dateA = new Date(a.querySelector('.publishDate').textContent.trim());
+				var dateB = new Date(b.querySelector('.publishDate').textContent.trim());
+				if (order === 'latest') {
+					return dateB - dateA;
+				} else if (order === 'oldest') {
+					return dateA - dateB;
+				}
+			});
+
+			anchorTags.forEach(function(anchor) {
+				parentDiv.removeChild(anchor);
+			});
+
+			anchorTags.forEach(function(anchor) {
+				parentDiv.appendChild(anchor);
+			});
 		}
 
 	</script>

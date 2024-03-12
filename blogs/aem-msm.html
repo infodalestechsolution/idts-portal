@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Blogs | MSM (Multi Site Manager)</title>
+	<link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta name="description" content="Understanding and implenting MSM (Multi Site Manager)">
+    <meta name="keywords" content="Infodales, MSM in AEM">
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Blogs | MSM in AEM" />
+    <meta property="og:description" content="Understanding and implenting MSM (Multi Site Manager)"/>
+    <meta property="og:url" content="https://infodales.com/spa-getting-started.html" />
+    <meta property="og:site_name" content="Blogs | MSM in AEM" />
+	<link rel="stylesheet" href="/style.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;600;700&display=swap"
+		rel="stylesheet">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"> -->
+
+</head>
+
+<body>
+
+	<!-- Header -->
+	<section class="sub-header"
+		style="background-image: linear-gradient(rgba(4, 9, 30, 0.5), rgba(4, 9, 30, 0.5)), url('/images/Cover\ Sites.jpg');">
+		<nav>
+			<a href="/index.html"><img src="/images/infodales/Info Dales Main Logo 03.webp" alt="logo"></a>
+			<div class="nav-links" id="navLinks">
+				<i class="fa fa-times" onclick="hideMenu()"></i>
+				<ul>
+					<li><a href="/index.html">HOME</a></li>
+					<li><a href="/about.html">ABOUT</a></li>
+					<li><a href="/services.html">SERVICES</a></li>
+					<li><a href="/blog.html">BLOGS</a></li>
+					<li><a href="/career.html">CAREER</a></li>
+					<li><a href="/contact.html">CONTACT</a></li>
+					<ul>
+			</div>
+			<i class="fa fa-bars" onclick="showMenu()"></i>
+		</nav>
+		<!-- <h1>Blogs</h1> -->
+	</section>
+	<!--  Blog Page Content --->
+	<section class="blog-content">
+		<div>
+			<div class="blog">
+				<p style="color: rgb(133, 133, 133); padding: 0 0 10px 0;"><a href="/blog.html" style="text-decoration: none; cursor: pointer;">Blogs</a> <span> > </span>MSM (Multi Site Manager)</p>
+	
+				<p class="sitesTag" style="margin-top: 7px; margin-bottom: 7px; font-size: 13px; border-radius: 20px; width: fit-content; padding: 3px 15px;">AEM Sites</p>
+				<h1 class="title">MSM (Multi Site Manager)</h1>
+				<span class="author">Infodales Tech Solutions</span> |
+				<span class="date">May 9, 2023</span>
+				<div class="share-icons">
+					<a href="https://www.linkedin.com/in/infodales-tech-solutions-928b21284/" target="_blank" class="linkedin-icon"><i class="fa fa-linkedin"></i></a>
+					<a href="mailto:info@infodales.com" target="_blank" class="email-icon"><i class="fa fa-envelope"></i></a>
+				</div>
+				<hr style="margin: 20px 0 10px 0;" />
+				<!-- <div class="image-container">
+					   <img src="images/cover.webp" alt="Image Description">
+					</div> -->
+				<div class="blog-items">
+					<div class="blog-container">
+						<h3 class="msm-headers">What is MSM?</h3>
+						<div style="padding-left: 3px; margin-bottom: 5px;">
+							<p class="line-padding">
+								MSM is a Multi Site Manager in Adobe Experience Manager that allows you to reuse content across multiple sites. MSM lets you create  live copies and blueprints of sites or pages and how the content is
+								Synchronized between them. MSM also works with translation tools to create and maintain multilingual sites.
+							</p>
+						</div>
+						<h3 class="msm-headers">What is the use of MSM in AEM?</h3>
+						<div class="list-container">
+							<ul>
+								<li><p class="line-padding">Creating and managing the sites that are in multiple languages and countries.</p></li>
+								<li><p class="line-padding">Reusing and replicating the same content across multiple websites while maintaining consistent branding and content.</p></li>
+								<li><p class="line-padding">Translate content automatically using i18n translation.</p></li>
+								<li><p class="line-padding">Publishing content changes from the blueprints to live copies.</p></li>
+								<li><p class="line-padding">Localizing content for different cultures or regions by detaching elements of the live copies.</p></li>
+							</ul>
+						</div>
+						<h3 class="msm-headers">Advantages of MSM in AEM</h3>
+						<div class="list-container">
+							<ul>
+								<li><p class="line-padding">It minimizes the time and effort required to manage multiple websites that share the same content.</p></li>
+								<li><p class="line-padding">It ensures consistency in the look of all the WebPages across different sites.</p></li>
+								<li>
+									<p class="line-padding">Translate content automatically using <span class="text-highlighter">i18n</span> translation.</p>
+								</li>
+								<li><p class="line-padding">It allows AEM developers to specify relationships between the sites so that changes made on one site will automatically be reflected on other sites.</p></li>
+								<li><p class="line-padding">It integrates with translation tools like i18n to create and maintain multilingual sites.</p></li>
+							</ul>
+						</div>
+						<h3 class="msm-headers">Important terms used with MSM</h3>
+						<div class="list-container">
+							<ul>
+								<li>
+									<h4 style="padding: 2px;">Language Copies</h4>
+									<p class="line-padding">
+										Language copies are the type of live copies in AEM that are created from a source page in a different language. Language copies allow you to reuse the content structure and layout of the page while
+										translating the content into other languages. Language copies can be created using the “Language Copy” command in AEM wizard which also integrates with third-party translation tools.
+									</p>
+									<div class="image-container">
+										<img src="/images/MSM BLOG/Languagemasterdiagram.webp"  alt="Language master diagram" style="width: 60%;" />
+									</div>
+								</li>
+								<li>
+									<h4 style="padding: 2px;">Blueprints</h4>
+									<p class="line-padding">
+										A blueprint is a structural definition of your site that you can use as a source for managing and creating live copies. A live copy is a copy of a page branch that inherits from the source and can be
+										synchronized with it. A blueprint configuration identifies an existing copy that you want to use as the source of one or more live copies. You can also specify the rollout configuration to use for
+										synchronizing the content between the blueprint and the live copies. A blueprint rollout will push all modifications to all of its live copies.
+									</p>
+									<div class="image-container">
+										<img src="/images/MSM BLOG/blueprints copies.webp" alt="country specific website" style="width: 80%;" />
+									</div>
+								</li>
+								<li>
+									<h4 style="padding: 2px;">Live Copies</h4>
+									<p class="line-padding" style="padding: 2px;">
+										Live Copies in MSM are the copies of source pages or sites that inherit the content and structure from the source but can also be modified independently. Live copies allow you to reuse the content across
+										multiple sites and pages, and synchronize them with the source needed.
+									</p>
+									<h4>Advantages of using live copies in AEM</h4>
+									<div class="list-container">
+										<ol type="1">
+											<li><p class="line-padding">You can manage multiple sites and pages that share the same content with less effort and time.</p></li>
+											<li><p class="line-padding">You can ensure the consistency and accuracy of content across different sites or pages.</p></li>
+											<li><p class="line-padding">You can customize the content of live copies to suit different regions and languages.</p></li>
+										</ol>
+									</div>
+								</li>
+							</ul>
+						</div>
+						<h3 class="msm-headers">Now step to step we will see how to create Language Copies in MSM</h3>
+						<div class="list-container">
+							<ul>
+								<li>
+									<p class="line-padding">Create a page e.g. <span class="text-highlighter">Language Master</span> by right clicking on your project.</p>
+									<div class="image-container">
+										<img src="/images/MSM BLOG/CreateLanguagemaster.webp" alt="Create Language master image" style="width: 100%;" />
+									</div>
+								</li>
+								<li>
+									<p class="line-padding">Similarly, create a master page for “English” by right clicking on Language Master. Click on create -> <span class="text-highlighter">Language Copy </span> tab.</p>
+									<div class="image-container">
+										<img src="/images/MSM BLOG/creating language copy.webp" alt="creating language copy image" style="width: 100%;" />
+									</div>
+								</li>
+								<li>
+									<p class="line-padding">Click on the <span class="text-highlighter">Add Pages</span> button and select the language of which copies you wish to make. Currently we have selected English (en).</p>
+									<div class="image-container">
+										<img src="/images/MSM BLOG/Add language master page.webp" style="width: 100%;" alt="Add language master page image"/>
+									</div>
+								</li>
+								<li>
+									<p class="line-padding">
+										After selecting a page, Click “Next” on the next tab. Click on <span class="text-highlighter">Translation</span> Setting and select <span class="text-highlighter">Default Configuration</span> and on the
+										Left hand side you will find <span class="text-highlighter">Target Language</span> Here, you can select what language copies you want to make. In the below Image we have selected Hindi as a language.
+									</p>
+									<div class="image-container">
+										<img src="/images/MSM BLOG/Creating hindi language copy.webp" style="width: 100%;" alt="Creating hindi language copy image"/>
+									</div>
+								</li>
+								<li>
+									<p class="line-padding">In this way you can create the language copies of many languages. In the below Image we have created language copies in French, Italian, German languages.</p>
+									<div class="image-container">
+										<img src="/images/MSM BLOG/Language copiesss.webp" style="width: 100%;" alt="Language copies image"/>
+									</div>
+								</li>
+							</ul>
+						</div>
+						<h3 class="msm-headers">Steps to create Blueprints in MSM in AEM</h3>
+						<div class="list-container">
+							<ul>
+								<li>
+									<p class="line-padding">Click on the create button and select <span class="text-highlighter">Site</span> -> Select your project Blueprint.</p>
+									<div class="image-container">
+										<img src="/images/MSM BLOG/blue print 1.webp" style="width: 100%;" alt="blue print 1 image"/>
+									</div>
+									<div class="image-container">
+										<img src="/images/MSM BLOG/blue print 2.webp" style="width: 100%;" alt="blue print 2 image"/>
+									</div>
+									<p>Note: In case you do not find your project. Go to Tools -> Sites -> Blueprints and there, create your Blueprint.</p>
+								</li>
+								<li>
+									<p class="line-padding">In the properties section, mention “Title” and “Name” of your site and select the “Site Owner” and also mention the languages in which the site should be displayed.</p>
+									<div class="image-container">
+										<img src="/images/MSM BLOG/blueprint 3.webp" style="width: 100%;" alt="blueprint 3 image"/>
+									</div>
+								</li>
+								<li>
+									<p class="line-padding">In the below Image you can find the live copies of English and Hindi under India(hi) page.</p>
+									<div class="image-container">
+										<img src="/images/MSM BLOG/blueprint4.webp" style="width: 100%;" alt="blueprint 4 image"/>
+									</div>
+									<p class="line-padding">Now the question is if we can create live copies with Blueprints then what’s the use of live copy option in Sites?</p>
+									<p class="line-padding">
+										Consider we have a Site in French and English language, but there should be a need of creating the site in other languages, e.g. Spanish in such a case you can create a Live Copy of Spanish language.
+									</p>
+								</li>
+							</ul>
+						</div>
+						<div>
+							<h3 class="msm-headers">Steps to create the live copies in MSM</h3>
+							<div class="list-container">
+								<ul>
+									<li>
+										<p class="line-padding">In the below Image we have created a page “Master Copy” and under it we have a test component.</p>
+										<div class="image-container">
+											<img src="/images/MSM BLOG/master copy.webp" style="width: 100%;" alt="master copy image"/>
+										</div>
+									</li>
+									<li>
+										<p class="line-padding">Click on the page you have created and author it. Here we have a test page under which I have added a “Text” component and authored it.</p>
+										<div class="image-container">
+											<img src="/images/MSM BLOG/text component.webp" style="width: 100%;" alt="text component image"/>
+										</div>
+									</li>
+									<li>
+										<p class="line-padding">
+											Now to create a live copy of the test page in French language, Click on create <span class="text-highlighter">live copy</span> -> Language Master Page -> select live copy (French Page).
+										</p>
+										<div class="image-container">
+											<img src="/images/MSM BLOG/live copy.webp" style="width: 100%;" alt="live copy image"/>
+										</div>
+										<div class="image-container">
+											<img src="/images/MSM BLOG/French Live Copy.webp" style="width: 100%;" alt="French live copy image"/>
+										</div>
+									</li>
+									<li>
+										<p class="line-padding">Click on the Next Button -> Choose the destination for which page you need to create a live copy.</p>
+										<div class="image-container">
+											<img src="/images/MSM BLOG/french live copy destination.webp" style="width: 100%;" alt="french live copy destination image"/>
+										</div>
+									</li>
+									<li>
+										<p class="line-padding">Add Title and Name, also select the <span class="text-highlighter">Rollout Configs</span> i.e. Standard Rollout Config, and Push on Modify. Click on the Next Button.</p>
+										<div class="image-container">
+											<img src="/images/MSM BLOG/creating french live copy.webp" style="width: 100%;" alt="creating french live copy image"/>
+										</div>
+										<div class="image-container">
+											<img src="/images/MSM BLOG/created french copy.webp" style="width: 100%;" alt="created french live copy image"/>
+										</div>
+									</li>
+									<li>
+										<p class="line-padding">
+											Now to create a Live Copy of the Master Copy (Test Page) inside the French page. Again, Click on Live Copy -> Open master Copy there you will find the Test Page. Select that Page -> Select the
+											destination as French Page -> Inside the French Page Test will be created. In the below Image, you will find a Test Page, Its URL will be<span class="text-highlighter"> /fr/fr/test.html</span>.
+										</p>
+										<div class="image-container">
+											<img src="/images/MSM BLOG/French Test Component.webp" style="width: 100%;" alt="french test component image"/>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+	
+				<hr style="margin-top: 30px;" />
+				<div class="author-details">
+					<div id="like-icon" class="like-icon">
+						<span id="like-count" class="like-count">0</span>
+						<span id="like-btn" class="like-btn">
+							<img src="/images/clap.webp" alt="Like" />
+						</span>
+					</div>
+					<div>
+						<span class="author-name">Yash Sakharkar | </span>
+						<span class="author-designation">AEM Developer</span>
+					</div>
+				</div>
+				<!-- <div style="display: flex; justify-content: center;">
+					   <div class="comment-box" >
+						  <h3> Leave a Comment</h3>
+						  <form class="comment-form">
+							 <input type="text" placeholder="Enter Name"/>
+							 <input type="email" placeholder="Enter Email"/>
+							 <textarea  rows="5" placeholder="Your Comments"></textarea>
+							 <button type="submit" class="hero-btn red-btn">Your Comment</button>
+						  </form>
+					   </div>
+					</div> -->
+			</div>
+		</div>
+	</section>
+	
+	
+
+<div class="social-icons">
+	 
+	<a href="https://www.linkedin.com/company/infodales-tech-solution/" class="linkedin"><img src="/images/linkedin.webp" alt="LinkedIn"></a>
+	<a href="mailto:info@infodales.com" class="email"><img src="/images/email.webp" alt="Email"></a>
+</div>
+
+	<!--  Footer --->
+	<div class="copyright-area">
+		<div class="footer">
+			<div class="row" style="margin-top: 0px;">
+				<div class="col-xl-4 col-lg-4 text-center text-lg-left">
+					<div class="copyright-text">
+						<p>Copyright &copy; 2024, All Right Reserved <a href="/index.html">Infodales Tech
+								Solution</a></p>
+					</div>
+				</div>
+				
+				<div class="col-xl-4 col-lg-4 d-none d-lg-block text-right">
+					<div class="footer-menu" style="margin-top:10px;">
+						<ul>
+							<li><a href="/index.html">Home</a></li>
+							<li><a href="/about.html">About</a></li>
+							<li><a href="/contact.html">Contact</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<!--- Java Script-->
+	<script>
+		var navLinks = document.getElementById("navLinks");
+
+		function showMenu() {
+			navLinks.style.right = "0";
+		}
+
+		function hideMenu() {
+			navLinks.style.right = "-200px";
+		}
+
+		document.addEventListener("DOMContentLoaded", () => {
+    const likeBtn = document.getElementById('like-btn');
+    const likeCount = document.getElementById('like-count');
+
+    let count = parseInt(localStorage.getItem('clapCount')) || 0;
+    likeCount.textContent = count;
+
+    likeBtn.addEventListener('click', () => {
+        count++;
+        likeCount.textContent = count;
+        localStorage.setItem('clapCount', count);
+
+        const likeAnimation = document.createElement('div');
+        likeAnimation.classList.add('like-animation');
+        likeAnimation.innerHTML = '🎉';
+        document.getElementById('like-icon').appendChild(likeAnimation);
+        likeAnimation.addEventListener('animationend', () => {
+            likeAnimation.remove();
+        });
+    });
+});
+
+		// function relatedFilter() {
+		// 	var retString = localStorage.getItem("allBlogs");
+		// 	console.log(retString);
+		// }
+
+
+	</script>
+
+</body>
+
+</html>

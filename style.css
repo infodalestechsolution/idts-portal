@@ -2192,3 +2192,31 @@ table, th, td {
 		width: 40%;
 	}
 }
+
+  /*MSM BLOG*/
+  .list-container {
+	padding-left: 2.6%;
+	padding-bottom: 5px;
+  }
+  .line-padding{
+	padding: 0px;
+  }
+  .text-highlighter{
+	font-weight: 600;
+	/* background-color: lightblue; */
+  }
+  .msm-headers{
+	text-align: left;
+	margin: 3px !important;
+  }
+
+  @media(max-width:700px) {
+	.list-container {
+		padding-left: 5.9% !important;
+	  }
+  }
+  @media only screen and (min-width: 700px) and (max-width: 1024px){
+	.list-container {
+		padding-left: 4.7%;
+	  }
+  }
