@@ -2220,3 +2220,8 @@ table, th, td {
 		padding-left: 4.7%;
 	  }
   }
+
+  .resource{
+	font-size: 12px;
+	padding:0px 0px;
+  }
