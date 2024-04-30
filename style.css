@@ -1033,6 +1033,11 @@ h3 {
   width: 65%;
 }
 
+.blogsCount {
+  font-weight: 300;
+  font-size: 17px;
+  margin-left: 5px;
+}
 /* .blog h2{
 	color: #222;
 	font-weight: 600;

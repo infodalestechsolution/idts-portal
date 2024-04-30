@@ -55,7 +55,7 @@
 		</div>       
 
 		<div style="display: flex; align-items: center; justify-content: space-between; margin: 0 5px;">
-			<h2 class="blog-category" style="margin-top: 15px; margin-bottom: 15px; width: fit-content;">All Blogs</h2>
+			<div style="display: flex; align-items: center;"><h2 class="blog-category" style="margin-top: 15px; margin-bottom: 15px; width: fit-content;">All Blogs</h2><span class="blogsCount">(0)</span></div>
 			<div class="sortBlogs">
 				<label for="order" style="color: #555;">Sort By : </label>
 				<select name="order" id="order" onchange="sortBlogs()" style="padding: 3px 8px;">
@@ -276,6 +276,15 @@
 			navLinks.style.right = "-200px";
 		}
 
+		var allItems = document.querySelectorAll(".blog-item-div");
+				allItems.forEach(function (div){
+					div.parentElement.setAttribute("hidden", true);
+					div.parentElement.removeAttribute("hidden");
+				});
+				document.querySelector(".blog-category").innerHTML = "All Blogs";
+				let count = allItems.length;
+				document.querySelector(".blogsCount").innerHTML = `( ${count} )`;
+
 		function categoryFilter(event) {
 			event.preventDefault();
 			var filterValue = event.target.innerHTML;
@@ -288,7 +297,9 @@
 				sitesMarkup.forEach(function (div){
 					div.parentElement.removeAttribute("hidden");
 				});
-				document.querySelector(".blog-category").innerHTML = "AEM Sites Blogs";
+				document.querySelector(".blog-category").innerHTML = "AEM Sites";
+				let count = sitesMarkup.length;
+				document.querySelector(".blogsCount").innerHTML = `( ${count} )`;
 			} else if(filterValue == "AEM SPA"){
 				var spaMarkup = document.querySelectorAll("#spa");
 				var allItems = document.querySelectorAll(".blog-item-div");
@@ -298,7 +309,9 @@
 				spaMarkup.forEach(function (div){
 					div.parentElement.removeAttribute("hidden");
 				});
-				document.querySelector(".blog-category").innerHTML = "AEM SPA Blogs";
+				document.querySelector(".blog-category").innerHTML = "AEM SPA";
+				let count = spaMarkup.length;
+				document.querySelector(".blogsCount").innerHTML = `( ${count} )`;
 			} else if(filterValue == "AEM Forms"){
 				var formsMarkup = document.querySelectorAll("#forms");
 				var allItems = document.querySelectorAll(".blog-item-div");
@@ -308,17 +321,21 @@
 				formsMarkup.forEach(function (div){
 					div.parentElement.removeAttribute("hidden");
 				});
-				document.querySelector(".blog-category").innerHTML = "AEM Forms Blogs";
+				document.querySelector(".blog-category").innerHTML = "AEM Forms";
+				let count = formsMarkup.length;
+				document.querySelector(".blogsCount").innerHTML = `( ${count} )`;
 			} else if(filterValue == "Dispatcher"){
-				var formsMarkup = document.querySelectorAll("#dispatcher");
+				var dispatcherMarkup = document.querySelectorAll("#dispatcher");
 				var allItems = document.querySelectorAll(".blog-item-div");
 				allItems.forEach(function (div){
 					div.parentElement.setAttribute("hidden", true);
 				});
-				formsMarkup.forEach(function (div){
+				dispatcherMarkup.forEach(function (div){
 					div.parentElement.removeAttribute("hidden");
 				});
-				document.querySelector(".blog-category").innerHTML = "Dispatcher Blogs";
+				document.querySelector(".blog-category").innerHTML = "Dispatcher";
+				let count = dispatcherMarkup.length;
+				document.querySelector(".blogsCount").innerHTML = `( ${count} )`;
 			}	else if(filterValue == "All"){
 				var allItems = document.querySelectorAll(".blog-item-div");
 				allItems.forEach(function (div){
@@ -326,6 +343,8 @@
 					div.parentElement.removeAttribute("hidden");
 				});
 				document.querySelector(".blog-category").innerHTML = "All Blogs";
+				let count = allItems.length;
+				document.querySelector(".blogsCount").innerHTML = `( ${count} )`;
 			}
 		}
 
