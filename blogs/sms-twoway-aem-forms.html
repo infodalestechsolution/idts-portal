@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Blogs | Enhancing Security with SMS Two Factor Authentication in AEM Forms</title>
+	<link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content=" Enhancing Security with SMS Two Factor Authentication in AEM Forms">
+    <meta name="keywords" content="SMS 2FA adds an extra layer of security by requiring users to verify their identity not only with a password but also with a unique verification code sent to their mobile devices ">
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Blogs | Enhancing Security with SMS Two Factor Authentication in AEM Forms" />
+    <meta property="og:description" content="One effective way to enhance security is through SMS-based two-factor authentication (2FA), a robust method that adds an extra layer of protection to online accounts. Let's delve into how SMS 2FA works and why it's a crucial tool in the fight against unauthorized access." />
+    <meta property="og:url" content="https://infodales.com/sms-twoway-aem-forms.html" />
+    <meta property="og:site_name" content="Blogs | Enhancing Security with SMS Two Factor Authentication in AEM Forms" />
+	<link rel="stylesheet" href="/style.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;600;700&display=swap"
+		rel="stylesheet">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+
+	<!-- Header -->
+	<section class="sub-header"
+		style="background-image: linear-gradient(rgba(4, 9, 30, 0.5), rgba(4, 9, 30, 0.5)), url('/images/Cover\ Forms.jpg');">
+		<nav>
+			<a href="/index.html"><img src="/images/infodales/Info Dales Main Logo 03.webp" alt="logo"></a>
+			<div class="nav-links" id="navLinks">
+				<i class="fa fa-times" onclick="hideMenu()"></i>
+				<ul>
+					<li><a href="/index.html">HOME</a></li>
+					<li><a href="/about.html">ABOUT</a></li>
+					<li><a href="/services.html">SERVICES</a></li>
+					<li><a href="/blog.html">BLOGS</a></li>
+					<li><a href="/career.html">CAREER</a></li>
+					<li><a href="/contact.html">CONTACT</a></li>
+					<ul>
+			</div>
+			<i class="fa fa-bars" onclick="showMenu()"></i>
+		</nav>
+		<!-- <h1>Blogs</h1> -->
+	</section>
+	<!--  Blog Page Content --->
+	<section class="blog-content">
+		<div>
+			<div class="blog">
+
+				<p style="color: rgb(133, 133, 133); padding: 0 0 10px 0;"><a href="/blog.html" style="text-decoration: none; cursor: pointer;">Blogs</a> <span> > </span> Enhancing Security with SMS Two Factor Authentication in AEM Forms</p>
+
+				<p class="formsTag" style="margin-top: 7px; margin-bottom: 7px; font-size: 13px; border-radius: 20px; 
+				width: fit-content; padding: 3px 15px;">AEM Forms</p>
+				<h1 class="title">Enhancing Security with SMS Two Factor Authentication in AEM Forms</h1>
+      				<span class="author">Infodales Tech Solutions | </span>
+      				<span class="date">June 24, 2023</span>
+    			
+					<div class="share-icons">	
+					<a href="https://www.linkedin.com/company/infodales-tech-solution/" target="_blank" class="linkedin-icon"><i class="fa fa-linkedin"></i></a>
+					<a href="mailto:info@infodales.com" target="_blank" class="email-icon"><i class="fa fa-envelope"></i></a>
+					</div>
+				
+				<hr style="margin: 20px 0 10px 0;">
+				<!-- <div class="image-container">
+					<img src="images/cover.webp" alt="Image Description">
+				</div> -->
+				<div class="blog-items">
+					<h3 style="text-align: left; margin: 0px 0">SMS Two-Factor Authentication</h3>
+        			<p>In today's digital landscape, security is paramount. With cyber threats evolving constantly, safeguarding user accounts has become a top priority for businesses and individuals alike. One effective way to enhance security is through SMS-based two-factor authentication (2FA), a robust method that adds an extra layer of protection to online accounts. Let's delve into how SMS 2FA works and why it's a crucial tool in the fight against unauthorized access.</p>
+					<p>SMS 2FA adds an extra layer of security by requiring users to verify their identity not only with a password but also with a unique verification code sent to their mobile devices. This blog post dives into the process of implementing SMS 2FA with AEM Forms and highlights its benefits.</p>
+        			
+					<h3 style="text-align: left; margin: 0px 0">Create Developer Account</h3>
+        			<p>Many organizations offer SMS 2FA services, and if they have clear REST APIs, you can integrate them with AEM 
+						Forms effortlessly. In this tutorial, I've chosen Vonage API to show how SMS 2FA works with AEM Forms.</p>
+					<p>Begin by creating a developer account on the Vonage API platform. Once you've registered, take note of the API Key and API Secret Key provided by Vonage API Dashboard.
+						These keys are crucial for accessing and using Vonage API's REST APIs effectively.</p>
+					<div class="image-container">
+						<img src="/images/sms/s2f.png" alt="SMS Two-Factor Authentication">
+					</div>
+
+					<h3 style="text-align: left; margin: 0px 0">Create a Swagger File</h3>
+					<p>Creating a Swagger file involves defining your API's structure, endpoints, parameters, responses, and other details using the Swagger/OpenAPI Specification. Here's a step-by-step guide to help you create a Swagger file:
+					</p>
+					<ul style="margin-left: auto; width: 95%;">
+            			<li><p>Understand Swagger/OpenAPI Specification</p></li>
+						<li><p>Choose a Swagger Editor</p></li>
+						<li><p>Define API Info</p></li>
+						<li><p>Define Paths and Operations</p></li>
+						<li><p>Define Parameters and Responses</p></li>
+						<li><p>Add Security Definitions (if needed)</p></li>
+						<li><p>Export and Save</p></li>
+						<li><p>Validate and Test</p></li>
+        			</ul>
+					<p>Use tools like Swagger Inspector or Postman to validate and test your Swagger file against your actual API endpoints.</p>
+					<div class="code-block">
+						<code>
+							swagger: '2.0'<br>
+							info:<br>
+  							version: 1.0.0<br>
+ 							title: Nexmo Verify API<br>
+  							description: API for verifying OTP codes and sending SMS with codes using Nexmo (formerly Vonage)<br>
+							host: api.nexmo.com<br>
+							basePath: /verify<br>
+							schemes:<br>
+  							- https<br>
+							paths:<br>
+  							/check/json:<br>
+    						post:<br>
+      						summary: Verify OTP Code<br>
+      						produces:<br>
+        					- application/json<br>
+      						consumes:<br>
+        					- application/x-www-form-urlencoded<br>
+      						operationId: VerifyOTPCode<br>
+      						parameters:<br>
+        					- in: formData<br>
+          					name: api_key<br>
+          					type: string<br>
+          					description: API Key<br>
+        					- in: formData<br>
+         					name: api_secret<br>
+          					type: string<br>
+          					description: API Secret Key<br>
+        					- in: formData<br>
+          					name: request_id<br>
+          					type: string<br>
+          					description: Vonage Request ID<br>
+        					- in: formData<br>
+          					name: code<br>
+          					type: string<br>
+          					description: OTP Code<br>
+      						responses:<br>
+        					'200':<br>
+          					description: Successful Response<br>
+          					schema:<br>
+            				$ref: '#/definitions/ReturnValue'<br>
+  							/json:<br>
+    						post:<br>
+      						summary: Send SMS with Code<br>
+      						produces:<br>
+        					- application/json<br>
+      						consumes:<br>
+       		 				- application/x-www-form-urlencoded<br>
+      						operationId: SendSMSWithCode<br>
+      						parameters:<br>
+        					- in: formData<br>
+          					name: api_key<br>
+          					type: string<br>
+          					description: API Key<br>
+        					- in: formData<br>
+          					name: api_secret<br>
+          					type: string<br>
+          					description: API Secret Key<br>
+        					- in: formData<br>
+          					name: number<br>
+          					type: string<br>
+          					description: Number to send SMS<br>
+        					- in: formData<br>
+          					name: brand<br>
+          					type: string<br>
+          					description: Vonage Brand<br>
+        					- in: formData<br>
+          					name: code_length<br>
+          					type: string<br>
+          					description: Verification Code Length<br>
+      						responses:<br>
+        					'200':<br>
+          					description: Successful Response<br>
+          					schema:<br>
+            				$ref: '#/definitions/ReturnValue'<br>
+
+							definitions:<br>
+  							ReturnValue:<br>
+    						type: object<br>
+    						properties:<br>
+      						request_id:<br>
+        					type: string<br>
+      						status:<br>
+        					type: string<br>
+						</code>
+					</div>
+					
+					<h3 style="text-align: left; margin: 0px 0">Create a Data Source</h3>
+        			<p>To connect AEM/AEM Forms with third party api's, you first make a data source in cloud services. You can use the Swagger file to set up this data source.</p>
+					<ul style="margin-left: auto; width: 95%;">
+						<li><p>Log in to AEM and go to the Dashboard.</p></li>
+						<li><p>From Tools, select Cloud Services.</p></li>
+						<li><p>Pick or create a folder in Cloud Services to store your data sources.</p></li>
+						<li><p>Define settings like data type, endpoint URL, and authentication.</p></li>
+						<li><p>Save the data source</p></li>
+					</ul>
+					<div class="image-container">
+						<img src="/images/sms/ds01.png" alt="Data Source ">	
+					</div>
+
+					<div class="image-container">
+						<img src="/images/sms/ds 02.png" alt="Data Source">
+					</div>
+
+					<div class="image-container">
+						<img src="/images/sms/ds03.png" alt="Data Source">
+					</div>
+
+					<h3 style="text-align: left; margin: 0px 0">Create a Form Data Model</h3>
+					<p>Creating a form data model in AEM Forms involves defining the structure of your form data, including the fields, data types, and validation rules. Here's a step-by-step guide:</p>
+					
+					<div class="image-container">
+						<img src="/images/sms/fdm01.webp" alt="Form Data Model">
+					</div>
+					<div class="image-container">
+						<img src="/images/sms/ds04.png" alt="Form Data Model">
+					</div>
+					<div class="image-container">
+						<img src="/images/sms/ds05.png" alt="Form Data Model">
+					</div>
+					<p>Select you data source</p>
+					<div class="image-container">
+						<img src="/images/sms/ds06.png" alt="Form Data Model">
+					</div>
+					<p>Test your Model and Service and save it.</p>
+					<div class="image-container">
+						<img src="/images/sms/ds07.png" alt="Form Data Model">
+					</div>
+					
+					<h3 style="text-align: left; margin: 0px 0">Create an Adaptive Form</h3>
+					<p>Connect your form's data with the adaptive form to check the phone number users enter. You can make your own adaptive form and use its data to send and check OTP codes the way you need to.</p>
+					<div class="image-container">
+						<img src="/images/sms/af01.png" alt="Adaptive Form">
+					</div>
+					<p>Go to properties</p>
+					<div class="image-container">
+						<img src="/images/sms/af02.png" alt="Adaptive Form">
+					</div>
+
+					<p>Select your form data model</p>
+					<div class="image-container">
+						<img src="/images/sms/af004.png" alt="Adaptive Form">
+					</div>
+
+					<div class="image-container">
+						<img src="/images/sms/af03.png" alt="Adaptive Form">
+					</div>
+					
+					<p>Open the form in edit mode. Open the rule editor for the following field.Provide your API key and API Secret Key.</p>
+					<div class="image-container">
+						<img src="/images/sms/af04.png" alt="Adaptive Form">
+					</div>
+					<p>Always use country code.</p>
+					<div class="image-container">
+						<img src="/images/sms/af05.png" alt="Adaptive Form">
+					</div>
+					<p>OTP Sent Successfully</p>
+					<div class="image-container">
+						<img src="/images/sms/af06.png" alt="Adaptive Form">
+					</div>
+
+					<p> In conclusion, SMS-based two-factor authentication enhances security, improves user confidence, and aligns with industry best practices. Integrating SMS 2FA with AEM Forms empowers organizations to protect sensitive data and mitigate security risks effectively. Strengthen your security posture today with SMS 2FA and AEM Forms.</p>	
+					
+					<p>I'm glad you found this article interesting and informative! Feel free to share it with your friends to spread the 
+						knowledge. <br> Don't forget to follow me for upcoming blogs. Thank you!</p>
+				</div>
+					<hr style="margin-top: 30px;">
+
+					<div class="author-details">
+						<div id="like-icon" class="like-icon">
+							<span id="like-count" class="like-count">0</span>
+							<span id="like-btn" class="like-btn">
+							  	<img src="/images/clap.webp" alt="Like">
+							</span>
+						</div>
+						<div>
+							<span class="author-name">Nitish Bisen | </span>
+							<span class="author-designation">AEM Developer</span>
+						</div>
+					</div>
+
+			</div>
+		</div>
+	</section>
+
+<div class="social-icons">
+	 
+	<a href="https://www.linkedin.com/company/infodales-tech-solution/" class="linkedin"><img src="/images/linkedin.webp" alt="LinkedIn"></a>
+	<a href="mailto:info@infodales.com" class="email"><img src="/images/email.webp" alt="Email"></a>
+</div>
+
+	<!--  Footer --->
+	<div class="copyright-area">
+		<div class="footer">
+			<div class="row" style="margin-top: 0px;">
+				<div class="col-xl-4 col-lg-4 text-center text-lg-left">
+					<div class="copyright-text">
+						<p>Copyright &copy; 2023, All Right Reserved <a href="/index.html">Infodales Tech
+								Solution</a></p>
+					</div>
+				</div>
+				
+				<div class="col-xl-4 col-lg-4 d-none d-lg-block text-right">
+					<div class="footer-menu" style="margin-top:10px;">
+						<ul>
+							<li><a href="/index.html">Home</a></li>
+							<li><a href="/about.html">About</a></li>
+							<li><a href="/contact.html">Contact</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<!--- Java Script-->
+	<script>
+		var navLinks = document.getElementById("navLinks");
+
+		function showMenu() {
+			navLinks.style.right = "0";
+		}
+
+		function hideMenu() {
+			navLinks.style.right = "-200px";
+		}
+
+		document.addEventListener("DOMContentLoaded", () => {
+    const likeBtn = document.getElementById('like-btn');
+    const likeCount = document.getElementById('like-count');
+
+    let count = parseInt(localStorage.getItem('clapCount')) || 0;
+    likeCount.textContent = count;
+
+    likeBtn.addEventListener('click', () => {
+        count++;
+        likeCount.textContent = count;
+        localStorage.setItem('clapCount', count);
+
+        const likeAnimation = document.createElement('div');
+        likeAnimation.classList.add('like-animation');
+        likeAnimation.innerHTML = '🎉';
+        document.getElementById('like-icon').appendChild(likeAnimation);
+        likeAnimation.addEventListener('animationend', () => {
+            likeAnimation.remove();
+        });
+    });
+});
+
+		// function relatedFilter() {
+		// 	var retString = localStorage.getItem("allBlogs");
+		// 	console.log(retString);
+		// }
+
+
+	</script>
+
+</body>
+
+</html>
