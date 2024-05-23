@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Blogs | Dispatcher Setup and Configurations</title>
+	<link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta name="description" content="Welcome to the blog, here we will understand setting up and configuration of dispatcher">
+    <meta name="keywords" content="Infodales, Dispatcher">
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Blogs | Setting up and Configuration of Dispatcher" />
+    <meta property="og:description" content="Welcome to the blog, here we will understand setting up and configuration of dispatcher" />
+    <meta property="og:url" content="https://infodales.com/spa-getting-started.html" />
+    <meta property="og:site_name" content="Blogs | Setting up and Configuration of Dispatcher" />
+	<link rel="stylesheet" href="/style.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;600;700&display=swap"
+		rel="stylesheet">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"> -->
+   <link rel="stylesheet" href="/vanitystyle.css">
+</head>
+
+<body>
+
+	<!-- Header -->
+	<section class="sub-header"
+		style="background-image: linear-gradient(rgba(4, 9, 30, 0.5), rgba(4, 9, 30, 0.5)), url('/images/Cover\ Sites.jpg');">
+		<nav>
+			<a href="/index.html"><img src="/images/infodales/Info Dales Main Logo 03.webp" alt="logo"></a>
+			<div class="nav-links" id="navLinks">
+				<i class="fa fa-times" onclick="hideMenu()"></i>
+				<ul>
+					<li><a href="/index.html">HOME</a></li>
+					<li><a href="/about.html">ABOUT</a></li>
+					<li><a href="/services.html">SERVICES</a></li>
+					<li><a href="/blog.html">BLOGS</a></li>
+					<li><a href="/career.html">CAREER</a></li>
+					<li><a href="/contact.html">CONTACT</a></li>
+					<ul>
+			</div>
+			<i class="fa fa-bars" onclick="showMenu()"></i>
+		</nav>
+		<!-- <h1>Blogs</h1> -->
+	</section>
+	<!--  Blog Page Content --->
+	<section class="blog-content">
+		<div>
+			<div class="blog">
+            
+            <p style="color: rgb(133, 133, 133); padding: 0 0 10px 0;"><a href="/blog.html" style="text-decoration: none; cursor: pointer;">Blogs</a> <span> > </span>Handelling Vanity URLs in AEM</p>
+
+            <p class="sitesTag" style="margin-top: 7px; margin-bottom: 7px; font-size: 13px; border-radius: 20px; 
+               width: fit-content; padding: 3px 15px;">Vanity URLs</p>
+            <h1 class="title">Handelling Vanity URLs in AEM</h1>
+            <span class="author">Infodales Tech Solutions</span> |
+            <span class="date">May 25, 2024</span>
+            <div class="share-icons">
+               <a href="https://www.linkedin.com/in/infodales-tech-solutions-928b21284/" target="_blank" class="linkedin-icon"><i class="fa fa-linkedin"></i></a>
+               <a href="mailto:info@infodales.com" target="_blank" class="email-icon"><i class="fa fa-envelope"></i></a>
+            </div>
+				<hr style="margin: 20px 0 10px 0;">            
+            <!-- <div class="image-container">
+               <img src="images/cover.webp" alt="Image Description">
+            </div> -->
+            <div class="blog-items">
+               <div >
+                  <div class="content">
+                     <div >
+                        <p>Lets begin today's learning regarding vanity urls and their handelling in AEM.</p>
+                        <h4>Introduction</h4>
+                        <p>Vanity URLs are nothing but friendly URLs. Suppose we have a URL:<span style=" word-wrap: break-word; word-break: break-all; white-space: normal; "><u>localhost/content/abc/def/ghi/organization/team.html</u></span> which is not really eye scatching to the users so AEM authors are provided the previllege to transform this URL into a more user friendly URL such as <u>locahost:4502/organization/team.html</u>, which is indeed a vanity url of the provided one.</p>
+                        <h4>Adding Vanity URLs via Page Properties</h4>
+                        <p>In order to do this, AEM Authors should open the page properties of the page and set up the friendly.</p>
+                        <img class="firstImage" src="/images/VanityURLs/ProcessedImages/ImageOne.webp" alt="PageWithOriginalURL"/>
+                     
+                        <img class="secondImage" src="/images/VanityURLs/ProcessedImages/ImageTwo.webp" alt="PageProperties"/>
+                        <p>Go to Basic tab and find vanity path as a multifield to add the required vanity url and select save and close.</p>
+                        <img class="thirdImage" src="/images/VanityURLs/ProcessedImages/ImageThree.webp" alt="VanityURLsMultifield"/>
+                        <p>There in you also find a Redirect checkbox, if checked, the vanity url generates a status code of 302 along with initiator as other and reaches the parent url through internal redirect.</p>
+                        <p>The vanity URL on the other hand provides a status code of 200 with initiator as the vanity url itself</p>
+                        <!-- Add image -->
+                        <img class="firstImage" src="/images/VanityURLs/ProcessedImages/ImageFour.webp" alt="PageWithFriendlyURL"/>
+                        <img class="thirdImage" src="/images/VanityURLs/ProcessedImages/ImageFive.webp" alt="RedirectCheckbox" style="padding-top: 1%; padding-bottom: 1%;"/>
+                        <img class="firstImage" src="/images/VanityURLs/ProcessedImages/ImageSix.webp" alt="StatusCodeCheckWithoutRedirect" style="padding-top: 1%; padding-bottom: 1%;">
+                        <img class="firstImage" src="/images/VanityURLs/ProcessedImages/ImageSeven.webp" alt="StatusCodeCheckWithRedirect" style="padding-top: 1%;"/>
+                        <h4>Dispatcher Configuration of Vanity URLs</h4>
+                        <p>Everytime an author adds a vanity url, its entry needs to be made at the dispatcher level and this becomes tedious so, in AEM dispatcher has an auto allow feature listed in vanity tree.</p>
+                        <p>All the map entries for vanity urls are available in <u>localhost:4502/system/console/jcrresolver</u> stating external redirect with status code 302.</p>
+                        <img class="firstImage" src="/images/VanityURLs/ProcessedImages/ImageEight.webp" alt="JCRResolverConsole"/>
+                        <p>In order to exercise auto-filter mechanism of dispatcher content/software distribution package needs to be downloaded (a feature of AEM Cloud as a Service) and configured in the dispatcher itself.</p>
+                        <!-- Link from official documentation -->
+                        <!-- <a href="">Click here</a> -->
+                        <p>In dispatcher, /vhost, we specify the rules for vanity_urls. Also we can specify which file should store vanity urls and after how many seconds the file must get refreshed.</p>
+                        <!-- Add snippet for vanity url rules in dispatcher -->
+                        <div class="snippetvanity">
+                           <pre>
+                              <code>
+         /vanity_urls{
+         /url "/libs/granite/dispatcher/content/vanityUrls.html"
+         /file "/temp/vanity-urls"
+      /delay "400"
+          }
+                              </code>
+                          </pre>
+                          
+                        </div style="margin-bottom:-10%">
+                        <div>
+                        <p style="padding-top: 4%;">Here <u>/libs/content/dispatcher/content/vanityUrls.html</u> is a page that displays all the vanity urls available in AEM.</p><p><u>/temp/vanity-urls</u> is file that stores all the vanity urls</p>
+                        <img class="firstImage" src="/images/VanityURLs/ProcessedImages/ImageNine.webp" alt="VanityURLPage"/>
+                        <p>/delay 400 is the time period till which the /temp/vanity-urls file will not get refreshed if the time difference between current moment and file's last modification is less than that of /delay.</p>
+                        <p>A refreshed request can be explicitly trigerred by just requesting a non-existing url to ensure /delay elapse.</p>
+                        <!-- Add a non exisiting url request through the dispatcher (Done) -->
+                        <p>For example : <u>localhost/non-existing/page.html</u></p>
+                        <p>It is recommended to use rewrite rules instead of default mechanism to ensure namespace resolutions, higherlevel logic implementation and increased performance.</p>
+                        <!-- Add the snippet of rewrite rule with flag -->
+                      </div>
+                        <div class="snippetvanity" style="height: 110px;">
+                        <pre>
+                           <code>
+RewriteRule ^/home /content/abc/def/ghi/home.html [PT,L,NC]
+                           </code>
+                       </pre>
+                       </div>
+                        
+                        <p style="padding-top: 4%;">L i.e last flag is used to increade the performance as it skips the unnecessary rules without generating a proxy request.
+                           PT i.e pass through flag looks for a vanity url starting with provided initals and then fetches the complete path from the renderer.
+                           NC i.e no case sensitivity ignores casings.</p>
+                        <p>I hope you find this blog informative and helpful and if so please do like.</p>
+                     
+                                                      
+                        
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <hr style="margin-top: 30px;">
+            <div class="author-details">
+               <div id="like-icon" class="like-icon">
+                  <span id="like-count" class="like-count">0</span>
+                  <span id="like-btn" class="like-btn">
+                  <img src="/images/clap.webp" alt="Like">
+                  </span>
+               </div>
+               <div>
+                  <span class="author-name">Shruti Meshram | </span>
+                  <span class="author-designation">AEM Developer</span>
+               </div>
+            </div>
+            <!-- <div style="display: flex; justify-content: center;">
+               <div class="comment-box" >
+                  <h3> Leave a Comment</h3>
+                  <form class="comment-form">
+                     <input type="text" placeholder="Enter Name"/>
+                     <input type="email" placeholder="Enter Email"/>
+                     <textarea  rows="5" placeholder="Your Comments"></textarea>
+                     <button type="submit" class="hero-btn red-btn">Your Comment</button>
+                  </form>
+               </div>
+            </div> -->
+         </div>
+		</div>
+	</section>
+
+<div class="social-icons">
+	 
+	<a href="https://www.linkedin.com/company/infodales-tech-solution/" class="linkedin"><img src="/images/linkedin.webp" alt="LinkedIn"></a>
+	<a href="mailto:info@infodales.com" class="email"><img src="/images/email.webp" alt="Email"></a>
+</div>
+
+	<!--  Footer --->
+	<div class="copyright-area">
+		<div class="footer">
+			<div class="row" style="margin-top: 0px;">
+				<div class="col-xl-4 col-lg-4 text-center text-lg-left">
+					<div class="copyright-text">
+						<p>Copyright &copy; 2024, All Right Reserved <a href="/index.html">Infodales Tech
+								Solution</a></p>
+					</div>
+				</div>
+				
+				<div class="col-xl-4 col-lg-4 d-none d-lg-block text-right">
+					<div class="footer-menu" style="margin-top:10px;">
+						<ul>
+							<li><a href="/index.html">Home</a></li>
+							<li><a href="/about.html">About</a></li>
+							<li><a href="/contact.html">Contact</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<!--- Java Script-->
+	<script>
+		var navLinks = document.getElementById("navLinks");
+
+		function showMenu() {
+			navLinks.style.right = "0";
+		}
+
+		function hideMenu() {
+			navLinks.style.right = "-200px";
+		}
+
+		document.addEventListener("DOMContentLoaded", () => {
+    const likeBtn = document.getElementById('like-btn');
+    const likeCount = document.getElementById('like-count');
+
+    let count = parseInt(localStorage.getItem('clapCount')) || 0;
+    likeCount.textContent = count;
+
+    likeBtn.addEventListener('click', () => {
+        count++;
+        likeCount.textContent = count;
+        localStorage.setItem('clapCount', count);
+
+        const likeAnimation = document.createElement('div');
+        likeAnimation.classList.add('like-animation');
+        likeAnimation.innerHTML = '🎉';
+        document.getElementById('like-icon').appendChild(likeAnimation);
+        likeAnimation.addEventListener('animationend', () => {
+            likeAnimation.remove();
+        });
+    });
+});
+
+		// function relatedFilter() {
+		// 	var retString = localStorage.getItem("allBlogs");
+		// 	console.log(retString);
+		// }
+
+
+	</script>
+
+</body>
+
+</html>
