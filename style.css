@@ -1558,6 +1558,15 @@ pre {
   width: fit-content;
   height: 190px;
 }
+
+.spa-pre-tag pre {
+  width: 100%;
+}
+
+.query-pre-tag pre {
+  width: 100%;
+}
+
 pre code {
   background-color: lightgray;
   border: 1px solid #999;
@@ -1627,6 +1636,15 @@ pre code {
   pre {
     width: 94%;
   }
+
+  .spa-pre-tag pre {
+    width: 94%;
+  }
+
+  .query-pre-tag pre {
+    width: 94%;
+  }
+
   pre code {
     background-color: lightgray;
     border: 1px solid #999;
@@ -1760,6 +1778,10 @@ img {
 }
 
 @media (max-width: 700px) {
+  pre {
+    width: 94%;
+  }
+
   .center {
     padding-left: 0% !important;
     width: 50%;

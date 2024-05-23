@@ -83,7 +83,7 @@
 							<li>
 								<p style="margin: 3px 0;">Single Page Application (SPA)</p>
 								<img class="spa-image" src="/images/SPA-Blogs/Initial Request 2.webp" alt="SPA approach" width="700" height="310">
-								<p>In SPA, the client makes the initial request and the server responds with the content and as much as possible content with the initial request. When a client has some content and it&apos;s moving from page to page, so when we move from page to page we don't make any request to the server and all the content is present at the client side only.
+								<p>In SPA, the client makes the initial request and the server responds with the content and as much as possible content with the initial request. When a client has some content and it&apos;s moving from page to page, it doesn't make any request to the server and all the content is present at the client side only.
 								</p>
 								<p>If a client makes some request which is not present at the client side, in that case the client will make the request to the server for the specific content and the server will return the content in the form of Json.
 								</p>
@@ -131,7 +131,7 @@
 						</ul>
 						<p>We would be working with React js to develop an AEM SPA application.</p>
 					</div>
-					<div>
+					<div class="spa-pre-tag">
 						<h3 style="text-align: left;">Creating an AEM SPA Project</h3>
 						<p style="font-size: small; color: darkslategray; background-color: rgb(255, 255, 129); padding: 4px 10px; margin: 10px 0 5px 0;">Note : Ensure that a fresh instance of AEM, started in Author mode, is running locally.</p>
 						<p>Create the project :</p>
@@ -139,7 +139,7 @@
 							<li>
 								<p>Open the command line terminal and enter the following maven command.</p>
 								<pre>
-<code>mvn -B org.apache.maven.plugins:maven-archetype-plugin:3.2.1:generate -D
+<code style="width: 100%;">mvn -B org.apache.maven.plugins:maven-archetype-plugin:3.2.1:generate -D
 archetypeGroupId=com.adobe.aem -D archetypeArtifactId=aem-project-archetype -D
 archetypeVersion=35 -D appTitle="SPA React" -D appId="spa-react" -D
 artifactId="aem-spa.react" -D groupId="com.adobe.aem.spa.react" -D
