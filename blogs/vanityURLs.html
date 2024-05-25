@@ -56,7 +56,7 @@
                width: fit-content; padding: 3px 15px;">Vanity URLs</p>
             <h1 class="title">Handelling Vanity URLs in AEM</h1>
             <span class="author">Infodales Tech Solutions</span> |
-            <span class="date">May 25, 2024</span>
+            <span class="date">July 9, 2023</span>
             <div class="share-icons">
                <a href="https://www.linkedin.com/in/infodales-tech-solutions-928b21284/" target="_blank" class="linkedin-icon"><i class="fa fa-linkedin"></i></a>
                <a href="mailto:info@infodales.com" target="_blank" class="email-icon"><i class="fa fa-envelope"></i></a>
@@ -71,7 +71,7 @@
                      <div >
                         <p>Lets begin today's learning regarding vanity urls and their handelling in AEM.</p>
                         <h4>Introduction</h4>
-                        <p>Vanity URLs are nothing but friendly URLs. Suppose we have a URL:<span style=" word-wrap: break-word; word-break: break-all; white-space: normal; "><u>localhost/content/abc/def/ghi/organization/team.html</u></span> which is not really eye scatching to the users so AEM authors are provided the previllege to transform this URL into a more user friendly URL such as <u>locahost:4502/organization/team.html</u>, which is indeed a vanity url of the provided one.</p>
+                        <p>Vanity URLs are nothing but friendly URLs. Suppose we have a URL:<span style=" word-wrap: break-word; word-break: break-all; white-space: normal; "><u>localhost/content/abc/def/ghi/organization/team.html</u></span> which is not really eye catching to the users so AEM authors are provided the previllege to transform this URL into a more user friendly URL such as <u>localhost:4502/organization/team.html</u> which is indeed a vanity url of the provided one.</p>
                         <h4>Adding Vanity URLs via Page Properties</h4>
                         <p>In order to do this, AEM Authors should open the page properties of the page and set up the friendly.</p>
                         <img class="firstImage" src="/images/VanityURLs/ProcessedImages/ImageOne.webp" alt="PageWithOriginalURL"/>
@@ -125,9 +125,9 @@ RewriteRule ^/home /content/abc/def/ghi/home.html [PT,L,NC]
                        </pre>
                        </div>
                         
-                        <p style="padding-top: 4%;">L i.e last flag is used to increade the performance as it skips the unnecessary rules without generating a proxy request.
-                           PT i.e pass through flag looks for a vanity url starting with provided initals and then fetches the complete path from the renderer.
-                           NC i.e no case sensitivity ignores casings.</p>
+                        <p style="padding-top: 4%;">L (i.e last flag) is used to increase the performance as it skips the unnecessary rules without generating a proxy request.
+                           PT (i.e pass through flag) looks for a vanity url starting with provided initals and then fetches the complete path from the renderer.
+                           NC (i.e no case sensitivity) ignores casings.</p>
                         <p>I hope you find this blog informative and helpful and if so please do like.</p>
                      
                                                       
