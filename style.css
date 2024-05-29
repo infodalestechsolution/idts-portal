@@ -2272,3 +2272,68 @@ code {
     }
   }
 }
+
+/* Osgi COnfiguration Factory Blog*/
+.osgiconfiguration {
+  margin-left: auto;
+  width: 97%;
+  list-style-type: none;
+}
+.osgiFactoryConfigService {
+  height: 252px;
+  padding-left: 20%;
+}
+.osgimodel {
+  height: 15%;
+  padding-left: 12%;
+}
+.cardinality {
+  padding-left: 25px;
+}
+.cardinality-description {
+  padding-left: 30px;
+  margin-bottom: 5px;
+}
+.cardinality-list {
+  padding-left: 6%;
+}
+@media (max-width: 700px) {
+  .osgiconfiguration {
+    margin-left: 0%;
+    width: 90%;
+  }
+  .osgiFactoryConfigService {
+    height: 252px;
+    padding-left: 0%;
+  }
+  .osgimodel {
+    height: 15%;
+    padding-left: 0%;
+  }
+  .cardinality-list {
+    padding-left: 13% !important;
+  }
+}
+@media (min-width: 701px) and (max-width: 1281px) {
+  .blog p {
+    margin-top: 4%;
+  }
+  .osgimodel {
+    height: 20%;
+  }
+  .cardinality-list {
+    padding-left: 13% !important;
+  }
+  .configurationclass code {
+    overflow-x: scroll;
+    padding-left: 10%;
+  }
+  .osgiconfmodel code {
+    overflow-x: scroll;
+    width: 60%;
+  }
+  .osgiconfiguration code {
+    overflow-x: scroll;
+    width: 60%;
+  }
+}

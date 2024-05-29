@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Blogs | OSGI Configuration Factory</title>
+	<link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Welcome to the blog designed for developers new to the OSGI Factory Concepts. This blog will walk you through How the Osgi Configuration class has been created and how to retrive the list of Configurations">
+  	<meta name="keywords" content="Infodales, OSGI Configuration Factory">
+	<meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Blogs | OSGI Configuration Factory" />
+    <meta property="og:description" content="Welcome to the blog designed for developers new to the OSGI Factory Concepts. This blog will walk you through How the Osgi Configuration class has been created and how to retrive the list of Configurations" />
+    <meta property="og:url" content="https://infodales.com/spa-getting-started.html" />
+    <meta property="og:site_name" content="Blogs | OSGI Configuration Factory" />
+	<link rel="stylesheet" href="/style.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;600;700&display=swap"
+		rel="stylesheet">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+
+	<!-- Header -->
+	<section class="sub-header"
+		style="background-image: linear-gradient(rgba(4, 9, 30, 0.5), rgba(4, 9, 30, 0.5)), url('/images/Cover\ Sites.jpg');">
+		<nav>
+			<a href="/index.html"><img src="/images/infodales/Info Dales Main Logo 03.webp" alt="logo"></a>
+			<div class="nav-links" id="navLinks">
+				<i class="fa fa-times" onclick="hideMenu()"></i>
+				<ul>
+					<li><a href="/index.html">HOME</a></li>
+					<li><a href="/about.html">ABOUT</a></li>
+					<li><a href="/services.html">SERVICES</a></li>
+					<li><a href="/blog.html">BLOGS</a></li>
+					<li><a href="/career.html">CAREER</a></li>
+					<li><a href="/contact.html">CONTACT</a></li>
+					<ul>
+			</div>
+			<i class="fa fa-bars" onclick="showMenu()"></i>
+		</nav>
+		<!-- <p style="color: lightgray; margin-left: 17%;"><a href="./blog.html" style="text-decoration: none; color: white; cursor: pointer;">Blogs</a> <span> > </span> Getting started with SPA</p> -->
+		<!-- <h1>Blogs</h1> -->
+	</section>
+	<!--  Blog Page Content --->
+	<section class="blog-content">
+		<div>
+			<div class="blog spa-blog">
+				
+				<p style="color: rgb(133, 133, 133); padding: 0 0 10px 0;"><a href="/blog.html" style="text-decoration: none; cursor: pointer;">Blogs</a> <span> > </span>OSGI Configuration Factory</p>
+
+				<p class="sitesTag" style="margin-top: 7px; margin-bottom: 7px; font-size: 13px; border-radius: 20px; 
+				width: fit-content; padding: 3px 15px;">AEM Sites</p>
+				<h1 class="title">OSGI Configuration Factory</h1>
+      				<span class="author">Infodales Tech Solutions</span> |
+      				<span class="date">July 24, 2023</span>
+    			
+					<div class="share-icons">
+					<a href="https://www.linkedin.com/company/infodales-tech-solution/" target="_blank" class="linkedin-icon"><i class="fa fa-linkedin"></i></a>
+                    <a href="mailto:info@infodales.com" target="_blank" class="email-icon"><i class="fa fa-envelope"></i></a>
+					</div>
+
+				<hr style="margin: 20px 0 10px 0;">
+				<div class="blog-items">
+                <h3 class="msm-headers">What is OSGI In AEM ?</h3>
+                <div style="padding-left: 3px; margin-bottom: 5px;">
+                    <p class="line-padding">
+                        OSGi is a fundamental element in the technology stack of Adobe Experience Manager (AEM). It is used to control the composite bundles of AEM and their configuration.
+                        OSGi “provides the standardized primitives that allow applications to be constructed from small, reusable, and collaborative components. These components can be composed into an application and deployed”.
+                    </p>
+                </div>
+                <h3 class="msm-headers">What is OSGI Configuration In AEM ?</h3>
+                <div style="padding-left: 3px; margin-bottom: 5px;">
+                    <p class="line-padding">
+                        OSGi Configurations in AEM are used to set up and customize the properties of OSGi components and services.
+                        These Configurations are often stored in configuration files or managed through the AEM Web Console.
+                    </p>
+                </div>
+                <h3 class="msm-headers">What is OSGI Factory Configuration In AEM ?</h3>
+                <div style="padding-left: 3px; margin-bottom: 5px;">
+                    <p class="line-padding">
+                        OSGi Factory Configuration in Adobe Experience Manager (AEM) refers to a way of creating multiple instances of an OSGi service, each with its own unique configuration. This is particularly useful when you need several instances of a service with different settings.
+                    </p>
+                </div>
+                <h3 class="msm-headers">Key Concepts of OSGi Factory Configuration:</h3>
+                <div class="list-container">
+                    <ul>
+                        <li>
+                            <h4 style="padding: 2px;">Factory Configuration:</h4>
+                            <p class="line-padding">
+                                Unlike standard OSGi Configurations, which apply a single configuration to a single service instance, factory Configurations allow multiple instances of a service to be created, each with a unique configuration.
+                                Each instance is created with a distinct configuration, enabling different behavior or settings for each instance.
+                            </p>
+                        </li>
+                        <li>
+                            <h4 style="padding: 2px;">Identifiers:</h4>
+                            <p class="line-padding">
+                                Each factory configuration instance is identified by a unique identifier, typically appended to the configuration’s PID (Persistent Identifier).
+                            </p>
+                        </li>
+                        <li>
+                            <h4 style="padding: 2px;">Configuration Format:</h4>
+                            <p class="line-padding">
+                                Factory Configurations often use .config or .cfg.json files, with a filename pattern that includes a factory identifier.
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+                <h3 class="msm-headers">Now we will see Implementation of factory configuration</h3>
+                <ul>
+                    <div style="padding-left: 25px;"><li><p class="content-text">Here is the code to create Osgi Configuration :</p><div class="image-container" >
+                    </div></li></div>
+                </ul>
+                <ol  class="osgiconfiguration">
+                    <li>
+                        <pre style="height: 310px;"  >
+<code >package com.demo.core.conf;
+
+    import org.osgi.service.metatype.annotations.AttributeDefinition;
+    import org.osgi.service.metatype.annotations.AttributeType;
+    import org.osgi.service.metatype.annotations.ObjectClassDefinition;
+    
+    @ObjectClassDefinition(name = "Osgi Factory Configuration", description = "Osgi Factory Configuration Demo")
+    public @interface OsgiFactoryConfiguration {
+        @AttributeDefinition(name = "configId",description = "ConfigId",type = AttributeType.INTEGER)
+        int configurationId();
+        @AttributeDefinition(name = "configName",description = "ConfigName",type = AttributeType.STRING)
+        String configName() default "Config #";
+    }
+    </code>
+                        </pre>
+                    </li>
+                </ol>
+                <ul>
+                    <div style="padding-left: 25px;"><li><p class="content-text">  Create a Service which contains the methods to get Configuration Name and Ids. :</p><div class="image-container" >
+                    </div></li></div>
+                </ul>
+                <ol class="osgiconfiguration configurationclass">
+                    <li>
+                        <pre class="osgiFactoryConfigService">
+<code >package com.demo.core.services;
+
+    import java.util.List;
+    
+    public interface OsgiFactoryConfigService {
+        int getConfigurationId();
+        String getConfigName();
+        public OsgiFactoryConfigService get(int configId);
+        List<OsgiFactoryConfigService> getAllConfiguration();
+    }
+    </code>
+                        </pre>
+                    </li>
+                </ol>
+                <ul>
+                    <div style="padding-left: 25px;"><li><p class="content-text">Create a Java Class with @Component Annotation and Implements the service and override all the Methods.
+                        Under @Designate Annotation include the Configuration class, to include the configuration class use "ocd" Interface. ocd is @ObjectClassDefinition Annotation is used to define a class or interface that describes the configuration options available for a particular OSGi service or component. This annotation helps in creating a clear and structured way to handle configuration properties, making them easier to manage and understand. </p><div class="image-container" >
+                    </div></li></div>
+                </ul>
+                <ol class="osgiconfiguration">
+                    <li>
+                        <pre style="height: 50%;"   >
+<code>package com.demo.core.services.impl;
+
+    import com.demo.core.conf.OsgiFactoryConfiguration;
+    import com.demo.core.conf.OsgiFactoryConfigurator;
+    import com.demo.core.services.OsgiFactoryConfigService;
+    import org.osgi.service.cm.Configuration;
+    import org.osgi.service.cm.ConfigurationAdmin;
+    import org.osgi.service.component.annotations.*;
+    import org.osgi.service.metatype.annotations.Designate;
+    
+    import java.io.IOException;
+    import java.util.ArrayList;
+    import java.util.Dictionary;
+    import java.util.Hashtable;
+    import java.util.List;
+    
+    @Component(service = OsgiFactoryConfigService.class, configurationPolicy = ConfigurationPolicy.REQUIRE)
+    @Designate(ocd = OsgiFactoryConfiguration.class,factory = true)
+    public class OsgiConfigurationFactoryImpl implements OsgiFactoryConfigService {
+        private int configurationId;
+        private String configurationName;
+        List<OsgiFactoryConfigService> list;
+    
+        @Activate
+        @Modified
+        public void activate(final OsgiFactoryConfiguration config) throws IOException {
+            configurationId = config.configurationId();
+            configurationName = config.configName();
+        }
+    
+        @Reference(service = OsgiFactoryConfigService.class,
+                  cardinality = ReferenceCardinality.MULTIPLE
+                , policy = ReferencePolicy.DYNAMIC)
+        public void bindOSGiFactoryConfig(final OsgiFactoryConfigService configService) {
+            if (list == null) {
+                list = new ArrayList<>();
+            }
+            list.add(configService);
+        }
+    
+        public void unbindOSGiFactoryConfig(final OsgiFactoryConfigService configService) {
+            list.remove(configService);
+    
+        }
+    
+        @Override
+        public int getConfigurationId() {
+            return configurationId;
+        }
+    
+        @Override
+        public String getConfigName() {
+            return configurationName;
+        }
+    
+        @Override
+        public List<OsgiFactoryConfigService> getAllConfiguration() {
+            return list;
+        }
+    
+        @Override
+        public OsgiFactoryConfigService get(int configId) {
+            for (OsgiFactoryConfigService confFact : list) {
+                if (configurationId == confFact.getConfigurationId())
+                    return confFact;
+            }
+            return null;
+        }
+    
+    }
+    </code>
+                        </pre>
+                    </li>
+                </ol>
+                <h3  class="msm-headers cardinality" >Cardinality in AEM ?</h3>
+                <div  class="cardinality-description">
+                    <p class="line-padding">
+                        Cardinality in OSGi is specified using annotations or XML Configurations and indicates whether a service dependency is mandatory or optional, and whether the component expects a single instance or multiple instances of the service.
+                    </p>
+                </div>
+                <h3 class="msm-headers cardinality">Cardinality Options</h3>
+                <div class="list-container cardinality-list">
+                    <ul>
+                        <li>
+                            <h4 style="padding: 2px;">Mandatory Single (1..1)</h4>
+                            <p class="line-padding">
+                                The component requires exactly one instance of the service. The component cannot function without this service, and only one instance is expected.
+                            </p>
+                        </li>
+                        <li>
+                            <h4 style="padding: 2px;">Optional Single (0..1)</h4>
+                            <p class="line-padding">
+                                The component can function without the service (optional), but if the service is present, only one instance is expected.
+                            </p>
+                        </li>
+                        <li>
+                            <h4 style="padding: 2px;">Mandatory Multiple (1..n):</h4>
+                            <p class="line-padding">
+                                The component requires at least one instance of the service but can accept multiple instances. It must have at least one service bound to function properly.
+                            </p>
+                        </li>
+                        <li>
+                            <h4 style="padding: 2px;">Optional Multiple (0..n):</h4>
+                            <p class="line-padding">
+                                The component can function without the service, but if the service is available, it can bind to multiple instances.
+                        </li>
+                    </ul>
+                </div>
+                <ul>
+                    <div style="padding-left: 25px;"><li><p class="content-text"> Create a Java Class with @Model as an annotation through which we can get all the Configurations that passed from Felic console </p><div class="image-container" >
+                    </div></li></div>
+                </ul>
+                <ol  class="osgiconfiguration osgiconfmodel">
+                    <li>
+                        <pre  class="osgimodel">
+<code>package com.demo.core.models.impl;
+
+    import com.demo.core.models.OsgiConfigurationModel;
+    import com.demo.core.services.OsgiFactoryConfigService;
+    import org.apache.sling.api.SlingHttpServletRequest;
+    import org.apache.sling.models.annotations.DefaultInjectionStrategy;
+    import org.apache.sling.models.annotations.Model;
+    import org.apache.sling.models.annotations.injectorspecific.OSGiService;
+    
+    import java.util.List;
+    
+    @Model(adaptables = SlingHttpServletRequest.class,
+            adapters = OsgiConfigurationModel.class,
+            defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
+    public class OsgiConfigurationModelImpl implements OsgiConfigurationModel {
+        @OSGiService
+        OsgiFactoryConfigService osgiFactoryConfigService;
+        @Override
+        public List<OsgiFactoryConfigService> getAllConfigurations() {
+            return osgiFactoryConfigService.getAllConfiguration();
+        }
+    }
+    </code>
+                        </pre>
+                    </li>
+                </ol>
+                <ul>
+                    <div style="padding-left: 25px;"><li><p class="content-text">Create the components and with the help of Slightly we can display all the Configurations in AEM page.  </p><div class="image-container" >
+                        <img src="/images/Configuration Factory/slightlycode.webp" style="width: 100%;" alt="Language copies image"/>
+                    </div></li></div>
+                </ul>
+                <ul>
+                    <div style="padding-left: 25px;"><li><p class="content-text"> Now Redirect to localhost:4502/system/console/configMgr and search you configuration name. </p><div class="image-container" >
+                    </div></li></div>
+                </ul>
+                <ul>
+                    <div style="padding-left: 25px;"><li><p class="content-text">   After refreshing the Page you will find all the Configurations with the unique identifier.</p><div class="image-container" >
+                        <img src="/images/Configuration Factory/FelixConsole.webp" style="width: 100%;" alt="Language copies image"/>
+                    </div></li></div>
+                </ul>
+                <ul>
+                    <div style="padding-left: 25px;"><li><p class="content-text">  Click On '+' icon to add the Configurations</p><div class="image-container" >
+                        <img src="/images/Configuration Factory/felixconsole2.webp" style="width: 100%;" alt="Language copies image"/>
+                    </div></li></div>
+                </ul>
+                <ul>
+                    <div style="padding-left: 25px;"><li><p class="content-text"> Now login in to the AEM , Go to site Console and open the page </p><div class="image-container" >
+                        <img src="/images/Configuration Factory/osgifactorypage.webp" style="width: 100%;" alt="Language copies image"/>
+                    </div></li></div>
+                </ul>
+                <hr style="margin-top: 30px;">
+				<div class="author-details">
+					<div id="like-icon" class="like-icon">
+						<span id="like-count" class="like-count">0</span>
+						<span id="like-btn" class="like-btn">
+							<img src="/images/clap.webp" alt="Like">
+						</span>
+					</div>
+					<div>
+						<span class="author-name">Yash Sakharkar | </span>
+						<span class="author-designation">AEM Developer</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+<div class="social-icons">
+         
+        <a href="https://www.linkedin.com/company/infodales-tech-solution/" class="linkedin"><img src="/images/linkedin.webp" alt="LinkedIn"></a>
+        <a href="mailto:info@infodales.com" class="email"><img src="/images/email.webp" alt="Email"></a>
+    </div>
+
+	<!--  Footer --->
+	<div class="copyright-area">
+		<div class="footer">
+			<div class="row" style="margin-top: 0px;">
+				<div class="col-xl-4 col-lg-4 text-center text-lg-left">
+					<div class="copyright-text">
+						<p>Copyright &copy; 2024, All Right Reserved <a href="/index.html">Infodales Tech
+								Solution</a></p>
+					</div>
+				</div>
+				
+				<div class="col-xl-4 col-lg-4 d-none d-lg-block text-right">
+					<div class="footer-menu" style="margin-top:10px;">
+						<ul>
+							<li><a href="/index.html">Home</a></li>
+							<li><a href="/about.html">About</a></li>
+							<li><a href="/contact.html">Contact</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<!--- Java Script-->
+	<script>
+		var navLinks = document.getElementById("navLinks");
+
+		function showMenu() {
+			navLinks.style.right = "0";
+		}
+
+		function hideMenu() {
+			navLinks.style.right = "-200px";
+		}
+
+		document.addEventListener("DOMContentLoaded", () => {
+    const likeBtn = document.getElementById('like-btn');
+    const likeCount = document.getElementById('like-count');
+
+    let count = parseInt(localStorage.getItem('clapCount')) || 0;
+    likeCount.textContent = count;
+
+    likeBtn.addEventListener('click', () => {
+        count++;
+        likeCount.textContent = count;
+        localStorage.setItem('clapCount', count);
+
+        const likeAnimation = document.createElement('div');
+        likeAnimation.classList.add('like-animation');
+        likeAnimation.innerHTML = '🎉';
+        document.getElementById('like-icon').appendChild(likeAnimation);
+        likeAnimation.addEventListener('animationend', () => {
+            likeAnimation.remove();
+        });
+    });
+});
+
+		// function relatedFilter() {
+		// 	var retString = localStorage.getItem("allBlogs");
+		// 	console.log(retString);
+		// }
+
+
+	</script>
+
+</body>
+
+</html>
