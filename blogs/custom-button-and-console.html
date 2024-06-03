@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Blogs | Getting started with AEM SPA</title>
+	<link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Welcome to the blog designed for developers new to the AEM SPA concept. This blog will walk you through some of the well known questions like What is SPA? Why SPA? and mainly Why SPA with AEM? We'll cover these questions in this blog.">
+  	<meta name="keywords" content="Infodales, Adobe AEM SPA, Single Page Application, SPA component, SPA with AEM">
+	<meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Blogs | Getting started with AEM SPA" />
+    <meta property="og:description" content="Welcome to the blog designed for developers new to the AEM SPA concept. This blog will walk you through some of the well known questions like What is SPA? Why SPA? and mainly Why SPA with AEM? We'll cover these questions in this blog." />
+    <meta property="og:url" content="https://infodales.com/spa-getting-started.html" />
+    <meta property="og:site_name" content="Blogs | Getting started with AEM SPA" />
+	<link rel="stylesheet" href="/style.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;600;700&display=swap"
+		rel="stylesheet">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+
+	<!-- Header -->
+	<section class="sub-header"
+		style="background-image: linear-gradient(rgba(4, 9, 30, 0.5), rgba(4, 9, 30, 0.5)), url('/images/Cover\ Sites.jpg');">
+		<nav>
+			<a href="/index.html"><img src="/images/infodales/Info Dales Main Logo 03.webp" alt="logo"></a>
+			<div class="nav-links" id="navLinks">
+				<i class="fa fa-times" onclick="hideMenu()"></i>
+				<ul>
+					<li><a href="/index.html">HOME</a></li>
+					<li><a href="/about.html">ABOUT</a></li>
+					<li><a href="/services.html">SERVICES</a></li>
+					<li><a href="/blog.html">BLOGS</a></li>
+					<li><a href="/career.html">CAREER</a></li>
+					<li><a href="/contact.html">CONTACT</a></li>
+					<ul>
+			</div>
+			<i class="fa fa-bars" onclick="showMenu()"></i>
+		</nav>
+		<!-- <p style="color: lightgray; margin-left: 17%;"><a href="./blog.html" style="text-decoration: none; color: white; cursor: pointer;">Blogs</a> <span> > </span> Getting started with SPA</p> -->
+		<!-- <h1>Blogs</h1> -->
+	</section>
+	<!--  Blog Page Content --->
+	<section class="blog-content">
+		<div>
+			<div class="blog spa-blog">
+				
+				<p style="color: rgb(133, 133, 133); padding: 0 0 10px 0;"><a href="/blog.html" style="text-decoration: none; cursor: pointer;">Blogs</a> <span> > </span> Creating custom button & console in AEM</p>
+
+				<p class="sitesTag" style="margin-top: 7px; margin-bottom: 7px; font-size: 13px; border-radius: 20px; 
+				width: fit-content; padding: 3px 15px;">AEM Sites</p>
+				<h1 class="title">Creating custom button & console in AEM</h1>
+      				<span class="author">Infodales Tech Solutions</span> |
+      				<span class="date">August 9, 2023</span>
+    			
+					<div class="share-icons">
+					<a href="https://www.linkedin.com/company/infodales-tech-solution/" target="_blank" class="linkedin-icon"><i class="fa fa-linkedin"></i></a>
+                    <a href="mailto:info@infodales.com" target="_blank" class="email-icon"><i class="fa fa-envelope"></i></a>
+					</div>
+				<hr style="margin: 20px 0 10px 0;">
+
+				<div class="blog-items">
+					<p>Adobe Experience Manager (AEM) is a comprehensive content management solution for building websites, mobile apps, and forms. AEM's flexibility allows developers to customize its interface extensively. In this blog, we'll walk through the steps to create a custom button in the AEM console and how to add a custom navigation tab and console.</p>
+                    <div>
+                        <h3 style="text-align: left;">Prerequisites</h3>
+                        <p>Before we start, ensure you have the following:</p>
+                        <ul style="margin-left: auto; width: 93%;">
+                            <li><p>Running AEM instance (AEM 6.x)</p></li>
+                            <li><p>Basic knowledge of AEM and Sling</p></li>
+                            <li><p>Familiarity with JSP, and front-end technologies like HTML, CSS, Javascript</p></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 style="text-align: left;">Creating a Custom Button in an AEM Console</h3>
+                        <p>In AEM, all the core content and components resides in the /libs directory in CRX. When customization or modification is required, it's best practice to overlay the specific node from /libs to the /apps directory. This approach ensures that the original content remains untouched, allowing for safer and more manageable updates. By overlaying and modifying nodes in /apps, you can tailor your AEM instance to meet unique requirements while maintaining a clear distinction between out-of-the-box functionality and custom development.</p>
+                        <p>Let's create a custom button in the AEM Sites Console.</p>
+                        <p>All related nodes for the Sites Console are located under /libs/wcm/core/content/sites. Within jcr:content, the /actions/selection node contains all the available buttons that appear when selecting any page in the Sites Console. To customize or add new functionality, we can overlay and modify any node as needed. In this scenario, we'll create a new button which will simply redirect us to a new page, on click of it. To do this, we'll overlay the /selection node under /apps and create a new node named "opennewpage" with a "data" sub-node and add respective properties to it as shown below.</p>
+                        <p style="text-align: center; font-weight: bold; text-decoration: underline;">/apps overlayed node structure</p>
+                        <img class="spa-image" src="/images/Custom Button & Console/apps-overlay-structure.png" alt="apps overlay structure" width="460" height="200" >
+                        <p style="text-align: center; font-weight: bold; text-decoration: underline;">opennewpage node properties</p>
+                        <img class="spa-image" src="/images/Custom Button & Console/opennewpage-node-properties.png" alt="opennewpage node properties" style="width: 100%;">
+                        <p style="text-align: center; font-weight: bold; text-decoration: underline;">data node properties</p>
+                        <img class="spa-image" src="/images/Custom Button & Console/data-node-properties.png" alt="data node properties" style="width: 100%;">
+                        <p>Save all the nodes & we've successfully customized the AEM Sites Console by adding a custom button.</p>
+                        <p>To check the availability of our custom button, navigate to the Sites Console at <a href="http://localhost:4502/sites.html/content">http://localhost:4502/sites.html/content</a>, select any page, we'll spot our custom button in the selection bar (as shown below). Clicking on it will smoothly redirect us based on the URL specified in its data node's href property.</p>
+                        <img class="spa-image" src="/images/Custom Button & Console/custom button.png" alt="opennewpage node properties" style="width: 100%;">
+                        <p>This slight adjustment enhances the console's usability, granting users a more fluid and user-friendly interaction.</p>
+                    </div>
+                    <div>
+                        <h3 style="text-align: left;">Creating a Custom Tool Navigation Menu and a new Console</h3>
+						<p>Now let's create a custom console in our AEM environment. To achieve this, we need to overlay the tools node from /libs/cq/core/content/nav/tools to /apps. Once overlaid, we can add our own navigation menu by creating a new node and configuring the necessary properties (as shown below).</p>
+						<img class="spa-image" src="/images/Custom Button & Console/tools-menu.png" alt="navigation menu" style="width: 100%;">
+						<p>After setting up the navigation menu, the next step is to add a subnode under our custom "console-menu" node. This subnode will represent the AEM console tool, which can be configured to perform any additional functionality we require. By creating this subnode and adding the respective properties according to our needs, we ensure the custom console tool is fully functional and integrated seamlessly into the AEM console.</p>
+						<img class="spa-image" src="/images/Custom Button & Console/console-tool.png" alt="console tool" style="width: 100%;">
+						<p>We've configured the tool to redirect to the new console page located at /apps/[project]/content/sample-console.html. The next step involves creating this page. First, create a node of type cq:Page at the project level. This node should be assigned a meaningful title and the property sling:resourceType, which will reference the specific page component we plan to use.</p>
+						<p style="text-align: center; font-weight: bold; text-decoration: underline;">sample-console page</p>
+						<img class="spa-image" src="/images/Custom Button & Console/console-page.png" alt="console page" width="450" height="100" >
+						<p style="text-align: center; font-weight: bold; text-decoration: underline;">sample-console node properties</p>
+						<img class="spa-image" src="/images/Custom Button & Console/console-page-properties.png" alt="console-page-properties" style="width: 100%;" >
+						<p style="text-align: center; font-weight: bold; text-decoration: underline;">jcr:content node properties</p>
+						<img class="spa-image" src="/images/Custom Button & Console/page-jcr-properties.png" alt="page-jcr-properties" style="width: 100%;" >
+						<p>After establishing the cq:Page node, the next task is to develop the page component itself. This involves configuring the HTML and any associated scripts within the page component to display the desired content on our custom console. The page component's HTML should be crafted to present the necessary interface and functionality required for our console.</p>
+						<p>After creating the page component and adding the content & styling to it (can be done accordingly), we have sucessfully created our custom AEM console. Upon clicking our sample console tool, it effortlessly redirects us to the meticulously designed page we've created.</p>
+						<img class="spa-image" src="/images/Custom Button & Console/console.png" alt="console" style="width: 100%;">
+						<p>With that, we've successfully added a custom button to the AEM console, created a unique navigation menu, and personalized the AEM console itself. I hope you've found this blog helpful. Thanks for reading along! &#128516;</p>
+                    </div>
+				</div>
+                <hr style="margin-top: 30px;">
+				<div class="author-details">
+					<div id="like-icon" class="like-icon">
+						<span id="like-count" class="like-count">0</span>
+						<span id="like-btn" class="like-btn">
+							<img src="/images/clap.webp" alt="Like">
+						</span>
+					</div>
+					<div>
+						<span class="author-name">Suchita Mishra | </span>
+						<span class="author-designation">AEM Developer</span>
+					</div>
+				</div>
+				<!-- <div style="display: flex; justify-content: center;">
+					<div class="comment-box" >
+						<h3> Leave a Comment</h3>
+						<form class="comment-form">
+							<input type="text" placeholder="Enter Name"/>
+							<input type="email" placeholder="Enter Email"/>
+							<textarea  rows="5" placeholder="Your Comments"></textarea>
+							<button type="submit" class="hero-btn red-btn">Your Comment</button>
+						</form>
+					</div>
+				</div> -->
+			</div>
+		</div>
+	</section>
+
+<div class="social-icons">
+         
+        <a href="https://www.linkedin.com/company/infodales-tech-solution/" class="linkedin"><img src="/images/linkedin.webp" alt="LinkedIn"></a>
+        <a href="mailto:info@infodales.com" class="email"><img src="/images/email.webp" alt="Email"></a>
+    </div>
+
+	<!--  Footer --->
+	<div class="copyright-area">
+		<div class="footer">
+			<div class="row" style="margin-top: 0px;">
+				<div class="col-xl-4 col-lg-4 text-center text-lg-left">
+					<div class="copyright-text">
+						<p>Copyright &copy; 2024, All Right Reserved <a href="/index.html">Infodales Tech
+								Solution</a></p>
+					</div>
+				</div>
+				
+				<div class="col-xl-4 col-lg-4 d-none d-lg-block text-right">
+					<div class="footer-menu" style="margin-top:10px;">
+						<ul>
+							<li><a href="/index.html">Home</a></li>
+							<li><a href="/about.html">About</a></li>
+							<li><a href="/contact.html">Contact</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<!--- Java Script-->
+	<script>
+		var navLinks = document.getElementById("navLinks");
+
+		function showMenu() {
+			navLinks.style.right = "0";
+		}
+
+		function hideMenu() {
+			navLinks.style.right = "-200px";
+		}
+
+		document.addEventListener("DOMContentLoaded", () => {
+            const likeBtn = document.getElementById('like-btn');
+            const likeCount = document.getElementById('like-count');
+
+            let count = parseInt(localStorage.getItem('clapCount')) || 0;
+            likeCount.textContent = count;
+
+            likeBtn.addEventListener('click', () => {
+                count++;
+                likeCount.textContent = count;
+                localStorage.setItem('clapCount', count);
+
+                const likeAnimation = document.createElement('div');
+                likeAnimation.classList.add('like-animation');
+                likeAnimation.innerHTML = '🎉';
+                document.getElementById('like-icon').appendChild(likeAnimation);
+                likeAnimation.addEventListener('animationend', () => {
+                    likeAnimation.remove();
+                });
+            });
+        });
+
+	</script>
+
+</body>
+
+</html>

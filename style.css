@@ -2336,4 +2336,8 @@ code {
     overflow-x: scroll;
     width: 60%;
   }
+  .blog .spa-image {
+    width: 100%;
+    height: auto;
+  }
 }
