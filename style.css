@@ -1554,6 +1554,11 @@ button[disabled] {
 .blog-items h3 {
   margin: 5px 0;
 }
+
+.aff-headings h3 {
+  padding-bottom: 10px;
+}
+
 pre {
   width: fit-content;
   height: 190px;
