@@ -47,7 +47,7 @@
 	<section class="blog-tiles">
 		<p style="padding: 0; margin-bottom: 20px;">Categories :</p>
 		<div class="categoriesList">
-			<a class="blog-button" onclick="categoryFilter(event)">All</a>
+			<a class="blog-button active" onclick="categoryFilter(event)">All</a>
 			<a class="blog-button" onclick="categoryFilter(event)">AEM Sites</a>
 			<a class="blog-button" onclick="categoryFilter(event)">AEM SPA</a>
 			<a class="blog-button" onclick="categoryFilter(event)">AEM Forms</a>
@@ -66,7 +66,7 @@
 		</div>
 		<!-- <button style="width: fit-content;" onclick="sortBlogs('latest')">Sort By Latest</button>
 		<button style="width: fit-content;" onclick="sortBlogs('oldest')">Sort By Oldest</button> -->
-		<div class="blog-tiles-list" style="display: flex; flex-wrap: wrap;">
+		<div class="blog-tiles-list" >
 			<a href="./blogs/dispatcher.html" style="text-decoration: none;" class="blog-item">
 				<div id="dispatcher" class="blog-item-div"
 					style="border: 1px solid #ccc; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
@@ -194,6 +194,19 @@
 							AEM Sites</p>
 						<p class="blog-title" style="font-size: 1em; color: #555;">AEM as a Cloud Service: Powering Next-Generation Digital Experiences</p>
 						<p class="publishDate">May 24, 2023</p>
+					</div>
+				</div>
+			</a>
+			<a href="./blogs/ContextAware.html" style="text-decoration: none;" class="blog-item">
+				<div id="sites" class="blog-item-div"
+					style="border: 1px solid #ccc; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+					<img src="images/Tile Sites.jpg" alt="Card Image" style="width: 100%; height: auto; display: block;">
+					<div style="padding: 16px;">
+						<p class="sitesTag"
+							style="margin-top: 7px; margin-bottom: 7px; font-size: 13px; border-radius: 20px; width: fit-content; padding: 3px 15px;">
+							AEM Sites</p>
+						<p class="blog-title" style="font-size: 1em; color: #555;">Context Aware Configuration in Adobe Experience Manager (AEM)</p>
+						<p class="publishDate">Sep 09, 2023</p>
 					</div>
 				</div>
 			</a>
@@ -364,6 +377,13 @@
 				document.querySelector(".blogsCount").innerHTML = `( ${count} )`;
 
 		function categoryFilter(event) {
+
+			const buttons = document.querySelectorAll('.blog-button');
+			buttons.forEach(button => {
+				button.classList.remove('active');
+			});
+			event.target.classList.add('active');
+
 			event.preventDefault();
 			var filterValue = event.target.innerHTML;
 			if(filterValue == "AEM Sites"){
