@@ -1631,7 +1631,7 @@ pre code {
     margin-bottom: 10px;
   }
   .categoriesList a {
-    width: 35%;
+    /* width: 35%; */
     font-size: 15px;
   }
   .blog .author,
@@ -2485,4 +2485,22 @@ details[open] .accordion-header {
 
 details[open] .accordion-icon {
   transform: rotate(180deg);
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .blog-tiles-list {
+    grid-template-columns: repeat(2, minmax(200px, 1fr));
+  }
+  .categoriesList {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .blog-tiles-list {
+    grid-template-columns: repeat(1, minmax(200px, 1fr));
+  }
+  .categoriesList {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
