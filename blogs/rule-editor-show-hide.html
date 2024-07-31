@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Blogs | AEM Forms : Show Hide in Rule Editor</title>
+	<link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="In AEM 6.5.xx, we have code editor as well as visual editor wherein you can apply your rules to be followed by the fields either by using functionalities of visual editor or by customizing your own logic in JavaScript and adding the same in code editor.">
+  	<meta name="keywords" content="Infodales, Adobe AEM Forms, Rule Editor, Show Hide">
+	<meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Blogs |  AEM Forms : Show Hide in Rule Editor" />
+    <meta property="og:description" content="In AEM 6.5.xx, we have code editor as well as visual editor wherein you can apply your rules to be followed by the fields either by using functionalities of visual editor or by customizing your own logic in JavaScript and adding the same in code editor." />
+    <meta property="og:url" content="https://infodales.com/blogs/spa-getting-started.html" />
+    <meta property="og:site_name" content="Blogs |  AEM Forms : Show Hide in Rule Editor" />
+	<link rel="stylesheet" href="/style.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;600;700&display=swap"
+		rel="stylesheet">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+
+	<!-- Header -->
+	<section class="sub-header"
+		style="background-image: linear-gradient(rgba(4, 9, 30, 0.5), rgba(4, 9, 30, 0.5)), url('/images/Cover\ Forms.jpg');">
+		<nav>
+			<a href="/index.html"><img src="/images/infodales/Info Dales Main Logo 03.webp" alt="logo"></a>
+			<div class="nav-links" id="navLinks">
+				<i class="fa fa-times" onclick="hideMenu()"></i>
+				<ul>
+					<li><a href="/index.html">HOME</a></li>
+					<li><a href="/about.html">ABOUT</a></li>
+					<li><a href="/services.html">SERVICES</a></li>
+					<li><a href="/blog.html">BLOGS</a></li>
+					<li><a href="/career.html">CAREER</a></li>
+					<li><a href="/contact.html">CONTACT</a></li>
+					<ul>
+			</div>
+			<i class="fa fa-bars" onclick="showMenu()"></i>
+		</nav>
+		<!-- <p style="color: lightgray; margin-left: 17%;"><a href="./blog.html" style="text-decoration: none; color: white; cursor: pointer;">Blogs</a> <span> > </span>AEM Forms : Show Hide in Rule Editor</p> -->
+		<!-- <h1>Blogs</h1> -->
+	</section>
+	<!--  Blog Page Content --->
+	<section class="blog-content">
+		<div>
+			<div class="blog spa-blog">
+				
+				<p style="color: rgb(133, 133, 133); padding: 0 0 10px 0;"><a href="/blog.html" style="text-decoration: none; cursor: pointer;">Blogs</a> <span> > </span>AEM Forms : Show Hide in Rule Editor</p>
+
+				<p class="formsTag" style="margin-top: 7px; margin-bottom: 7px; font-size: 13px; border-radius: 20px; 
+				width: fit-content; padding: 3px 15px;">AEM Forms</p>
+				<h1 class="title">Show Hide in Rule Editor</h1>
+      				<span class="author">Infodales Tech Solutions</span> |
+      				<span class="date">Sept 24, 2023</span>
+    			
+					<div class="share-icons">
+					<a href="https://www.linkedin.com/company/infodales-tech-solution/" target="_blank" class="linkedin-icon"><i class="fa fa-linkedin"></i></a>
+                    <a href="mailto:info@infodales.com" target="_blank" class="email-icon"><i class="fa fa-envelope"></i></a>
+					</div>
+
+				<hr style="margin: 20px 0 10px 0;">
+
+				<!-- <div class="image-container">
+					<img src="images/SPA-Blogs/SPA banner.webp" alt="SPA banner">
+				</div> -->
+				<div class="blog-items">
+					<p>Hi all! Hope you all are doing good. In today's blog, let us understand the functionalities of Show Hide in Rule Editor</p>
+					
+					<div>
+					<h3 style="text-align: left;">Introduction</h3>
+						<p>In AEM 6.5.xx, we have code editor as well as visual editor wherein you can apply your rules to be followed by the fields either by using functionalities of visual editor or by customizing your own logic in JavaScript and adding the same in code editor.</p>
+						<p>AEM Rule Editor is a powerful tool provided by AEM Forms in order to:</p>
+							<ul style="margin-left: auto; width: 93%;">
+								<li>
+									<p>
+										Add custom functionalities in the fields of your form.
+									</p>
+								</li>
+							</ul>
+							<ul style="margin-left: auto; width: 93%;">
+								<li>
+									<p>
+										Set the behaviour of fields within the form structure.
+									</p>
+								</li>
+							</ul>
+								
+					</div>
+					<div>
+						<h3 style="text-align: left;">Approach To study Rule Editor</h3>
+						<p>
+							In this blog we will understand the power of rule editor by creating a simple College Application Form. 
+						</p>
+						<p>
+							The scenario states that first the candidate's eligibility needs to be checked and if found eligible the further sections of the form will be visible to the candidate for filling as per the eligibility criteria and if not then admission denied text will be shown which itself will be a part of the form.  
+						</p>
+						<p><b>Prerequisites: A running AEM instance with forms addon package installed.</b></p>
+					</div>
+					<div>
+						<h3 style="text-align: left;">Creation of College Application Form</h3>
+						<p>Let us begin the creation of College Application Form</p>
+						<ul style="margin-left: auto; width: 93%;">
+							<li><p>
+								First navigate to <a href="http://localhost:4502/aem/forms.html/content/dam/formsanddocuments">create adaptive form</a> and create your form.</p>
+								<!-- image for creating adaptive form -->
+							</li>
+							<div class ="image-container">
+								<img  src="../images/RuleEditor/create.webp">
+							</div>
+							
+						</br>
+						<div class ="image-container">
+							<img src="../images/RuleEditor/form properties.webp">
+						</div>	
+						
+							<li><p>Choose a template of your choice, could be blank but here I have created a custom template, College Template, for the purpose of creation of the form and provide title to it. You will find the root panel wherein you can add a theme after clicking on configure. I have added Beryl theme.</p>
+							</li>
+							<div class="small-img-container">
+								<img class="responsive-image" src="../images/RuleEditor/theme.webp">
+							</div>
+							
+							<li><p>First you need to add 5 panels to your form with provided configuration. Ensure except for the first panel rest all are maked as hidden.</p>
+							</li>
+							<!-- images for creating panel -->
+							<div class="small-img-container">
+							<img class="responsive-image" src="../images/RuleEditor/hide-panel.webp"> </br>
+							</div>
+							<div class ="image-container">
+								<img src="../images/RuleEditor/personal-details-panel.webp">
+							</div>
+							<div class ="image-container">
+								<img src="../images/RuleEditor/ApplicableStreamsPanel.webp">
+							</div>
+							<div class ="image-container">
+								<img src="../images/RuleEditor/Available-streams-panel.webp">
+							</div>
+							<div class ="image-container">
+								<img src="../images/RuleEditor/admission-details-panel.webp">
+							</div>
+							<div class ="image-container">
+								<img src="../images/RuleEditor/admission-denied.webp">
+							</div>
+							
+							<li><p>Now after adding panels, you need to add fields to them. Except for first name, mark all the fields as disabled.</p>
+							</li>
+							<div class="small-img-container">
+								<img class="responsive-image" src="../images/RuleEditor/last-name-configuration.webp">
+							</div>
+							
+							<li><p>First name , Last Name and Percentile Obtained in 10th are the fields in Personal details panel.</p></li>
+							<li><p>Add the First Name Configurations.</p></li>
+							<!-- images for fields of first panel -->
+							<div class="small-img-container">
+								<img class="responsive-image" src="../images/RuleEditor/first-name-configuration.webp">
+							</div>
+							<li><p>Add the Last Name Configurations.</p></li>
+							<div class="small-img-container">
+								<img class="responsive-image" src="../images/RuleEditor/last-name.webp">
+							</div>
+							<li><p>Add the Percentile Obtained in 10th Configurations.</p></li>
+							<div class="small-img-container">
+								<img class="responsive-image" src="../images/RuleEditor/peercentile.webp">
+							</div>
+							
+							
+							 
+							<li><p>Applicable Stream is the field in Applicable Streams panel.</p></li> 
+							<!-- images for fields of second panel -->
+							<div class="small-img-container">
+								<img class="responsive-image" src="../images/RuleEditor/applicable.webp"> 
+							</div>
+							
+							<li><p>Applicable Stream is again a field in Available Streams panel.</p></li>  
+							<!-- images for fields of third panel -->
+							<div class="small-img-container">
+								<img class="responsive-image" src="../images/RuleEditor/avvailable.webp">
+							</div>
+							 
+							<li><p>Name as per ID proof, Contact, Address, Select Blood Group and submit button are the field in Admission Details panel.</p></li> 
+							<!-- images for fields of fourth panel -->
+							<li><p>Add the Name as per ID proof Configurations.</p></li>
+							<div class="small-img-container">
+								<img class="responsive-image" src="../images/RuleEditor/complete-name.webp">
+							</div>
+							<li><p>Add the Contact Configurations.</p></li>
+							<div class="small-img-container">
+								<img class="responsive-image" src="../images/RuleEditor/contact.webp">
+							</div>
+							<li><p>Add the Address Configurations.</p></li>
+							<div class="small-img-container">
+								<img class="responsive-image" src="../images/RuleEditor/address-one.webp">
+							</div>
+							<li><p>Allow multiple lined in Address Configurations.</p></li>
+							<div class="small-img-container">
+								<img class="responsive-image" src="../images/RuleEditor/address-two.webp">
+							</div>
+							<li><p>Add the Select Blood Group Configurations.</p></li>
+							<div class="small-img-container">
+								<img class="responsive-image" src="../images/RuleEditor/bloodgroup.webp">
+							</div>
+							<li><p>Add the Submit Configurations.</p></li>
+							<div class="small-img-container">
+								<img class="responsive-image" src="../images/RuleEditor/submit.webp">
+							</div>
+							
+							<li><p>Candidate not applicable text is a field in Admission Denied panel.</p></li>  
+							<!-- images for fields of fifth panel -->
+							 
+							<div class="small-img-container">
+								<img class="responsive-image" src="../images/RuleEditor/text.webp">
+							</div>
+									
+							<li><p>
+								With this your adaptive form is ready to add include the functionalities of rule editor.
+							</p>
+							</li>
+							
+						</ul>
+					</div>
+					<div>
+						<h3 style="text-align: left;">Adding Rules to Fields</h3>
+						<p>In AEM we have visual as well as code editor that enables an author to add functionalities using either none of them.</p>
+						<p>Let us understand the scenario in detail so as to implement rules in the rule editor. Here first we want to check the eligibility of candidate. If the candidate is found eligible, the respective streams will appear for him to choose. As soon as the candidate selects a field, the candidate will have to enter admission details for official purpose and hence submit the form.</p>
+						<p>In case the candidate does not qualify to secure admission in college, he will recieve the respective message.</p>
+						<p>Let us begin:</p>
+						<ul style="margin-left: auto; width: 93%;">
+							<li><p>Go to the First Name field, select rule editor, this will navigate you to the Rule Editor Console.</p></li>
+							<div class ="image-container">
+								<img class ="image_css" src="../images/RuleEditor/1722249776423/ruleeditorstart.webp">
+							</div>
+							
+							<li><p>We want Last Name to be enabled only when the First Name is not empty, and so select create.</p></li>
+							<!-- image of rule editor of first name both code and visual   -->
+							<div class ="image-container">
+								<img src="../images/RuleEditor/1722249698072/firstname-visual.webp">
+							</div>
+							
+							<div class ="image-container">
+								<img src="../images/RuleEditor/1722249698072/firstname-code.webp">
+							</div>
+							
+							<li><p>Similarly, we want the applicant to add 10th percentile only after last name is not empty.</p></li>
+							<!-- image of rule editor of last name both code and visual   -->
+							<div class ="image-container">
+								<img src="../images/RuleEditor/1722249698072/lastname-visual.webp">
+							</div>
+							 
+							<li><p>Now if 10th percentile is greater than 75, we want Applicable Streams panel to be visible.</p></li>
+							<!-- image of rule editor of percentile first both code and visual   -->
+							<div class ="image-container">
+								<img src="../images/RuleEditor/1722249698072/percentile-one-visual.webp">
+							</div>
+							 
+							<li><p>Now if 10th percentile is between 55-75, we want Available Streams panel to be visible.</p></li>
+							<!-- image of rule editor of percentile second both code and visual   -->
+							<div class ="image-container">
+								<img src="../images/RuleEditor/1722249698072/percentile-two-visual.webp"> 
+							</div>
+							
+							<li><p>Now if 10th percentile is less than 55, we want denied panel to be visible.</p></li> 
+							<!-- image of rule editor of percentile third both code and visual   -->
+							<div class ="image-container">
+								<img src="../images/RuleEditor/1722249698072/percentile-three-visual.webp">
+							</div>
+							 
+							<li><p>After selecting any of the streams, Admission details panel must get available</p></li>
+							<!-- image of rule editor of streams both code and visual   --> 
+							<div class ="image-container">
+								<img src="../images/RuleEditor/1722249698072/applicable-visual.webp">
+							</div>
+							
+							<div class ="image-container">
+								<img src="../images/RuleEditor/1722249698072/available-visual.webp"> 
+							</div>
+							 
+							<li><p>In Admission Panel, we want to enable Contact only if Name as per ID proof is not empty.</p></li> 
+							<!-- image of rule editor of Name as per ID proof code and visual   -->
+							<div class ="image-container">
+								<img src="../images/RuleEditor/1722249698072/complete-name-visual.webp"> 
+							</div>
+							
+							<li><p>We want to enable Address only if Contact is not empty.</p></li> 
+							<!-- image of rule editor of Contact code and visual   -->
+							<div class ="image-container">
+								<img src="../images/RuleEditor/1722249698072/contact-visual.webp"> 
+							</div>
+							
+							<li><p>We want to enable Blood group only if Address is not empty.</p></li> 
+							<!-- image of rule editor of Contact code and visual   --> 
+							<div class ="image-container">
+								<img src="../images/RuleEditor/1722249698072/address.webp"> 
+							</div>
+							
+							<li><p>We want to enable submission after only if blood group is not empty.</p></li> 
+							<!-- image of rule editor of Contact code and visual   -->
+							<div class ="image-container">
+								<img src="../images/RuleEditor/1722249698072/bloodgroup-visual.webp"> 
+							</div>
+							
+						</ul>
+						<p>Now your form is ready. Preview it to find the functionalities working as per the scenario.</p>
+					</div>
+					
+					<div>
+						<p style="color: rgb(3, 7, 26);">Hope you enjoyed reading and understanding the concept of rule editor provided by AEM.</p>
+						<p style="color: rgb(3, 7, 26);">Thanks for reading! &#128516;</p>
+					</div>
+				</div>
+                <hr style="margin-top: 30px;">
+				<div class="author-details">
+					<div id="like-icon" class="like-icon">
+						<span id="like-count" class="like-count">0</span>
+						<span id="like-btn" class="like-btn">
+							<img src="/images/clap.webp" alt="Like">
+						</span>
+					</div>
+					<div>
+						<span class="author-name">Shruti Meshram| </span>
+						<span class="author-designation">AEM Developer</span>
+					</div>
+				</div>
+				<!-- <div style="display: flex; justify-content: center;">
+					<div class="comment-box" >
+						<h3> Leave a Comment</h3>
+						<form class="comment-form">
+							<input type="text" placeholder="Enter Name"/>
+							<input type="email" placeholder="Enter Email"/>
+							<textarea  rows="5" placeholder="Your Comments"></textarea>
+							<button type="submit" class="hero-btn red-btn">Your Comment</button>
+						</form>
+					</div>
+				</div> -->
+			</div>
+		</div>
+	</section>
+
+<div class="social-icons">
+         
+        <a href="https://www.linkedin.com/company/infodales-tech-solution/" class="linkedin"><img src="/images/linkedin.webp" alt="LinkedIn"></a>
+        <a href="mailto:info@infodales.com" class="email"><img src="/images/email.webp" alt="Email"></a>
+    </div>
+
+	<!--  Footer --->
+	<div class="copyright-area">
+		<div class="footer">
+			<div class="row" style="margin-top: 0px;">
+				<div class="col-xl-4 col-lg-4 text-center text-lg-left">
+					<div class="copyright-text">
+						<p>Copyright &copy; 2024, All Right Reserved <a href="/index.html">Infodales Tech
+								Solution</a></p>
+					</div>
+				</div>
+				
+				<div class="col-xl-4 col-lg-4 d-none d-lg-block text-right">
+					<div class="footer-menu" style="margin-top:10px;">
+						<ul>
+							<li><a href="/index.html">Home</a></li>
+							<li><a href="/about.html">About</a></li>
+							<li><a href="/contact.html">Contact</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<!--- Java Script-->
+	<script>
+		var navLinks = document.getElementById("navLinks");
+
+		function showMenu() {
+			navLinks.style.right = "0";
+		}
+
+		function hideMenu() {
+			navLinks.style.right = "-200px";
+		}
+
+		document.addEventListener("DOMContentLoaded", () => {
+    const likeBtn = document.getElementById('like-btn');
+    const likeCount = document.getElementById('like-count');
+
+    let count = parseInt(localStorage.getItem('clapCount')) || 0;
+    likeCount.textContent = count;
+
+    likeBtn.addEventListener('click', () => {
+        count++;
+        likeCount.textContent = count;
+        localStorage.setItem('clapCount', count);
+
+        const likeAnimation = document.createElement('div');
+        likeAnimation.classList.add('like-animation');
+        likeAnimation.innerHTML = '🎉';
+        document.getElementById('like-icon').appendChild(likeAnimation);
+        likeAnimation.addEventListener('animationend', () => {
+            likeAnimation.remove();
+        });
+    });
+});
+
+		// function relatedFilter() {
+		// 	var retString = localStorage.getItem("allBlogs");
+		// 	console.log(retString);
+		// }
+
+
+	</script>
+
+</body>
+
+</html>

@@ -2504,3 +2504,46 @@ details[open] .accordion-icon {
     grid-template-columns: repeat(2, 1fr);
   }
 }
+
+/* Rule Editor Styling */
+.responsive-image {
+  width: 100%;
+  height: auto;
+  max-width: 500px;
+  max-height: 550px;
+}
+.small-img-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 700px) {
+  .responsive-image {
+    max-width: 100%;
+    max-height: 100vh;
+  }
+}
+
+/*Custom Prefill Servicess*/
+.heading-h3 {
+  text-align: left !important;
+}
+.prefill-service-code code {
+  width: 100% !important;
+  overflow-x: scroll;
+}
+.prefill-service-pre {
+  height: 106em;
+}
+
+@media only screen and (max-width: 700px) {
+  .prefill-service-pre {
+    height: 106em;
+  }
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  .prefill-service-pre {
+    height: 106em;
+  }
+}

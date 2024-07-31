@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Blogs | AEM Forms : Adaptive Form Fragments</title>
+	<link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content=" Geolocation : AEM Forms with Dynamic Location">
+    <meta name="keywords" content=" In today’s digital world, enhancing user experience in forms can significantly impact engagement and usability. In this blog, we’ll guide you through creating dynamic forms that fetch and populate dropdown lists with city, state, and country data. By leveraging GeoNames for location data, you’ll be able to create a highly interactive and user-friendly form experience. We’ll also cover the essential steps, including setting up a GeoNames account. Join us as we dive into these powerful integrations to make your AEM forms smarter and more responsive.">
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Blogs | Geolocation : AEM Forms with Dynamic Location" />
+    <meta property="og:description" content="In today’s digital world, enhancing user experience in forms can significantly impact engagement and usability. In this blog, we’ll guide you through creating dynamic forms that fetch and populate dropdown lists with city, state, and country data. By leveraging GeoNames for location data, you’ll be able to create a highly interactive and user-friendly form experience. We’ll also cover the essential steps, including setting up a GeoNames account. Join us as we dive into these powerful integrations to make your AEM forms smarter and more responsive." />
+    <meta property="og:url" content="https://infodales.com/adaptive-form-fragments.html" />
+    <meta property="og:site_name" content="Blogs | Geolocation : AEM Forms with Dynamic Location" />
+	<link rel="stylesheet" href="/style.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;600;700&display=swap"
+		rel="stylesheet">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+
+	<!-- Header -->
+	<section class="sub-header"
+		style="background-image: linear-gradient(rgba(4, 9, 30, 0.5), rgba(4, 9, 30, 0.5)), url('/images/Cover\ Forms.jpg');">
+		<nav>
+			<a href="/index.html"><img src="/images/infodales/Info Dales Main Logo 03.webp" alt="logo"></a>
+			<div class="nav-links" id="navLinks">
+				<i class="fa fa-times" onclick="hideMenu()"></i>
+				<ul>
+					<li><a href="/index.html">HOME</a></li>
+					<li><a href="/about.html">ABOUT</a></li>
+					<li><a href="/services.html">SERVICES</a></li>
+					<li><a href="/blog.html">BLOGS</a></li>
+					<li><a href="/career.html">CAREER</a></li>
+					<li><a href="/contact.html">CONTACT</a></li>
+					<ul>
+			</div>
+			<i class="fa fa-bars" onclick="showMenu()"></i>
+		</nav>
+		<!-- <h1>Blogs</h1> -->
+	</section>
+	<!--  Blog Page Content --->
+	<section class="blog-content">
+		<div>
+			<div class="blog">
+
+				<p style="color: rgb(133, 133, 133); padding: 0 0 10px 0;"><a href="/blog.html" style="text-decoration: none; cursor: pointer;">Blogs</a> <span> > </span> Geolocation : AEM Forms with Dynamic Location</p>
+
+				<p class="formsTag" style="margin-top: 7px; margin-bottom: 7px; font-size: 13px; border-radius: 20px; 
+				width: fit-content; padding: 3px 15px;">AEM Forms</p>
+				<h1 class="title">Geolocation : AEM Forms with Dynamic Location</h1>
+      				<span class="author">Infodales Tech Solutions | </span>
+      				<span class="date">Oct 09, 2023</span>
+    			
+					<div class="share-icons">	
+					<a href="https://www.linkedin.com/company/infodales-tech-solution/" target="_blank" class="linkedin-icon"><i class="fa fa-linkedin"></i></a>
+					<a href="mailto:info@infodales.com" target="_blank" class="email-icon"><i class="fa fa-envelope"></i></a>
+					</div>
+				
+				<hr style="margin: 20px 0 10px 0;">
+
+				<div class="blog-items">
+					
+        			<p>In today’s digital world, enhancing user experience in forms can significantly impact engagement and usability. In this blog, we’ll guide you through creating dynamic forms that fetch and populate dropdown lists with city, state, and country data. 
+					By leveraging GeoNames for location data, you’ll be able to create a highly interactive and user-friendly form experience. We’ll also cover the essential steps, including setting up a GeoNames account. Join us as we dive into these powerful integrations to make your AEM forms smarter and more responsive.
+					</p>
+        			<div class="image-container">
+						<img src="/images/Geolocation-aff/Geolocation.jpg" alt="Integrate Geolocation with AEM Forms">
+					</div>
+					<p>Sign up for a GeoNames account and take note of your username. This username is required to access GeoNames REST APIs. Integrate Geolocation with AEM Forms</p>
+					<div class="image-container">
+						<img src="/images/Geolocation-aff/Geonames Login.png" alt="Create an account in Geolocation">
+					</div>
+
+					<h4 style="text-align: left; margin: 0px 0">Create a Swagger file :</h4>
+					<ul style="margin-left: auto; width: 95%;">
+						<li><p>Retrieve all countries</p></li>
+						<li><p>Retrieve child countries</p></li>
+					</ul>
+					
+					<h4 style="text-align: left; margin: 0px 0">Create Data Sources</h4>
+					<p>To integrate AEM Forms with third-party applications, configure data sources in the cloud services settings. Use the Swagger files to set up these data sources. You will need to create two separate data sources: one for retrieving all countries and another for fetching child elements.
+					</p>
+					<p>To connect AEM Forms with third party api's, you first make a data source in cloud services. You can use the Swagger file to set up this data source.</p>
+					<ul style="margin-left: auto; width: 95%;">
+						<li><p>Log in to AEM and go to the Dashboard.</p></li>
+						<li><p>From Tools, select Cloud Services.</p></li>
+						<li><p>Pick or create a folder in Cloud Services to store your data sources.</p></li>
+						<li><p>Define settings like data type, endpoint URL, and authentication.</p></li>
+						<li><p>Save the data source</p></li>
+					</ul>
+					<div class="image-container">
+						<img src="/images/Geolocation-aff/DS 01.JPG" alt="Integrate Geolocation with AEM Forms">
+						<img src="/images/Geolocation-aff/DS 02.JPG" alt="Integrate Geolocation with AEM Forms">
+					</div>
+
+					<h4 style="text-align: left; margin: 0px 0">Create Form Data Model</h4>
+					<p>Build your form data model using the data sources configured in the previous step, incorporating both data sources for a comprehensive model.
+					</p>
+					<ul style="margin-left: auto; width: 95%;">
+						<li><p>Log in to AEM and go to the Dashboard.</p></li>
+						<li><p>Go to Forms > Data Integrations</p></li>
+						<li><p>Create an Form Data Model</p></li>
+					</ul>
+					<div class="image-container">
+						<img src="/images/Geolocation-aff/FDM 01.JPG" alt="Integrate Geolocation with AEM Forms">
+						<img src="/images/Geolocation-aff/FDM 02.JPG" alt="Integrate Geolocation with AEM Forms">
+						<img src="/images/Geolocation-aff/FDM 03.png" alt="Integrate Geolocation with AEM Forms">
+						<img src="/images/Geolocation-aff/FDM 04.JPG" alt="Integrate Geolocation with AEM Forms">
+					</div>
+					<p>Save it.</p>
+					
+					<h4 style="text-align: left; margin: 0px 0">Create an Adaptive Form</h4>
+        			<p>Create an adaptive form featuring multiple dropdown lists for selecting countries, states, and cities. Include one dropdown for listing countries and another for states and another for cities 
+					that dynamically updates based on the selected country.
+					</p>
+					<ul style="margin-left: auto; width: 95%;">
+						<li><p>Log in to AEM and go to the Dashboard.</p></li>
+						<li><p>Go to Forms > Forms & Documents.</p></li>
+					</ul>
+					<div class="image-container">
+						<img src="/images/Geolocation-aff/AF 01.JPG" alt="Adaptive Form Home ">
+						<img src="/images/Geolocation-aff/AF 02.jpg" alt="Adaptive Form Home ">
+						<img src="/images/Geolocation-aff/AF 03.JPG" alt="Adaptive Form Home ">
+						<img src="/images/Geolocation-aff/AF 04.JPG" alt="Adaptive Form Home ">
+						<img src="/images/Geolocation-aff/AF 05.JPG" alt="Adaptive Form Home ">
+					</div>	
+
+					<h4 style="text-align: left; margin: 0px 0">Populate the Countries Dropdown List</h4>
+        			<p>The countries dropdown list is populated when the form is first loaded. The screenshot below illustrates the rule editor set up to populate the country options.
+					Ensure you provide your GeoNames username for the functionality to work.
+					</p>
+					<div class="image-container">
+						<img src="/images/Geolocation-aff/AF 06.JPG" alt="Adaptive Form Fragments">
+						<img src="/images/Geolocation-aff/AF 07.png" alt="Adaptive Form Fragments">
+						<img src="/images/Geolocation-aff/AF 08.JPG" alt="Adaptive Form Fragments">
+					</div>
+
+					<h4 style="text-align: left; margin: 0px 0">Populate the States Dropdown List</h4>
+        			<p>The states dropdown list is populated when the form is first loaded. The screenshot below illustrates the rule editor set up to populate the state options. Ensure you provide your GeoNames username for the functionality to work.
+					</p>
+					<div class="image-container">
+						<img src="/images/Geolocation-aff/AF 09.JPG" alt="Adaptive Form Fragments">
+					</div>
+
+					<h4 style="text-align: left; margin: 0px 0">Populate the City Dropdown List</h4>
+        			<p>The cities dropdown list is populated when the form is first loaded. The screenshot below illustrates the rule editor set up to populate the cities options. Ensure you provide your GeoNames username for the functionality to work.
+					</p>
+					<div class="image-container">
+						<img src="/images/Geolocation-aff/AF 10.JPG" alt="Adaptive Form Fragments">
+					</div>
+
+					<h4 style="text-align: left; margin: 0px 0">Final Form</h4>
+					<div class="image-container">
+						<img src="/images/Geolocation-aff/AF 11.JPG" alt="Adaptive Form Fragments">
+						<img src="/images/Geolocation-aff/AF 12.JPG" alt="Adaptive Form Fragments">
+						<img src="/images/Geolocation-aff/AF 13.JPG" alt="Adaptive Form Fragments">
+					</div>
+				
+					
+					<p>I'm glad you found this article interesting and informative! Feel free to share it with your friends to spread the 
+						knowledge. <br> Don't forget to follow me for upcoming blogs. Thank you!</p>
+				</div>
+					<hr style="margin-top: 30px;">
+
+					<div class="author-details">
+						<div id="like-icon" class="like-icon">
+							<span id="like-count" class="like-count">0</span>
+							<span id="like-btn" class="like-btn">
+							  	<img src="/images/clap.webp" alt="Like">
+							</span>
+						</div>
+						<div>
+							<span class="author-name">Nitish Bisen | </span>
+							<span class="author-designation">AEM Developer</span>
+						</div>
+					</div>
+
+			</div>
+		</div>
+	</section>
+
+<div class="social-icons">
+	 
+	<a href="https://www.linkedin.com/company/infodales-tech-solution/" class="linkedin"><img src="/images/linkedin.webp" alt="LinkedIn"></a>
+	<a href="mailto:info@infodales.com" class="email"><img src="/images/email.webp" alt="Email"></a>
+</div>
+
+	<!--  Footer --->
+	<div class="copyright-area">
+		<div class="footer">
+			<div class="row" style="margin-top: 0px;">
+				<div class="col-xl-4 col-lg-4 text-center text-lg-left">
+					<div class="copyright-text">
+						<p>Copyright &copy; 2023, All Right Reserved <a href="/index.html">Infodales Tech
+								Solution</a></p>
+					</div>
+				</div>
+				
+				<div class="col-xl-4 col-lg-4 d-none d-lg-block text-right">
+					<div class="footer-menu" style="margin-top:10px;">
+						<ul>
+							<li><a href="/index.html">Home</a></li>
+							<li><a href="/about.html">About</a></li>
+							<li><a href="/contact.html">Contact</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<!--- Java Script-->
+	<script>
+		var navLinks = document.getElementById("navLinks");
+
+		function showMenu() {
+			navLinks.style.right = "0";
+		}
+
+		function hideMenu() {
+			navLinks.style.right = "-200px";
+		}
+
+		document.addEventListener("DOMContentLoaded", () => {
+    const likeBtn = document.getElementById('like-btn');
+    const likeCount = document.getElementById('like-count');
+
+    let count = parseInt(localStorage.getItem('clapCount')) || 0;
+    likeCount.textContent = count;
+
+    likeBtn.addEventListener('click', () => {
+        count++;
+        likeCount.textContent = count;
+        localStorage.setItem('clapCount', count);
+
+        const likeAnimation = document.createElement('div');
+        likeAnimation.classList.add('like-animation');
+        likeAnimation.innerHTML = '🎉';
+        document.getElementById('like-icon').appendChild(likeAnimation);
+        likeAnimation.addEventListener('animationend', () => {
+            likeAnimation.remove();
+        });
+    });
+});
+
+		// function relatedFilter() {
+		// 	var retString = localStorage.getItem("allBlogs");
+		// 	console.log(retString);
+		// }
+
+
+	</script>
+
+</body>
+
+</html>

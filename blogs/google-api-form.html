@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Blogs | AEM Forms : Adaptive Form Fragments</title>
+	<link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content=" AEM Forms with Google Maps API's">
+    <meta name="keywords" content=" In today’s digital world, enhancing user experience in forms can significantly impact engagement and usability. In this blog, we’ll explore how to supercharge your Adobe Experience Manager (AEM) forms by integrating Google Maps APIs. We’ll guide you through creating dynamic forms that  fetch and display the user’s current location like street, 
+	zipcode, city, state, and country data. By leveraging Google Maps APIs for geolocation, you’ll be able to create a highly interactive and user-friendly form experience. We’ll also cover the essential steps, integrating Google Maps API keys to bring this functionality to life. Join us as we dive into these powerful integrations to make your AEM forms smarter and more responsive.">
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Blogs | AEM Forms with Google Maps API's" />
+    <meta property="og:description" content="In today’s digital world, enhancing user experience in forms can significantly impact engagement and usability. In this blog, we’ll explore how to supercharge your Adobe Experience Manager (AEM) forms by integrating Google Maps APIs. We’ll guide you through creating dynamic forms that  fetch and display the user’s current location like street, 
+	zipcode, city, state, and country data. By leveraging Google Maps APIs for geolocation, you’ll be able to create a highly interactive and user-friendly form experience. We’ll also cover the essential steps, integrating Google Maps API keys to bring this functionality to life. Join us as we dive into these powerful integrations to make your AEM forms smarter and more responsive." />
+    <meta property="og:url" content="https://infodales.com/google-api-form.html" />
+    <meta property="og:site_name" content="Blogs | AEM Forms with Google Maps API's" />
+	<link rel="stylesheet" href="/style.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;600;700&display=swap"
+		rel="stylesheet">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+
+	<!-- Header -->
+	<section class="sub-header"
+		style="background-image: linear-gradient(rgba(4, 9, 30, 0.5), rgba(4, 9, 30, 0.5)), url('/images/Cover\ Forms.jpg');">
+		<nav>
+			<a href="/index.html"><img src="/images/infodales/Info Dales Main Logo 03.webp" alt="logo"></a>
+			<div class="nav-links" id="navLinks">
+				<i class="fa fa-times" onclick="hideMenu()"></i>
+				<ul>
+					<li><a href="/index.html">HOME</a></li>
+					<li><a href="/about.html">ABOUT</a></li>
+					<li><a href="/services.html">SERVICES</a></li>
+					<li><a href="/blog.html">BLOGS</a></li>
+					<li><a href="/career.html">CAREER</a></li>
+					<li><a href="/contact.html">CONTACT</a></li>
+					<ul>
+			</div>
+			<i class="fa fa-bars" onclick="showMenu()"></i>
+		</nav>
+		<!-- <h1>Blogs</h1> -->
+	</section>
+	<!--  Blog Page Content --->
+	<section class="blog-content">
+		<div>
+			<div class="blog">
+
+				<p style="color: rgb(133, 133, 133); padding: 0 0 10px 0;"><a href="/blog.html" style="text-decoration: none; cursor: pointer;">Blogs</a> <span> > </span> AEM Forms with Google Maps API's</p>
+
+				<p class="formsTag" style="margin-top: 7px; margin-bottom: 7px; font-size: 13px; border-radius: 20px; 
+				width: fit-content; padding: 3px 15px;">AEM Forms</p>
+				<h1 class="title">AEM Forms with Google Maps API's</h1>
+      				<span class="author">Infodales Tech Solutions | </span>
+      				<span class="date">Oct 24, 2023</span>
+    			
+					<div class="share-icons">	
+					<a href="https://www.linkedin.com/company/infodales-tech-solution/" target="_blank" class="linkedin-icon"><i class="fa fa-linkedin"></i></a>
+					<a href="mailto:info@infodales.com" target="_blank" class="email-icon"><i class="fa fa-envelope"></i></a>
+					</div>
+				
+				<hr style="margin: 20px 0 10px 0;">
+
+				<div class="blog-items">
+					
+        			<p>In today’s digital world, enhancing user experience in forms can significantly impact engagement and usability. In this blog, we’ll explore how to supercharge your Adobe Experience Manager (AEM) forms by integrating Google Maps APIs. We’ll guide you through creating dynamic forms that  fetch and display the user’s current location like street, 
+					zipcode, city, state, and country data. By leveraging Google Maps APIs for geolocation, you’ll be able to create a highly interactive and user-friendly form experience. We’ll also cover the essential steps, integrating Google Maps API keys to bring this functionality to life. Join us as we dive into these powerful integrations to make your AEM forms smarter and more responsive.
+					</p>
+        			<div class="image-container">
+						<img src="/images/GoogleAPIs-aff/Google API's.jpg" alt="Integrate Geolocation with AEM Forms">
+					</div>
+
+					<h4 style="text-align: left; margin: 0px 0">API's Integration</h4>
+					<p>To implement the Geolocation API in Adaptive Forms, follow these steps:</p>
+					<ul style="margin-left: auto; width: 95%;">
+						<li><p><b>Obtain an API Key from Google :</b> Sign up for the Google Maps platform to receive an API key. You can start with a trial key that remains valid for one year.</p></li>
+						<li><p><b>Create an Adaptive Form Fragment :</b> Design a form fragment with fields to display the current address.</p></li>
+						<li><p><b>Invoke the Geolocation API :</b>Trigger the API call using the click event of an image object within the Adaptive Form.</p></li>
+						<li><p><b>Process the API Response :</b>Parse the JSON data returned by the API and populate the Adaptive Form fields with the extracted address information.</p></li>
+					</ul>
+					
+					<h4 style="text-align: left; margin: 0px 0">Create an Adaptive Form</h4>
+        			<p>Create an adaptive form that includes an "Image Choice" component for selecting geolocations. The form should 
+					feature multiple text boxes for entering Lane Number, Lane Name, Zip Code, City, and State. These text boxes should dynamically update based on the user’s clicking on the map image.
+					</p>
+					<ul style="margin-left: auto; width: 95%;">
+						<li><p>Log in to AEM and go to the Dashboard.</p></li>
+						<li><p>Go to Forms > Forms & Documents.</p></li>
+						<li><p>You can create an Adaptive Form or Adaptive Form Fragments</p></li>
+					</ul>
+					<div class="image-container">
+						<img src="/images/GoogleAPIs-aff/AF 01.JPG" alt="Adaptive Form Home ">
+						<img src="/images/GoogleAPIs-aff/AF 02.JPG" alt="Adaptive Form Home ">
+						<p>Select Image Choice component to add image.</p>
+						<img src="/images/GoogleAPIs-aff/AF 03.JPG" alt="Adaptive Form Home ">
+						<p>Select multiple Text Box to fetch data dynamically.</p>
+						<img src="/images/GoogleAPIs-aff/AF 04.JPG" alt="Adaptive Form Home ">
+						<p>Select the rule editor to provide the API key and fetch data using that key. You will use the code editor to write the necessary code for this operation.</p>
+						<img src="/images/GoogleAPIs-aff/AF 05.JPG" alt="Adaptive Form Home ">
+						<img src="/images/GoogleAPIs-aff/AF 06.JPG" alt="Adaptive Form Home ">
+						<img src="/images/GoogleAPIs-aff/AF 07.JPG" alt="Adaptive Form Home ">
+						<img src="/images/GoogleAPIs-aff/AF 09.JPG" alt="Adaptive Form Home ">
+					</div>	
+					<p>Source code similar to Adobe AEM Forms Documents</p>
+					<div class="code-block">
+	
+						<code>
+							navigator.geolocation.getCurrentPosition(showPosition, handleError);<br>
+
+							function showPosition(position) {<br>
+								console.log("I am inside the showPosition function");<br>
+								console.log("Latitude: " + position.coords.latitude + " Longitude: " + position.coords.longitude);<br>
+								
+								var apiKey = "Provide your API Key";<br>
+								var url = "https://maps.googleapis.com/maps/api/geocode/json?latlng=" + position.coords.latitude + "," + position.coords.longitude + "&key=" + apiKey;<br>
+								console.log(url);<br>
+								
+								$.getJSON(url, function (data) {<br>
+									if (data.status === "OK" && data.results.length > 0) {<br>
+										var location = data.results[0].formatted_address;<br>
+										console.log(location);<br>
+										
+										data.results[0].address_components.forEach(function(component) {<br>
+											switch (component.types[0]) {<br>
+												case "street_number":<br>
+													streetNumber.value = component.long_name;<br>
+													break;<br>
+												case "route":<br>
+													streetName.value = component.long_name;<br>
+													break;<br>
+												case "postal_code":<br>
+													zipCode.value = component.long_name;<br>
+													break;<br>
+												case "locality":<br>
+													city.value = component.long_name;<br>
+													break;<br>
+												case "administrative_area_level_1":<br>
+													state.value = component.long_name;<br>
+													break;<br>
+											}<br>
+										});<br>
+									} else {<br>
+										console.error("No results found or Geocode was not successful.");<br>
+									}<br>
+								}).fail(function() {<br>
+									console.error("Failed to retrieve data from Google Maps API.");<br>
+								});<br>
+							}<br>
+							
+							function handleError(error) {<br>
+								switch(error.code) {<br>
+									case error.PERMISSION_DENIED:<br>
+										console.error("User denied the request for Geolocation.");<br>
+										break;<br>
+									case error.POSITION_UNAVAILABLE:<br>
+										console.error("Location information is unavailable.");<br>
+										break;<br>
+									case error.TIMEOUT:<br>
+										console.error("The request to get user location timed out.");<br>
+										break;<br>
+									case error.UNKNOWN_ERROR:<br>
+										console.error("An unknown error occurred.");<br>
+										break;<br>
+								}<br>
+							}<br>
+							
+						</code>
+					</div>
+					<p>Click on the Map Image to automatically populate the form with your current location.</p>
+					<div class="image-container">
+						<img src="/images/GoogleAPIs-aff/AF 08.jpg" alt="Integrate Geolocation with AEM Forms">
+					</div>
+				
+					
+					<p>I'm glad you found this article interesting and informative! Feel free to share it with your friends to spread the 
+						knowledge. <br> Don't forget to follow me for upcoming blogs. Thank you!</p>
+				</div>
+					<hr style="margin-top: 30px;">
+
+					<div class="author-details">
+						<div id="like-icon" class="like-icon">
+							<span id="like-count" class="like-count">0</span>
+							<span id="like-btn" class="like-btn">
+							  	<img src="/images/clap.webp" alt="Like">
+							</span>
+						</div>
+						<div>
+							<span class="author-name">Nitish Bisen | </span>
+							<span class="author-designation">AEM Developer</span>
+						</div>
+					</div>
+
+			</div>
+		</div>
+	</section>
+
+<div class="social-icons">
+	 
+	<a href="https://www.linkedin.com/company/infodales-tech-solution/" class="linkedin"><img src="/images/linkedin.webp" alt="LinkedIn"></a>
+	<a href="mailto:info@infodales.com" class="email"><img src="/images/email.webp" alt="Email"></a>
+</div>
+
+	<!--  Footer --->
+	<div class="copyright-area">
+		<div class="footer">
+			<div class="row" style="margin-top: 0px;">
+				<div class="col-xl-4 col-lg-4 text-center text-lg-left">
+					<div class="copyright-text">
+						<p>Copyright &copy; 2023, All Right Reserved <a href="/index.html">Infodales Tech
+								Solution</a></p>
+					</div>
+				</div>
+				
+				<div class="col-xl-4 col-lg-4 d-none d-lg-block text-right">
+					<div class="footer-menu" style="margin-top:10px;">
+						<ul>
+							<li><a href="/index.html">Home</a></li>
+							<li><a href="/about.html">About</a></li>
+							<li><a href="/contact.html">Contact</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<!--- Java Script-->
+	<script>
+		var navLinks = document.getElementById("navLinks");
+
+		function showMenu() {
+			navLinks.style.right = "0";
+		}
+
+		function hideMenu() {
+			navLinks.style.right = "-200px";
+		}
+
+		document.addEventListener("DOMContentLoaded", () => {
+    const likeBtn = document.getElementById('like-btn');
+    const likeCount = document.getElementById('like-count');
+
+    let count = parseInt(localStorage.getItem('clapCount')) || 0;
+    likeCount.textContent = count;
+
+    likeBtn.addEventListener('click', () => {
+        count++;
+        likeCount.textContent = count;
+        localStorage.setItem('clapCount', count);
+
+        const likeAnimation = document.createElement('div');
+        likeAnimation.classList.add('like-animation');
+        likeAnimation.innerHTML = '🎉';
+        document.getElementById('like-icon').appendChild(likeAnimation);
+        likeAnimation.addEventListener('animationend', () => {
+            likeAnimation.remove();
+        });
+    });
+});
+
+		// function relatedFilter() {
+		// 	var retString = localStorage.getItem("allBlogs");
+		// 	console.log(retString);
+		// }
+
+
+	</script>
+
+</body>
+
+</html>

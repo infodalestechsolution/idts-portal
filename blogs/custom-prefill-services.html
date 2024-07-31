@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Blogs | Custom Prefill Services in AEM Forms</title>
+	<link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Welcome to the blog designed for developers new to the AEM Forms . This blog will walk you through some of the concepts like .What is Custom Prefill ServiceIn AEM Form? and most importantly. How to Implement Custom Prefill Services In Aem Forms? We'll cover these questions in this blog.">
+  	<meta name="keywords" content="Infodales, Custom Prefill Services">
+	<meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Blogs | Custom Prefill Services in AEM Forms" />
+    <meta property="og:description" content="Welcome to the blog designed for developers new to the AEM Forms . This blog will walk you through some of the concepts like .What is Custom Prefill ServiceIn AEM Form? and most importantly. How to Implement Custom Prefill Services In Aem Forms? We'll cover these questions in this blog." />
+    <meta property="og:url" content="https://infodales.com/blogs/custom-prefill-services.html" />
+    <meta property="og:site_name" content="Blogs | Custom Prefill Services in AEM Forms" />
+	<link rel="stylesheet" href="/style.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;600;700&display=swap"
+		rel="stylesheet">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+
+	<!-- Header -->
+	<section class="sub-header"
+		style="background-image: linear-gradient(rgba(4, 9, 30, 0.5), rgba(4, 9, 30, 0.5)), url('/images/Cover\ Forms.jpg');">
+		<nav>
+			<a href="/index.html"><img src="/images/infodales/Info Dales Main Logo 03.webp" alt="logo"></a>
+			<div class="nav-links" id="navLinks">
+				<i class="fa fa-times" onclick="hideMenu()"></i>
+				<ul>
+					<li><a href="/index.html">HOME</a></li>
+					<li><a href="/about.html">ABOUT</a></li>
+					<li><a href="/services.html">SERVICES</a></li>
+					<li><a href="/blog.html">BLOGS</a></li>
+					<li><a href="/career.html">CAREER</a></li>
+					<li><a href="/contact.html">CONTACT</a></li>
+					<ul>
+			</div>
+			<i class="fa fa-bars" onclick="showMenu()"></i>
+		</nav>
+		<!-- <p style="color: lightgray; margin-left: 17%;"><a href="./blog.html" style="text-decoration: none; color: white; cursor: pointer;">Blogs</a> <span> > </span> Getting started with SPA</p> -->
+		<!-- <h1>Blogs</h1> -->
+	</section>
+	<!--  Blog Page Content --->
+	<section class="blog-content">
+		<div>
+			<div class="blog spa-blog">
+				
+				<p style="color: rgb(133, 133, 133); padding: 0 0 10px 0;"><a href="/blog.html" style="text-decoration: none; cursor: pointer;">Blogs</a> <span> > </span>Custom Prefill Services in AEM Forms</p>
+
+				<p class="formsTag" style="margin-top: 7px; margin-bottom: 7px; font-size: 13px; border-radius: 20px; 
+				width: fit-content; padding: 3px 15px;">AEM Forms</p>
+				<h1 class="title">Custom Prefill Services In AEM Forms</h1>
+      				<span class="author">Infodales Tech Solutions</span> |
+      				<span class="date">September 09, 2023</span>
+    			
+					<div class="share-icons">
+					<a href="https://www.linkedin.com/company/infodales-tech-solution/" target="_blank" class="linkedin-icon"><i class="fa fa-linkedin"></i></a>
+                    <a href="mailto:info@infodales.com" target="_blank" class="email-icon"><i class="fa fa-envelope"></i></a>
+					</div>
+
+				<hr style="margin: 20px 0 10px 0;">
+				<div class="blog-items">
+					<p>Welcome to the blog designed for developers new to the AEM Forms . This blog will walk you through some of the concepts like <b>What is Custom Prefill Service In AEM Form ?</b> and most importantly<b>, How to Implement Custom Prefill Services In AEM Forms ?</b> We'll cover these questions in this blog.</p>
+					<h3 class="heading-h3">What are Prefill Services in AEM Forms ?</h3>
+                    <p>Prefill Services in AEM Forms are used to populate the form field with data before form is presented to the users. These services are useful for enhancing by reducing the amount of information users need to manually, ensuring data consistency, and improving form consistency rates.</p>
+                    <h3 class="heading-h3">What are Custom Prefill Services in AEM Forms ?</h3>
+                    <p>Custom Prefill Services in AEM (Adobe Experience Manager) Forms are tailored solutions designed to meet specific business requirements that are not addressed by out-of-the-box prefill functionalities. These services allow for more complex and dynamic data fetching, manipulation, and mapping to form fields based on unique logic and sources.
+                    </p>
+                    <h3 class="heading-h3">Steps to Implement Custom Prefill Services </h3>
+                    <div>
+                        <ul style="margin-left: 2.5%;">
+                            <li>
+                            <h4 style="margin: 3px 0;">Create an Adaptive Form </h4>
+                               <ul style="margin-left: 3%; width: 93%;margin-top: -1%;">
+                                  <li>
+                                      <p>To  Create an Adaptive Form Navigate to <b>Forms</b> -><b> Forms and Document</b> -> <b>Create</b> -> Select <b>Adaptive Form </b> -> Select any Template -> Enter Title and Name -> Click <b>Create</b>. Form which looks like this will appear.</p>
+                                    <div class="image-container">
+                                      <img  src="/images/Custom Prefill Services/Adaptive Form.png" alt="sampleAdaptive form" />
+                                    </div>
+                                    </li>
+                                 <li>
+                                    <p>Add the Component in the root panel for e.g Text box.</p>
+                                    <div class="image-container">
+                                    <img src="/images/Custom Prefill Services/Added Component to the Root panel.png" alt="added-component"/>
+                                    </div>
+                                </li>
+
+                                </ul>
+                             </li>
+                             <li>
+                            <h4 style="margin: 3px 0;">Create a Backend Services that fetches and processes the data from the required sources.</h4>
+                            <ul  style="margin-left: 3%; width: 93%;margin-top: -1%;">
+                                <li>  <p>To Prefill an adaptive form using, Prefill Service. You must create a class that Implement
+                                    <b style="background-color: yellow; word-wrap: break-word;">com.adobe.forms.common.service.DataProvider</b> Interface which will override <b style="background-color: yellow;">getPrefillData()</b>. Under this method we will write the business logic which will fetch the data and return the input stream of the data document.
+                                    </p></li>
+                                <li>
+                                    <p>In the Code Snippet below we have Implemented the DataProvider Interface</p>
+                                    <div  class="prefill-service-code" style="margin-top: -2%;">
+                                    <pre  class="prefill-service-pre">
+                                        <code  class="prefill-service-code-tag">
+package com.infodalesforms.core.service.impl;
+
+import com.adobe.forms.common.service.*;
+import org.apache.sling.api.resource.LoginException;
+import org.osgi.service.component.annotations.Component;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import javax.jcr.RepositoryException;
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.TransformerException;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.InputStream;
+
+@Component(service = DataProvider.class)
+public class CustomPrefillServices implements DataProvider {
+    @Override
+    public String getServiceName() {
+        return "Custom Prefill Services";
+    }
+    @Override
+    public String getServiceDescription() {
+        return "Custom Prefill Services";
+    }
+    @Override
+    public PrefillData getPrefillData(DataOptions dataOptions) throws FormsException {
+        return new PrefillData() {
+            public InputStream getInputStream() {
+                try {
+                    return getData(dataOptions);
+                } catch (ParserConfigurationException | TransformerException | RepositoryException | LoginException e) {
+                    throw new RuntimeException(e);
+                }
+            }
+
+            public ContentType getContentType() {
+                return ContentType.XML;
+            }
+        };
+    }
+
+    public InputStream getData(DataOptions dataOptions) throws ParserConfigurationException, 
+    TransformerException, RepositoryException, LoginException {
+        DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
+        DocumentBuilder documentBuilder = documentBuilderFactory.newDocumentBuilder();
+        Document document = documentBuilder.newDocument();
+
+        Element rootElement = document.createElement("data");
+        document.appendChild(rootElement);
+
+        Element name = document.createElement("<b style="color: black;">name</b>");
+        name.setTextContent("abc");
+        rootElement.appendChild(name);
+
+        Element lastName = document.createElement("<b style="color: black;">lastname</b>");
+        lastName.setTextContent("def");
+        rootElement.appendChild(lastName);
+
+        Element email = document.createElement("<b style="color: black;">email</b>");
+        email.setTextContent("abc@gmail.com");
+        rootElement.appendChild(email);
+        DOMSource domSource = new DOMSource(document);
+        ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
+        StreamResult streamResult = new StreamResult(byteArrayOutputStream);
+        TransformerFactory.newInstance().newTransformer().transform(domSource, streamResult);
+
+        return new ByteArrayInputStream(byteArrayOutputStream.toByteArray());
+    }
+}
+
+                                        </code>
+                                    </pre>
+                                    </div>
+                                </li>
+                                <li class="li-margin">
+                                    <p><b>Note :</b> The text which are highlighted in black to create an elements in the above snippet should be similar to which you have provided after adding the textbox component in AEM Forms. In the below image, name field are similar to the one I have created an element in the code.</p>
+                                    <div class="image-container">
+                                    <img src="/images/Custom Prefill Services/Adaptive Forms Name Field.png" alt="name fields" />
+                                    </div>
+
+                                </li>
+                            </ul>
+                            </li>
+                            <li>
+                                <p>Deploy the code to AEM Environment using <b style="background-color: yellow;">mvn clean install -PautoInstallBundle 
+                                </b></p>
+                            </li>
+                            <li>
+                                <p>Navigate to Your form -> Click on "1" symbol in the image -> Click on <b>Setting Symbol</b> Option -> There you will see the out of the box services as well as <b>Custom Prefill Services</b>  that you have created through Java Code.</p>
+                                <div class="image-container">
+                                <img src="/images/Custom Prefill Services/Prefill Adaptive Form -1.png " alt="prefill service 1" width="700" height="280"/>
+                                </div>
+                                <div class="image-container">
+                                <img src="/images/Custom Prefill Services/Prefill Services -2.png" alt="prefill service 2" width="700" height="280"/>
+                                </div>
+                            </li>
+                            <li>
+                                <p>Click On <b>Preview</b>. You will see data get Prefilled into the Form.</p>
+                                <div class="image-container">
+                                <img src="/images/Custom Prefill Services/Preview Image.png" alt="preview image" width="700" height="280"/>
+                                </div>
+                            </li>
+                        </ul>
+                        <p>So Using above mention Steps you can create your own Prefill Services in AEM Form. If you find this blog helpful, Please share it with your friends and colleagues.</p>
+                    </div> 
+                </div>
+                <hr style="margin-top: 30px;">
+				<div class="author-details">
+					<div id="like-icon" class="like-icon">
+						<span id="like-count" class="like-count">0</span>
+						<span id="like-btn" class="like-btn">
+							<img src="/images/clap.webp" alt="Like">
+						</span>
+					</div>
+					<div>
+						<span class="author-name">Yash Sakharkar | </span>
+						<span class="author-designation">AEM Developer</span>
+					</div>
+				</div>
+				<!-- <div style="display: flex; justify-content: center;">
+					<div class="comment-box" >
+						<h3> Leave a Comment</h3>
+						<form class="comment-form">
+							<input type="text" placeholder="Enter Name"/>
+							<input type="email" placeholder="Enter Email"/>
+							<textarea  rows="5" placeholder="Your Comments"></textarea>
+							<button type="submit" class="hero-btn red-btn">Your Comment</button>
+						</form>
+					</div>
+				</div> -->
+			</div>
+		</div>
+	</section>
+
+<div class="social-icons">
+         
+        <a href="https://www.linkedin.com/company/infodales-tech-solution/" class="linkedin"><img src="/images/linkedin.webp" alt="LinkedIn"></a>
+        <a href="mailto:info@infodales.com" class="email"><img src="/images/email.webp" alt="Email"></a>
+    </div>
+
+	<!--  Footer --->
+	<div class="copyright-area">
+		<div class="footer">
+			<div class="row" style="margin-top: 0px;">
+				<div class="col-xl-4 col-lg-4 text-center text-lg-left">
+					<div class="copyright-text">
+						<p>Copyright &copy; 2024, All Right Reserved <a href="/index.html">Infodales Tech
+								Solution</a></p>
+					</div>
+				</div>
+				
+				<div class="col-xl-4 col-lg-4 d-none d-lg-block text-right">
+					<div class="footer-menu" style="margin-top:10px;">
+						<ul>
+							<li><a href="/index.html">Home</a></li>
+							<li><a href="/about.html">About</a></li>
+							<li><a href="/contact.html">Contact</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<!--- Java Script-->
+	<script>
+		var navLinks = document.getElementById("navLinks");
+
+		function showMenu() {
+			navLinks.style.right = "0";
+		}
+
+		function hideMenu() {
+			navLinks.style.right = "-200px";
+		}
+
+		document.addEventListener("DOMContentLoaded", () => {
+    const likeBtn = document.getElementById('like-btn');
+    const likeCount = document.getElementById('like-count');
+
+    let count = parseInt(localStorage.getItem('clapCount')) || 0;
+    likeCount.textContent = count;
+
+    likeBtn.addEventListener('click', () => {
+        count++;
+        likeCount.textContent = count;
+        localStorage.setItem('clapCount', count);
+
+        const likeAnimation = document.createElement('div');
+        likeAnimation.classList.add('like-animation');
+        likeAnimation.innerHTML = '🎉';
+        document.getElementById('like-icon').appendChild(likeAnimation);
+        likeAnimation.addEventListener('animationend', () => {
+            likeAnimation.remove();
+        });
+    });
+});
+
+		// function relatedFilter() {
+		// 	var retString = localStorage.getItem("allBlogs");
+		// 	console.log(retString);
+		// }
+
+
+	</script>
+
+</body>
+
+</html>
