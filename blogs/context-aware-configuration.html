@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Blogs | Context Aware Configuration</title>
+	<link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content=" Context Aware Configuration">
+    <meta name="keywords" content="Context Aware Configuration (CA-Config) in Adobe Experience Manager (AEM) is a powerful feature that allows for the flexible and dynamic application of settings and configurations based on the context of content within the AEM hierarchy.">
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Blogs | Context Aware Configuration" />
+    <meta property="og:description" content="Context Aware Configuration (CA-Config) in Adobe Experience Manager (AEM) is a powerful feature that allows for the flexible and dynamic application of settings and configurations based on the context of content within the AEM hierarchy." />
+    <meta property="og:url" content="https://infodales.com/ContextAware.html" />
+    <meta property="og:site_name" content="Blogs | Context Aware Configuration" />
+	<link rel="stylesheet" href="/style.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;600;700&display=swap"
+		rel="stylesheet">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+
+	<!-- Header -->
+	<section class="sub-header"
+		style="background-image: linear-gradient(rgba(4, 9, 30, 0.5), rgba(4, 9, 30, 0.5)), url('/images/Cover\ Sites.jpg');">
+		<nav>
+			<a href="/index.html"><img src="/images/infodales/Info Dales Main Logo 03.webp" alt="logo"></a>
+			<div class="nav-links" id="navLinks">
+				<i class="fa fa-times" onclick="hideMenu()"></i>
+				<ul>
+					<li><a href="/index.html">HOME</a></li>
+					<li><a href="/about.html">ABOUT</a></li>
+					<li><a href="/services.html">SERVICES</a></li>
+					<li><a href="/blog.html">BLOGS</a></li>
+					<li><a href="/career.html">CAREER</a></li>
+					<li><a href="/contact.html">CONTACT</a></li>
+					<ul>
+			</div>
+			<i class="fa fa-bars" onclick="showMenu()"></i>
+		</nav>
+		<!-- <h1>Blogs</h1> -->
+	</section>
+	<!--  Blog Page Content --->
+	<section class="blog-content">
+		<div>
+			<div class="blog">
+
+				<p style="color: rgb(133, 133, 133); padding: 0 0 10px 0;"><a href="/blog.html" style="text-decoration: none; cursor: pointer;">Blogs</a> <span> > </span> Context Aware Configuration</p>
+
+				<p class="sitesTag" style="margin-top: 7px; margin-bottom: 7px; font-size: 13px; border-radius: 20px; 
+				width: fit-content; padding: 3px 15px;">AEM Sites</p>
+				<h1 class="title">Context Aware Configuration</h1>
+      				<span class="author">Infodales Tech Solutions | </span>
+      				<span class="date">November 09, 2023</span>
+    			
+					<div class="share-icons">	
+					<a href="https://www.linkedin.com/company/infodales-tech-solution/" target="_blank" class="linkedin-icon"><i class="fa fa-linkedin"></i></a>
+					<a href="mailto:info@infodales.com" target="_blank" class="email-icon"><i class="fa fa-envelope"></i></a>
+					</div>
+				
+				<hr style="margin: 20px 0 10px 0;">
+				<!-- <div class="image-container">
+					<img src="images/cover.webp" alt="Image Description">
+				</div> -->
+				<div class="blog-items">
+					<div>
+						<h3 style="text-align: left; margin: 0px 0">Introduction</h3>
+						<p>
+							Managing the settings for different parts of a website can be a headache, especially for large sites with varied needs. Adobe Experience Manager (AEM) has a powerful tool called Context Aware Configuration (CA-Config) that makes this job much easier. CA-Config allows you to apply different settings to different sections of your website based on their specific requirements.
+						</p>
+						<p>
+							Think of CA-Config like a smart manager for your website’s settings. For example, if you run a global website, you can use CA-Config to ensure each regional section of your site shows the right content for that area. This means your visitors in the USA see different information than visitors in Japan, all managed smoothly from one place.
+						</p>
+						<p>
+							The real benefit of CA-Config is its simplicity and precision. You can control settings exactly where you need them without dealing with complicated setups. This makes it easier to keep your site running smoothly, no matter how big or complex it gets. In this blog, we’ll explore how CA-Config works and how it can help you manage your website more effectively.
+						</p>
+					</div>
+        			
+					<div>
+						<h3 style="text-align: left; margin: 0px 0">What is Context Aware Configuration?</h3>
+						<p>
+							Context Aware Configuration (CA-Config) in Adobe Experience Manager (AEM) is a powerful feature that allows for the flexible and dynamic application of settings and configurations based on the context of content within the AEM hierarchy. It enables the definition of configurations that are specific to content resources or resource trees, rather than being globally applied.
+						</p>
+						<p>
+							With CA-Config, configurations can be tailored to different sections of a website or application, such as regional sites or tenant-specific pages. This is particularly useful for large, multi-faceted websites that serve diverse audiences with varying needs. CA-Config supports hierarchy-based inheritance, which means that configurations can inherit settings from their parent context, allowing for a structured and organized approach to configuration management.
+						</p>
+						<p>
+							One of the key benefits of CA-Config is its ability to provide context-specific settings without the need for complex coding or deployment processes. It simplifies the management of environment-specific configurations, enabling developers to adjust application behavior dynamically, based on the specific site or content context.
+						</p>
+						<p>
+							n practice, CA-Config is implemented by defining configuration properties in Sling, creating context configurations under the /conf folder, and associating these configurations with content paths. This approach not only streamlines the configuration process but also enhances the scalability and maintainability of AEM projects
+						</p>
+					</div>
+
+					<div>
+						<h3 style="text-align: left; margin: 0px 0">Advantages of Using CA-Config</h3>
+						<p>The main advantages of using CA-Config over traditional OSGi configurations include:</p>
+						<ul style="margin-left: auto; width: 93%;">
+							<li><p><b>Context-specific settings:</b> Configurations can be applied to specific areas of the content tree, allowing for greater flexibility.</p></li>
+							<li><p><b>Hierarchy-based inheritance:</b> Settings can inherit from parent configurations, making it easier to manage configurations across a site.</p></li>
+							<li><p><b>Simplified management:</b> CA-Config simplifies the management of configurations, especially for large sites with complex structures.</p></li>
+						</ul>
+					</div>
+
+					<div>
+						<h3 style="text-align: left; margin: 0px 0">How To Create Context Aware Configuration </h3>
+						<h4 style="margin: 12px 0">Step : 1 Creating OSGi Configuration:</h4>
+						<ul style="margin-left: auto; width: 93%;">
+							<li><p>Define an interface similar to creating an OSGi configuration.</p></li>
+							<li><p>Use the @Configuration annotation instead of the usual OSGi annotations.</p></li>
+							<li><p>Provide labels, descriptions, names, and specify the collection property (true or false).</p></li>
+							<li><p>Define properties using the @Property annotation.</p></li>
+							<li><p>Provide label and description.</p></li>
+							<li><p>Default values can be provided if needed.</p></li>
+						</ul>
+						<pre style="height: 410px;" >
+							<code style="width: 100%;">
+import org.apache.sling.caconfig.annotation.Configuration;
+import org.apache.sling.caconfig.annotation.Property;
+
+@Configuration(  name = "Test Context Aware Configuration",
+								description = "Context Aware Configuration.")
+public @interface ContextAwareConfig {
+	@Property( label = "CA Value",
+						description="Test value for CA Config")
+	String CAValue();
+
+	@Property( label = "CA Value with Default",
+						description="Default value for CA Config")
+	String CAValueWithDefault() default "default Value";
+}
+						</code>
+					</pre>
+					<h4 style="margin: 12px 0">Step : 2 Call OSGi configuration in Sling Model:</h4>
+					<ul style="margin-left: auto; width: 93%;">
+						<li>
+							<p>First, we create a model class that can work with configurations.</p>
+						</li>
+						<li>
+							<p>Inside this model class, we define a function that needs information like the current page and the resource resolver.</p>
+						</li>
+						<li>
+							<p>Context-aware configurations are based on resources that understand their context.
+							To access configurations, we use the ConfigurationResolver service.</p>
+						</li>
+						<li>
+							<p>We can obtain the ConfigurationBuilder through the ConfigurationResolver service.
+								This service provides a method to retrieve the ConfigurationBuilder.</p>
+						</li>
+						<li>
+							<p>Alternatively, we can directly adapt our content resource to the ConfigurationBuilder interface to access the configuration.</p>
+						</li>
+						<li>
+							<p>The ConfigurationBuilder can retrieve configurations as ValueMap or by adapting the configuration resources.
+								Sometimes, we need to specify a configuration name, but it's often automatically derived from annotations.</p>
+						</li>
+						<li>
+							<p>The ConfigurationResolver internally uses the ConfigurationResourceResolver to fetch configuration resources.
+								These resources are usually stored under the bucket name sling:configs.</p>
+						</li>
+						<li>
+							<p>Once you have the ConfigurationBuilder, it offers only one method called 'as'.
+								This 'as' method returns your context-aware configuration, which you can then use anywhere in your application.</p>
+						</li>
+						<li>
+							<p>Finally, we execute the function using the @PostConstruct annotation.
+								Inside this function, we initialize variables with values retrieved from the configuration.</p>
+						</li>
+					</ul>
+
+					<p>You can refer below code </p>
+
+					<pre style="height: 1050px;">
+						<code style="width: 100%;">
+@Model(
+adaptables = {SlingHttpServletRequest.class},
+adapters = {ContextAwareConfig.class},
+defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL
+			)
+public class ContextAwareConfigModel {
+	private String siteCountry;
+	private String siteOwner;
+	private String siteLanguage;
+	@SlingObject
+	ResourceResolver resourceResolver;
+	private ContextAwareConfig CAConfig;
+	@ScriptVariable
+	Page currentPage;
+	@PostConstruct
+	void init() {
+		ContextAwareConfig CAConfig=getCAConfiguration(currentPage.getPath(),resourceResolver);
+		siteCountry=CAConfig.siteCountry();
+		siteOwner=CAConfig.siteOwner();
+		siteLanguage=CAConfig.siteLanguage();
+	}
+	ContextAwareConfig getCAConfiguration( String currentPage, ResourceResolver resourceResolver){
+		String currentPath = StringUtils.isNotBlank(currentPage) ? currentPage : StringUtils.EMPTY;
+		Resource contentResource = resourceResolver.getResource(currentPath);
+		if (contentResource != null) {
+			ConfigurationBuilder configurationBuilder = contentResource.adaptTo(ConfigurationBuilder.class);
+			if (configurationBuilder != null) {
+				return configurationBuilder.as(ContextAwareConfig.class);
+			}
+		}
+		return null;
+	}
+	public String getSiteCountry() {
+		return siteCountry;
+	}
+
+	public String getSiteOwner() {
+		return siteOwner;
+	}
+
+	public String getSiteLanguage() {
+		return siteLanguage;
+	}
+}
+
+					</code>
+					</pre>
+					<h4 style="margin: 12px 0">Step : 3 Create Component</h4>
+					<ul style="margin-left: auto; width: 93%;">
+						<li>
+							<p>In component display the value of CA configuration</p> 
+							<pre style="height: 210px;">
+						<code style="width: 100%;">
+&lt;sly data-sly-use.ConfigValue="com.weretail.core.models.impl.ContextAwareConfigModel"&gt;
+	&lt;h4&gt;>Site Country : ${ConfigValue.siteCountry}&lt;/h4&gt;
+	&lt;h4>Site Owner : ${ConfigValue.siteOwner}&lt;/h4&gt;
+	&lt;h4&gt;>Site Language : ${ConfigValue.siteLanguage}&lt;/h4&gt;
+&lt;/sly&gt;
+						</code>
+					</pre>
+						</li>
+					</ul>
+					
+					<h4 style="margin: 12px 0">Step : 4 Create Folder</h4>
+					<ul style="margin-left: auto; width: 93%;">
+						<li>
+							<p>Create a folder sturucture according to your site </p>
+						</li>
+						<li>
+							<p>Folders jcr:primarytype would be sling:folder </p>
+						</li>
+						<li>
+							<p>Node name would be your configurations relative path </p>
+							<img src="/images/contextAwareImage/Screenshot 2024-03-13 193115.webp"  width="100%" alt="Text">
+						</li>
+					</ul>
+					
+					<ul  style="margin-left: auto; width: 93%;">
+						<li>
+							<p>Add property and value to the node that you have defined in your configuration</p>
+							<img src="/images/contextAwareImage/Screenshot 2024-03-13 192641.webp" width="100%"alt="">
+							<img src="/images/contextAwareImage/Screenshot 2024-03-13 192729.webp"width="100%" alt="">
+							<img src="/images/contextAwareImage/Screenshot 2024-03-13 192757.webp"width="100%" alt="">
+						</li>
+					</ul>
+
+					
+
+					<h4 style="margin: 12px 0">Step : 5 Add rererence to your site </h4>
+					<ul style="margin-left: auto; width: 93%;">
+						<li>
+							<p>Inside /content/mysite under the specific site hierarchy, add property sling:configRef = [path of the folder that has a configuration for that specific site] in jcr: content.
+
+								<img src="/images/contextAwareImage/Screenshot 2024-03-13 193534.webp"width="100%" alt="">
+							</p>
+						</li>
+					</ul>
+
+					
+					<h4 style="margin: 12px 0">Step : 6 Add component to your page</h4>
+					<ul style="margin-left: auto; width: 93%;">
+						<li>
+							<p>When we utilize a component on a webpage, it acquires its configuration based 
+								on the sling:configRef path. If, within a hierarchy, a specific configuration
+								is not explicitly defined, the component inherits configuration values from 
+								its parent. For instance, if we do not define sling:configRef in 
+								ca/b1/jcr:content, it will inherit configuration settings from the ca
+								parent.
+								<img src="/images/contextAwareImage/endResult.webp" width="100%" alt="">
+								</p>
+						</li>
+					</ul>
+				</div>
+				
+
+                <h3 style="text-align: left; margin: 0px 0">Conclusion</h3>
+                <p>
+                    Context Aware Configuration (CA-Config) in Adobe Experience Manager (AEM) significantly simplifies the management of website settings, particularly for large and complex sites. By allowing configurations to be tailored to specific sections of a site, CA-Config ensures that content is relevant and localized for different audiences. Its flexibility and precision reduce the need for complex inheritance structures, making it easier to maintain consistency across the site. Implementing CA-Config involves defining configuration properties, integrating them with Sling Models, and creating components that display these configurations. This streamlined approach enhances the scalability and maintainability of AEM projects, ensuring a smooth and efficient content management experience.
+                </p>
+					
+				</div>
+					<hr style="margin-top: 30px;">
+
+					<div class="author-details">
+						<div id="like-icon" class="like-icon">
+							<span id="like-count" class="like-count">0</span>
+							<span id="like-btn" class="like-btn">
+							  	<img src="/images/clap.webp" alt="Like">
+							</span>
+						</div>
+						<div>
+							<span class="author-name">Ankit Pardhi | </span>
+							<span class="author-designation">AEM Developer</span>
+						</div>
+					</div>
+
+			</div>
+		</div>
+	</section>
+
+<div class="social-icons">
+	 
+	<a href="https://www.linkedin.com/company/infodales-tech-solution/" class="linkedin"><img src="/images/linkedin.webp" alt="LinkedIn"></a>
+	<a href="mailto:info@infodales.com" class="email"><img src="/images/email.webp" alt="Email"></a>
+</div>
+
+	<!--  Footer --->
+	<div class="copyright-area">
+		<div class="footer">
+			<div class="row" style="margin-top: 0px;">
+				<div class="col-xl-4 col-lg-4 text-center text-lg-left">
+					<div class="copyright-text">
+						<p>Copyright &copy; 2023, All Right Reserved <a href="/index.html">Infodales Tech
+								Solution</a></p>
+					</div>
+				</div>
+				
+				<div class="col-xl-4 col-lg-4 d-none d-lg-block text-right">
+					<div class="footer-menu" style="margin-top:10px;">
+						<ul>
+							<li><a href="/index.html">Home</a></li>
+							<li><a href="/about.html">About</a></li>
+							<li><a href="/contact.html">Contact</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<!--- Java Script-->
+	<script>
+		var navLinks = document.getElementById("navLinks");
+
+		function showMenu() {
+			navLinks.style.right = "0";
+		}
+
+		function hideMenu() {
+			navLinks.style.right = "-200px";
+		}
+
+		document.addEventListener("DOMContentLoaded", () => {
+    const likeBtn = document.getElementById('like-btn');
+    const likeCount = document.getElementById('like-count');
+
+    let count = parseInt(localStorage.getItem('clapCount')) || 0;
+    likeCount.textContent = count;
+
+    likeBtn.addEventListener('click', () => {
+        count++;
+        likeCount.textContent = count;
+        localStorage.setItem('clapCount', count);
+
+        const likeAnimation = document.createElement('div');
+        likeAnimation.classList.add('like-animation');
+        likeAnimation.innerHTML = '🎉';
+        document.getElementById('like-icon').appendChild(likeAnimation);
+        likeAnimation.addEventListener('animationend', () => {
+            likeAnimation.remove();
+        });
+    });
+});
+
+		// function relatedFilter() {
+		// 	var retString = localStorage.getItem("allBlogs");
+		// 	console.log(retString);
+		// }
+
+
+	</script>
+
+</body>
+
+</html>
