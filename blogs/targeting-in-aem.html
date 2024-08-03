@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Blogs | Targeting in AEM - Part 1</title>
+	<link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Welcome to the blog designed for developers new to the AEM SPA concept. This blog will walk you through some of the well known questions like What is SPA? Why SPA? and mainly Why SPA with AEM? We'll cover these questions in this blog.">
+  	<meta name="keywords" content="Infodales, Adobe AEM, Targeting, Personalization, Targeting in AEM">
+	<meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Blogs | Targeting in AEM - Part 1" />
+    <meta property="og:description" content="Welcome to the blog designed for developers new to the AEM SPA concept. This blog will walk you through some of the well known questions like What is SPA? Why SPA? and mainly Why SPA with AEM? We'll cover these questions in this blog." />
+    <meta property="og:url" content="https://infodales.com/blogs/targeting-in-aem.html" />
+    <meta property="og:site_name" content="Blogs | Targeting in AEM - Part 1" />
+	<link rel="stylesheet" href="/style.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;600;700&display=swap"
+		rel="stylesheet">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+
+	<!-- Header -->
+	<section class="sub-header"
+		style="background-image: linear-gradient(rgba(4, 9, 30, 0.5), rgba(4, 9, 30, 0.5)), url('/images/Cover\ Sites.jpg');">
+		<nav>
+			<a href="/index.html"><img src="/images/infodales/Info Dales Main Logo 03.webp" alt="logo"></a>
+			<div class="nav-links" id="navLinks">
+				<i class="fa fa-times" onclick="hideMenu()"></i>
+				<ul>
+					<li><a href="/index.html">HOME</a></li>
+					<li><a href="/about.html">ABOUT</a></li>
+					<li><a href="/services.html">SERVICES</a></li>
+					<li><a href="/blog.html">BLOGS</a></li>
+					<li><a href="/career.html">CAREER</a></li>
+					<li><a href="/contact.html">CONTACT</a></li>
+					<ul>
+			</div>
+			<i class="fa fa-bars" onclick="showMenu()"></i>
+		</nav>
+		<!-- <p style="color: lightgray; margin-left: 17%;"><a href="./blog.html" style="text-decoration: none; color: white; cursor: pointer;">Blogs</a> <span> > </span> Getting started with SPA</p> -->
+		<!-- <h1>Blogs</h1> -->
+	</section>
+	<!--  Blog Page Content --->
+	<section class="blog-content">
+		<div>
+			<div class="blog spa-blog">
+				
+				<p style="color: rgb(133, 133, 133); padding: 0 0 10px 0;"><a href="/blog.html" style="text-decoration: none; cursor: pointer;">Blogs</a> <span> > </span> Targeting in AEM - Part 1</p>
+
+				<p class="sitesTag" style="margin-top: 7px; margin-bottom: 7px; font-size: 13px; border-radius: 20px; 
+				width: fit-content; padding: 3px 15px;">AEM Sites</p>
+				<h1 class="title">Targeting in AEM - Part 1</h1>
+      				<span class="author">Infodales Tech Solutions</span> |
+      				<span class="date">November 09, 2023</span>
+    			
+					<div class="share-icons">
+					<a href="https://www.linkedin.com/company/infodales-tech-solution/" target="_blank" class="linkedin-icon"><i class="fa fa-linkedin"></i></a>
+                    <a href="mailto:info@infodales.com" target="_blank" class="email-icon"><i class="fa fa-envelope"></i></a>
+					</div>
+
+				<hr style="margin: 20px 0 10px 0;">
+
+				<!-- <div class="image-container">
+					<img src="images/SPA-Blogs/SPA banner.webp" alt="SPA banner">
+				</div> -->
+				<div class="blog-items">
+                    <p>Content personalization in short means delivering the right content to the right person in real-time.</p>
+                    <p>The targeting engine is the mechanism that drives the logic for targeted content. You can use either AEM or Adobe Target as the targeting engine, AEM provides a built-in targeting engine that processes page requests and determines the content to display. AEM as a targeting engine only supports Experience Targeting but Adobe Target should be used for A/B testing.</p>
+                    <p>Let us see how to use the AEM targeting engine to enable the experience targeting for a web page.</p>
+                    <div>
+                        <h3 style="text-align: left;">Setup ContextHub</h3>
+                        <p>ContextHub is a framework for storing, manipulating, and presenting context data. The ContextHub Javascript API enables us to access stores to create, update, and delete data as necessary. To enable the ContextHub features and to link to the ContextHub JavaScript libraries, including the <strong>&lt;contexthub&gt;</strong> component in the <strong>&lt;head&gt;</strong> section of our web page.</p>
+                        <p>Add the below HTL code to the overridden customheaderlibs.html file of your page component(here the page component is extending from core page component - core/wcm/components/page/v2/page)</p>
+                        <p><strong>&lt;sly data-sly-resource=" ${'contexthub' @ resourceType = 'granite/contexthub/components/contexthub'}"/&gt;</strong></p>
+                        <img class="spa-image" src="/images/Targeting in AEM/image.png" alt="image" style="width: 100%;">
+						<p>ContextHub includes a segmentation engine that manages segments and determines which segments are resolved for the current context.</p>
+						<p>Once the ContextHub is enabled for the project, client context data can be explored through the browser local storage.</p>
+						<img class="spa-image" src="/images/Targeting in AEM/image-1.png" alt="image1" style="width: 100%;">
+                    </div>
+					<div>
+						<h3 style="text-align: left;">Configuration Browser - EnableContextHub Segments</h3>
+						<p>Enable the ContextHub segments for your site under Configuration Browser.</p>
+						<p><i>Tools → General → Configuration Browser → Select the project → Properties → Check ContextHub Segments</i></p>
+						<p>Save and Close</p>
+						<img class="spa-image" src="/images/Targeting in AEM/image-2.png" alt="image2" style="width: 100%;">
+					</div>
+					<div>
+						<h3 style="text-align: left;">Configure Segment Path and ContextHub Path</h3>
+						<p>Assign Segment path and ContextHub path to your site root node, the default ContextHub path is <strong>/libs/settings/cloudsettings/legacy</strong></p>
+						<p>& segment path — <strong>/conf/&lt;tenant&gt;/settings/wcm/segments</strong></p>
+						<img class="spa-image" src="/images/Targeting in AEM/image-3.png" alt="image3" style="width: 100%;">
+					</div>
+					<div>
+						<h3 style="text-align: left;">Create Brand</h3>
+						<p>Create a Brand to manage the Audiences through Activities console,</p>
+						<p><i>Tools → Personalization → Activities</i>, Create Brand</p>
+						<p>Select Brand Template, add a title, and Create.</p>
+						<img class="spa-image" src="/images/Targeting in AEM/image-4.png" alt="image4" style="width: 100%;">
+					</div>
+					<div>
+						<h3 style="text-align: left;">Create Audiences - Create ContextHub Segment</h3>
+						<p>An audience, called segment in ContextHub, is a class of visitors defined by specific criteria, which then determines who sees a targeted activity.</p>
+						<p>Create the required Audiences,</p>
+						<p><i>Tools → Personalization → Audiences,</i></p>
+						<p>Create ContextHub Segments under the corresponding project.</p>
+						<img class="spa-image" src="/images/Targeting in AEM/image-5.png" alt="image5" style="width: 100%;">
+						<p>Specify the required boost factor, If there is more than one segment that gets resolved the one with a higher boost factor is selected.</p>
+						<img class="spa-image" src="/images/Targeting in AEM/image-6.png" alt="image6" style="width: 100%;">
+						<p>Create.</p>
+						<p>Assign the segments to the audience accordingly (similarly as shown below), by editing the segment we&apos;ve created.</p>
+						<img class="spa-image" src="/images/Targeting in AEM/image-7.png" alt="image7" style="width: 100%;">
+					</div>
+					<div>
+						<h3 style="text-align: left;">Create Activities</h3>
+						<p>Activities consist of audiences that you are targeting, and the period of time when the targeting is applied.</p>
+						<p>First Create an Area under Brand and create the Activity inside the Area,</p>
+						<p><i>Tools → Personalization → Activities</i></p>
+						<p>Enter Title, Name and select the Target Engine as ContextHub.</p>
+						<img class="spa-image" src="/images/Targeting in AEM/image-8.png" alt="image8" style="width: 100%;">
+						<p>Add Experience for each audience</p>
+						<img class="spa-image" src="/images/Targeting in AEM/image-9.png" alt="image9" style="width: 100%;">
+						<p>Set the Duration and Priority</p>
+						<img class="spa-image" src="/images/Targeting in AEM/image-10.png" alt="image10" style="width: 100%;">
+						<p>And Save.</p>
+					</div>
+					<div>
+						<h3 style="text-align: left;">Enable Target Configuration</h3>
+						<p>Enable the Target Configuration — Brand, Area to the root page properties or to the specific page(you can configure more than one brand).</p>
+						<img class="spa-image" src="/images/Targeting in AEM/image-11.png" alt="image11" style="width: 100%;">
+						<img class="spa-image" src="/images/Targeting in AEM/image-12.png" alt="image12" style="width: 100%;">
+						<p>Save and Close.</p>
+						<p>Now we are done with all the configurations and we can go ahead with the authoring part which will be done in the targeting mode of AEM.</p>
+					</div>
+					<div>
+						<h3 style="text-align: left;">Author Targeted Content</h3>
+						<p>Author targeted content using the Targeting mode of AEM. Targeting mode provides tools for creating content for the experiences of your marketing activities.</p>
+						<p>Select Targeting Mode from the Dropdown.</p>
+						<img class="spa-image" src="/images/Targeting in AEM/image-13.png" alt="image13" style="width: 100%;">
+						<p>Select the Brand and Activity and click on Start Targeting.</p>
+						<img class="spa-image" src="/images/Targeting in AEM/image-14.png" alt="image14" style="width: 100%;">
+						<p>On required components select the Target option.</p>
+						<img class="spa-image" src="/images/Targeting in AEM/image-15.png" alt="image15" style="width: 100%;">
+						<p>Now select the Audience and define the experience for the components,</p>
+						<table style="border-collapse: collapse; width: 100%;">
+							<tr>
+								<td style="border: 1px solid black; padding: 5px 10px;"><p>Default</p></td>
+								<td style="border: 1px solid black; padding: 5px 10px;"><p>Default experience</p></td>
+							</tr>
+							<tr>
+								<td style="border: 1px solid black; padding: 5px 10px;"><p>Summer Female</p></td>
+								<td style="border: 1px solid black; padding: 5px 10px;"><p>the experience for female users in Summer</p></td>
+							</tr>
+							<tr>
+								<td style="border: 1px solid black; padding: 5px 10px;"><p>Summer Male</p></td>
+								<td style="border: 1px solid black; padding: 5px 10px;"><p>the experience for male users in Summer</p></td>
+							</tr>
+							<tr>
+								<td style="border: 1px solid black; padding: 5px 10px;"><p>Winter Female</p></td>
+								<td style="border: 1px solid black; padding: 5px 10px;"><p>the experience for female users in Winter</p></td>
+							</tr>
+							<tr>
+								<td style="border: 1px solid black; padding: 5px 10px;"><p>Winter Male</p></td>
+								<td style="border: 1px solid black; padding: 5px 10px;"><p>the experience for male users in Winter</p></td>
+							</tr>
+						</table>
+						<p>Select the corresponding audience and edit the component data, also we need to set the targeting engine i.e, ContextHub, by clicking on settings.</p>
+						<img class="spa-image" src="/images/Targeting in AEM/image-16.png" alt="image16" style="width: 100%;">
+						<img class="spa-image" src="/images/Targeting in AEM/image-17.png" alt="image17" style="width: 100%;">
+						<p>Now author the targeted component according to the audiences.</p>
+						<img class="spa-image" src="/images/Targeting in AEM/image-18.png" alt="image18" style="width: 100%;">
+						<p><strong>Summer Female:</strong></p>
+						<img class="spa-image" src="/images/Targeting in AEM/image-19.png" alt="image19" style="width: 100%;">
+						<p>Similarly, edit the authoring for the rest of the audiences accordingly.</p>
+						<p><strong>Summer Male:</strong></p>
+						<img class="spa-image" src="/images/Targeting in AEM/image-20.png" alt="image20" style="width: 100%;">
+						<p><strong>Winter Female:</strong></p>
+						<img class="spa-image" src="/images/Targeting in AEM/image-21.png" alt="image21" style="width: 100%;">
+						<p><strong>Winter Male:</strong></p>
+						<img class="spa-image" src="/images/Targeting in AEM/image-22.png" alt="image22" style="width: 100%;">
+						<p>Save all the authoring changing for different audiences and click next.</p>
+						<img class="spa-image" src="/images/Targeting in AEM/image-23.png" alt="image23" style="width: 100%;">
+						<p>The target audiences and experiences are defined as we added in the Activities (can be modified if needed).</p>
+						<p>Click next.</p>
+						<img class="spa-image" src="/images/Targeting in AEM/image-24.png" alt="image24" style="width: 100%;">
+						<p>Define the duration and Priority and Save it.</p>
+						<p>We have successfully saved our activity and now we will get different personalized experiences for different audiences and seasons based on what we configured.</p>
+						<p>We can verify the targeting and personalization by viewing the page in the preview mode. On the top left corner we&apos;ll have the contextHub option available which will provide some contextHub features, using which we can verify the experiences that the particular audience/user will get along with the resolved segments.</p>
+						<img class="spa-image" src="/images/Targeting in AEM/image-25.png" alt="image25" style="width: 100%;">
+						<p>PERSONA - defines the user i.e., which user is logged in.</p>
+						<p>LOCATION - defines from what location that user is actually logging in from.</p>
+						<p>In our case, we can test the experiences by defining the persona.</p>
+						<p><strong>Summer Female User:</strong></p>
+						<img class="spa-image" src="/images/Targeting in AEM/image-26.png" alt="image26" style="width: 100%;">
+						<p><strong>Summer Male User:</strong></p>
+						<img class="spa-image" src="/images/Targeting in AEM/image-27.png" alt="image27" style="width: 100%;">
+						<p>So, we have verified the targeting and we are successfully able to get the personalized content based on the segments/audiences that we created.</p>
+						<p>Hope you find the blog insightful. Thanks!! &#128516;</p>
+					</div>
+				</div>
+				<hr style="margin-top: 30px;">
+				<div class="author-details">
+					<div id="like-icon" class="like-icon">
+						<span id="like-count" class="like-count">0</span>
+						<span id="like-btn" class="like-btn">
+							<img src="/images/clap.webp" alt="Like">
+						</span>
+					</div>
+					<div>
+						<span class="author-name">Suchita Mishra | </span>
+						<span class="author-designation">AEM Developer</span>
+					</div>
+				</div>
+		</div>
+	</section>
+
+<div class="social-icons">
+         
+        <a href="https://www.linkedin.com/company/infodales-tech-solution/" class="linkedin"><img src="/images/linkedin.webp" alt="LinkedIn"></a>
+        <a href="mailto:info@infodales.com" class="email"><img src="/images/email.webp" alt="Email"></a>
+    </div>
+
+	<!--  Footer --->
+	<div class="copyright-area">
+		<div class="footer">
+			<div class="row" style="margin-top: 0px;">
+				<div class="col-xl-4 col-lg-4 text-center text-lg-left">
+					<div class="copyright-text">
+						<p>Copyright &copy; 2024, All Right Reserved <a href="/index.html">Infodales Tech
+								Solution</a></p>
+					</div>
+				</div>
+				
+				<div class="col-xl-4 col-lg-4 d-none d-lg-block text-right">
+					<div class="footer-menu" style="margin-top:10px;">
+						<ul>
+							<li><a href="/index.html">Home</a></li>
+							<li><a href="/about.html">About</a></li>
+							<li><a href="/contact.html">Contact</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<!--- Java Script-->
+	<script>
+		var navLinks = document.getElementById("navLinks");
+
+		function showMenu() {
+			navLinks.style.right = "0";
+		}
+
+		function hideMenu() {
+			navLinks.style.right = "-200px";
+		}
+
+		document.addEventListener("DOMContentLoaded", () => {
+    const likeBtn = document.getElementById('like-btn');
+    const likeCount = document.getElementById('like-count');
+
+    let count = parseInt(localStorage.getItem('clapCount')) || 0;
+    likeCount.textContent = count;
+
+    likeBtn.addEventListener('click', () => {
+        count++;
+        likeCount.textContent = count;
+        localStorage.setItem('clapCount', count);
+
+        const likeAnimation = document.createElement('div');
+        likeAnimation.classList.add('like-animation');
+        likeAnimation.innerHTML = '🎉';
+        document.getElementById('like-icon').appendChild(likeAnimation);
+        likeAnimation.addEventListener('animationend', () => {
+            likeAnimation.remove();
+        });
+    });
+});
+
+	</script>
+
+</body>
+
+</html>

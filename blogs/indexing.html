@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Blogs | AEM Sites : Indexing in AEM</title>
+	<link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content=" AEM Sites : Indexing in AEM">
+    <meta name="keywords" content="Indexing in AEM is a powerful feature  that ensures optimized search execcutions.">
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Blogs | AEM Sites : Indexing in AEM" />
+    <meta property="og:description" content="Indexing is a technique which enables the user to retrieve data with minimal node traversal and in minimum amount of time. Suppose, an AEM user wants to find all the images present in crx/de console which actually is categorized as a slow query in AEM as the process search gets terminated due to 100000+ node traversal. This is a case where you need to perform indexing upon desired property to retrieve the data (i.e images). Also in case where you need to enhance the search performance, it is recommended to perform indexing so that the data retrieval is cost efficient.Indexing is a technique which enables the user to retrieve data with minimal node traversal and in minimum amount of time. Suppose, an AEM user wants to find all the images present in crx/de console which actually is categorized as a slow query in AEM as the process search gets terminated due to 100000+ node traversal. This is a case where you need to perform indexing upon desired property to retrieve the data (i.e images). Also in case where you need to enhance the search performance, it is recommended to perform indexing so that the data retrieval is cost efficient." />
+    <meta property="og:url" content="https://infodales.com/adaptive-form-fragments.html" />
+    <meta property="og:site_name" content="Blogs | AEM Sites : Indexing in AEM" />
+	<link rel="stylesheet" href="/style.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;600;700&display=swap"
+		rel="stylesheet">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+
+	<!-- Header -->
+	<section class="sub-header"
+		style="background-image: linear-gradient(rgba(4, 9, 30, 0.5), rgba(4, 9, 30, 0.5)), url('/images/Cover\ Forms.jpg');">
+		<nav>
+			<a href="/index.html"><img src="/images/infodales/Info Dales Main Logo 03.webp" alt="logo"></a>
+			<div class="nav-links" id="navLinks">
+				<i class="fa fa-times" onclick="hideMenu()"></i>
+				<ul>
+					<li><a href="/index.html">HOME</a></li>
+					<li><a href="/about.html">ABOUT</a></li>
+					<li><a href="/services.html">SERVICES</a></li>
+					<li><a href="/blog.html">BLOGS</a></li>
+					<li><a href="/career.html">CAREER</a></li>
+					<li><a href="/contact.html">CONTACT</a></li>
+					<ul>
+			</div>
+			<i class="fa fa-bars" onclick="showMenu()"></i>
+		</nav>
+		<!-- <h1>Blogs</h1> -->
+	</section>
+	<!--  Blog Page Content --->
+	<section class="blog-content">
+		<div>
+			<div class="blog">
+
+				<p style="color: rgb(133, 133, 133); padding: 0 0 10px 0;"><a href="/blog.html" style="text-decoration: none; cursor: pointer;">Blogs</a> <span> > </span>  AEM Sites : Indexing in AEM</p>
+
+				<p class="formsTag" style="margin-top: 7px; margin-bottom: 7px; font-size: 13px; border-radius: 20px; 
+				width: fit-content; padding: 3px 15px;">AEM Sites</p>
+				<h1 class="title">AEM Sites : Indexing in AEM</h1>
+      				<span class="author">Infodales Tech Solutions | </span>
+      				<span class="date">November 24, 2023</span>
+    			
+					<div class="share-icons">	
+					<a href="https://www.linkedin.com/company/infodales-tech-solution/" target="_blank" class="linkedin-icon"><i class="fa fa-linkedin"></i></a>
+					<a href="mailto:info@infodales.com" target="_blank" class="email-icon"><i class="fa fa-envelope"></i></a>
+					</div>
+				
+				<hr style="margin: 20px 0 10px 0;">
+				<!-- <div class="image-container">
+					<img src="images/cover.webp" alt="Image Description">
+				</div> -->
+				<div class="blog-items">
+					<p>Happy to find you all well.  Let us discuss in today's blog an efficient way to perform search operations in AEM.</p>
+        			<p>
+						Indexing is a technique which enables the user to retrieve data with minimal node traversal and in minimum amount of time. Suppose, an AEM user wants to find all the images present in crx/de console which actually is categorized as a slow query in AEM as the process search gets terminated due to 100000+ node traversal. This is a case where you need to perform indexing upon desired property to retrieve the data (i.e images). Also in case where you need to enhance the search performance, it is recommended to perform indexing so that the data retrieval is cost efficient.
+
+Oak query engine supports XPath, SQL-2 and JQOM and Apache Oak-based backend allows multiple indexes to be plugged in a repository. PropertyIndex is predefined in repository itself, Apache Lucene and Apache Solr can be customized.
+					</p>
+					
+
+					<h3 style="text-align: left; margin: 0px 0">While executing a query</h3>
+					
+					<h4 style="text-align: left; margin: 0px 0">Case 1: No index is applied</h4>
+        			
+						<p>
+							Traversal Index is by default used to run the search.
+						</p>
+
+					<h4 style="text-align: left; margin: 0px 0">Case 2:Multiple indexes as applicable for a search</h4>
+        			<p>
+						Oak internally finds out the most cost efficient index and implements it for the search.
+					</p>
+					
+					<h3 style="text-align: left; margin: 0px 0">Diagrammatic Representation of Handling Indexes</h3>
+					
+					<div class="image-container">
+						<img src="/images/indexing/image-one.webp" alt="Indexing  in AEM">	
+					</div>
+
+
+					<h4 style="text-align: left; margin: 0px 0">Creating Indexes in AEM</h4>
+					<p>
+						Oak supports Lucene indexing for property search (where an index is applied directly upon a property) as well as full text search. Here we will be focusing upon creating lucene indexings. </p>
+
+					<h4 style="text-align: left; margin: 0px 0">Steps for creating indexes in AEM</h4>
+					<p>Under oak:index, in crx/de create indexing-in-aem as QueryIndexDefinition and add a mandatory property type lucene as shown in the xml. Also add the provided properties and rename the prop0 node as properties and you may also rename nt:base to nt:unstructured.</p>
+
+				    <div class="image-container">
+						<img src="/images/indexing/image-two.webp" alt="Indexing  in AEM">	
+					</div>
+					<p>After successfully creating the index, you can find the generated index <a href="http://localhost:4502/libs/granite/operations/content/diagnosistools/indexManager.html">here</a> 
+					</p>
+					<p>You need to find all the info as well as its consistency in </p>
+					<div class="image-container">
+						<img src="/images/indexing/image-three.webp" alt="Indexing  in AEM">	
+					</div>
+
+					<p>Also your index will be available in quickstart itself
+						\crx-quickstart\repository\index
+						If you are able to find the generated index in both the locations then congrats! You have successfully created your first index.
+						</p>
+
+					<h3 style="text-align: left; margin: 0px 0">Lucene Indexing Example</h3>
+
+					
+					<p>
+						Oak engine for both property search as well as for full text search internally implements lucene indexing. Let us understand by an example.
+We need to search all the nodes in crx/de with property property dam:Asset from nt:base.
+Then for this we need to navigate to crx/de console, click on tools, the Query and select SQL-2 rather than XPath, enter the query for the search i.e 
+</p>
+					<p><b>SELECT * FROM [nt:base] WHERE [jcr:primaryType] = 'dam:Asset'</b></p>
+					<p>, to find the node traversal reaches its provided limit and so the process search terminates.</p>
+
+					<div class="image-container">
+						<img src="/images/indexing/image-four.webp" alt="Indexing  in AEM">	
+					</div>
+
+					<p>Also while checking the query explanation from <a href="http://localhost:4502/libs/granite/operations/content/diagnosistools/queryPerformance.html">operation console</a>, an error message gets displayed</p>
+
+
+					<div class="image-container">
+						<img src="/images/indexing/image-five.webp" alt="Indexing  in AEM">	
+					</div>
+
+					<p>This triggers the need of creating an index over the property jcr:primaryType with sole reason to minimize the nodes traversed for the search to execute and generate the desired result.</p>
+					<p>In order to generate an index create assetType index (a node under /oak:index of type oak:QueryIndexDefinition) with provided properties.
+					</p>
+
+
+
+					<div class="image-container">
+						<img src="/images/indexing/image-six.webp" alt="Indexing  in AEM">	
+					</div>
+
+
+					<p>Re run the same query to get the results.
+						You can also find you index applied on the search when you find the explanation of your query.
+						</p>
+
+
+						<div class="image-container">
+							<img src="/images/indexing/image-seven.webp" alt="Indexing  in AEM">	
+						</div>
+						
+						
+						<p>Here at the top you can find the assetType index applied for the generated search after clicking on Explain button.</p>
+
+						<div class="image-container">
+							<img src="/images/indexing/image-eight.webp" alt="Indexing  in AEM">	
+						</div>
+
+						<div class="image-container">
+							<img src="/images/indexing/image-nine.webp" alt="Indexing  in AEM">	
+						</div>
+
+					<h4 style="text-align: left; margin: 0px 0">Lucene Indexing Properties and Explanations</h4>
+
+					<p>
+						While performing lucene indexing, we have a variety of properties and nodes. 
+					</p>
+					
+					<h3 style="text-align: left; margin: 0px 0">1.Node with type oak:QueryIndexDefinition</h3>
+        			
+					
+					<ul style="margin-left: auto; width: 95%;">
+						<li><p>It has to have a mandatory property “type” “String” “lucene” else the node itself don’t save.</p></li>
+						<li><p>“compatVersion” “Long” “2” version 1 is deprecated and does not support property restrictions and index time aggregation  whereas version 2 is faster to run queries.</p></li>
+						<li><p>“evaluatePathRestrictions” “boolean” “true” set the run to consider path restrictions provided.</p></li>
+						<li><p>“excludedPaths” “String[]” consists of paths which need to be excluded from search run.</p></li>
+						<li><p>“includedPaths” “String[]” consists of paths included for the search.</p></li>
+						<li><p>“async” “String” “async” it allows the index to keep running in the background even it multiple tasks are executing at a time.</p></li>
+					</ul>
+
+
+					<h3 style="text-align: left; margin: 0px 0">2.Node name indexRules</h3>
+        			
+					
+					<ul style="margin-left: auto; width: 95%;">
+						<li><p>They consist of configuration of index for provided node or property.</p></li>
+						<li><p>They consist of configuration of index for provided node or property.</p></li>
+						<li><p>Within this each first level node thus created will encounter the provided differed set of rules.</p></li>
+						
+					</ul>
+
+					<h3 style="text-align: left; margin: 0px 0">3.nt:base</h3>
+        			
+					
+					<ul style="margin-left: auto; width: 95%;">
+						<li><p>It consists of property definitions in the form of node created under it as a property.</p></li>
+						<li><p>There can be variety of property nodes on which the indexing needs to be done.</p></li>
+						<li><p>The name of the prop0 needs to be converted to the name of the property itself to be indexed also the name property must be changed to the indexed property name.</p></li>
+						<li><p>“isRegexp” ”boolean” “false”, if set to true, then it will be considered as a regular expression.</p></li>
+						<li><p>“ordered” “boolean” “true” so as to implement order by clause.</p></li>
+						<li><p>“propertyIndex” “boolean” “true” allows to check equality condition, not null condition and ordering condition.</p></li>
+						<li><p>“sync” “boolean” “true” requires propertyIndex condition to be true always and ensures that the changes to the content are available as soon as they are committed.</p></li>
+					</ul>
+
+					<h3 style="text-align: left; margin: 0px 0">4.Full text search in lucene indexing</h3>
+
+					<p>And these indexes consist of entries of columns that contain the generated tokens. These inverted indexes fall handy while running the generated search.
+					</p>
+
+					<h4 style="text-align: left; margin: 0px 0">Conclusion</h4>
+
+
+					<p>Lucene indexing is hence a powerful mechanism that ensures fast retrieval of data. In case the requirement demands a customized property for the lucene search to execute, the property can also be generated in the backend.</p>
+
+					<p>The AEM crx/de itself has many ootb indexes which indeed avoids the traversal index search but in special cases, where node traversals exceed the declared limits, oak search engine applies lucene indexes for property, node as well as full text searches. </p>
+					<p>Hope you find this blog informative.</p>
+					
+				</div>
+					<hr style="margin-top: 30px;">
+
+					<div class="author-details">
+						<div id="like-icon" class="like-icon">
+							<span id="like-count" class="like-count">0</span>
+							<span id="like-btn" class="like-btn">
+							  	<img src="/images/clap.webp" alt="Like">
+							</span>
+						</div>
+						<div>
+							<span class="author-name">Shruti Meshram | </span>
+							<span class="author-designation">AEM Developer</span>
+						</div>
+					</div>
+
+			</div>
+		</div>
+	</section>
+
+<div class="social-icons">
+	 
+	<a href="https://www.linkedin.com/company/infodales-tech-solution/" class="linkedin"><img src="/images/linkedin.webp" alt="LinkedIn"></a>
+	<a href="mailto:info@infodales.com" class="email"><img src="/images/email.webp" alt="Email"></a>
+</div>
+
+	<!--  Footer --->
+	<div class="copyright-area">
+		<div class="footer">
+			<div class="row" style="margin-top: 0px;">
+				<div class="col-xl-4 col-lg-4 text-center text-lg-left">
+					<div class="copyright-text">
+						<p>Copyright &copy; 2023, All Right Reserved <a href="/index.html">Infodales Tech
+								Solution</a></p>
+					</div>
+				</div>
+				
+				<div class="col-xl-4 col-lg-4 d-none d-lg-block text-right">
+					<div class="footer-menu" style="margin-top:10px;">
+						<ul>
+							<li><a href="/index.html">Home</a></li>
+							<li><a href="/about.html">About</a></li>
+							<li><a href="/contact.html">Contact</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<!--- Java Script-->
+	<script>
+		var navLinks = document.getElementById("navLinks");
+
+		function showMenu() {
+			navLinks.style.right = "0";
+		}
+
+		function hideMenu() {
+			navLinks.style.right = "-200px";
+		}
+
+		document.addEventListener("DOMContentLoaded", () => {
+    const likeBtn = document.getElementById('like-btn');
+    const likeCount = document.getElementById('like-count');
+
+    let count = parseInt(localStorage.getItem('clapCount')) || 0;
+    likeCount.textContent = count;
+
+    likeBtn.addEventListener('click', () => {
+        count++;
+        likeCount.textContent = count;
+        localStorage.setItem('clapCount', count);
+
+        const likeAnimation = document.createElement('div');
+        likeAnimation.classList.add('like-animation');
+        likeAnimation.innerHTML = '🎉';
+        document.getElementById('like-icon').appendChild(likeAnimation);
+        likeAnimation.addEventListener('animationend', () => {
+            likeAnimation.remove();
+        });
+    });
+});
+
+		// function relatedFilter() {
+		// 	var retString = localStorage.getItem("allBlogs");
+		// 	console.log(retString);
+		// }
+
+
+	</script>
+
+</body>
+
+</html>
