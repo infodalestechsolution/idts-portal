@@ -151,7 +151,6 @@ p {
 }
 .footer-widget ul li {
   display: inline-block;
-  float: left;
   width: 50%;
   margin-bottom: 12px;
 }
@@ -205,10 +204,6 @@ p {
 }
 .expertise-row {
   margin-top: unset !important;
-}
-
-.home-col-right {
-  /*flex-basis: 26% !important; */
 }
 
 @media (max-width: 1280px) {
@@ -499,7 +494,7 @@ h3 {
   width: 100%;
   font-weight: 600;
   color: #fff;
-  font-size: 26px;
+  font-size: 22px;
   bottom: 0;
   left: 50%;
   transform: translate(-50%);
@@ -2205,9 +2200,6 @@ td {
 
 /* Media Query for Tablets Ipads portrait mode */
 @media (min-width: 768px) and (max-width: 1024px) {
-  .blog-item {
-    /* width: 40%; */
-  }
 }
 
 /*MSM BLOG*/
