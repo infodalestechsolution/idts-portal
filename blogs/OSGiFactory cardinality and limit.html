@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Blogs | OSGI Configuration Factory</title>
+	<link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Welcome to the blog designed for developers new to the OSGI Factory Concepts. This blog will walk you through How the Osgi Configuration class has been created and how to retrive the list of Configurations">
+  	<meta name="keywords" content="Infodales, OSGI Configuration Factory">
+	<meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Blogs | OSGI Configuration Factory" />
+    <meta property="og:description" content="Welcome to the blog designed for developers new to the OSGI Factory Concepts. This blog will walk you through How the Osgi Configuration class has been created and how to retrive the list of Configurations" />
+    <meta property="og:url" content="https://infodales.com/spa-getting-started.html" />
+    <meta property="og:site_name" content="Blogs | OSGI Configuration Factory" />
+	<link rel="stylesheet" href="/style.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;600;700&display=swap"
+		rel="stylesheet">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+
+	<!-- Header -->
+	<section class="sub-header"
+		style="background-image: linear-gradient(rgba(4, 9, 30, 0.5), rgba(4, 9, 30, 0.5)), url('/images/Cover\ Sites.jpg');">
+		<nav>
+			<a href="/index.html"><img src="/images/infodales/Info Dales Main Logo 03.webp" alt="logo"></a>
+			<div class="nav-links" id="navLinks">
+				<i class="fa fa-times" onclick="hideMenu()"></i>
+				<ul>
+					<li><a href="/index.html">HOME</a></li>
+					<li><a href="/about.html">ABOUT</a></li>
+					<li><a href="/services.html">SERVICES</a></li>
+					<li><a href="/blog.html">BLOGS</a></li>
+					<li><a href="/career.html">CAREER</a></li>
+					<li><a href="/contact.html">CONTACT</a></li>
+					<ul>
+			</div>
+			<i class="fa fa-bars" onclick="showMenu()"></i>
+		</nav>
+		<!-- <p style="color: lightgray; margin-left: 17%;"><a href="./blog.html" style="text-decoration: none; color: white; cursor: pointer;">Blogs</a> <span> > </span> Getting started with SPA</p> -->
+		<!-- <h1>Blogs</h1> -->
+	</section>
+	<!--  Blog Page Content --->
+	<section class="blog-content">
+		<div>
+			<div class="blog spa-blog">
+				
+				<p style="color: rgb(133, 133, 133); padding: 0 0 10px 0;"><a href="/blog.html" style="text-decoration: none; cursor: pointer;">Blogs</a> <span> > </span>OSGi Factory Configuration cardinality and limit</p>
+
+				<p class="sitesTag" style="margin-top: 7px; margin-bottom: 7px; font-size: 13px; border-radius: 20px; 
+				width: fit-content; padding: 3px 15px;">AEM Sites</p>
+				<h1 class="title">OSGi Factory Configuration cardinality and limit</h1>
+      				<span class="author">Infodales Tech Solutions</span> |
+      				<span class="date">August 17, 2024</span>
+    			
+					<div class="share-icons">
+					<a href="https://www.linkedin.com/company/infodales-tech-solution/" target="_blank" class="linkedin-icon"><i class="fa fa-linkedin"></i></a>
+                    <a href="mailto:info@infodales.com" target="_blank" class="email-icon"><i class="fa fa-envelope"></i></a>
+					</div>
+
+				<hr style="margin: 20px 0 10px 0;">
+                <p>Happy to find you here. Welcome to another learning.</p>
+                <h4>Use case for OSGi Factory Configuration</h4>
+                <p>
+                    Lets say we have a configuration and we need it to have different values for its attributes defined for different scenarios. Speaking of a hypothetical scenario, say you are dealing with multiple api calls whose urls and timeout period are consumed via OSGi configurations. You need to create a separate configuration each having the same attributes and same attribute definations which are api url and timeout period. In this case aem provides a facility to group them all to be various instances of one OSGi configuration which is declared as an OSGi factory.
+                </p>
+                <h4>Creation of OSGi Configuration Factory</h4>
+                <ul class="ff_ul" >
+                    <li>
+                        <p>Lets begin by creating an interface called ApiHandlerService, where you will add the methods which you want to find in the configuration.</p>
+                        <div>
+                            <pre style="width: 100%; height:100%">
+                                <code class="center" style="width: 80%; height:100%">
+                                    package com.local.core.services;
+
+                                    public interface ApiHandlerService {
+                                        String getApiEndpont();
+                                        int getTimeout();
+                                        String callApi();
+                                    }
+
+                                </code>
+                            </pre>
+                        </div>
+                            
+                        
+                    </li>
+                    <br>
+                    <br>
+                    <li>
+                        <p>Now we need to create the respective object class defination for the same interface. We need to add the name to the same. This is the name from which we will be able to find configuration in the felix console.</p>
+                        <p>Then for each method, we need to add the attribute defination, consisting of two properties, name and description.</p>
+                        <p>We can also add the default value for the method, the way we have added timeout.</p>
+                        <p>Also we have added limit to the timeout by fixing its range.</p>
+                        <div>
+                            <pre style="width: 100%; height:100%">
+                                <code class="center" style="width: 80%; height:100%">
+                                    package com.local.core.services;
+
+                                    import org.osgi.service.metatype.annotations.AttributeDefinition;
+                                    import org.osgi.service.metatype.annotations.ObjectClassDefinition;
+
+                                    @ObjectClassDefinition(
+                                            name = "Api Handeler Configuration"
+                                    )
+                                    public @interface ApiHandlerConfig {
+                                        @AttributeDefinition(
+                                                name = "Api Endpoint",
+                                                description = "This provides the enpoint url"
+                                        )
+                                        String apiEndpoint();
+
+                                        @AttributeDefinition(
+                                                name = "Timeout in seconds",
+                                                description = "This provides the timeout in seconds",
+                                                min = "1",
+                                                max = "60"
+                                        )
+                                        int timeout() default 50;
+                                    }
+
+                                </code>
+                            </pre>
+                        </div>
+                            
+                        
+                    </li>
+                    
+                    <li>
+                       <p>After creating the object class defination, we need to create the implementation class. In Component annotation, provide the property configurationPolicy = ConfigurationPolicy=REQUIRE. This is added for factory configuration. Also in Designate annotation, provide a property factory = true. This ensures successful creation of the factory configuration.</p>
+                       <p>
+                        In callApi() method, we are actually consuming the values set in an instance of the configuration factory.
+                       </p>
+                       <div>
+                        <pre style="width: 100%; height:100%">
+                            <code class="center" style="width: 80%; height:100%">
+                                package com.local.core.services.impl;
+                                import com.local.core.services.ApiHandlerConfig;
+                                import com.local.core.services.ApiHandlerService;
+                                import org.apache.sling.caconfig.annotation.Configuration;
+                                import org.osgi.service.component.annotations.Activate;
+                                import org.osgi.service.component.annotations.Component;
+                                import org.osgi.service.component.annotations.ConfigurationPolicy;
+                                import org.osgi.service.component.annotations.Modified;
+                                import org.osgi.service.metatype.annotations.Designate;
+
+                                @Component(
+                                    service = ApiHandlerService.class,
+                                    configurationPolicy = ConfigurationPolicy.REQUIRE, // This is for factory configuration
+                                    immediate = true
+                                )
+                                @Designate(ocd= ApiHandlerConfig.class, factory = true)
+                                public class ApiHandlerServiceImpl implements ApiHandlerService {
+
+                                    private String apiEndpoint;
+                                    private int timeout;
+
+                                    @Activate
+                                    @Modified
+                                    protected void activate(ApiHandlerConfig config){
+                                        this.apiEndpoint = config.apiEndpoint();
+                                        this.timeout = config.timeout();
+                                    }
+
+
+                                    @Override
+                                    public String getApiEndpont() {
+                                        return "";
+                                    }
+
+                                    @Override
+                                    public int getTimeout() {
+                                        return 0;
+                                    }
+
+                                    @Override
+                                    public String callApi() {
+                                        return "Calling at API :: " + apiEndpoint + " with timeout :: " + timeout;
+                                    }
+                                }
+                                                            </code>
+                        </pre>
+                    </div>
+                    </li>
+                    <li>
+                        <p>Now after creating the factory configuration, you will need to cisit the <a href="http://localhost:4502/system/console/configMgr">felix console</a> to find the configuration factory in there with a + sign.</p>
+                        <div>
+                            <image class="center" style="width: 100%; height: 50%; margin-top: 15px;" src="../images/factoryConfiguration/plus.webp"/> 
+                        </div>
+                    </li>
+                    <li>
+                        <p>You need to add instances in the factory ahich will get stored with a unique Persistent Identity (PID). Here we have created two instances for the factory with fake api, one showing the todo and the other showing the recipies.</p>
+                        <div>
+                            <image class="center" style="width: 100%; height: 50%; margin-top: 15px;" src="../images/factoryConfiguration/configuration1.webp" />
+                        </div>
+                        <div>
+                            <image class="center" style="width: 100%; height: 50%; margin-top: 15px;" src="../images/factoryConfiguration/configuration2.webp"/>
+                        </div>
+                        
+                    </li>
+                    <li>
+                        <p>After creating these, we now will create a manager class which will iterate over the instances and create get the values entered for the endpoint and respective timeouts. Here in order to consume multiple values from the OSGi factory, we have created a list of type ApiHandlerService via Reference annotation with property cardinality = ReferenceCardinality.MULTIPLE. This tells the sling that with this reference, multiple services will be bound.</p>
+                        <div>
+                            <pre style="width: 100%; height:100%">
+                                <code class="center" style="width: 80%; height:100%">
+                                    package com.local.core.services.impl;
+
+                                    import com.local.core.services.ApiHandlerService;
+                                    import org.osgi.service.component.annotations.Component;
+                                    import org.osgi.service.component.annotations.Reference;
+                                    import org.osgi.service.component.annotations.ReferenceCardinality;
+                                    import java.util.ArrayList;
+                                    import java.util.List;
+
+                                    @Component(
+                                            service = ApiHandlerManager.class
+                                    )
+                                    public class ApiHandlerManager {
+
+                                        @Reference(cardinality = ReferenceCardinality.MULTIPLE)
+                                        private List<ApiHandlerService> apiHandlerServices;
+
+                                        public void handlerRequests() {
+                                            List<String> requestsHandeled = new ArrayList<>();
+                                            for(ApiHandlerService apiHandlerService : apiHandlerServices){
+                                                requestsHandeled.add(apiHandlerService.callApi());
+                                            }
+                                            for(String requestOutput : requestsHandeled)
+                                                System.out.println(requestOutput);
+                                        }
+                                    }
+
+                                </code>
+                            </pre>
+                        </div>
+                    </li>
+                    <li>
+                        <p>Now we will retrieve the values hence recieved from a servlet. Here particularly in this example we are showing the values in stdout.log file in crx-quickstart\logs\stdout.</p>
+                        <div>
+                            <pre style="width: 100%; height:100%">
+                                <code class="center" style="width: 80%; height:100%">
+                                    package com.local.core.servlets;
+
+                                    import com.local.core.services.impl.ApiHandlerManager;
+                                    import org.apache.sling.api.SlingHttpServletRequest;
+                                    import org.apache.sling.api.SlingHttpServletResponse;
+                                    import org.apache.sling.api.servlets.SlingSafeMethodsServlet;
+                                    import org.osgi.service.component.annotations.Component;
+                                    import org.osgi.service.component.annotations.Reference;
+
+                                    import javax.servlet.Servlet;
+                                    import javax.servlet.ServletException;
+                                    import java.io.IOException;
+                                    import java.io.PrintWriter;
+
+                                    @Component(
+                                            service = Servlet.class,
+                                            property = {
+                                                    "sling.servlet.paths=/bin/apiHandler",
+                                                    "sling.servlet.methods=GET"
+                                            }
+                                    )
+                                    public class ApiHandlerServlet extends SlingSafeMethodsServlet {
+                                        @Reference
+                                        private ApiHandlerManager apiHandlerManager;
+                                        @Override
+                                        protected void doGet(SlingHttpServletRequest request,
+                                         SlingHttpServletResponse response) throws ServletException, IOException {
+                                            PrintWriter out = response.getWriter();
+                                            out.println("Servlet Invoked");
+                                            apiHandlerManager.handlerRequests();
+                                            out.println("check logs");
+                                        }
+                                    }
+
+                                </code>
+                            </pre>
+                        </div>
+                        <p><image class="center" style="width: 100%; height: 50%; margin-top: 15px;" src="../images/factoryConfiguration/output.webp"/></p>
+                    </li>
+                </ul>
+                
+                <h4>Conclusion</h4>
+                <p>
+                    So here we have understood the concepts of factory configurations with a small example of cadinality and limit. Also we have understood how to retrieve the values of each instance via a servlet. Here we have printed the values in logs but you can have the direct access to the values in servlet itself by changing the return type of the method handlerRequests(). 
+                </p>
+                <p>
+                    I hope you enjoyed the learing and have found the blog informative. 
+                </p>
+                <hr style="margin-top: 30px;"/>
+                <div class="author-details">
+                    <div id="like-icon" class="like-icon">
+                       <span id="like-count" class="like-count">0</span>
+                       <span id="like-btn" class="like-btn">
+                       <img src="/images/clap.webp" alt="Like">
+                       </span>
+                    </div>
+                    <div>
+                       <span class="author-name">Shruti Meshram | </span>
+                       <span class="author-designation">AEM Developer</span>
+                    </div>
+                 </div>
+			</div>
+		</div>
+	</section>
+
+<div class="social-icons">
+         
+        <a href="https://www.linkedin.com/company/infodales-tech-solution/" class="linkedin"><img src="/images/linkedin.webp" alt="LinkedIn"></a>
+        <a href="mailto:info@infodales.com" class="email"><img src="/images/email.webp" alt="Email"></a>
+    </div>
+
+	<!--  Footer --->
+	<div class="copyright-area">
+		<div class="footer">
+			<div class="row" style="margin-top: 0px;">
+				<div class="col-xl-4 col-lg-4 text-center text-lg-left">
+					<div class="copyright-text">
+						<p>Copyright &copy; 2024, All Right Reserved <a href="/index.html">Infodales Tech
+								Solution</a></p>
+					</div>
+				</div>
+				
+				<div class="col-xl-4 col-lg-4 d-none d-lg-block text-right">
+					<div class="footer-menu" style="margin-top:10px;">
+						<ul>
+							<li><a href="/index.html">Home</a></li>
+							<li><a href="/about.html">About</a></li>
+							<li><a href="/contact.html">Contact</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<!--- Java Script-->
+	<script>
+		var navLinks = document.getElementById("navLinks");
+
+		function showMenu() {
+			navLinks.style.right = "0";
+		}
+
+		function hideMenu() {
+			navLinks.style.right = "-200px";
+		}
+
+		document.addEventListener("DOMContentLoaded", () => {
+    const likeBtn = document.getElementById('like-btn');
+    const likeCount = document.getElementById('like-count');
+
+    let count = parseInt(localStorage.getItem('clapCount')) || 0;
+    likeCount.textContent = count;
+
+    likeBtn.addEventListener('click', () => {
+        count++;
+        likeCount.textContent = count;
+        localStorage.setItem('clapCount', count);
+
+        const likeAnimation = document.createElement('div');
+        likeAnimation.classList.add('like-animation');
+        likeAnimation.innerHTML = '🎉';
+        document.getElementById('like-icon').appendChild(likeAnimation);
+        likeAnimation.addEventListener('animationend', () => {
+            likeAnimation.remove();
+        });
+    });
+});
+
+		// function relatedFilter() {
+		// 	var retString = localStorage.getItem("allBlogs");
+		// 	console.log(retString);
+		// }
+
+
+	</script>
+
+</body>
+
+</html>

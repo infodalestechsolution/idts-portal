@@ -2547,3 +2547,27 @@ details[open] .accordion-icon {
     height: 106em;
   }
 }
+/* osgi factory configuration*/
+.ff_ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+pre {
+  background-color: #f5f5f5;
+  border: 1px solid #ddd;
+  padding: 10px;
+  overflow-x: auto;
+}
+li {
+  margin-bottom: 20px;
+}
+code {
+  overflow: scroll;
+}
