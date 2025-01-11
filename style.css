@@ -413,6 +413,11 @@ p {
   margin-right: 5%;
   margin-left: 5%;
   display: flex;
+  justify-content: center;
+  gap: 32px;
+}
+
+.footer .row {
   justify-content: space-between;
 }
 
