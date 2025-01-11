@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Blogs | Servlets in AEM</title>
+	<link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Welcome to the blog designed for developers new to the OSGI Factory Concepts. This blog will walk you through How the Osgi Configuration class has been created and how to retrive the list of Configurations">
+  	<meta name="keywords" content="Infodales, OSGI Configuration Factory">
+	<meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Blogs | OSGI Configuration Factory" />
+    <meta property="og:description" content="Welcome to the blog designed for developers new to the OSGI Factory Concepts. This blog will walk you through How the Osgi Configuration class has been created and how to retrive the list of Configurations" />
+    <meta property="og:url" content="https://infodales.com/spa-getting-started.html" />
+    <meta property="og:site_name" content="Blogs | OSGI Configuration Factory" />
+	<link rel="stylesheet" href="/style.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;600;700&display=swap"
+		rel="stylesheet">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+
+	<!-- Header -->
+	<section class="sub-header"
+		style="background-image: linear-gradient(rgba(4, 9, 30, 0.5), rgba(4, 9, 30, 0.5)), url('/images/Cover\ Sites.jpg');">
+		<nav>
+			<a href="/index.html"><img src="/images/infodales/Info Dales Main Logo 03.webp" alt="logo"></a>
+			<div class="nav-links" id="navLinks">
+				<i class="fa fa-times" onclick="hideMenu()"></i>
+				<ul>
+					<li><a href="/index.html">HOME</a></li>
+					<li><a href="/about.html">ABOUT</a></li>
+					<li><a href="/services.html">SERVICES</a></li>
+					<li><a href="/blog.html">BLOGS</a></li>
+					<li><a href="/career.html">CAREER</a></li>
+					<li><a href="/contact.html">CONTACT</a></li>
+					<ul>
+			</div>
+			<i class="fa fa-bars" onclick="showMenu()"></i>
+		</nav>
+		<!-- <p style="color: lightgray; margin-left: 17%;"><a href="./blog.html" style="text-decoration: none; color: white; cursor: pointer;">Blogs</a> <span> > </span> Getting started with SPA</p> -->
+		<!-- <h1>Blogs</h1> -->
+	</section>
+	<!--  Blog Page Content --->
+	<section class="blog-content">
+		<div>
+			<div class="blog spa-blog">
+				
+				<p style="color: rgb(133, 133, 133); padding: 0 0 10px 0;"><a href="/blog.html" style="text-decoration: none; cursor: pointer;">Blogs</a> <span> > </span>Servlets in AEM</p>
+
+				<p class="sitesTag" style="margin-top: 7px; margin-bottom: 7px; font-size: 13px; border-radius: 20px; 
+				width: fit-content; padding: 3px 15px;">AEM Sites</p>
+				<h1 class="title">Servlets in AEM</h1>
+      				<span class="author">Infodales Tech Solutions</span> |
+      				<span class="date">July 24, 2023</span>
+    			
+					<div class="share-icons">
+					<a href="https://www.linkedin.com/company/infodales-tech-solution/" target="_blank" class="linkedin-icon"><i class="fa fa-linkedin"></i></a>
+                    <a href="mailto:info@infodales.com" target="_blank" class="email-icon"><i class="fa fa-envelope"></i></a>
+					</div>
+
+				<hr style="margin: 20px 0 10px 0;">
+                <p>Happy to see you. Welcome to a new blog.</p>
+                <h4>Servlets in AEM</h4>
+                <p>
+                    In this blog we will be understanding what are servlets in AEM plus what are the ways in which they are registered. Also we will understand in brief which type to use and when. Lets begin! 
+                </p>
+                <h4>What are Servlets</h4>
+                <p>
+                    Servlets are java classes which are meant to handle HTTP requests and their respective responses also allowing the developer to generate dynamic content. They provide variety of methods like doGET, doPOST, doPUT, doOPTIONS and doHEAD.
+                </p>
+                <p><b>doGET</b> - Handles HTTP GET requests, typically used to retrieve data from the server. It is used to serve resources and render data without altering the server's state.</p>
+                <p><b>doPOST</b> - Handles HTTP POST requests, used for submitting data to the server to create or modify resources. It is generally used for form submissions, API requests, or sending data that may change the server state.</p>
+                <p><b>doPUT</b> - Handles HTTP PUT requests, which are used to update an existing resource or create a new one if it doesn’t exist.</p>
+                <p><b>doOPTIONS</b> - Handles HTTP OPTIONS requests, used by clients to discover what HTTP methods are supported by the server for a given resource. It is generally used for handeling CORS(Cross Origin Resource Sharing) and checking server's capability.</p>
+                <p><b>doHEAD</b> - Handles HTTP HEAD requests, which are similar to GET but do not return the body of the response, only headers.</p>
+                <h4>Registering a Servlet</h4>
+                <p>There are tow ways in which a servlet is actually registered in aem</p>
+                <ul class="ff_ul">
+                    <li>
+                        <p><b>By Path</b></p>
+                        <p>Whenever we have to test the reponse or functioning of the servlet prior, it is preferred to register it by path. Also whenever any custom endpoint is created in the aem environment, they generally are not tied to any sort of aem resource, like components. In such case too, the servlet is preferred to be registered by path. An example is creating an endpoint from content fragments.</p>
+
+                    </li>
+                    <li>
+                        <p><b>By Resource Type</b></p>
+                        <p>Now when a servlet is supposed to act on a specific resource or is supposed to work within the context of a specific resource or perform logic specifically related to the content or inputs recieved from the page, at this moment we are ought to register the servlet by resource type.</p>
+                    </li>
+                </ul>
+                
+                <h4>Registering by Path</h4>
+                <ul class="ff_ul" >
+                    <li>
+                        <p>In order to register a servlet by path, you need to add the following snippet to it. Remember the path must begin with /bin.</p>
+                        <div>
+                            <pre style="width: 100%; height:100%">
+                                <code class="center" style="width: 80%; height:100%">
+                                    @Component(
+                                            service = Servlet.class,
+                                            property = {
+                                                    "sling.servlet.paths=/bin/asset",
+                                                    "sling.servlet.methods=GET",
+                                                    "sling.servlet.extension=json"
+                                            }
+                                    )
+
+                                </code>
+                            </pre>
+                        </div>
+                            
+                        
+                    </li>
+                    <li>
+                        <p>Here we have created a servlet that reads the metadata properties of an asset.</p>
+                        <div>
+                            <pre style="width: 100%; height:100%">
+                                <code class="center" style="width: 80%; height:100%">
+                                    package com.local.core.servlets;
+
+                                    import org.apache.sling.api.SlingHttpServletRequest;
+                                    import org.apache.sling.api.SlingHttpServletResponse;
+                                    import org.apache.sling.api.resource.Resource;
+                                    import org.apache.sling.api.resource.ResourceResolver;
+                                    import org.apache.sling.api.servlets.SlingSafeMethodsServlet;
+                                    import org.osgi.service.component.annotations.Component;
+
+                                    import javax.jcr.Node;
+                                    import javax.jcr.Property;
+                                    import javax.jcr.PropertyIterator;
+                                    import javax.naming.spi.Resolver;
+                                    import javax.servlet.Servlet;
+                                    import javax.servlet.ServletException;
+                                    import java.io.IOException;
+                                    import java.io.PrintWriter;
+                                    import java.util.Properties;
+
+                                    @Component(
+                                            service = Servlet.class,
+                                            property = {
+                                                    "sling.servlet.paths=/bin/asset",
+                                                    "sling.servlet.methods=GET",
+                                                    "sling.servlet.extension=json"
+                                            }
+                                    )
+                                    public class AssetPathServlet extends SlingSafeMethodsServlet {
+                                        @Override
+                                        protected void doGet(SlingHttpServletRequest request, SlingHttpServletResponse response) throws ServletException, IOException {
+                                            PrintWriter out = response.getWriter();
+                                            out.println("Get Invoked");
+                                            try(ResourceResolver resolver = request.getResourceResolver()){
+                                                Resource resource = resolver.getResource("/content/dam/Sample/sun.jpg");
+                                                Node asset = resource.adaptTo(Node.class);
+                                                Node metadata = asset.getNode("jcr:content").getNode("metadata");
+                                                out.println(metadata.getName());
+                                                PropertyIterator allProperties = metadata.getProperties();
+
+                                                if(allProperties.hasNext()){
+                                                    while(allProperties.hasNext()){
+                                                        Property property = allProperties.nextProperty();
+                                                        out.println(property.getName());
+                                                    }
+                                                }
+                                            }catch (Exception e){
+                                                e.printStackTrace();
+                                            }
+
+                                        }
+                                    }
+
+
+                                </code>
+                            </pre>
+                        </div>
+                            
+                        
+                    </li>
+                    
+                    <li>
+                       <p>Here as you can see the servlet is registered by /bin/assets.json. On hitting the servlet in the postman, we are able to see its response in the console.</p>
+                       <div>
+                            <image class="center" style="width: 100%; height: 50%; margin-top: 15px;" src="../images/servlet/postsmanpath.webp"/>
+                       </div>
+                    </li>
+                    </ul>
+                 <h4>Register by Resource</h4>
+                                  
+                 <ul class="ff_ul">
+                    <li>
+                        <p>In order to register your servlet by a resource type, you need to first create a component and add it on a page. In this case we have added a demo component on a page.</p>
+                    </li>
+                    <li>
+                        <p>You need to add the following snippet to your servlet. The same functionality we will achieve by registering the servlet by resource type.</p>
+                        <div>
+                            <pre style="width: 100%; height:100%">
+                                <code class="center" style="width: 80%; height:100%">
+                                    @Component(
+                                                service = Servlet.class
+                                        )
+                                        @SlingServletResourceTypes(
+                                            resourceTypes = "/apps/local-project/components/servletresource",
+                                            methods = HttpConstants.METHOD_GET
+                                        )
+                                </code>
+                            </pre>
+                        </div>
+                    </li>
+                    <li>
+                        <p>After registering your servlet with resource type, you need to hit it on the postman to recieve its response. The path to the servlet will be the path of the page on which your component is present ending till the location of the component itself.</p>
+
+                        <div>
+                            <pre style="width: 100%; height:100%">
+                                <code class="center" style="width: 80%; height:100%">
+                                    package com.local.core.servlets;
+
+                                    import org.apache.sling.api.SlingHttpServletRequest;
+                                    import org.apache.sling.api.SlingHttpServletResponse;
+                                    import org.apache.sling.api.resource.Resource;
+                                    import org.apache.sling.api.resource.ResourceResolver;
+                                    import org.apache.sling.api.servlets.HttpConstants;
+                                    import org.apache.sling.api.servlets.SlingSafeMethodsServlet;
+                                    import org.apache.sling.servlets.annotations.SlingServletResourceTypes;
+                                    import org.osgi.service.component.annotations.Component;
+
+                                    import javax.jcr.Node;
+                                    import javax.jcr.Property;
+                                    import javax.jcr.PropertyIterator;
+                                    import javax.servlet.Servlet;
+                                    import javax.servlet.ServletException;
+                                    import java.io.IOException;
+                                    import java.io.PrintWriter;
+
+                                    @Component(
+                                            service = Servlet.class
+                                    )
+                                    @SlingServletResourceTypes(
+                                        resourceTypes = "/apps/local-project/components/servletresource",
+                                        methods = HttpConstants.METHOD_GET
+                                    )
+                                    public class AssetResourceServlet extends SlingSafeMethodsServlet {
+                                        @Override
+                                        protected void doGet(SlingHttpServletRequest request, SlingHttpServletResponse response) throws ServletException, IOException {
+                                            PrintWriter out = response.getWriter();
+                                            out.println("Get Invoked");
+                                            try(ResourceResolver resolver = request.getResourceResolver()){
+                                                Resource resource = resolver.getResource("/content/dam/Sample/sun.jpg");
+                                                Node asset = resource.adaptTo(Node.class);
+                                                Node metadata = asset.getNode("jcr:content").getNode("metadata");
+                                                out.println(metadata.getName());
+                                                PropertyIterator allProperties = metadata.getProperties();
+
+                                                if(allProperties.hasNext()){
+                                                    while(allProperties.hasNext()){
+                                                        Property property = allProperties.nextProperty();
+                                                        out.println(property.getName());
+                                                    }
+                                                }
+                                            }catch (Exception e){
+                                                e.printStackTrace();
+                                            }
+
+                                        }
+                                    }
+
+                                </code>
+                            </pre>
+                        </div>
+                        <div>
+                            <image class="center" style="width: 100%; height: 50%; margin-top: 15px;" src="../images/servlet/postmanresource.webp"/>
+                        </div>
+                    </li>
+                 </ul>   
+
+                 
+                
+                <h4>Conclusion</h4>
+                <p>
+                    Here we have learnt what are servlets, how they are registered and when to use which way to register it. Also we have tested both the servlets as registered by resource as well as by path. 
+                </p>
+                <p>
+                    I hope you enjoyed the learing and have found the blog informative. 
+                </p>
+                <hr style="margin-top: 30px;"/>
+                <div class="author-details">
+                    <div id="like-icon" class="like-icon">
+                       <span id="like-count" class="like-count">0</span>
+                       <span id="like-btn" class="like-btn">
+                       <img src="/images/clap.webp" alt="Like">
+                       </span>
+                    </div>
+                    <div>
+                       <span class="author-name">Shruti Meshram | </span>
+                       <span class="author-designation">AEM Developer</span>
+                    </div>
+                 </div>
+			</div>
+		</div>
+	</section>
+
+<div class="social-icons">
+         
+        <a href="https://www.linkedin.com/company/infodales-tech-solution/" class="linkedin"><img src="/images/linkedin.webp" alt="LinkedIn"></a>
+        <a href="mailto:info@infodales.com" class="email"><img src="/images/email.webp" alt="Email"></a>
+    </div>
+
+	<!--  Footer --->
+	<div class="copyright-area">
+		<div class="footer">
+			<div class="row" style="margin-top: 0px;">
+				<div class="col-xl-4 col-lg-4 text-center text-lg-left">
+					<div class="copyright-text">
+						<p>Copyright &copy; 2024, All Right Reserved <a href="/index.html">Infodales Tech
+								Solution</a></p>
+					</div>
+				</div>
+				
+				<div class="col-xl-4 col-lg-4 d-none d-lg-block text-right">
+					<div class="footer-menu" style="margin-top:10px;">
+						<ul>
+							<li><a href="/index.html">Home</a></li>
+							<li><a href="/about.html">About</a></li>
+							<li><a href="/contact.html">Contact</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<!--- Java Script-->
+	<script>
+		var navLinks = document.getElementById("navLinks");
+
+		function showMenu() {
+			navLinks.style.right = "0";
+		}
+
+		function hideMenu() {
+			navLinks.style.right = "-200px";
+		}
+
+		document.addEventListener("DOMContentLoaded", () => {
+    const likeBtn = document.getElementById('like-btn');
+    const likeCount = document.getElementById('like-count');
+
+    let count = parseInt(localStorage.getItem('clapCount')) || 0;
+    likeCount.textContent = count;
+
+    likeBtn.addEventListener('click', () => {
+        count++;
+        likeCount.textContent = count;
+        localStorage.setItem('clapCount', count);
+
+        const likeAnimation = document.createElement('div');
+        likeAnimation.classList.add('like-animation');
+        likeAnimation.innerHTML = '🎉';
+        document.getElementById('like-icon').appendChild(likeAnimation);
+        likeAnimation.addEventListener('animationend', () => {
+            likeAnimation.remove();
+        });
+    });
+});
+
+		// function relatedFilter() {
+		// 	var retString = localStorage.getItem("allBlogs");
+		// 	console.log(retString);
+		// }
+
+
+	</script>
+
+</body>
+
+</html>
