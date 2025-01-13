@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Blogs | Migrating the Dispatcher Configuration from AMS to AEM as a Cloud Service </title>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content=" This blog aims to guide you through the process of converting the Ams Dispatcher Configurations into AEM As a Cloud Service Dispatcher Configurations">
+    <meta name="keywords"
+        content=" This blog aims to guide you through the process of converting the Ams Dispatcher Configurations into AEM As a Cloud Service Dispatcher Configurations">
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title"
+        content="Blogs | Migrating the Dispatcher Configuration from AMS to AEM as a Cloud Service " />
+    <meta property="og:description"
+        content="This blog aims to guide you through the process of converting the Ams Dispatcher Configurations into AEM As a Cloud Service Dispatcher Configurations." />
+    <meta property="og:url" content="https://infodales.com/form-submission.html" />
+    <meta property="og:site_name"
+        content="Blogs | Migrating the Dispatcher Configuration from AMS to AEM as a Cloud Service " />
+    <link rel="stylesheet" href="/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+
+    <!-- Header -->
+    <section class="sub-header"
+        style="background-image: linear-gradient(rgba(4, 9, 30, 0.5), rgba(4, 9, 30, 0.5)), url('/images/Cover\ Sites.jpg');">
+        <nav>
+            <a href="/index.html"><img src="/images/infodales/Info Dales Main Logo 03.webp" alt="logo"></a>
+            <div class="nav-links" id="navLinks">
+                <i class="fa fa-times" onclick="hideMenu()"></i>
+                <ul>
+                    <li><a href="/index.html">HOME</a></li>
+                    <li><a href="/about.html">ABOUT</a></li>
+                    <li><a href="/services.html">SERVICES</a></li>
+                    <li><a href="/blog.html">BLOGS</a></li>
+                    <li><a href="/career.html">CAREER</a></li>
+                    <li><a href="/contact.html">CONTACT</a></li>
+                    <ul>
+            </div>
+            <i class="fa fa-bars" onclick="showMenu()"></i>
+        </nav>
+
+    </section>
+    <!--  Blog Page Content --->
+    <section class="blog-content">
+        <div>
+            <div class="blog">
+
+                <p style="color: rgb(133, 133, 133); padding: 0 0 10px 0;"><a href="/blog.html"
+                        style="text-decoration: none; cursor: pointer;">Blogs</a> <span> > </span> Migrating the
+                    Dispatcher Configuration from AMS to AEM as a Cloud Service </p>
+
+                <p class="sitesTag" style="margin-top: 7px; margin-bottom: 7px; font-size: 13px; border-radius: 20px; 
+				width: fit-content; padding: 3px 15px;">Dispatcher</p>
+                <h1 class="title">Migrating the Dispatcher Configuration from AMS to AEM as a Cloud Service</h1>
+                <span class="author">Infodales Tech Solutions | </span>
+                <span class="date">August 31, 2024</span>
+
+                <div class="share-icons">
+                    <a href="https://www.linkedin.com/company/infodales-tech-solution/" target="_blank"
+                        class="linkedin-icon"><i class="fa fa-linkedin"></i></a>
+                    <a href="mailto:info@infodales.com" target="_blank" class="email-icon"><i
+                            class="fa fa-envelope"></i></a>
+                </div>
+
+                <hr style="margin: 20px 0 10px 0;">
+                <div class="blog-items">
+                    <h3 style="text-align: left; margin: 0px 0">Introduction</h3>
+                    <p>Migrating an AEM AMS (Adobe Managed Services) Dispatcher to AEM as a Cloud Service involves using
+                        Adobe I/O CLI (aio CLI) tools to manage and deploy the dispatcher configurations. This process
+                        requires careful planning and adherence to Adobe’s best practices for AEM as a Cloud Service. In
+                        this blog, we’ll walk through the step-by-step process of converting AMS Dispatcher
+                        configurations and making the necessary updates to the converted Dispatcher files.</p>
+                    <h4 tyle="text-align: left; margin: 0px 0">Step 1: Install Node.js</h4>
+                    <p>Ensure that Node.js is installed on your system. If it isn’t, download and install the latest
+                        version from the following link: <a href="https://nodejs.org/en/download">https://node
+                            js.org/en/download</a></p>
+                    <h4 tyle="text-align: left; margin: 0px 0">Step 2: Install the Adobe I/O CLI Tool</h4>
+                    <p>Open the command prompt and run the following command to install the Adobe I/O CLI:</p>
+                    <p>
+                    <div class="dispatcher-snippets">
+                        <pre
+                            style="margin-bottom: -150px; margin-top: -10px;"><code>npm install -g @adobe/aio-cli</code></pre>
+                    </div>
+
+                    </p>
+                    <h4 tyle="text-align: left; margin: 0px 0">Step 3: Install AEM Cloud Service Migration Plugins</h4>
+                    <p>Install the necessary AEM Cloud Service migration plugins by running the following command</p>
+                    <p>
+                    <div class="dispatcher-snippets">
+                        <pre
+                            style="margin-bottom: -150px; margin-top: -10px;"><code>aio plugins:install @adobe/aio-cli-plugin-AEM-cloud-service-migration</code></pre>
+                    </div>
+                    </p>
+                    <h4 tyle="text-align: left; margin: 0px 0">Step 4: Verify the Installation</h4>
+                    <p>To verify that the CLI tools are installed correctly, run the following command:</p>
+                    <p>
+                    <div class="dispatcher-snippets">
+                        <pre
+                            style="margin-bottom: -150px; margin-top: -10px;"><code>aio AEM-migration --help </code></pre>
+                    </div>
+                    </p>
+                    <p style="margin-top: -10px;">This command will display the list of available tools.</p>
+                    <div class="image-container">
+                        <img src="/images/AEM-Cloud-Images/aio-cli-tools.webp" alt="aio-cli-tools-img" />
+                    </div>
+                    <h4 tyle="text-align: left; margin: 0px 0">Step 5: Configure the Migration Tool</h4>
+                    <p>Navigate to the configuration file located at:</p>
+                    <p><span style=" background-color: yellow;">C:\Users\admin\AppData\Local\@adobe\aio-cli\AEM-migration-config.yaml
+                        </span>
+                        Update the file with the paths to your AEM-sdk-dispatcher source and ams-dispatcher source, then
+                        save the changes.</p>
+                    <div class="image-container">
+                        <img src="/images/AEM-Cloud-Images/dispatcher-config.webp" alt="dispatcher-config">
+                    </div>
+                    <h4 tyle="text-align: left; margin: 0px 0">Step 6: Run the Dispatcher Converter</h4>
+                    <p>Once everything is set up, execute the dispatcher conversion command:</p>
+                    <div class="dispatcher-snippets">
+                        <pre
+                            style="margin-bottom: -130px; margin-top: 10px;"><code>aio AEM-migration:dispatcher-converter -t=ams</code></pre>
+                    </div>
+                    <p style="margin-top: -10px;">After conversion its looks like this </p>
+                    <div class="image-container">
+                        <img src="/images/AEM-Cloud-Images/dispatcher-logs.webp" alt="dispatcher-logs" />
+                    </div>
+                    <p>After the conversion, navigate to the target folder. You will find a newly converted dispatcher
+                        folder. Replace its <span style="color: green;">src</span> folder with the <span
+                            style="color: green;">AEM-sdk-dispatcher</span> source files.</p>
+                    <h4>Note :</h4>
+                    <p>If you encounter any errors during the process, check the logs in the following file for details:
+                    </p>
+                    <p>
+                    <div class="dispatcher-snippets">
+                        <pre style="margin-bottom: 675px; margin-top: -35px;">
+                        <code >
+                            ./
+                            ├── conf.d
+                            │   ├── available_vhosts
+                            │   │   └── default.vhost
+                            │   ├── dispatcher_vhost.conf
+                            │   ├── enabled_vhosts
+                            │   │   ├── README
+                            │   │   └── default.vhost -> ../available_vhosts/default.vhost
+                            │   └── rewrites
+                            │   │   ├── default_rewrite.rules
+                            │   │   └── rewrite.rules
+                            │   └── variables
+                            |       ├── custom.vars
+                            │       └── global.vars
+                            └── conf.dispatcher.d
+                                ├── available_farms
+                                │   └── default.farm
+                                ├── cache
+                                │   ├── default_invalidate.any
+                                │   ├── default_rules.any
+                                │   ├── marketing_query_parameters.any
+                                │   └── rules.any
+                                ├── clientheaders
+                                │   ├── clientheaders.any
+                                │   └── default_clientheaders.any
+                                ├── dispatcher.any
+                                ├── enabled_farms
+                                │   ├── README
+                                │   └── default.farm -> ../available_farms/default.farm
+                                ├── filters
+                                │   ├── default_filters.any
+                                │   └── filters.any
+                                ├── renders
+                                │   └── default_renders.any
+                                └── virtualhosts
+                                    ├── default_virtualhosts.any
+                                    └── virtualhosts.any
+                            
+                        </code>
+                  </pre>
+                    </div>
+                    </p>
+                    <p>Your Dispatcher file structure should look like this</p>
+                    <p>After the conversion make some changes in dispatcher</p>
+                    <h4>Delete Virtual Host Files</h4>
+                    <div style=" margin-left: 20px; ;">
+                        <ul style="margin: auto; width: 95%;" class="description-txt">
+                            <li>
+                                <p>Navigate to conf.d/enabled_vhosts. Delete any virtual host files whose names contain
+                                    author or flush.</p>
+                            </li>
+                            <li>
+                                <p>Remove all virtual host files in conf.d/available_vhosts that are not linked.</p>
+                            </li>
+                        </ul>
+                    </div>
+                  
+                    <h4>Remove or Comment Unnecessary vHosts</h4>
+                    <div style=" margin-left: 20px;">
+                        <ul style="margin: auto; width: 95%;" class="description-txt">
+                            <li>
+                                <p> Remove or comment out virtual host files that do not reference port 80.</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <h4> Check Rewrites</h4>
+                    <div style=" margin-left: 20px;">
+                        <ul style="margin: auto; width: 95%;" class="description-txt">
+                            <li>
+                                <p> Go to the conf.d/rewrites directory.</p>
+                            </li>
+                            <li>
+                                <p> Delete files like base_rewrite.rules. Also, remove any Include statements in the
+                                    virtual
+                                    host files referencing these files.</p>
+                            </li>
+                            <li>
+                                <p> If only one file remains in the folder, rename it to rewrite.rules and update the
+                                    Include statements in the virtual host files accordingly.</p>
+                            </li>
+                            <li>
+                                <p> If there are multiple virtual host-specific files, merge their contents into the
+                                    corresponding Include statements in the relevant virtual host files.</p>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <h4> Check Variables</h4>
+                    <div style=" margin-left: 20px;">
+                        <ul style="margin: auto; width: 95%;" class="description-txt">
+                            <li>
+                                <p> Navigate to the conf.d/variables directory.</p>
+                            </li>
+                            <li>
+                                <p> Delete the ams_default.vars file and remove any Include statements in virtual host
+                                    files
+                                    referencing it.</p>
+                            </li>
+                            <li>
+                                <p> If only one file remains, rename it to custom.vars and update all Include statements
+                                    in
+                                    the virtual host files to reflect this new name.</p>
+                            </li>
+                            <li>
+                                <p> If multiple files remain, copy their contents into the corresponding Include
+                                    statements
+                                    in the relevant virtual host files.
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <h4> Remove Allowlists</h4>
+                    <div style=" margin-left: 20px;">
+                        <ul style="margin: auto; width: 95%;" class="description-txt">
+                            <li>
+                                <p> Delete the conf.d/whitelists folder.</p>
+                            </li>
+                            <li>
+                                <p>Remove any Include statements in virtual host files referencing files in this folder.
+                                </p>
+                            </li>
+                            <li>
+                                <p>Replace PUBLISH_DOCROOT with DOCROOT.
+                                </p>
+                            </li>
+                            <li>
+                                <p> Remove references to the following variables: DISP_ID, PUBLISH_FORCE_SSL,
+                                    PUBLISH_WHITELIST_ENABLED.
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <h4> Check Cache</h4>
+                    <div style=" margin-left: 20px;">
+                        <ul style="margin: auto; width: 95%;" class="description-txt">
+                            <li>
+                                <p> Navigate to conf.dispatcher.d/cache.</p>
+                            </li>
+                            <li>
+                                <p>Delete files prefixed with ams_.</p>
+                            </li>
+                            <li>
+                                <p>If the folder is empty, copy the rules.any file from the standard Dispatcher
+                                    configuration (found in the SDK src folder) into this folder and update the $include
+                                    statements referencing the ams_*_cache.any files. </p>
+                            </li>
+                            <li>
+                                <p>If only one file remains with a _cache.any suffix, rename it to rules.any and update
+                                    the
+                                    $include statements in the farm files. </p>
+                            </li>
+                            <li>
+                                <p>If multiple farm-specific cache files remain, merge their contents into the
+                                    corresponding
+                                    $include statements in the farm files.</p>
+                            </li>
+                            <li>
+                                <p>Delete files with the suffix _invalidate_allowed.any.</p>
+                            </li>
+                            <li>
+                                <p>Copy default_invalidate.any from the standard Dispatcher configuration into this
+                                    folder
+                                    and update the cache/allowedClients section in the farm files.</p>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <h4> Check Client Headers</h4>
+                    <div style=" margin-left: 20px;">
+                        <ul style="margin: auto; width: 95%;" class="description-txt">
+                            <li>
+                                <p>Navigate to conf.dispatcher.d/clientheaders.</p>
+                            </li>
+                            <li>
+                                <p>Delete files prefixed with ams_.</p>
+                            </li>
+                            <li>
+                                <p>If only one file remains with a _clientheaders.any suffix, rename it to
+                                    clientheaders.any
+                                    and update the $include statements in the farm files. </p>
+                            </li>
+                            <li>
+                                <p>If only one file remains with a _cache.any suffix, rename it to rules.any and update
+                                    the
+                                    $include statements in the farm files. </p>
+                            </li>
+                            <li>
+                                <p>If multiple files remain, merge their contents into the corresponding $include
+                                    statements
+                                    in the farm files.</p>
+                            </li>
+                            <li>
+                                <p>Copy default_clientheaders.any from the standard Dispatcher configuration into this
+                                    folder and replace outdated $include statements in the farm files with:</p>
+                            </li>
+                            <p>
+                            <div class="dispatcher-snippets">
+                                <pre style="margin-bottom: 20px;"><code>
+    replace
+    <b>$include "/etc/httpd/conf.dispatcher.d/clientheaders/ams_publish_clientheaders.any"</b>
+    <b>$include "/etc/httpd/conf.dispatcher.d/clientheaders/ams_common_clientheaders.any"</b>
+                                    
+    With
+    <b>$include "../clientheaders/default_clientheaders.any"</b>
+                                    
+                                </code></pre>
+                            </div>
+
+                            </p>
+                        </ul>
+                    </div>
+
+                    <h4>Check Filters</h4>
+                    <div style=" margin-left: 20px;">
+                        <ul style="margin: auto; width: 95%;" class="description-txt">
+                            <li>
+                                <p>Navigate to conf.dispatcher.d/filters.</p>
+                            </li>
+                            <li>
+                                <p>Delete files prefixed with ams_.</p>
+                            </li>
+                            <li>
+                                <p>If only one file remains, rename it to filters.any and update the $include statements
+                                    in
+                                    the farm files.</p>
+                            </li>
+                            <li>
+                                <p>If multiple files remain, merge their contents into the corresponding $include
+                                    statements
+                                    in the farm files.</p>
+                            </li>
+                            <li>
+                                <p>Copy default_filters.any from the standard Dispatcher configuration and update
+                                    outdated
+                                    $include statements in the farm files with:</p>
+                            </li>
+                            <div class="dispatcher-snippets">
+                                <pre
+                                    style="margin-bottom: -125px;"><code>  $include "../filters/default_filters.any"</code></pre>
+                            </div>
+
+                        </ul>
+                    </div>
+
+                    <h4>Check Renders</h4>
+                    <div style=" margin-left: 20px;">
+                        <ul style="margin: auto; width: 95%;" class="description-txt">
+                            <li>
+                                <p>Navigate to conf.dispatcher.d/renders.</p>
+                            </li>
+                            <li>
+                                <p>Delete all files in this folder.</p>
+                            </li>
+                            <li>
+                                <p>Copy default_renders.any from the standard Dispatcher configuration into this folder.
+                                </p>
+                            </li>
+                            <li>
+                                <p>Update the renders section in each farm file with:</p>
+                            </li>
+                            <div class="dispatcher-snippets">
+                                <pre
+                                    style="margin-bottom: -125px;"><code>$include "../renders/default_renders.any"</code></pre>
+                            </div>
+
+                        </ul>
+                    </div>
+
+                    <h4>Check Virtual Hosts</h4>
+                    <div style=" margin-left: 20px;">
+                        <ul style="margin: auto; width: 95%;" class="description-txt">
+                            <li>
+                                <p>Rename the directory conf.dispatcher.d/vhosts to conf.dispatcher.d/virtualhosts and
+                                    navigate to it.</p>
+                            </li>
+                            <li>
+                                <p>Delete files prefixed with ams_.</p>
+                            </li>
+                            <li>
+                                <p>If only one file remains, rename it to virtualhosts.any and update the $include
+                                    statements in the farm files.</p>
+                            </li>
+                            <li>
+                                <p>If multiple files remain, merge their contents into the corresponding $include
+                                    statements
+                                    in the farm files.</p>
+                            </li>
+                            <li>
+                                <p>Copy default_virtualhosts.any from the standard Dispatcher configuration and update
+                                    outdated $include statements in the farm files with:</p>
+                            </li>
+                            <div class="dispatcher-snippets">
+                                <pre
+                                    style="margin-bottom: -125px;"><code>$include "../virtualhosts/default_virtualhosts.any"</code></pre>
+                            </div>
+
+                        </ul>
+                    </div>
+
+                    <h4> Include Custom Variables</h4>
+                    <div style=" margin-left: 20px;">
+                        <ul style="margin: auto; width: 95%;" class="description-txt">
+                            <li>
+                                <p>In the conf.d/variables/custom.vars file, ensure it is included in each virtual host
+                                    file. This file contains custom domain names.</p>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <h4> Validate the Dispatcher</h4>
+                    <div style=" margin-left: 20px;">
+                        <ul style="margin: auto; width: 95%;" class="description-txt">
+                            <li>
+                                <p>Navigate to the Dispatcher folder.</p>
+                            </li>
+                            <li>
+                                <p>Run the command:</p>
+                            </li>
+                            <div class="dispatcher-snippets">
+                                <pre style="margin-bottom: -145px;"><code>bin\validate src</code></pre>
+                            </div>
+
+                            <li>
+                                <p>Ensure Docker is installed on your system. The output should confirm successful
+                                    validation.</p>
+                            </li>
+                            <div class="image-container">
+                                <img src="/images/AEM-Cloud-Images/dispatcher-phases.webp" alt="dispatcher-phases-img" />
+                            </div>
+                        </ul>
+                    </div>
+
+                    <h4> Start the Dispatcher:</h4>
+                    <div style=" margin-left: 20px;">
+                        <ul style="margin:auto ; width: 95%;" class="description-txt">
+                            <li>
+                                <p>Now start the dispatcher in a docker image with a deployment information make sure
+                                    you
+                                    have up the AEM publish instance </p>
+                            </li>
+                            <li>
+                                <p>With your AEM publish server running on windows running on port 4503 you can start
+                                    the
+                                    dispatcher by running the command</p>
+                            </li>
+                            <div class="dispatcher-snippets">
+                                <pre
+                                    style="margin-bottom: -135px;"><code>bin\docker_run src host.docker.internal:4503 8080 </code></pre>
+                            </div>
+
+                            <li>
+                                <p>After running it looks like :</p>
+                            </li>
+                            <div class="image-container">
+                                <img src="/images/AEM-Cloud-Images/starting-dispatcher.webp" alt="starting-dispatcher" />
+                            </div>
+                        </ul>
+                    </div>
+
+                </div>
+                <hr style="margin-top: 30px;">
+                <div class="author-details">
+                    <div id="like-icon" class="like-icon">
+                        <span id="like-count" class="like-count">0</span>
+                        <span id="like-btn" class="like-btn">
+                            <img src="/images/clap.webp" alt="Like">
+                        </span>
+                    </div>
+                    <div>
+                        <span class="author-name">Yash Sakharkar |</span>
+                        <span class="author-designation">AEM Developer</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <div class="social-icons">
+
+        <a href="https://www.linkedin.com/company/infodales-tech-solution/" class="linkedin"><img
+                src="/images/linkedin.webp" alt="LinkedIn"></a>
+        <a href="mailto:info@infodales.com" class="email"><img src="/images/email.webp" alt="Email"></a>
+    </div>
+
+    <!--  Footer --->
+    <div class="copyright-area">
+        <div class="footer">
+            <div class="row" style="margin-top: 0px;">
+                <div class="col-xl-4 col-lg-4 text-center text-lg-left">
+                    <div class="copyright-text">
+                        <p>Copyright &copy; 2023, All Right Reserved <a href="/index.html">Infodales Tech
+                                Solution</a></p>
+                    </div>
+                </div>
+
+                <div class="col-xl-4 col-lg-4 d-none d-lg-block text-right">
+                    <div class="footer-menu" style="margin-top:10px;">
+                        <ul>
+                            <li><a href="/index.html">Home</a></li>
+                            <li><a href="/about.html">About</a></li>
+                            <li><a href="/contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--- Java Script-->
+    <script>
+        var navLinks = document.getElementById("navLinks");
+
+        function showMenu() {
+            navLinks.style.right = "0";
+        }
+
+        function hideMenu() {
+            navLinks.style.right = "-200px";
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const likeBtn = document.getElementById('like-btn');
+            const likeCount = document.getElementById('like-count');
+
+            let count = parseInt(localStorage.getItem('clapCount')) || 0;
+            likeCount.textContent = count;
+
+            likeBtn.addEventListener('click', () => {
+                count++;
+                likeCount.textContent = count;
+                localStorage.setItem('clapCount', count);
+
+                const likeAnimation = document.createElement('div');
+                likeAnimation.classList.add('like-animation');
+                likeAnimation.innerHTML = '🎉';
+                document.getElementById('like-icon').appendChild(likeAnimation);
+                likeAnimation.addEventListener('animationend', () => {
+                    likeAnimation.remove();
+                });
+            });
+        });
+    </script>
+
+</body>
+
+</html>
