@@ -2557,7 +2557,7 @@ details[open] .accordion-icon {
   font-size: 14px;
   font-weight: 500;
   line-height: 22px;
-  padding: 5px !important;
+  padding: 0px !important;
 }
 .code-flow {
   overflow: scroll;

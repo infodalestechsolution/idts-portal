@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <title>Blogs | Introduction to Edge Delivery Services</title>
+      <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="description" content="Welcome to the blog designed for developers new to the Edge delivery service Concepts. In this blog we will walk you through Document Based Authoring concept Document Based Authoring (DBA) in Adobe Experience Manager (AEM) is a content authoring paradigm designed to simplify the creation, management, and delivery of structured content.">
+      <meta name="keywords" content="Infodales, Introduction to Document Based Authoring">
+      <meta property="og:locale" content="en_US" />
+      <meta property="og:type" content="website" />
+      <meta property="og:title" content="Blogs | Introduction to Document Based Authoring" />
+      <meta property="og:description" content="Welcome to the blog designed for developers new to the Edge delivery service Concepts. In this blog we will walk you through Document Based Authoring concept Document Based Authoring (DBA) in Adobe Experience Manager (AEM) is a content authoring paradigm designed to simplify the creation, management, and delivery of structured content." />
+      <meta property="og:url" content="https://infodales.com/spa-getting-started.html" />
+      <meta property="og:site_name" content="Blogs | Introduction to Document Based Authoring" />
+      <link rel="stylesheet" href="/style.css">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;600;700&display=swap"
+         rel="stylesheet">
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+   </head>
+   <body>
+      <!-- Header -->
+      <section class="sub-header"
+         style="background-image: linear-gradient(rgba(4, 9, 30, 0.5), rgba(4, 9, 30, 0.5)), url('/images/Cover\ Sites.jpg');">
+         <nav>
+         <a href="/index.html"><img src="/images/infodales/Info Dales Main Logo 03.webp" alt="logo">
+         </a>
+         <div class="nav-links" id="navLinks">
+            <i class="fa fa-times" onclick="hideMenu()"></i>
+            <ul>
+            <li><a href="/index.html">HOME</a></li>
+            <li><a href="/about.html">ABOUT</a></li>
+            <li><a href="/services.html">SERVICES</a></li>
+            <li><a href="/blog.html">BLOGS</a></li>
+            <li><a href="/career.html">CAREER</a></li>
+            <li><a href="/contact.html">CONTACT</a></li>
+            <ul>
+         </div>
+         <i class="fa fa-bars" onclick="showMenu()"></i>
+      </section>
+      <!--  Blog Page Content --->
+      <section class="blog-content">
+         <div>
+         <div class="blog spa-blog">
+         <p style="color: rgb(133, 133, 133); padding: 0 0 10px 0;"><a href="/blog.html" style="text-decoration: none; cursor: pointer;">Blogs</a> <span> > </span>Introduction to Edge Delivery Services</p>
+         <p class="sitesTag" style="margin-top: 7px; margin-bottom: 7px; font-size: 13px; border-radius: 20px; 
+            width: fit-content; padding: 3px 15px;">AEM Sites</p>
+         <h1 class="title">Introduction to Document Based Authoring</h1>
+         <span class="author">Infodales Tech Solutions</span> |
+         <span class="date">December 10, 2024</span>
+         <div class="share-icons">
+            <a href="https://www.linkedin.com/company/infodales-tech-solution/" target="_blank" class="linkedin-icon"><i class="fa fa-linkedin"></i></a>
+            <a href="mailto:info@infodales.com" target="_blank" class="email-icon"><i class="fa fa-envelope"></i></a>
+         </div>
+         <hr style="margin: 20px 0 10px 0;">
+         <div class="blog-items">
+         <div>
+            <p>Happy to find you here. Welcome to another learning.</p>
+            <h2>Document Based Authoring</h2>
+            <p>Document-Based Authoring (DBA) in Adobe Experience Manager (AEM) is a content authoring paradigm designed to simplify the creation, management, and delivery of structured content. Unlike traditional page-based authoring, where authors focus on creating and managing individual web pages, DBA allows authors to work with content in a more modular, reusable, and centralized way, often in the form of documents</p>
+            <p>currently when a request comes the content is served through the publish instance but with Edge Delivery Service the content is served through EDS and no publish instance is required.We can build, run a website on AEM as cloud without using AEM.</p>
+            <div class="image-container">
+               <img src="../images/Document-Based-Authoring/content-is-served-through-documents.webp" style="width: 70%;  margin-top: 15px;" alt="content-is-served-through-documents"/>
+            </div>
+            <p>Now we will be creating a sample website for learning document based authoring. below are the ceartine requirements to create a website:</p>
+            <ul class="ff_ul" style="padding: 10px;">
+               <li>GitHub account - you need a github account in this all you code will be kept</li>
+               <li>Google account - for new we are using google docs so we need google account othwise we can use microsoft account as well.</li>
+               <li>You should have basic understanding of HTML, CSS and JavaScript</li>
+            </ul>
+         </div>
+         <div>
+            <h2>Steps to create and configure Edge Delivery Services Project</h2>
+            <ul class="ff_ul" style="padding: 10px;">
+               <li>Create new repository in your github using this template <a href="https://github.com/adobe/aem-boilerplate" target="_blank">https://github.com/adobe/aem-boilerplate</a></li>
+               <div class="image-container">
+                  <img src="../images/Document-Based-Authoring/adobe-template.webp" style="width: 100%;  margin-top: 15px;" alt="adobe-template"/>
+               </div>
+               <li>Install the AEM Code Sync GitHub App on your repository.Open the URL <a href="https://github.com/apps/aem-code-sync" target="_blank"> github.com/apps/aem-code-sync </a>in the browser and click on install</li>
+               <div class="image-container">
+                  <img src="../images/Document-Based-Authoring/aem-code-sync.webp" style="width: 100%;  margin-top: 15px;" alt="aem-code-sync"/>
+               </div>
+               <li>Go to the google drive in that create a folder with project name.</li>
+               <div class="image-container">
+                  <img src="../images/Document-Based-Authoring/folder-creation.webp" style="width: 100%;  margin-top: 15px;" alt="folder-creation-in-google-drive"/>
+               </div>
+               <li>Create 3 docs files in the project folder with the name index, nav, footer and give the editor permission to <a href="mailto:helix@adobe.com">helix@adobe.com</a> account and add some content in it.</li>
+               <div class="image-container">
+                  <img src="../images/Document-Based-Authoring/docs-creation-google-drive.webp" style="width: 100%;  margin-top: 15px;" alt="docs-creation-google-drive"/>
+               </div>
+               <li>After that go to the github in that there is the file called fstab.yaml in that add the path of your google drive folder and commit that change</li>
+               <div class="image-container">
+                  <img src="../images/Document-Based-Authoring/adding-path-to-git-code.webp" style="width: 100%;  margin-top: 15px;" alt="adding-path-to-git-code"/>
+               </div>
+               <li>Now add AEM sidekick extension to your browser then go inside your project folder then in sidekick you will get the option to add project then add the project, now you can preview or publish the pages</li>
+               <div class="image-container">
+                  <img src="../images/Document-Based-Authoring/sidekick.webp" style="width: 100%;  margin-top: 15px;" alt="sidekick"/>
+               </div>
+               <li>Now there are two urls that you can use to see the pages so create the url you need your branch in which your code is available, your repo name and owner name then for preview and live <span style="color: blue;">.page</span> and <span style="color: blue;">.live</span> extension can be used as shown below</li>
+               <ol class="ff_ul">
+                  <li>preview URL -  https://{branch}--{repo}--{owner}.aem.page/</li>
+                  <li>publish URL -  https://{branch}--{repo}--{owner}.aem.live/</li>
+               </ol>
+               <p>Whenever you hit the url the index page available in that folder will be displayed if index page is not present it will throw <span style="color: red;">404 not found</span> exception</p>
+               <p>Below is how your website gonna look for the content of the page you can reffer to the following google drive <a href="https://drive.google.com/drive/u/0/folders/1MGzOt7ubUh3gu7zhZIPb7R7dyRzG371j" target="_blank">GDrive</a></p>
+               <div class="image-container">
+                  <img src="../images/Document-Based-Authoring/index-page.webp" style="width: 100%;  margin-top: 15px;" alt="index-page"/>
+               </div>
+            </ul>
+         </div>
+         <div>
+         </div>
+      </section>
+      <div class="social-icons">
+         <a href="https://www.linkedin.com/company/infodales-tech-solution/" class="linkedin"><img src="/images/linkedin.webp" alt="LinkedIn"></a>
+         <a href="mailto:info@infodales.com" class="email"><img src="/images/email.webp" alt="Email"></a>
+      </div>
+      <!--  Footer --->
+      <div class="copyright-area">
+         <div class="footer">
+            <div class="row" style="margin-top: 0px;">
+               <div class="col-xl-4 col-lg-4 text-center text-lg-left">
+                  <div class="copyright-text">
+                     <p>Copyright &copy; 2024, All Right Reserved <a href="/index.html">Infodales Tech
+                        Solution</a>
+                     </p>
+                  </div>
+               </div>
+               <div class="col-xl-4 col-lg-4 d-none d-lg-block text-right">
+                  <div class="footer-menu" style="margin-top:10px;">
+                     <ul>
+                        <li><a href="/index.html">Home</a></li>
+                        <li><a href="/about.html">About</a></li>
+                        <li><a href="/contact.html">Contact</a></li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!--- Java Script-->
+      <script>
+         var navLinks = document.getElementById("navLinks");
+         
+         function showMenu() {
+         	navLinks.style.right = "0";
+         }
+         
+         function hideMenu() {
+         	navLinks.style.right = "-200px";
+         }
+         
+         document.addEventListener("DOMContentLoaded", () => {
+           const likeBtn = document.getElementById('like-btn');
+           const likeCount = document.getElementById('like-count');
+         
+           let count = parseInt(localStorage.getItem('clapCount')) || 0;
+           likeCount.textContent = count;
+         
+           likeBtn.addEventListener('click', () => {
+               count++;
+               likeCount.textContent = count;
+               localStorage.setItem('clapCount', count);
+         
+               const likeAnimation = document.createElement('div');
+               likeAnimation.classList.add('like-animation');
+               likeAnimation.innerHTML = '🎉';
+               document.getElementById('like-icon').appendChild(likeAnimation);
+               likeAnimation.addEventListener('animationend', () => {
+                   likeAnimation.remove();
+               });
+           });
+         });
+      </script>
+   </body>
+</html>
