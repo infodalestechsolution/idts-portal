@@ -2544,6 +2544,9 @@ details[open] .accordion-icon {
     height: 106em;
   }
 }
+.ff_ul {
+  margin-left: 20px;
+}
 /* Dispatcher Migration */
 .dispatcher-snippets {
   display: flex;
