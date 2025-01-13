@@ -42,8 +42,6 @@
 			</div>
 			<i class="fa fa-bars" onclick="showMenu()"></i>
 		</nav>
-		<!-- <p style="color: lightgray; margin-left: 17%;"><a href="./blog.html" style="text-decoration: none; color: white; cursor: pointer;">Blogs</a> <span> > </span> Getting started with SPA</p> -->
-		<!-- <h1>Blogs</h1> -->
 	</section>
 	<!--  Blog Page Content --->
 	<section class="blog-content">
@@ -64,12 +62,14 @@
 					</div>
 
 				<hr style="margin: 20px 0 10px 0;">
+                <div class="blog-items">
+                 
                 <p>Happy to see you. Welcome to a new blog.</p>
-                <h4>Servlets in AEM</h4>
+                <h2>Servlets in AEM</h2>
                 <p>
                     In this blog we will be understanding what are servlets in AEM plus what are the ways in which they are registered. Also we will understand in brief which type to use and when. Lets begin! 
                 </p>
-                <h4>What are Servlets</h4>
+                <h2>What are Servlets</h2>
                 <p>
                     Servlets are java classes which are meant to handle HTTP requests and their respective responses also allowing the developer to generate dynamic content. They provide variety of methods like doGET, doPOST, doPUT, doOPTIONS and doHEAD.
                 </p>
@@ -92,13 +92,13 @@
                     </li>
                 </ul>
                 
-                <h4>Registering by Path</h4>
+                <h2>Registering by Path</h2>
                 <ul class="ff_ul" >
                     <li>
                         <p>In order to register a servlet by path, you need to add the following snippet to it. Remember the path must begin with /bin.</p>
                         <div>
                             <pre style="width: 100%; height:100%">
-                                <code class="center" style="width: 80%; height:100%">
+                                <code class="center code-flow" style="width: 80%; height:100%">
                                     @Component(
                                             service = Servlet.class,
                                             property = {
@@ -118,7 +118,7 @@
                         <p>Here we have created a servlet that reads the metadata properties of an asset.</p>
                         <div>
                             <pre style="width: 100%; height:100%">
-                                <code class="center" style="width: 80%; height:100%">
+                                <code class="center code-flow" style="width: 80%; height:100%">
                                     package com.local.core.servlets;
 
                                     import org.apache.sling.api.SlingHttpServletRequest;
@@ -148,7 +148,8 @@
                                     )
                                     public class AssetPathServlet extends SlingSafeMethodsServlet {
                                         @Override
-                                        protected void doGet(SlingHttpServletRequest request, SlingHttpServletResponse response) throws ServletException, IOException {
+                                        protected void doGet(SlingHttpServletRequest request,
+                                        SlingHttpServletResponse response) throws ServletException, IOException {
                                             PrintWriter out = response.getWriter();
                                             out.println("Get Invoked");
                                             try(ResourceResolver resolver = request.getResourceResolver()){
@@ -186,7 +187,7 @@
                        </div>
                     </li>
                     </ul>
-                 <h4>Register by Resource</h4>
+                 <h2>Register by Resource</h2>
                                   
                  <ul class="ff_ul">
                     <li>
@@ -196,7 +197,7 @@
                         <p>You need to add the following snippet to your servlet. The same functionality we will achieve by registering the servlet by resource type.</p>
                         <div>
                             <pre style="width: 100%; height:100%">
-                                <code class="center" style="width: 80%; height:100%">
+                                <code class="center code-flow" style="width: 80%; height:100%">
                                     @Component(
                                                 service = Servlet.class
                                         )
@@ -213,7 +214,7 @@
 
                         <div>
                             <pre style="width: 100%; height:100%">
-                                <code class="center" style="width: 80%; height:100%">
+                                <code class="center code-flow" style="width: 80%; height:100%">
                                     package com.local.core.servlets;
 
                                     import org.apache.sling.api.SlingHttpServletRequest;
@@ -276,13 +277,15 @@
 
                  
                 
-                <h4>Conclusion</h4>
+                <h2>Conclusion</h2>
                 <p>
                     Here we have learnt what are servlets, how they are registered and when to use which way to register it. Also we have tested both the servlets as registered by resource as well as by path. 
                 </p>
                 <p>
                     I hope you enjoyed the learing and have found the blog informative. 
                 </p>
+                   
+            </div>
                 <hr style="margin-top: 30px;"/>
                 <div class="author-details">
                     <div id="like-icon" class="like-icon">
@@ -364,13 +367,6 @@
         });
     });
 });
-
-		// function relatedFilter() {
-		// 	var retString = localStorage.getItem("allBlogs");
-		// 	console.log(retString);
-		// }
-
-
 	</script>
 
 </body>

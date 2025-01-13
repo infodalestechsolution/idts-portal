@@ -2556,3 +2556,6 @@ details[open] .accordion-icon {
   line-height: 22px;
   padding: 5px !important;
 }
+.code-flow {
+  overflow: scroll;
+}
