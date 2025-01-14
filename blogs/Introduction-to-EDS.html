@@ -64,37 +64,38 @@
 					</div>
 
 				<hr style="margin: 20px 0 10px 0;">
+                <div class="blog-items">
                 <p>Happy to find you here. Welcome to another learning.</p>
-                <h4>What is Edge Delivery Services</h4>
+                <h3 style="text-align: left;">What is Edge Delivery Services</h3>
                 <p>Edge delivery service is a part of AEM as a cloud service It is an individual module/functionality in AEM as a cloud service and not dependent on AEM You can Build, Run and Author a website using Edge Delivery service without AEM It can be integrated with AEM author to create content/site authoring however, AEM authoring is not mandatory for content authoring It supports two way of authoring one is document-based authoring and another one is WYSIWYG(What You See Is What you Get) authoring.</p>
-					<h4>Edge Delivery Service Architecture</h4>
+					<h3 style="text-align: left;">Edge Delivery Service Architecture</h3>
 					<p><li>Franklin /Edge Delivery Service is based on a serverless micro-services architecture.</li>
                     <li>Each individual service is designed to be single-purpose. The connections between the
-different services make up the overall architecture.</li>
+                      different services make up the overall architecture.</li>
                     <li>All inter-service communication is based on HTTPS.</li>
                     <li>It is a composable set of services that enables a rapid development environment.</li>
                     <img src="/images/EDS/Architecture-picture.png" style="width: 80%;  margin-top: 15px;" alt="properties"/></p>
                     <p>The architecture is typically composed of three layers.
-                        <h5>Authoring Layer:</h5>
+                        <h3 style="text-align: left;">Authoring Layer:</h3>
                         <p>In this we create content for edge delivery service, we have following ways to create content
                             <li>AEM authoring using universal editor</li>
                             <li>We can create content using google docs or Microsoft docs or spreadsheet with teams and slack you can take help of adobe and build channels to ask for the help as it is a new product.</li>
                             <li>your code and configuration always stay in GitHub and that code is moved to edge delivery services when needed.</li>
                         </p>
-                        <h5>Edge Delivery Layer:</h5>
+                        <h3 style="text-align: left;">Edge Delivery Layer:</h3>
                         <p>It is micro service based serverless infrastructure build on cloud.</p>
-                        <h5>Client infrastructure:</h5>
+                        <h3 style="text-align: left;">Client infrastructure:</h3>
                         <p>This is also the CDN layer from client side on top of Edge Delivery Service CDN</p>
                     </p>
-					<h4>The entire edge delivery service is implemented in two ways:</h4>
+					<h3 style="text-align: left;">The entire edge delivery service is implemented in two ways:</h3>
                     <P>After all the develeopement the storage and processing is done with the below mentioned servers</P>
                     <img src="/images/EDS/implementation.png" style="width: 80%;  margin-top: 15px;" alt="properties"/></p>
-                    <h5>AWS</h5>
+                    <h3 style="text-align: left;">AWS</h3>
                     <p>In AWS there are three components AWS-S3, Lambda and Fastly</p>
                     <li>AWS s3 is used for storage or content hub</li>
                     <li>Lambda is used for processing and computing</li>
                     <li>Fastly is used as CDN for this stack</li>
-                    <h5>CloudFlare</h5>
+                    <h3 style="text-align: left;">CloudFlare</h3>
                     <p>In CloudFlare there are three components R2, Worker and Cloudflare-CDN</p>
                     <li>R2 is used for the storage.</li>
                     <li>Worker is used for the computing.</li>
@@ -102,22 +103,22 @@ different services make up the overall architecture.</li>
                     <p>There are bascially following 4 main parts involved in Edge Delivery Service(EDS):</p>
                     <img src="/images/EDS/FourMainPartsofEDS.png" style="width: 80%;  margin-top: 15px;" alt="properties"/></p>
                     <p>I will explain each and every part in detail</p>
-                    <h5>Edge</h5>
+                    <h3 style="text-align: left;">Edge</h3>
                     <p>Edge is basically the CDN part it involves three types of CDN</p>
                     <img src="/images/EDS/Edge.png" style="width: 50%;  margin-top: 15px;" alt="properties"/>
                     <p>Bring your own cdn(BYOCDN)- this is basically the CDN that client can include above the EDS CDN.</p>
                     <p>Outer CDN- In EDS we have two url one is live url and one is preview url outer cdn will display you the live url content which is published.</p>
                     <p>Inner CDN- Thi will basically shows you the preview of the content you have authored.</p>
-                    <h5>PIPE(Pipeline)</h5>
+                    <h3 style="text-align: left;">PIPE(Pipeline)</h3>
                     <p>The main delivery functionality is provided PIPE (Pipeline) and main pipeline is helix-plpeline-service, which uses the helix-html-pipeline framework to render HTML and renders filtered JSON directly after applying some filters. The Pipeline Service pulls configuration from the Code Bus and the published Content from the Content Bus The pipeline service runs as an AWS Lambda function.Mainly the pipeline is used to convert the content autored in documents to hypermedia
                     </p>
-                    <h5>Authoring/Author</h5>
+                    <h3 style="text-align: left;">Authoring/Author</h3>
                     <p>Authoring can be done using the google docs or microsoft docs and can be stores in google drive or share point and can be published from there.</p>
                     <p>Authoring mainly involves 3 things</p>
                     <img src="/images/EDS/Authoring-Author.png" style="width: 50%;  margin-top: 15px;" alt="properties"/>
                     <p>Authoring- it can be done using google docs or microsoft docs or any third party document service.</p>
                     <p>SideKick- It is very important it is an extension which is used to publish, unpublish or delete the content from th website</p>
-                    <h5>Dev</h5>
+                    <h3 style="text-align: left;">Dev</h3>
                     <p>Developement part is mainly done in the github repo that we will create in this we need to install AEM code sync github app which is know as franklin bot and the content is served from the documents stores in google drive or sharepoint</p>
                     <img src="/images/EDS/Dev.png" style="width: 50%;  margin-top: 15px;" alt="properties"/>
                     <hr style="margin-top: 30px;">
@@ -131,6 +132,7 @@ different services make up the overall architecture.</li>
                     <div>
                         <span class="author-name">Owais Pathan | </span>
                         <span class="author-designation">AEM Developer</span>
+                    </div>
                     </div>
                     </div>
 		</div>
