@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Blogs | Introduction to Components and Sling Model</title>
+	<link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Today we will understand the basics of components and sling model in AEM.">
+  	<meta name="keywords" content="Infodales, introduction to components and sling model, components and sling model, sling model annotations, sling models, components">
+	<meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Blogs | Introduction to Components and Sling Model" />
+    <meta property="og:description" content="Today we will understand the basics of components and sling model in AEM." />
+    <meta property="og:url" content="https://infodales.com/spa-getting-started.html" />
+    <meta property="og:site_name" content="Blogs | Introduction to Components and Sling Model" />
+	<link rel="stylesheet" href="/style.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;600;700&display=swap"
+		rel="stylesheet">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+
+	<!-- Header -->
+	<section class="sub-header"
+		style="background-image: linear-gradient(rgba(4, 9, 30, 0.5), rgba(4, 9, 30, 0.5)), url('/images/Cover\ Sites.jpg');">
+		<nav>
+			<a href="/index.html"><img src="/images/infodales/Info Dales Main Logo 03.webp" alt="logo"></a>
+			<div class="nav-links" id="navLinks">
+				<i class="fa fa-times" onclick="hideMenu()"></i>
+				<ul>
+					<li><a href="/index.html">HOME</a></li>
+					<li><a href="/about.html">ABOUT</a></li>
+					<li><a href="/services.html">SERVICES</a></li>
+					<li><a href="/blog.html">BLOGS</a></li>
+					<li><a href="/career.html">CAREER</a></li>
+					<li><a href="/contact.html">CONTACT</a></li>
+					<ul>
+			</div>
+			<i class="fa fa-bars" onclick="showMenu()"></i>
+		</nav>
+		
+	</section>
+	<!--  Blog Page Content --->
+	<section class="blog-content">
+		<div>
+			<div class="blog spa-blog">
+				
+				<p style="color: rgb(133, 133, 133); padding: 0 0 10px 0;"><a href="/blog.html" style="text-decoration: none; cursor: pointer;">Blogs</a> <span> > </span>Introduction to Components and Sling Model</p>
+
+				<p class="sitesTag" style="margin-top: 7px; margin-bottom: 7px; font-size: 13px; border-radius: 20px; 
+				width: fit-content; padding: 3px 15px;">AEM Sites</p>
+				<h1 class="title">Introduction to Components and Sling Model</h1>
+      				<span class="author">Infodales Tech Solutions</span> |
+      				<span class="date">January 18, 2023</span>
+    			
+					<div class="share-icons">
+					<a href="https://www.linkedin.com/company/infodales-tech-solution/" target="_blank" class="linkedin-icon"><i class="fa fa-linkedin"></i></a>
+                    <a href="mailto:info@infodales.com" target="_blank" class="email-icon"><i class="fa fa-envelope"></i></a>
+					</div>
+
+				<hr style="margin: 20px 0 10px 0;">
+                <div class="blog-items">
+
+                
+                <p>Hello, good to see you. Let us begin with a new learning.</p>
+                <h2>Introduction to Components and Sling Model</h2>
+                <p>
+                    Today we will understand the basics of components and sling model in AEM.
+                </p>
+                <h2>What are Components</h2>
+                <p>
+                    Components are the building blocks of content on a page. A component is a reusable unit of functionality that can be placed on a page to represent specific content or behavior, such as a text block, image, carousel, form, or other interactive elements. Components are responsible for rendering content and logic on a web page and are used extensively in AEM’s Editable Templates and Pages.
+                </p>
+                <h2>How Do AEM Components Work</h2>
+                
+                <ul class="ff_ul">
+                    <li>
+                        <p><b>Rendering Content:</b></p>
+                        <p>A component is usually called within a page’s HTML by its resource type . The page requests content, which the component renders based on its configuration and underlying logic.</p>
+
+                    </li>
+                    <li>
+                        <p><b>Dialog Configuration</b></p>
+                        <p>Components have dialogs where authors can configure the properties of the component, such as uploading an image or adding text. This dialog makes it easy for authors to personalize the content without needing to write code.</p>
+                    </li>
+                    <li>
+                        <p><b>Editable Content</b></p>
+                        <p>Components allow AEM authors to interact with the content directly in the AEM author interface. They can use drag-and-drop functionality to add, move, or remove components on a page.</p>
+                    </li>
+                </ul>
+                
+                <h2>Creation of Component</h2>
+                <ul class="ff_ul" >
+                    <li>
+                        <p>First you need to go to crx/de and in your project, go to components and then create component.</p>
+                        <div class="image-container">
+                            <image class="center" style="width: 30%; margin-top: 15px;" src="../images/components/componentcreation.webp" />
+                        </div>
+                            
+                        
+                    </li>
+                    <li>
+                        <p>You will get a dialog box wherein you need to add all the details for the component creation which includes the pre filled ones.</p>
+                        <div class="image-container">
+                            <image class="center" style="width: 50%;  margin-top: 15px;" src="../images/components/componentDialog.webp"/>
+                        </div>
+                    </li>
+                    
+                    <li>
+                       <p>Therein you need to rename the .jsp file to .html file and also add a cd:dialog. This is the dialog in which the fiels persists which are then authored. Here we have created the text fiel, path field, date picker and a chekbor. For every such field, we have to add a different sling:resourceType. These sling:resourceTypes can be found from the ADOBE Granite UI.</p>
+                       
+                       <div class="image-container">
+                            <image class="center" style="width: 30; margin-top: 15px;" src="../images/components/dialogconfiguration.webp"/>
+                       </div>
+                       <div class="image-container">
+                        <image class="center" style="width: 100%; margin-top: 15px;" src="../images/components/fields.webp"/>
+                       </div>
+                    </li>
+                    <li>
+                        <p>Then, you simple need to add the component on the page. You need to edit template, add the component to the cointainer's policy and then simply drop your component.</p>
+                        <div class="image-container">
+                            <image class="center" style="width: 50%; margin-top: 15px;" src="../images/components/editTemplate.webp"/>
+                        </div>
+                        <div class="image-container">
+                            <image class="center" style="width: 100%; height: 50%; margin-top: 15px;" src="../images/components/addingPolicy.webp"/>
+                        </div>
+                    </li>
+                    </ul>
+                 <h2>Creating Sling Model</h2>
+                                  
+                 <ul class="ff_ul">
+                    <li>
+                        <p>Now we need tto render the authored values of the component via sling model.</p>
+                    </li>
+                    <li>
+                        <p>@Model(adaptables = Resource.class, defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL) This defines that the Sling Model can be adapted from a Resource and pecifies how fields in the model should be injected.</p>
+                        
+                    </li>
+                    <li>
+                        <p>@ValueMapValue annotation is specifically used to inject properties from a Sling Resource into a Sling Model. It works with ValueMaps, which are essentially key-value pairs that store resource properties in AEM.</p>
+                        <p>The @Inject annotation can be used with different types, and AEM will automatically resolve the correct source for the injection. Here we are using it to inject ResourceResolver</p>
+
+                        <div>
+                            <pre style="width: 100%; height:100%">
+                                <code class="center code-flow" style="width: 80%; height:100%">
+                                    package com.local.core.models;
+
+                                    import org.apache.sling.api.resource.Resource;
+                                    import org.apache.sling.api.resource.ResourceResolver;
+                                    import org.apache.sling.models.annotations.DefaultInjectionStrategy;
+                                    import org.apache.sling.models.annotations.Model;
+                                    import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
+                                    
+                                    import javax.annotation.PostConstruct;
+                                    import javax.inject.Inject;
+                                    import javax.jcr.Node;
+                                    
+                                    @Model(adaptables = Resource.class, defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
+                                    public class DemoComponentModel {
+                                    
+                                        @Inject
+                                        ResourceResolver resolver;
+                                    
+                                        @ValueMapValue
+                                        String text;
+                                        @ValueMapValue
+                                        String linkTo;
+                                        @ValueMapValue
+                                        String showCheck;
+                                    
+                                        String nodeName;
+                                    
+                                    
+                                        public String getText() {
+                                            return text;
+                                        }
+                                    
+                                        public String getLinkTo() {
+                                            return linkTo;
+                                        }
+                                    
+                                        public String getShowCheck() {
+                                            return showCheck;
+                                        }
+                                    
+                                        public String getNodeName() {
+                                            return nodeName;
+                                        }
+                                    
+                                    
+                                        @PostConstruct
+                                        protected void init() {
+                                            try{
+                                                Resource resource = resolver.getResource(linkTo);
+                                                Node node = resource.adaptTo(Node.class);
+                                                nodeName = node.getName();
+                                            }catch(Exception e){
+                                                e.printStackTrace();
+                                            }
+                                        }
+                                    }
+                                    
+
+                                </code>
+                            </pre>
+                        </div>
+                        <div class="image-container">
+                            <image class="center" style="width: 100%; height: 50%; margin-top: 15px;" src="../images/components/complete.webp"/>
+                        </div>
+                    </li>
+                 </ul>   
+
+                 
+                
+                <h2>Conclusion</h2>
+                <p>
+                    We have created a simple component and have learnt how to render its authoreded values using a sling model.
+                </p>
+                <p>
+                    I hope you enjoyed the learing and have found the blog informative. 
+                </p>
+                </div>
+                <hr style="margin-top: 30px;"/>
+                <div class="author-details">
+                    <div id="like-icon" class="like-icon">
+                       <span id="like-count" class="like-count">0</span>
+                       <span id="like-btn" class="like-btn">
+                       <img src="/images/clap.webp" alt="Like">
+                       </span>
+                    </div>
+                    <div>
+                       <span class="author-name">Shruti Meshram | </span>
+                       <span class="author-designation">AEM Developer</span>
+                    </div>
+                 </div>
+			</div>
+		</div>
+	</section>
+
+<div class="social-icons">
+         
+        <a href="https://www.linkedin.com/company/infodales-tech-solution/" class="linkedin"><img src="/images/linkedin.webp" alt="LinkedIn"></a>
+        <a href="mailto:info@infodales.com" class="email"><img src="/images/email.webp" alt="Email"></a>
+    </div>
+
+	<!--  Footer --->
+	<div class="copyright-area">
+		<div class="footer">
+			<div class="row" style="margin-top: 0px;">
+				<div class="col-xl-4 col-lg-4 text-center text-lg-left">
+					<div class="copyright-text">
+						<p>Copyright &copy; 2024, All Right Reserved <a href="/index.html">Infodales Tech
+								Solution</a></p>
+					</div>
+				</div>
+				
+				<div class="col-xl-4 col-lg-4 d-none d-lg-block text-right">
+					<div class="footer-menu" style="margin-top:10px;">
+						<ul>
+							<li><a href="/index.html">Home</a></li>
+							<li><a href="/about.html">About</a></li>
+							<li><a href="/contact.html">Contact</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<!--- Java Script-->
+	<script>
+		var navLinks = document.getElementById("navLinks");
+
+		function showMenu() {
+			navLinks.style.right = "0";
+		}
+
+		function hideMenu() {
+			navLinks.style.right = "-200px";
+		}
+
+		document.addEventListener("DOMContentLoaded", () => {
+    const likeBtn = document.getElementById('like-btn');
+    const likeCount = document.getElementById('like-count');
+
+    let count = parseInt(localStorage.getItem('clapCount')) || 0;
+    likeCount.textContent = count;
+
+    likeBtn.addEventListener('click', () => {
+        count++;
+        likeCount.textContent = count;
+        localStorage.setItem('clapCount', count);
+
+        const likeAnimation = document.createElement('div');
+        likeAnimation.classList.add('like-animation');
+        likeAnimation.innerHTML = '🎉';
+        document.getElementById('like-icon').appendChild(likeAnimation);
+        likeAnimation.addEventListener('animationend', () => {
+            likeAnimation.remove();
+        });
+    });
+});
+	</script>
+
+</body>
+
+</html>
