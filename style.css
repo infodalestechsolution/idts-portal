@@ -2562,3 +2562,10 @@ details[open] .accordion-icon {
 .code-flow {
   overflow: scroll;
 }
+.code-large-snippet{
+  height: 75%;
+  width: 100%;
+}
+.pre-large-snippet{
+  width: 100% 
+}
