@@ -1133,6 +1133,15 @@ h3 {
   right: 0;
 }
 
+.blog .edsTag {
+  background-color: #A9A2D8;
+  color: white;
+}
+#eds .edsTag {
+  background-color: #A9A2D8;
+  color: white;
+}
+
 .blog .sitesTag {
   background-color: #991b1b;
   color: white;

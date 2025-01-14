@@ -52,6 +52,7 @@
 			<a class="blog-button" onclick="categoryFilter(event)">AEM SPA</a>
 			<a class="blog-button" onclick="categoryFilter(event)">AEM Forms</a>
 			<a class="blog-button" onclick="categoryFilter(event)">Dispatcher</a>
+			<a class="blog-button" onclick="categoryFilter(event)">AEM EDS</a>
 		</div>       
 
 		<div style="display: flex; align-items: center; justify-content: space-between; margin: 0 5px;">
@@ -443,13 +444,13 @@
 				</div>
 			</a>
 			<a href="./blogs/Introduction-to-EDS.html" style="text-decoration: none;" class="blog-item">
-				<div id="sites" class="blog-item-div"
+				<div id="eds" class="blog-item-div"
 					style="border: 1px solid #ccc; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
-					<img src="images/Tile Sites.jpg" alt="Card Image" style="width: 100%; height: auto; display: block;">
+					<img src="images/Tile EDS.jpg" alt="Card Image" style="width: 100%; height: auto; display: block;">
 					<div style="padding: 16px;">
-						<p class="sitesTag"
+						<p class="edsTag"
 							style="margin-top: 7px; margin-bottom: 7px; font-size: 13px; border-radius: 20px; width: fit-content; padding: 3px 15px;">
-							AEM Sites</p>
+							AEM EDS</p>
 						<div class="one-line">
 							<p class="blog-title" style="font-size: 1em; color: #555;" title="Introduction to Edge Delivery Services">Introduction to Edge Delivery Services</p>
 						</div>
@@ -458,13 +459,13 @@
 				</div>
 			</a>
 			<a href="./blogs/Introduction-to-Document-Based-Authoring.html" style="text-decoration: none;" class="blog-item">
-				<div id="sites" class="blog-item-div"
+				<div id="eds" class="blog-item-div"
 					style="border: 1px solid #ccc; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
-					<img src="images/Tile Sites.jpg" alt="Card Image" style="width: 100%; height: auto; display: block;">
+					<img src="images/Tile EDS.jpg" alt="Card Image" style="width: 100%; height: auto; display: block;">
 					<div style="padding: 16px;">
-						<p class="sitesTag"
+						<p class="edsTag"
 							style="margin-top: 7px; margin-bottom: 7px; font-size: 13px; border-radius: 20px; width: fit-content; padding: 3px 15px;">
-							AEM Sites</p>
+							AEM EDS</p>
 						<div class="one-line">
 							<p class="blog-title" style="font-size: 1em; color: #555;" title="Introduction to Document Based Authoring">Introduction to Document Based Authoring</p>
 						</div>
@@ -665,6 +666,18 @@
 					div.parentElement.removeAttribute("hidden");
 				});
 				document.querySelector(".blog-category").innerHTML = "Dispatcher";
+				let count = dispatcherMarkup.length;
+				document.querySelector(".blogsCount").innerHTML = `( ${count} )`;
+			} else if(filterValue == "AEM EDS"){
+				var dispatcherMarkup = document.querySelectorAll("#eds");
+				var allItems = document.querySelectorAll(".blog-item-div");
+				allItems.forEach(function (div){
+					div.parentElement.setAttribute("hidden", true);
+				});
+				dispatcherMarkup.forEach(function (div){
+					div.parentElement.removeAttribute("hidden");
+				});
+				document.querySelector(".blog-category").innerHTML = "AEM EDS";
 				let count = dispatcherMarkup.length;
 				document.querySelector(".blogsCount").innerHTML = `( ${count} )`;
 			}	else if(filterValue == "All"){
