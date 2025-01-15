@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <title>Blogs | Blocks Creation In Edge Delivery Services</title>
+      <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="description" content="Welcome to the blog designed for developers new to the Edge delivery service Concepts. In this blog we will walk you through the concept of Blocks we have components in AEM Sites similarly we have Blocks in Edge Delivery Services.">
+      <meta name="keywords" content="Infodales, Blocks Creation In Edge Delivery Services, how to create a blocks in eds, how to create a blocks in eds infodales, blocks creation in eds, blocks creation in aem franklin, helix blocks creation, aem helix, document based authoring in aem franklin, document based authoring">
+      <meta property="og:locale" content="en_US" />
+      <meta property="og:type" content="website" />
+      <meta property="og:title" content="Blogs | Blocks Creation In Edge Delivery Services" />
+      <meta property="og:description" content="Welcome to the blog designed for developers new to the Edge delivery service Concepts. In this blog we will walk you through the concept of Blocks we have components in AEM Sites similarly we have Blocks in Edge Delivery Services." />
+      <meta property="og:url" content="https://infodales.com/spa-getting-started.html" />
+      <meta property="og:site_name" content="Blogs | Blocks Creation In Edge Delivery Services" />
+      <link rel="stylesheet" href="/style.css">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;600;700&display=swap"
+         rel="stylesheet">
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+   </head>
+   <body>
+      <!-- Header -->
+      <section class="sub-header"
+         style="background-image: linear-gradient(rgba(4, 9, 30, 0.5), rgba(4, 9, 30, 0.5)), url('/images/Cover\ EDS.jpg');">
+         <nav>
+         <a href="/index.html"><img src="/images/infodales/Info Dales Main Logo 03.webp" alt="logo">
+         </a>
+         <div class="nav-links" id="navLinks">
+            <i class="fa fa-times" onclick="hideMenu()"></i>
+            <ul>
+            <li><a href="/index.html">HOME</a></li>
+            <li><a href="/about.html">ABOUT</a></li>
+            <li><a href="/services.html">SERVICES</a></li>
+            <li><a href="/blog.html">BLOGS</a></li>
+            <li><a href="/career.html">CAREER</a></li>
+            <li><a href="/contact.html">CONTACT</a></li>
+            <ul>
+         </div>
+         <i class="fa fa-bars" onclick="showMenu()"></i>
+      </section>
+      <!--  Blog Page Content --->
+      <section class="blog-content">
+         <div>
+         <div class="blog spa-blog">
+         <p style="color: rgb(133, 133, 133); padding: 0 0 10px 0;"><a href="/blog.html" style="text-decoration: none; cursor: pointer;">Blogs</a> <span> > </span>Blocks Creation In Edge Delivery Services</p>
+         <p class="edsTag" style="margin-top: 7px; margin-bottom: 7px; font-size: 13px; border-radius: 20px; 
+            width: fit-content; padding: 3px 15px;">AEM EDS</p>
+         <h1 class="title">Blocks Creation In Edge Delivery Services</h1>
+         <span class="author">Infodales Tech Solutions</span> |
+         <span class="date">December 15, 2024</span>
+         <div class="share-icons">
+            <a href="https://www.linkedin.com/company/infodales-tech-solution/" target="_blank" class="linkedin-icon"><i class="fa fa-linkedin"></i></a>
+            <a href="mailto:info@infodales.com" target="_blank" class="email-icon"><i class="fa fa-envelope"></i></a>
+         </div>
+         <hr style="margin: 20px 0 10px 0;">
+         <div class="blog-items">
+         <div>
+            <p>Happy to find you here. Welcome to another learning.</p>
+            <h3 style="text-align: left;">What is Block?</h3>
+            <p>Block is a modular, reusable unit of content or functionality that is designed to streamline content delivery and personalization at the edge. Blocks are the building blocks for rendering web pages or delivering experiences directly at the edge, enabling faster delivery and reduced latency by leveraging edge computing principles</p>
+            <p>For the sake of this blog we will create a cards block which will display multiple cards on the page</p>
+            <h3 style="text-align: left;">Steps to create a block</h3>
+            <p>So to create block we need to add the table in the document and then we need to add the content in it let us understand with an example.</p>
+            <p>For example we need to create a multiple cards section which will look something like shown in the below image.</p>
+            <div class="image-container">
+               <img src="../images/Blocks-In-EDS/Block-Cards.webp" style="width: 70%;  margin-top: 15px;" alt="Block-Cards"/>
+            </div>
+            <p>So to create the above Block we will follow the below steps</p>
+            <ol class="ff_ul" style="padding: 10px;">
+               <li>First of all we need to create table in the document where we need to add the block in the below manner</li>
+               <div class="image-container">
+               <img src="../images/Blocks-In-EDS/cards-table.webp" style="width: 40%;  margin-top: 15px;" alt="cards-table"/>
+               </div>
+               <p>In this we will give the title of the block in the first row and then we will give the image and description in the below rows.After creating this when we preview the page we will get the DOM that is created out of the box as shown in the below image.</p>
+               <div class="image-container">
+               <img src="../images/Blocks-In-EDS/Out-of-the-box-dom.webp" style="width: 70%;  margin-top: 15px;" alt="Out-of-the-box-dom"/>
+               </div>
+               <li>Now we need to rewrite this Dom structure using the JS and we need to add CSS to it to make it look presentable.So in the repository we have the folder called blocks inside that we need to create a folder by the name of the block the name that we have given in the first row of the table</li>
+               <div class="image-container">
+               <img src="../images/Blocks-In-EDS/github-code.webp" style="width: 20%;  margin-top: 15px;" alt="github-code"/>
+               </div>
+               <li>Inside this folder we will create two files one is js and other one is css and names would be cards.js and cards.css for sake of this blog</li>
+               <div class="image-container">
+               <img src="../images/Blocks-In-EDS/cards-files.webp" style="width: 70%;  margin-top: 15px;" alt="cards-files"/>
+               </div>
+               <li>Inside the cards.js we will be adding the below logic to make the block presentable you can modify as per your needs and project requirements</li>
+               <div class="image-container">
+               <img src="../images/Blocks-In-EDS/jscode.webp" style="width: 70%;  margin-top: 15px;" alt="jscode"/>
+               </div>
+               <li>and inside the cards.css we will be adding the below logic</li>
+               <div class="image-container">
+               <img src="../images/Blocks-In-EDS/card-css.webp" style="width: 50%;  margin-top: 15px;" alt="card-css"/>
+               </div>
+            </ol>
+            <p>After adding all the css and js code the block will render as shown below</p>
+            <div class="image-container">
+               <img src="../images/Blocks-In-EDS/final-card-look.webp" style="width: 50%;  margin-top: 15px;" alt="final-card-look"/>
+            </div>
+            <p>These are the 5 steps in which you can create a block and publish on the page.</p>
+            <p>Now whenever you create a block or you write anything on the document it comes under some section tag and if you want your next code to come under different section then in that case you need to seperate the sections so let's see how we can seperate the sections.</p>  
+            <p>Now if you add any content to the page this is how it comes under section</p> 
+            <div class="image-container">
+               <img src="../images/Blocks-In-EDS/section-image.webp" style="width: 50%;  margin-top: 15px;" alt="section-image"/>
+            </div> 
+            <p>To seperate the section we need to use hyphen("-") 3 times or horizontal line this will seperate the sections as shown in the below image </p>
+            <div class="image-container">
+               <img src="../images/Blocks-In-EDS/added-seperation.webp" style="width: 50%;  margin-top: 15px;" alt="added-seperation"/>
+            </div>
+             <p>After adding the seperation this is how the sections get seperated</p>
+             <div class="image-container">
+               <img src="../images/Blocks-In-EDS/seperated-sections.webp" style="width: 50%;  margin-top: 15px;" alt="seperated-sections"/>
+            </div>
+            <h3 style="text-align: left;">How to add custom css to the particular section</h3>  
+            <p>Suppose you have the two sections as show below and you wanted to apply any CSS class to each section or wanted to add any attribute to the section, so for that we need to creat a table with table title as Section Metadata in that we need to provide like for style we need to add style and its classes and for attribute in first column attribute name and in second column attribute value as shown below</p>
+            <div class="image-container">
+               <img src="../images/Blocks-In-EDS/Adding-CSS-in-section.webp" style="width: 50%;  margin-top: 15px;" alt="Adding-CSS-in-section"/>
+            </div>
+            <p>This is how it would add to the section as shown below.</p>
+            <div class="image-container">
+               <img src="../images/Blocks-In-EDS/Added-CSS-and-attribute.webp" style="width: 70%;  margin-top: 15px;" alt="Added-CSS-and-attribute"/>
+            </div>
+            <p>Now your block is ready you can preview on the page</p>
+            <p>Thanks fo reading 😄</p>
+         </div>
+         </div>
+         <hr style="margin-top: 30px;"/>
+                <div class="author-details">
+                    <div id="like-icon" class="like-icon">
+                       <span id="like-count" class="like-count">0</span>
+                       <span id="like-btn" class="like-btn">
+                       <img src="/images/clap.webp" alt="Like">
+                       </span>
+                    </div>
+                    <div>
+                       <span class="author-name">Owais Pathan | </span>
+                       <span class="author-designation">AEM Developer</span>
+                    </div>
+                 </div>
+      </section>
+      <div class="social-icons">
+         <a href="https://www.linkedin.com/company/infodales-tech-solution/" class="linkedin"><img src="/images/linkedin.webp" alt="LinkedIn"></a>
+         <a href="mailto:info@infodales.com" class="email"><img src="/images/email.webp" alt="Email"></a>
+      </div>
+      <!--  Footer --->
+      <div class="copyright-area">
+         <div class="footer">
+            <div class="row" style="margin-top: 0px;">
+               <div class="col-xl-4 col-lg-4 text-center text-lg-left">
+                  <div class="copyright-text">
+                     <p>Copyright &copy; 2024, All Right Reserved <a href="/index.html">Infodales Tech
+                        Solution</a>
+                     </p>
+                  </div>
+               </div>
+               <div class="col-xl-4 col-lg-4 d-none d-lg-block text-right">
+                  <div class="footer-menu" style="margin-top:10px;">
+                     <ul>
+                        <li><a href="/index.html">Home</a></li>
+                        <li><a href="/about.html">About</a></li>
+                        <li><a href="/contact.html">Contact</a></li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!--- Java Script-->
+      <script>
+         var navLinks = document.getElementById("navLinks");
+         
+         function showMenu() {
+         	navLinks.style.right = "0";
+         }
+         
+         function hideMenu() {
+         	navLinks.style.right = "-200px";
+         }
+         
+         document.addEventListener("DOMContentLoaded", () => {
+           const likeBtn = document.getElementById('like-btn');
+           const likeCount = document.getElementById('like-count');
+         
+           let count = parseInt(localStorage.getItem('clapCount')) || 0;
+           likeCount.textContent = count;
+         
+           likeBtn.addEventListener('click', () => {
+               count++;
+               likeCount.textContent = count;
+               localStorage.setItem('clapCount', count);
+         
+               const likeAnimation = document.createElement('div');
+               likeAnimation.classList.add('like-animation');
+               likeAnimation.innerHTML = '🎉';
+               document.getElementById('like-icon').appendChild(likeAnimation);
+               likeAnimation.addEventListener('animationend', () => {
+                   likeAnimation.remove();
+               });
+           });
+         });
+      </script>
+   </body>
+</html>

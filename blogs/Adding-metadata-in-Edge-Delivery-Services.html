@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <title>Blogs | Adding Metadata in Edge Delivery Services</title>
+      <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="description" content="Welcome to the blog designed for developers new to the Edge delivery service concepts. In this blog we will walk you through the concept of metadata how we can add metadata to the pages.">
+      <meta name="keywords" content="Infodales, how to add metadata in eds, adding metadata in pages in edge delivery services, adding metadata in eds, how to add metadata in pages in eds">
+      <meta property="og:locale" content="en_US" />
+      <meta property="og:type" content="website" />
+      <meta property="og:title" content="Blogs | Adding Metadata in Edge Delivery Services" />
+      <meta property="og:description" content="Welcome to the blog designed for developers new to the Edge delivery service concepts. In this blog we will walk you through the concept of metadata how we can add metadata to the pages." />
+      <meta property="og:url" content="https://infodales.com/spa-getting-started.html" />
+      <meta property="og:site_name" content="Blogs | Adding Metadata in Edge Delivery Services" />
+      <link rel="stylesheet" href="/style.css">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;600;700&display=swap"
+         rel="stylesheet">
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+   </head>
+   <body>
+      <!-- Header -->
+      <section class="sub-header"
+         style="background-image: linear-gradient(rgba(4, 9, 30, 0.5), rgba(4, 9, 30, 0.5)), url('/images/Cover\ EDS.jpg');">
+         <nav>
+         <a href="/index.html"><img src="/images/infodales/Info Dales Main Logo 03.webp" alt="logo">
+         </a>
+         <div class="nav-links" id="navLinks">
+            <i class="fa fa-times" onclick="hideMenu()"></i>
+            <ul>
+            <li><a href="/index.html">HOME</a></li>
+            <li><a href="/about.html">ABOUT</a></li>
+            <li><a href="/services.html">SERVICES</a></li>
+            <li><a href="/blog.html">BLOGS</a></li>
+            <li><a href="/career.html">CAREER</a></li>
+            <li><a href="/contact.html">CONTACT</a></li>
+            <ul>
+         </div>
+         <i class="fa fa-bars" onclick="showMenu()"></i>
+      </section>
+      <!--  Blog Page Content --->
+      <section class="blog-content">
+         <div>
+         <div class="blog spa-blog">
+         <p style="color: rgb(133, 133, 133); padding: 0 0 10px 0;"><a href="/blog.html" style="text-decoration: none; cursor: pointer;">Blogs</a> <span> > </span>Adding Metadata in Edge Delivery Services</p>
+         <p class="edsTag" style="margin-top: 7px; margin-bottom: 7px; font-size: 13px; border-radius: 20px; 
+            width: fit-content; padding: 3px 15px;">AEM EDS</p>
+         <h1 class="title">Adding Metadata in Edge Delivery Services</h1>
+         <span class="author">Infodales Tech Solutions</span> |
+         <span class="date">December 20, 2024</span>
+         <div class="share-icons">
+            <a href="https://www.linkedin.com/company/infodales-tech-solution/" target="_blank" class="linkedin-icon"><i class="fa fa-linkedin"></i></a>
+            <a href="mailto:info@infodales.com" target="_blank" class="email-icon"><i class="fa fa-envelope"></i></a>
+         </div>
+         <hr style="margin: 20px 0 10px 0;">
+         <div class="blog-items">
+         <div>
+            <p>Happy to find you here. Welcome to another learning.</p>
+            <h3 style="text-align: left;">What is Metadata?</h3>
+            <p>metadata refers to the information embedded in a webpage or associated with its content that describes its characteristics, purpose, and other properties. Metadata is not typically visible to users but plays a crucial role in how search engines, browsers, and other systems interpret and interact with the webpage.</p>
+            <p>Metadata to the page can be added in two ways</p>
+            <ol>
+               <li>Using Block- use to add `page level metadata</li>
+               <li>Using Google sheet or excel- this is for site level or used for bulk metadata</li>
+            </ol>
+            <h3 style="text-align: left;">Using Block</h3>
+            <p>To add metadata in page we need to add block to the page called metadata block it is a special block that is handled by HTML rendering service internally to add"meta tags in head of HTML structure.</p>
+            <p>There should be only one metadata block per page and it should be placed at the bottom of the page we can keep it anywhere but should be kept at the bottom of the page. Below image shows how we need to create the block</p>
+            <div class="image-container">
+               <img src="../images/Adding-Metadata/metadata-block.webp" style="width: 70%;  margin-top: 15px;" alt="metadata-block"/>
+            </div>
+            <p>In the above image as we can see i have added title, description, image, template, color, theme and robots. If you wont add title then it will pick the first h1 of page similarly for the description it will pick the first paragraph.After adding the block we need to preview the page and you can see that it is added in meta tag section in the below image.</p>
+            <div class="image-container">
+               <img src="../images/Adding-Metadata/metadata-added.webp" style="width: 40%;  margin-top: 15px;" alt="metadata-added"/>
+            </div>
+            <p>This is how we add metadata using block</p>
+            <h3 style="text-align: left;">Using Excel Sheet</h3>
+            <p>When we wanted to add metadata for particular hierarchy/pages under particular folder or we wanted to add metadata in bulk then in that case we use excel sheet to add metadata.</p>
+            <h3 style="text-align: left;">Steps to add metadata using excel</h3>
+            <ul class="ff_ul">
+               <li>So, to add the metadata using google sheet of excel we need to create a excel file with name metadata under the root folder meaning under the main folder where all the project files are kept.</li>
+               <div class="image-container">
+               <img src="../images/Adding-Metadata/metadata-sheet-name.webp" style="width: 70%;  margin-top: 15px;" alt="metadata-sheet-name"/>
+               </div>
+            <li>Inside the file we need to create a column called URL where we will define on which hierarchy metadata should be applied. And other columns will be the meta tags that you wanted to apply and their values.</li>
+            <div class="image-container">
+               <img src="../images/Adding-Metadata/metadata-excel-properties.webp" style="width: 70%;  margin-top: 15px;" alt="metadata-excel-properties"/>
+               </div>
+               <li>If ** then it will apply on all the pages and if you want to apply those meta tags only the pages which is under some folder for e.g. /cms/ then you need to define as shown above in the image.</li>
+               <p style="background-color: rgb(255, 255, 129); padding: 10px;">
+                 Note: Now if you have applied any meta tag let say "Theme" using metadata block and also applied using google sheet then in that case metadata block will be given priority.
+               </p>
+               <div class="image-container">
+               <img src="../images/Adding-Metadata/bulk-metadata-added.webp" style="width: 70%;  margin-top: 15px;" alt="bulk-metadata-added"/>
+               </div>
+            </ul>
+            <p>As you can see the metadata properties have been added to the pages</p>
+            <p>Thanks fo reading 😄</p>
+         </div>
+         </div>
+         <hr style="margin-top: 30px;"/>
+                <div class="author-details">
+                    <div id="like-icon" class="like-icon">
+                       <span id="like-count" class="like-count">0</span>
+                       <span id="like-btn" class="like-btn">
+                       <img src="/images/clap.webp" alt="Like">
+                       </span>
+                    </div>
+                    <div>
+                       <span class="author-name">Owais Pathan | </span>
+                       <span class="author-designation">AEM Developer</span>
+                    </div>
+                 </div>
+      </section>
+      <div class="social-icons">
+         <a href="https://www.linkedin.com/company/infodales-tech-solution/" class="linkedin"><img src="/images/linkedin.webp" alt="LinkedIn"></a>
+         <a href="mailto:info@infodales.com" class="email"><img src="/images/email.webp" alt="Email"></a>
+      </div>
+      <!--  Footer --->
+      <div class="copyright-area">
+         <div class="footer">
+            <div class="row" style="margin-top: 0px;">
+               <div class="col-xl-4 col-lg-4 text-center text-lg-left">
+                  <div class="copyright-text">
+                     <p>Copyright &copy; 2024, All Right Reserved <a href="/index.html">Infodales Tech
+                        Solution</a>
+                     </p>
+                  </div>
+               </div>
+               <div class="col-xl-4 col-lg-4 d-none d-lg-block text-right">
+                  <div class="footer-menu" style="margin-top:10px;">
+                     <ul>
+                        <li><a href="/index.html">Home</a></li>
+                        <li><a href="/about.html">About</a></li>
+                        <li><a href="/contact.html">Contact</a></li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!--- Java Script-->
+      <script>
+         var navLinks = document.getElementById("navLinks");
+         
+         function showMenu() {
+         	navLinks.style.right = "0";
+         }
+         
+         function hideMenu() {
+         	navLinks.style.right = "-200px";
+         }
+         
+         document.addEventListener("DOMContentLoaded", () => {
+           const likeBtn = document.getElementById('like-btn');
+           const likeCount = document.getElementById('like-count');
+         
+           let count = parseInt(localStorage.getItem('clapCount')) || 0;
+           likeCount.textContent = count;
+         
+           likeBtn.addEventListener('click', () => {
+               count++;
+               likeCount.textContent = count;
+               localStorage.setItem('clapCount', count);
+         
+               const likeAnimation = document.createElement('div');
+               likeAnimation.classList.add('like-animation');
+               likeAnimation.innerHTML = '🎉';
+               document.getElementById('like-icon').appendChild(likeAnimation);
+               likeAnimation.addEventListener('animationend', () => {
+                   likeAnimation.remove();
+               });
+           });
+         });
+      </script>
+   </body>
+</html>
