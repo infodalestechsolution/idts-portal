@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <title>Blogs | Implementing redirects and response header in Edge Delivery Services</title>
+      <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="description" content="Welcome to the blog designed for developers new to the Edge delivery service concepts. In this blog we will see how we can implement redirects and response header in Edge Delivery Services.">
+      <meta name="keywords" content="Infodales, how to add response headers in EDS, how to add redirects in EDS, how to implement redirects in EDS, how to implement response headers in EDS, redirects in EDS, response headers in EDS">
+      <meta property="og:locale" content="en_US" />
+      <meta property="og:type" content="website" />
+      <meta property="og:title" content="Blogs | Implementing redirects and response header in Edge Delivery Services" />
+      <meta property="og:description" content="Welcome to the blog designed for developers new to the Edge delivery service concepts. In this blog we will see how we can implement redirects and response header in Edge Delivery Services." />
+      <meta property="og:url" content="https://infodales.com/spa-getting-started.html" />
+      <meta property="og:site_name" content="Blogs | Implementing redirects and response header in Edge Delivery Services" />
+      <link rel="stylesheet" href="/style.css">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;600;700&display=swap"
+         rel="stylesheet">
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+   </head>
+   <body>
+      <!-- Header -->
+      <section class="sub-header"
+         style="background-image: linear-gradient(rgba(4, 9, 30, 0.5), rgba(4, 9, 30, 0.5)), url('/images/Cover\ EDS.jpg');">
+         <nav>
+         <a href="/index.html"><img src="/images/infodales/Info Dales Main Logo 03.webp" alt="logo">
+         </a>
+         <div class="nav-links" id="navLinks">
+            <i class="fa fa-times" onclick="hideMenu()"></i>
+            <ul>
+            <li><a href="/index.html">HOME</a></li>
+            <li><a href="/about.html">ABOUT</a></li>
+            <li><a href="/services.html">SERVICES</a></li>
+            <li><a href="/blog.html">BLOGS</a></li>
+            <li><a href="/career.html">CAREER</a></li>
+            <li><a href="/contact.html">CONTACT</a></li>
+            <ul>
+         </div>
+         <i class="fa fa-bars" onclick="showMenu()"></i>
+      </section>
+      <!--  Blog Page Content --->
+      <section class="blog-content">
+         <div>
+         <div class="blog spa-blog">
+         <p style="color: rgb(133, 133, 133); padding: 0 0 10px 0;"><a href="/blog.html" style="text-decoration: none; cursor: pointer;">Blogs</a> <span> > </span>Implementing redirects and response header in Edge Delivery Services</p>
+         <p class="edsTag" style="margin-top: 7px; margin-bottom: 7px; font-size: 13px; border-radius: 20px; 
+            width: fit-content; padding: 3px 15px;">AEM EDS</p>
+         <h1 class="title">Implementing redirects and response header in Edge Delivery Services</h1>
+         <span class="author">Infodales Tech Solutions</span> |
+         <span class="date">December 25, 2024</span>
+         <div class="share-icons">
+            <a href="https://www.linkedin.com/company/infodales-tech-solution/" target="_blank" class="linkedin-icon"><i class="fa fa-linkedin"></i></a>
+            <a href="mailto:info@infodales.com" target="_blank" class="email-icon"><i class="fa fa-envelope"></i></a>
+         </div>
+         <hr style="margin: 20px 0 10px 0;">
+         <div class="blog-items">
+         <div>
+            <p>Happy to find you here. Welcome to another learning.</p>
+            <h3 style="text-align: left;">What is Redirects?</h3>
+            <p>Redirects in AEM Edge Delivery Service (EDS) are mechanisms to route user requests from one URL to another at the edge server level, reducing latency and improving performance. These redirects occur before requests reach the AEM origin server, ensuring faster response times and efficient content delivery.</p>
+            <p>Redirects can be done for internal links as well external links.</p>
+            <ol>
+               <li>Internal links- redirects within the website</li>
+               <li>External links- redirects to the external webistes</li>
+            </ol>
+            <h3 style="text-align: left;">Internal redirect</h3>
+            <p>Redirects within the website pages is basically internal redirects.</p>
+            <h3 style="text-align: left;">Steps to create Internal redirects</h3>
+            <ul class="ff_ul">
+            <li>So, for the redirect rules you need to create the excel sheet with the name redirects in the root folder of the project</li>
+            <div class="image-container">
+               <img src="../images/Redirects-in-EDS/redirects-excel-created.webp" style="width: 70%;  margin-top: 15px;" alt="redirects-excel-created"/>
+            </div>
+            <li>Inside the sheet we need to create 2 columns with headers as "Source" and "Destination" as shown in the below image.In the source we will add source url and in destination we will add the url where it should redirects to.</li>
+            <div class="image-container">
+               <img src="../images/Redirects-in-EDS/redirects-excel-properties.webp" style="width: 70%;  margin-top: 15px;" alt="redirects-excel-properties"/>
+            </div>
+            <li>Before the redirects rules when we hit /dm in the url we got 404 not found as you can see in the below image.</li>
+            <div class="image-container">
+               <img src="../images/Redirects-in-EDS/404-not-found.webp" style="width: 70%;  margin-top: 15px;" alt="404-not-found"/>
+            </div>
+            <li>After creating the redirect rules we can see that it is redirecting to /demo/demo1 url</li>
+            <div class="image-container">
+               <img src="../images/Redirects-in-EDS/redirect-url.webp" style="width: 70%;  margin-top: 15px;" alt="redirect-url"/>
+            </div>
+            </ul>
+            <h3 style="text-align: left;">External redirect</h3>
+            <p>For external redirects in the same sheet if you replace destination with any external url you will see that it is landing to the external link</p>
+            <div class="image-container">
+               <img src="../images/Redirects-in-EDS/external-redirects-excel.webp" style="width: 70%;  margin-top: 15px;" alt="external-redirects-excel"/>
+            </div>
+            <h3 style="text-align: left;">What is Custom HTTP Response Headers?</h3>
+            <p>HTTP response headers in Adobe Experience Manager (AEM) Edge Delivery Service (EDS) are metadata sent back from the server to the client (usually a web browser) in response to an HTTP request. These headers provide information about the server's response, including status codes, content details, cache directives, and security policies. In the context of AEM EDS, headers play a critical role in controlling and optimizing the delivery of content at the edge.</p>
+            <h3 style="text-align: left;">Steps to add the response headers to the page</h3>
+            <ol class="ff_ul">
+               <li>To add headers to the pages we need to create a folder with name “.helix” under the root folder of our project.</li>
+               <div class="image-container">
+               <img src="../images/Redirects-in-EDS/helix-folder.webp" style="width: 70%;  margin-top: 15px;" alt="external-redirects-excel"/>
+               </div>
+               <li>Inside that folder we need to create the excel sheet with name as "headers"</li>
+               <div class="image-container">
+               <img src="../images/Redirects-in-EDS/headers-file.webp" style="width: 70%;  margin-top: 15px;" alt="headers-file"/>
+               </div>
+               <li>In that sheet there will be three columns url, key and value
+                  <ul class="ff_ul">
+                     <li>url: in this column there will be path of folder and the header will be applied to the pages present under that folder.</li>
+                     <li>key: it will have the key of the header.</li>
+                     <li>value: the value column will contain the value of the header.</li>
+                  </ul>
+               </li>
+               <div class="image-container">
+               <img src="../images/Redirects-in-EDS/headers-file-properties.webp" style="width: 70%;  margin-top: 15px;" alt="headers-file-properties"/>
+               </div>
+               <li>In the above image the header author will be applied to all the pages in the website and "cms" will be applied to the page present under the cms folder.</li>
+               <div class="image-container">
+               <img src="../images/Redirects-in-EDS/headers-added.webp" style="width: 50%;  margin-top: 15px;" alt="headers-file-properties"/>
+               </div>
+               <li>One more thing whenever you create this headers sheet you will get the option of activate and not publish this is due to security reasons.</li>
+               <div class="image-container">
+               <img src="../images/Redirects-in-EDS/Activating-headers-sheet.webp" style="width: 50%;  margin-top: 15px;" alt="headers-file-properties"/>
+               </div>
+            </ol>
+
+
+            <p>Thanks fo reading 😄</p>
+         </div>
+         </div>
+         <hr style="margin-top: 30px;"/>
+                <div class="author-details">
+                    <div id="like-icon" class="like-icon">
+                       <span id="like-count" class="like-count">0</span>
+                       <span id="like-btn" class="like-btn">
+                       <img src="/images/clap.webp" alt="Like">
+                       </span>
+                    </div>
+                    <div>
+                       <span class="author-name">Owais Pathan | </span>
+                       <span class="author-designation">AEM Developer</span>
+                    </div>
+                 </div>
+      </section>
+      <div class="social-icons">
+         <a href="https://www.linkedin.com/company/infodales-tech-solution/" class="linkedin"><img src="/images/linkedin.webp" alt="LinkedIn"></a>
+         <a href="mailto:info@infodales.com" class="email"><img src="/images/email.webp" alt="Email"></a>
+      </div>
+      <!--  Footer --->
+      <div class="copyright-area">
+         <div class="footer">
+            <div class="row" style="margin-top: 0px;">
+               <div class="col-xl-4 col-lg-4 text-center text-lg-left">
+                  <div class="copyright-text">
+                     <p>Copyright &copy; 2024, All Right Reserved <a href="/index.html">Infodales Tech
+                        Solution</a>
+                     </p>
+                  </div>
+               </div>
+               <div class="col-xl-4 col-lg-4 d-none d-lg-block text-right">
+                  <div class="footer-menu" style="margin-top:10px;">
+                     <ul>
+                        <li><a href="/index.html">Home</a></li>
+                        <li><a href="/about.html">About</a></li>
+                        <li><a href="/contact.html">Contact</a></li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!--- Java Script-->
+      <script>
+         var navLinks = document.getElementById("navLinks");
+         
+         function showMenu() {
+         	navLinks.style.right = "0";
+         }
+         
+         function hideMenu() {
+         	navLinks.style.right = "-200px";
+         }
+         
+         document.addEventListener("DOMContentLoaded", () => {
+           const likeBtn = document.getElementById('like-btn');
+           const likeCount = document.getElementById('like-count');
+         
+           let count = parseInt(localStorage.getItem('clapCount')) || 0;
+           likeCount.textContent = count;
+         
+           likeBtn.addEventListener('click', () => {
+               count++;
+               likeCount.textContent = count;
+               localStorage.setItem('clapCount', count);
+         
+               const likeAnimation = document.createElement('div');
+               likeAnimation.classList.add('like-animation');
+               likeAnimation.innerHTML = '🎉';
+               document.getElementById('like-icon').appendChild(likeAnimation);
+               likeAnimation.addEventListener('animationend', () => {
+                   likeAnimation.remove();
+               });
+           });
+         });
+      </script>
+   </body>
+</html>
