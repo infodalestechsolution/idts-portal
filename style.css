@@ -2334,9 +2334,6 @@ code {
   }
 }
 @media (min-width: 701px) and (max-width: 1281px) {
-  .blog p {
-    margin-top: 4%;
-  }
   .osgimodel {
     height: 20%;
   }
