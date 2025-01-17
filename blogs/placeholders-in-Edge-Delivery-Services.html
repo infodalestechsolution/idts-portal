@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <title>Blogs | Placeholders in Edge Delivery Services</title>
+      <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="description" content="Welcome to the blog designed for developers new to the Edge delivery service concepts. In this blog we will see how we can implement placeholders in Edge Delivery Services.">
+      <meta name="keywords" content="Infodales, how to add placeholder in EDS, how to implement placeholders in EDS, placeholders in EDS, placeholders in franklin">
+      <meta property="og:locale" content="en_US" />
+      <meta property="og:type" content="website" />
+      <meta property="og:title" content="Blogs | Placeholders in Edge Delivery Services" />
+      <meta property="og:description" content="Welcome to the blog designed for developers new to the Edge delivery service concepts. In this blog we will see how we can implement placeholders in Edge Delivery Services." />
+      <meta property="og:url" content="https://infodales.com/spa-getting-started.html" />
+      <meta property="og:site_name" content="Blogs | Placeholders in Edge Delivery Services" />
+      <link rel="stylesheet" href="/style.css">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;600;700&display=swap"
+         rel="stylesheet">
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+   </head>
+   <body>
+      <!-- Header -->
+      <section class="sub-header"
+         style="background-image: linear-gradient(rgba(4, 9, 30, 0.5), rgba(4, 9, 30, 0.5)), url('/images/Cover\ EDS.jpg');">
+         <nav>
+         <a href="/index.html"><img src="/images/infodales/Info Dales Main Logo 03.webp" alt="logo">
+         </a>
+         <div class="nav-links" id="navLinks">
+            <i class="fa fa-times" onclick="hideMenu()"></i>
+            <ul>
+            <li><a href="/index.html">HOME</a></li>
+            <li><a href="/about.html">ABOUT</a></li>
+            <li><a href="/services.html">SERVICES</a></li>
+            <li><a href="/blog.html">BLOGS</a></li>
+            <li><a href="/career.html">CAREER</a></li>
+            <li><a href="/contact.html">CONTACT</a></li>
+            <ul>
+         </div>
+         <i class="fa fa-bars" onclick="showMenu()"></i>
+      </section>
+      <!--  Blog Page Content --->
+      <section class="blog-content">
+         <div>
+         <div class="blog spa-blog">
+         <p style="color: rgb(133, 133, 133); padding: 0 0 10px 0;"><a href="/blog.html" style="text-decoration: none; cursor: pointer;">Blogs</a> <span> > </span>Implementing redirects and response header in Edge Delivery Services</p>
+         <p class="edsTag" style="margin-top: 7px; margin-bottom: 7px; font-size: 13px; border-radius: 20px; 
+            width: fit-content; padding: 3px 15px;">AEM EDS</p>
+         <h1 class="title">Placeholders in Edge Delivery Services</h1>
+         <span class="author">Infodales Tech Solutions</span> |
+         <span class="date">December 30, 2024</span>
+         <div class="share-icons">
+            <a href="https://www.linkedin.com/company/infodales-tech-solution/" target="_blank" class="linkedin-icon"><i class="fa fa-linkedin"></i></a>
+            <a href="mailto:info@infodales.com" target="_blank" class="email-icon"><i class="fa fa-envelope"></i></a>
+         </div>
+         <hr style="margin: 20px 0 10px 0;">
+         <div class="blog-items">
+         <div>
+            <p>Happy to find you here. Welcome to another learning.</p>
+            <h3 style="text-align: left;">What is Placeholder?</h3>
+            <p>Placeholders in AEM Edge Delivery Services (EDS) are dynamically replaceable tokens or variables that are used in configurations, rules, or templates to customize content delivery based on contextual data. They act as placeholders for dynamic values that are resolved at runtime, such as user-specific details, device information, geolocation, or other attributes.</p>
+            <p>In most websites, there are strings or variables that will be used throughout the site. Especially in sites that need to support multiple languages, it is not a good idea to hard code such values. Instead, placeholders can be used and managed centrally.</p>
+            <p>Placeholder can be managed as a spreadsheet that is either in the root folder of the project or in the locales root folder in the case of multilingual site</p>
+            <p>I will be explaining the placeholder concept using the example of multilingual site we will provide region specific content using placeholder</p>
+            <h3 style="text-align: left;">Steps to implement placeholder for region specific content</h3>
+            <ol class="ff_ul">
+               <li>So let say I have only one site which is in English language but later i expanded it to french as well. So I wanted to display same content in English as well as in french so for that what is will do is I will create a sheet called placeholder in each hierarchy of English and french. As shown below.</li>
+               <div class="image-container">
+               <img src="../images/placeholders-in-EDS/language-specific-files.webp" style="width: 70%;  margin-top: 15px;" alt="language-specific-files"/>
+               </div>
+               <li>Inside this sheet we need to create two columns Key and Text.In English we write as “First Name” but in french this is written as “Prénom” and on the site as well it should display as it is</li>
+               <div class="image-container">
+               <img src="../images/placeholders-in-EDS/placeholder-spreadsheet-content.webp" style="width: 50%;  margin-top: 15px;" alt="placeholder-spreadsheet-content"/>
+               </div>
+               <li>Now on the basis of meta data of the page we will pick the value that we wanted to display on the page so for that we have added  metadata to the respective pages as shown below.We have added locale and Language metadata to the en and fr pages.</li>
+               <div class="image-container">
+               <img src="../images/placeholders-in-EDS/metadata-for-locale.webp" style="width: 70%;  margin-top: 15px;" alt="metadata-for-locale"/>
+               </div>
+               <li>Now inside the en and fr pages we will create a block name Author in that it will have only heading of the block and rest data will come from the JS.</li>
+               <div class="image-container">
+               <img src="../images/placeholders-in-EDS/Author-block.webp" style="width: 70%;  margin-top: 15px;" alt="Author-block"/>
+               </div>
+               <li>Now there is inbuilt library to read the placeholder file it will read the placeholder file which is present in the root folder but we will customize that logic so that is should read the placeholder files kept in the respective “en”  and “fr”  hierarchy.Below is the logic change we did based on the prefix we will read the file. Prefix can be “en” or “fr” this is present under aem.js</li>
+               <div class="image-container">
+               <img src="../images/placeholders-in-EDS/aemjs-code.webp" style="width: 60%;  margin-top: 15px;" alt="aemjs-code"/>
+               </div>
+               <li>Now we will write CSS and JS for it inside the respective blocks js and we will create a table displaying first name in English and french languages in respective pages.</li>
+               <div class="image-container">
+               <img src="../images/placeholders-in-EDS/block-code.webp" style="width: 60%;  margin-top: 15px;" alt="block-code"/>
+               </div>
+            </ol>
+            <p>As you can see we have read the metadata property which is locale and on the basis of that we brought the values of placeholder and we are displaying on the page as shown in the blow image</p>
+            <div class="image-container">
+               <img src="../images/placeholders-in-EDS/final-output.png" style="width: 70%;  margin-top: 15px;" alt="final-output"/>
+            </div>
+            <p>Thanks fo reading 😄</p>
+         </div>
+         </div>
+         <hr style="margin-top: 30px;"/>
+                <div class="author-details">
+                    <div id="like-icon" class="like-icon">
+                       <span id="like-count" class="like-count">0</span>
+                       <span id="like-btn" class="like-btn">
+                       <img src="/images/clap.webp" alt="Like">
+                       </span>
+                    </div>
+                    <div>
+                       <span class="author-name">Owais Pathan | </span>
+                       <span class="author-designation">AEM Developer</span>
+                    </div>
+                 </div>
+      </section>
+      <div class="social-icons">
+         <a href="https://www.linkedin.com/company/infodales-tech-solution/" class="linkedin"><img src="/images/linkedin.webp" alt="LinkedIn"></a>
+         <a href="mailto:info@infodales.com" class="email"><img src="/images/email.webp" alt="Email"></a>
+      </div>
+      <!--  Footer --->
+      <div class="copyright-area">
+         <div class="footer">
+            <div class="row" style="margin-top: 0px;">
+               <div class="col-xl-4 col-lg-4 text-center text-lg-left">
+                  <div class="copyright-text">
+                     <p>Copyright &copy; 2024, All Right Reserved <a href="/index.html">Infodales Tech
+                        Solution</a>
+                     </p>
+                  </div>
+               </div>
+               <div class="col-xl-4 col-lg-4 d-none d-lg-block text-right">
+                  <div class="footer-menu" style="margin-top:10px;">
+                     <ul>
+                        <li><a href="/index.html">Home</a></li>
+                        <li><a href="/about.html">About</a></li>
+                        <li><a href="/contact.html">Contact</a></li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!--- Java Script-->
+      <script>
+         var navLinks = document.getElementById("navLinks");
+         
+         function showMenu() {
+         	navLinks.style.right = "0";
+         }
+         
+         function hideMenu() {
+         	navLinks.style.right = "-200px";
+         }
+         
+         document.addEventListener("DOMContentLoaded", () => {
+           const likeBtn = document.getElementById('like-btn');
+           const likeCount = document.getElementById('like-count');
+         
+           let count = parseInt(localStorage.getItem('clapCount')) || 0;
+           likeCount.textContent = count;
+         
+           likeBtn.addEventListener('click', () => {
+               count++;
+               likeCount.textContent = count;
+               localStorage.setItem('clapCount', count);
+         
+               const likeAnimation = document.createElement('div');
+               likeAnimation.classList.add('like-animation');
+               likeAnimation.innerHTML = '🎉';
+               document.getElementById('like-icon').appendChild(likeAnimation);
+               likeAnimation.addEventListener('animationend', () => {
+                   likeAnimation.remove();
+               });
+           });
+         });
+      </script>
+   </body>
+</html>
