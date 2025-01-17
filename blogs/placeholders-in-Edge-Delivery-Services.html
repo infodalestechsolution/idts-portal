@@ -58,40 +58,40 @@
          <div>
             <p>Happy to find you here. Welcome to another learning.</p>
             <h3 style="text-align: left;">What is Placeholder?</h3>
-            <p>Placeholders in AEM Edge Delivery Services (EDS) are dynamically replaceable tokens or variables that are used in configurations, rules, or templates to customize content delivery based on contextual data. They act as placeholders for dynamic values that are resolved at runtime, such as user-specific details, device information, geolocation, or other attributes.</p>
-            <p>In most websites, there are strings or variables that will be used throughout the site. Especially in sites that need to support multiple languages, it is not a good idea to hard code such values. Instead, placeholders can be used and managed centrally.</p>
-            <p>Placeholder can be managed as a spreadsheet that is either in the root folder of the project or in the locales root folder in the case of multilingual site</p>
-            <p>I will be explaining the placeholder concept using the example of multilingual site we will provide region specific content using placeholder</p>
+            <p style="margin-top: 0%;">Placeholders in AEM Edge Delivery Services (EDS) are dynamically replaceable tokens or variables that are used in configurations, rules, or templates to customize content delivery based on contextual data. They act as placeholders for dynamic values that are resolved at runtime, such as user-specific details, device information, geolocation, or other attributes.</p>
+            <p style="margin-top: 0%;">In most websites, there are strings or variables that will be used throughout the site. Especially in sites that need to support multiple languages, it is not a good idea to hard code such values. Instead, placeholders can be used and managed centrally.</p>
+            <p style="margin-top: 0%;">Placeholder can be managed as a spreadsheet that is either in the root folder of the project or in the locales root folder in the case of multilingual site</p>
+            <p style="margin-top: 0%;">I will be explaining the placeholder concept using the example of multilingual site we will provide region specific content using placeholder</p>
             <h3 style="text-align: left;">Steps to implement placeholder for region specific content</h3>
             <ol class="ff_ul">
-               <li>So let say I have only one site which is in English language but later i expanded it to french as well. So I wanted to display same content in English as well as in french so for that what is will do is I will create a sheet called placeholder in each hierarchy of English and french. As shown below.</li>
+               <li><p>So let say I have only one site which is in English language but later i expanded it to french as well. So I wanted to display same content in English as well as in french so for that what is will do is I will create a sheet called placeholder in each hierarchy of English and french. As shown below.</p></li>
                <div class="image-container">
                <img src="../images/placeholders-in-EDS/language-specific-files.webp" style="width: 70%;  margin-top: 15px;" alt="language-specific-files"/>
                </div>
-               <li>Inside this sheet we need to create two columns Key and Text.In English we write as “First Name” but in french this is written as “Prénom” and on the site as well it should display as it is</li>
+               <li><p>Inside this sheet we need to create two columns Key and Text.In English we write as “First Name” but in french this is written as “Prénom” and on the site as well it should display as it is.</p></li>
                <div class="image-container">
                <img src="../images/placeholders-in-EDS/placeholder-spreadsheet-content.webp" style="width: 50%;  margin-top: 15px;" alt="placeholder-spreadsheet-content"/>
                </div>
-               <li>Now on the basis of meta data of the page we will pick the value that we wanted to display on the page so for that we have added  metadata to the respective pages as shown below.We have added locale and Language metadata to the en and fr pages.</li>
+               <li><p>Now on the basis of meta data of the page we will pick the value that we wanted to display on the page so for that we have added  metadata to the respective pages as shown below.We have added locale and Language metadata to the en and fr pages.</p></li>
                <div class="image-container">
                <img src="../images/placeholders-in-EDS/metadata-for-locale.webp" style="width: 70%;  margin-top: 15px;" alt="metadata-for-locale"/>
                </div>
-               <li>Now inside the en and fr pages we will create a block name Author in that it will have only heading of the block and rest data will come from the JS.</li>
+               <li><p>Now inside the en and fr pages we will create a block name Author in that it will have only heading of the block and rest data will come from the JS.</p></li>
                <div class="image-container">
                <img src="../images/placeholders-in-EDS/Author-block.webp" style="width: 70%;  margin-top: 15px;" alt="Author-block"/>
                </div>
-               <li>Now there is inbuilt library to read the placeholder file it will read the placeholder file which is present in the root folder but we will customize that logic so that is should read the placeholder files kept in the respective “en”  and “fr”  hierarchy.Below is the logic change we did based on the prefix we will read the file. Prefix can be “en” or “fr” this is present under aem.js</li>
+               <li><p>Now there is inbuilt library to read the placeholder file it will read the placeholder file which is present in the root folder but we will customize that logic so that is should read the placeholder files kept in the respective “en”  and “fr”  hierarchy.Below is the logic change we did based on the prefix we will read the file. Prefix can be “en” or “fr” this is present under aem.js</p></li>
                <div class="image-container">
                <img src="../images/placeholders-in-EDS/aemjs-code.webp" style="width: 60%;  margin-top: 15px;" alt="aemjs-code"/>
                </div>
-               <li>Now we will write CSS and JS for it inside the respective blocks js and we will create a table displaying first name in English and french languages in respective pages.</li>
+               <li><p>Now we will write CSS and JS for it inside the respective blocks js and we will create a table displaying first name in English and french languages in respective pages.</p></li>
                <div class="image-container">
                <img src="../images/placeholders-in-EDS/block-code.webp" style="width: 60%;  margin-top: 15px;" alt="block-code"/>
                </div>
             </ol>
             <p>As you can see we have read the metadata property which is locale and on the basis of that we brought the values of placeholder and we are displaying on the page as shown in the blow image</p>
             <div class="image-container">
-               <img src="../images/placeholders-in-EDS/final-output.png" style="width: 70%;  margin-top: 15px;" alt="final-output"/>
+               <img src="../images/placeholders-in-EDS/final-output.webp" style="width: 70%;  margin-top: 15px;" alt="final-output"/>
             </div>
             <p>Thanks fo reading 😄</p>
          </div>
