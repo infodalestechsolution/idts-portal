@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Content Transfer Tool</title>
+	<link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="The Content Transfer Tool is designed to help you migrate content from a Source AEM instance (such as on-premise or AMS) to a Target AEM Cloud Service instance. Not only does it move your content, but it also transfers groups automatically, making the migration process more efficient. One of the best features of the CTT is that it integrates seamlessly with the Cloud Acceleration Manager, providing you with an enhanced migration experience.">
+    <meta name="keywords" content="content transfer tool, ctt, aem cloud service, aem migration, aem as a cloud service, aem sites,infodales,infodales tech solutions,Adobe Experience Manager, AEM, AEM Cloud Service, Content Transfer Tool, AEM Migration, Cloud Acceleration Manager, AEM Migration Steps, Delta Content Migration, AEM Prerequisites, AEM Managed Services, AEM Migration Best Practices, AEM Cloud Workflow, AEM Content Extraction, AEM Content Ingestion, Migration Set, Adobe Cloud Migration Tools, AEM Repository Migration, AEM Adaptive Migration, Content Migration to Cloud">
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Content Transfer Tool (CTT) Overview: Migrating Content to AEM as a Cloud Service" />
+    <meta property="og:description" content="The Content Transfer Tool is designed to help you migrate content from a Source AEM instance (such as on-premise or AMS) to a Target AEM Cloud Service instance. Not only does it move your content, but it also transfers groups automatically, making the migration process more efficient. One of the best features of the CTT is that it integrates seamlessly with the Cloud Acceleration Manager, providing you with an enhanced migration experience." />
+    <meta property="og:url" content="https://infodales.com/blogs/content-transfer-tool.html" />
+    <meta property="og:site_name" content="Content Transfer Tool (CTT) Overview: Migrating Content to AEM as a Cloud Service" />
+	<link rel="stylesheet" href="/style.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;600;700&display=swap"
+		rel="stylesheet">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+
+	<!-- Header -->
+	<section class="sub-header"
+		style="background-image: linear-gradient(rgba(4, 9, 30, 0.5), rgba(4, 9, 30, 0.5)), url('/images/Cover\ Sites.jpg');">
+		<nav>
+			<a href="/index.html"><img src="/images/infodales/Info Dales Main Logo 03.webp" alt="logo"></a>
+			<div class="nav-links" id="navLinks">
+				<i class="fa fa-times" onclick="hideMenu()"></i>
+				<ul>
+					<li><a href="/index.html">HOME</a></li>
+					<li><a href="/about.html">ABOUT</a></li>
+					<li><a href="/services.html">SERVICES</a></li>
+					<li><a href="/blogs.html">BLOGS</a></li>
+					<li><a href="/career.html">CAREER</a></li>
+					<li><a href="/contact.html">CONTACT</a></li>
+					<ul>
+			</div>
+			<i class="fa fa-bars" onclick="showMenu()"></i>
+		</nav>
+	</section>
+	<!--  Blog Page Content --->
+	<section class="blog-content">
+		<div>
+			<div class="blog">
+                <p style="color: rgb(133, 133, 133); padding: 0 0 10px 0;">
+                    <a href="/blogs.html" style="text-decoration: none; cursor: pointer;">Blogs</a>
+                    <span> &gt; </span>Content Transfer Tool (CTT) Overview: Migrating Content to AEM as a Cloud Service  
+                </p>
+                <p class="sitesTag" style="margin-top: 7px; margin-bottom: 7px; font-size: 13px; border-radius: 20px; 
+				    width: fit-content; padding: 3px 15px;">
+                    AEM Sites
+                </p>
+                <h1 class="title">Content Transfer Tool (CTT) Overview: Migrating Content to AEM as a Cloud Service</h1>
+                <span class="author">Infodales Tech Solutions | </span>
+      				<span class="date">September 14, 2024</span>
+    			
+					<div class="share-icons">	
+					   <a href="https://www.linkedin.com/company/infodales-tech-solution/" target="_blank" class="linkedin-icon"><i class="fa fa-linkedin"></i></a>
+					   <a href="mailto:info@infodales.com" target="_blank" class="email-icon"><i class="fa fa-envelope"></i></a>
+					</div>
+                    <hr style="margin: 20px 0 10px 0;">
+                    <div class="blog-items">
+                        <!-- <h3 style="text-align: left; margin: 0px 0">What’s AEM as a Cloud Service</h3> -->
+                        <p>
+                            If you're planning to migrate your existing Adobe Experience Manager (AEM) content to AEM as a Cloud Service, the Content Transfer Tool (CTT) is your go-to solution. Developed by Adobe, this tool simplifies the migration process by enabling you to move content from an on-premise or AEM Managed Services (AMS) instance to AEM Cloud.
+                            In this, we’ll give you a straightforward overview of how the Content Transfer Tool works and why it’s essential for a smooth migration to the cloud.
+                        </p>
+                        
+                        <h3 style="text-align: left; margin: 0px 0">
+                            What is the Content Transfer Tool (CTT)?
+                        </h3>
+                        <p>
+                            The Content Transfer Tool is designed to help you migrate content from a <Strong>Source AEM instance</Strong> (such as on-premise or AMS) to a <strong>Target AEM Cloud Service instance</strong>. Not only does it move your content, but it also transfers groups automatically, making the migration process more efficient.
+                            One of the best features of the CTT is that it integrates seamlessly with the <strong>Cloud Acceleration Manager</strong>, providing you with an enhanced migration experience.
+                        </p>
+                        <p>
+                            Here’s why that matters:
+                        </p>
+                        <ul style="margin-left: auto; width: 95%;">
+                            <li>
+                                <p>
+                                    <b>Self-service extraction: </b>Migrate content once and deploy it across multiple environments simultaneously.
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    <b>User-friendly experience:</b> The tool has helpful loading indicators, error handling, and guardrails to keep things running smoothly.
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    <b>Persistent logs:</b> You can always access ingestion logs for troubleshooting purposes.
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    <b>Validation reports:</b> You get detailed reports to verify that everything migrated successfully, including groups and user roles.
+                                </p>
+                            </li>
+                            
+                        </ul>
+                        <hr style="margin: 20px 0 10px 0;">
+
+                        <h3 style="text-align: left; margin: 0px 0">
+                            The Two Main Phases of Content Transfer
+                        </h3>
+
+                        <p>
+                            The migration process using CTT happens in two main phases: Extraction and Ingestion. Let’s break these down.
+                        </p>
+
+                        <p>
+                            <b>1. Extraction Phase</b>
+                        </p>
+                        <p>
+                            In the extraction phase, content is pulled from the source AEM instance and placed into a temporary cloud storage area called a migration set. Adobe provides this cloud storage space, and it's where your content will "live" while it’s transferred from your source instance to the cloud.
+                        </p>
+                        <p>
+                            Key things to remember about the <b>Extraction Phase:</b>
+                        </p>
+                        <ul style="margin-left: auto; width: 95%;">
+                            <li>
+                                <p>
+                                    <b>Migration Set:</b> A cloud storage area where the content is temporarily stored during migration.                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    <b>Top-Up Feature:</b> After the initial content extraction, you can transfer only the new changes made to the content since the last transfer, reducing the need for a complete content freeze.                                </p>
+                            </li>    
+                        </ul>
+                        <p>
+                            <strong>2. Ingestion Phase</strong>
+                        </p>
+                        <p>
+                            Once the content is in the migration set, the next step is <strong>ingesting</strong> it into the <strong>target AEM Cloud Service instance</strong>. This phase moves the content from the migration set into your cloud instance.
+                        </p>
+                        <p>
+                            Key things to remember about the <strong>Ingestion Phase:</strong>
+                        </p>
+                        <ul style="margin-left: auto; width: 95%;">
+                            <li>
+                                <p>
+                                    <b>Delta Content Ingestion:</b> Only new or changed content is applied during ingestion to avoid overwriting all your content. 
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    <b>Wipe Option:</b> Disable this option to apply only the changes (delta content) on top of the existing content.
+                                </p>
+                            </li>    
+                        </ul>
+                        <hr style="margin: 20px 0 10px 0;">
+                        <h3 style="text-align: left; margin: 0px 0">
+                            Attributes of a Migration Set
+                        </h3>
+                        <p>
+                            A migration set is a critical part of the CTT workflow. Here are the essential details you need to know:
+                        </p>
+                        <ul style="margin-left: auto; width: 95%;">
+                            <li>
+                                <p>
+                                    <b>Maximum Migration Sets: </b>You can create up to 10 migration sets within a single project in Cloud Acceleration Manager. 
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    <b>Unique Naming: </b>Each migration set must have a unique name for easy identification.
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    <b>Differential Content Transfer: </b>With the top-up feature, you only transfer the content changes made since the previous migration, helping you minimize downtime before going live.
+                                </p>
+                            </li>    
+                        </ul>
+                        <p>
+                            <strong>Important: </strong>After the first big content transfer, Adobe recommends frequent <strong>differential content top-ups</strong>. This reduces the content freeze period during the final transfer before you go live on the AEM Cloud.
+                        </p>
+                        <hr style="margin: 20px 0 10px 0;">
+                        <h3 style="text-align: left; margin: 0px 0">
+                            Migration Set Expiry
+                        </h3>
+                        <p>
+                            A migration set will expire after approximately <strong>45 days of inactivity</strong>. But don’t worry, you’ll get plenty of warnings before this happens. You can extend the expiration by performing any of these actions:
+                        </p>
+                        <ul style="margin-left: auto; width: 95%;">
+                            <li>
+                                <p>
+                                    Edit the description of the migration set.
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    Extract more content into it.
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    Ingest content from it.
+                                </p>
+                            </li>    
+                        </ul>
+                        <p>
+                            You’ll also see <b>visual indicators</b> on the project card and in the migration job table, reminding you that a migration set is approaching expiration.
+                        </p>
+                        <hr style="margin: 20px 0 10px 0;">
+                        <h3 style="text-align: left; margin: 0px 0">
+                            Prerequisites for Content Transfer Tool
+                        </h3>
+                        <p>
+                            The Content Transfer Tool facilitates migration to AEM, but certain conditions must be met for successful usage:
+                        </p>
+                        <ol style="margin-left: auto; width: 95%;">
+                            <li>
+                                <p>
+                                    <strong>AEM Version:</strong> Supports AEM 6.3 or higher.
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    <strong>Segment Store Size:</strong> Handles repositories with fewer than 750 million JCR nodes and an online compacted size of up to 500 GB on Author and 50 GB on Publish. For larger sizes, consult Adobe Customer Care.
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    <strong>Repository Size: </strong> Supports up to 20 TB for File Data Store. Larger sizes are possible for Amazon S3 and Azure Data Stores. Pre-copy steps can speed up transfers.
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                   <strong>Lucene Index Size: </strong> Total Lucene index size should not exceed 25 GB, excluding /oak:index/lucene and /oak:index/damAssetLucene.
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    <strong>Immutable Paths:</strong> Cannot migrate immutable paths directly. For specific paths like /etc, AEM Forms to AEM Forms as a Cloud Service is supported.
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    <strong>MongoDB Node Property Limit:</strong> MongoDB node property values must not exceed 16 MB. Run an oak-run script to identify and convert large property values to Binary if needed.
+                                </p>
+                            </li>
+                        </ol>    
+
+                        <hr style="margin: 20px 0 10px 0;">
+                        <b>What’s Next?</b>
+                        <p>
+                            Now that you have an understanding of the <strong>Content Transfer Tool (CTT)</strong> and how it can help move content from your existing AEM instance to AEM Cloud, it’s time to get started. Before diving into the tool, make sure to review the <strong>Prerequisites for Content Transfer Tool</strong> to ensure everything is in place for a smooth migration.
+                        </p>
+                        <hr style="margin: 20px 0 10px 0;">
+                        <h3 style="text-align: left; margin: 0px 0">
+                            Step-by-Step Guide to Using the Content Transfer Tool (CTT) for AEM Migration   
+                        </h3>
+                        <p>
+                            <b>
+                                Best Practices Before Running CTT
+                            </b>
+                        </p>
+                        <ul style="margin-left: auto; width: 95%;">
+                            <li>
+                                <p>
+                                    <strong>Run revision cleanup or compaction</strong> on the source AEM instance to reduce the repository size.
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    Perform a <strong>data store consistency check</strong> using the oak-run jar to avoid any unexpected behavior.
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    Ensure there is <strong>enough free disk space</strong> on the source instance (at least 1.5 times the repository size) for temporary extraction.
+                                </p>
+                            </li>    
+                        </ul>
+                        <p>
+                            <b>
+                                Step 1: Installing the Content Transfer Tool
+                            </b>
+                        </p>
+                        <p>
+                            First, install the <b>Content Transfer Tool</b> on your AEM source instance (AEM 6.3 or higher). You can download this tool from the <a href="https://experience.adobe.com/downloads" ><strong>AEM Software Distribution Portal</strong></a>.
+                        </p>
+                        <ol style="margin-left: auto; width: 95%;">
+                            <li>
+                                <p>
+                                    <b>Go to the Software Distribution Portal</b> and search for the <b>Content Transfer Tool.</b>
+                                    
+                                </p>
+                                <div class="image-container">
+                                    <img src="/images/CTT/CttToolDownloadsImage1.webp" alt="CTT Tool Downloads Image" style="width: 100%;">
+                                </div>
+                            </li>
+                            <li>
+                                <p>
+                                    <b>Download the tool</b> and upload it to your AEM source instance using <b>Package Manager.</b>
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    Once installed, you will see a new card for <b>Content Transfer</b> under <b>tools > operations > content transfer</b> on your AEM start screen.
+                                </p>
+                                <div class="image-container">
+                                    <img src="/images/CTT/ViewCttToolInAEM2.webp" alt="View CTT Tool in your AEM instances" style="width: 100%;">
+                                </div>
+                            </li>    
+                        </ol>
+                        <p>
+                            <b>
+                                Step 2: Retrieve your Access Token from the Cloud Service
+                            </b>
+                        </p>
+                        <p>
+                            To migrate content using the <strong>Content Transfer Tool (CTT)</strong>, you will need to retrieve an <b>Access Token</b> from your <b>AEM as a Cloud Service</b> environment. This token is required to authenticate the migration set when uploading content from the source AEM instance.
+                        </p>
+                        <p>
+                            Here’s how to retrieve your Access Token:
+                        </p>
+                        <ol style="margin-left: auto; width: 95%;">
+                            <li>
+                                <p>
+                                    <strong>Login to your AEM as a Cloud Service Author instance</strong> using your admin credentials.
+                                    
+                                </p>
+                                <div class="image-container">
+                                    <img src="/images/CTT/RetriveAccessToken3.webp" alt="Retrieve Access Token" style="width: 100%;">
+                                </div>
+                            </li>
+                            <li>
+                                <p>
+                                    Once logged in, navigate to the following URL in your browser:
+
+                                </p>
+                                <p>
+                                    /libs/granite/migration/token.json <br>
+                                    This will trigger the system to generate and display the Access Token <br>
+                                     needed for the migration.                       
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    The JSON response will appear on the screen, containing your <b>Access Token</b>.
+                                </p>
+                                <p>
+                                    The format of the JSON response will look like this:
+                                </p>
+                                <p>
+                                    {<br>
+                                         "token": "your-access-token-string" <br>
+                                    } <br>
+                                   
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                  <b>Copy the Access Token</b> from the JSON response and save it securely for use in the migration process.
+                                </p>
+                                <p>
+                                    You’ll need to input this token when setting up your Migration Set in the Transfer Tool UI.
+                                </p>
+                            </li>    
+                        </ol>
+                        <p>
+                            <b>Step 3: Creating a Migration Set</b>
+                        </p>
+                        <p>
+                            The next step is to create a migration set. A migration set defines all the content (pages, digital assets, etc.) you wish to transfer.
+                        </p>
+                        <ol style="margin-left: auto; width: 95%;">
+                            <li>
+                                <p>
+                                    <strong>Go to the Content Transfer Tool</strong> UI in AEM, and click <strong>Create New Migration Set</strong>. 
+                                    
+                                </p>
+                                <div class="image-container">
+                                    <img src="/images/CTT/CreateMigrationSet4.webp"alt="creating a migration set" style="width: 100%;">
+                                </div>
+                            </li>
+                            <li>
+                                <p>
+                                    <b>Name your migration set</b> (for example, “WKND Base Content”).
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    <b>Enter the Cloud Service Destination URL.</b> This is the URL of the AEM as a Cloud Service environment you want to migrate to.
+                                </p>
+                                <div class="image-container">
+                                    <img src="/images/CTT/UploadAccessToken5.webp" alt="upload access token" style="width: 100%;">
+                                </div>
+                            </li>
+                            <li>
+                                <p>
+                                  Enter the Retrieved Access Token from the cloud service by navigating to /libs/granite/migration/token.json.
+                                </p>
+                            </li> 
+                            <li>
+                                <p>
+                                    Choose which content paths to include in your migration set (e.g., /content/WKND, /conf/WKND, /assets/WKND).
+                                </p>
+                                <div class="image-container">
+                                    <img src="/images/CTT/AddMigrationPath6.webp" alt="Add path for migration" style="width: 100%;">
+                                </div>
+                            </li>  
+                            <li>
+                                <p>
+                                    Save the migration set. After this, a new migration set will be created.
+                                </p>
+                            </li>  
+                        </ol>
+                        <p>
+                            <b>
+                                Step 4: Extraction Phase
+                            </b>
+                        </p>
+                        <p>
+                            Now it’s time to extract the content from your AEM source instance.
+                        </p>
+                        <ol style="margin-left: auto; width: 95%;">
+                            <li>
+                                <p>
+                                    Select your migration set and <b>click Extract</b>.   
+                                </p>
+                                <div class="image-container">
+                                    <img src="/images/CTT/ExtractMigrationSet7.webp" alt="Extract Migration set" style="width: 100%;">
+                                </div>
+                                <div class="image-container">
+                                    <img src="/images/CTT/RunningMigrationset8.webp" alt="Image of Running Migration Set" style="width: 100%;">
+                                </div>
+                                <div class="image-container">
+                                    <img src="/images/CTT/FinishedMigrationSet9.webp" alt="Finished Migration set running" style="width: 100%;">
+                                </div>
+                                
+                            </li>
+                            <li>
+                                <p>
+                                    The extraction will pull the content from your source repository and upload it to Adobe-managed temporary cloud storage.
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    You can monitor the extraction by viewing the logs.
+                                </p>
+                            </li>  
+                        </ol>
+                        <p>
+                            <b>
+                                Step 5: Ingestion Phase
+                            </b>
+                        </p>
+                        <p>
+                            Once extraction is complete, the next step is to ingest the content into your AEM as a Cloud Service environment.
+                        </p>
+                        <ol style="margin-left: auto; width: 95%;">
+                            <li>
+                                <p>
+                                    Select your migration set again and click <b>Ingest</b>.   
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    Choose whether to<b> wipe existing content</b> on the target cloud instance. It’s recommended to wipe the target instance for the <b>first migration</b> to ensure a clean environment.
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    You can choose to <b>ingest on the Author, Publish, or both</b> environments.
+                                </p>
+                                <div class="image-container">
+                                    <img src="/images/CTT/InjectMigrationSet10.webp" alt="Inject Migration Set " style="width: 100%;">
+                                </div>
+                            </li> 
+                            <li>
+                                <p>
+                                    Click Ingest to start the process. You can monitor the ingestion progress in the logs.
+                                </p>
+                                <div class="image-container">
+                                    <img src="/images/CTT/PandingInjection11.webp" alt="Running Injection" style="width: 100%;">
+                                </div>
+                                <div class="image-container">
+                                    <img src="/images/CTT/FinishedInjectionMigrationSet12.webp" alt="Injection Finished" style="width: 100%;">
+                                </div>
+                            </li>  
+                        </ol>
+                        <p>
+                            <b>
+                                Step 6: Verifying the Migration
+                            </b>
+                        </p>
+                        <p>
+                            Once the ingestion process is complete, log into your AEM as a Cloud Service environment to verify that all your content has been successfully transferred.
+
+                        </p>
+                        <ol style="margin-left: auto; width: 95%;">
+                            <li>
+                                <p>
+                                    Navigate to Sites Console to check if all pages have been migrated.   
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    Check Assets to ensure all digital files have been migrated.
+                                </p>
+                                <div class="image-container">
+                                    <img src="/images/CTT/ViewMigationInCloudAEM13.webp" alt="View content in AEM Cloud instance" style="width: 100%;">
+                                </div>
+                            </li> 
+                        </ol>
+                        <p>
+                            <b>
+                                Step 7: Top-up Migration (Delta Migration)
+                            </b>
+                        </p>
+                        <p>
+                            For ongoing projects, content might still be edited on the <strong>AEM source instance</strong> after the initial migration. The <strong>Content Transfer Tool</strong> allows you to perform <strong>Delta Migrations</strong>, where only newly added or changed content is migrated.
+                        </p>
+                        <ol style="margin-left: auto; width: 95%;">
+                            <li>
+                                <p>
+                                    After creating new content (e.g., a new page), go to the <strong>Content Transfer Tool</strong> and select your migration set.   
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    Click <strong>Extract</strong>, but this time, <strong>turn off the option to overwrite the staging container</strong> to preserve previously migrated content.
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    Perform the <strong>Ingestion</strong> as usual, and the new or updated content will be added to the AEM cloud environment.
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    Verify that the new content has been migrated by checking your<strong> Sites Console</strong> and <strong>Assets</strong> in the cloud.
+                                </p>
+                            </li> 
+                        </ol>
+                        <p>
+                            Thank you for taking the time to explore this blog. I hope it provided valuable insights and enhanced your understanding of the topic. 
+                        </p>
+                        <p>
+                            Stay tuned for more informative content, and keep learning and growing! 😊
+                        </p>
+                        <hr style="margin-top: 30px;">
+
+					<div class="author-details">
+						<div id="like-icon" class="like-icon">
+							<span id="like-count" class="like-count">0</span>
+							<span id="like-btn" class="like-btn">
+							  	<img src="/images/clap.webp" alt="Like">
+							</span>
+						</div>
+						<div>
+							<span class="author-name">Ankit Pardhi | </span>
+							<span class="author-designation">AEM Developer</span>
+						</div>
+					</div>
+
+			</div>
+		</div>
+	</section>
+
+<div class="social-icons">
+	 
+	<a href="https://www.linkedin.com/company/infodales-tech-solution/" class="linkedin"><img src="/images/linkedin.webp" alt="LinkedIn"></a>
+	<a href="mailto:info@infodales.com" class="email"><img src="/images/email.webp" alt="Email"></a>
+</div>
+
+	<!--  Footer --->
+	<div class="copyright-area">
+		<div class="footer">
+			<div class="row" style="margin-top: 0px;">
+				<div class="col-xl-4 col-lg-4 text-center text-lg-left">
+					<div class="copyright-text">
+						<p>Copyright &copy; 2023, All Right Reserved <a href="/index.html">Infodales Tech
+								Solution</a></p>
+					</div>
+				</div>
+				
+				<div class="col-xl-4 col-lg-4 d-none d-lg-block text-right">
+					<div class="footer-menu" style="margin-top:10px;">
+						<ul>
+							<li><a href="/index.html">Home</a></li>
+							<li><a href="/about.html">About</a></li>
+							<li><a href="/contact.html">Contact</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<!--- Java Script-->
+	<script>
+		var navLinks = document.getElementById("navLinks");
+
+		function showMenu() {
+			navLinks.style.right = "0";
+		}
+
+		function hideMenu() {
+			navLinks.style.right = "-200px";
+		}
+
+		document.addEventListener("DOMContentLoaded", () => {
+    const likeBtn = document.getElementById('like-btn');
+    const likeCount = document.getElementById('like-count');
+
+    let count = parseInt(localStorage.getItem('clapCount')) || 0;
+    likeCount.textContent = count;
+
+    likeBtn.addEventListener('click', () => {
+        count++;
+        likeCount.textContent = count;
+        localStorage.setItem('clapCount', count);
+
+        const likeAnimation = document.createElement('div');
+        likeAnimation.classList.add('like-animation');
+        likeAnimation.innerHTML = '🎉';
+        document.getElementById('like-icon').appendChild(likeAnimation);
+        likeAnimation.addEventListener('animationend', () => {
+            likeAnimation.remove();
+        });
+    });
+});
+
+		// function relatedFilter() {
+		// 	var retString = localStorage.getItem("allBlogs");
+		// 	console.log(retString);
+		// }
+
+
+	</script>
+
+</body>
+
+</html>
