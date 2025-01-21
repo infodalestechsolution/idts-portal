@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <title>Blogs | Sidekick Customization in Edge Delivery Services</title>
+      <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="description" content="Welcome to the blog designed for developers new to the Edge delivery service concepts. In this blog we will see how we can customize the sidekick extension as per our requirements in Edge Delivery Services.">
+      <meta name="keywords" content="Infodales, how to customize sidekick in aem eds, sidekick Customization in aem eds, aem sidekick customization, sidekick in aem eds, sidekick">
+      <meta property="og:locale" content="en_US" />
+      <meta property="og:type" content="website" />
+      <meta property="og:title" content="Blogs | Sidekick Customization in Edge Delivery Services" />
+      <meta property="og:description" content="Welcome to the blog designed for developers new to the Edge delivery service concepts. In this blog we will see how we can customize the sidekick extension as per our requirements in Edge Delivery Services." />
+      <meta property="og:url" content="https://infodales.com/spa-getting-started.html" />
+      <meta property="og:site_name" content="Blogs | Sidekick Customization in Edge Delivery Services" />
+      <link rel="stylesheet" href="/style.css">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;600;700&display=swap"
+         rel="stylesheet">
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+   </head>
+   <body>
+      <!-- Header -->
+      <section class="sub-header"
+         style="background-image: linear-gradient(rgba(4, 9, 30, 0.5), rgba(4, 9, 30, 0.5)), url('/images/Cover\ EDS.jpg');">
+         <nav>
+         <a href="/index.html"><img src="/images/infodales/Info Dales Main Logo 03.webp" alt="logo">
+         </a>
+         <div class="nav-links" id="navLinks">
+            <i class="fa fa-times" onclick="hideMenu()"></i>
+            <ul>
+            <li><a href="/index.html">HOME</a></li>
+            <li><a href="/about.html">ABOUT</a></li>
+            <li><a href="/services.html">SERVICES</a></li>
+            <li><a href="/blogs.html">BLOGS</a></li>
+            <li><a href="/career.html">CAREER</a></li>
+            <li><a href="/contact.html">CONTACT</a></li>
+            <ul>
+         </div>
+         <i class="fa fa-bars" onclick="showMenu()"></i>
+      </section>
+      <!--  Blog Page Content --->
+      <section class="blog-content">
+         <div>
+         <div class="blog spa-blog">
+         <p style="color: rgb(133, 133, 133); padding: 0 0 10px 0;"><a href="/blogs.html" style="text-decoration: none; cursor: pointer;">Blogs</a> <span> > </span>Sidekick Customization in Edge Delivery Services</p>
+         <p class="edsTag" style="margin-top: 7px; margin-bottom: 7px; font-size: 13px; border-radius: 20px; 
+            width: fit-content; padding: 3px 15px;">AEM EDS</p>
+         <h1 class="title">Sidekick Customization in Edge Delivery Services</h1>
+         <span class="author">Infodales Tech Solutions</span> |
+         <span class="date">January 5, 2025</span>
+         <div class="share-icons">
+            <a href="https://www.linkedin.com/company/infodales-tech-solution/" target="_blank" class="linkedin-icon"><i class="fa fa-linkedin"></i></a>
+            <a href="mailto:info@infodales.com" target="_blank" class="email-icon"><i class="fa fa-envelope"></i></a>
+         </div>
+         <hr style="margin: 20px 0 10px 0;">
+         <div class="blog-items">
+         <div>
+            <p>Happy to find you here. Welcome to another learning.</p>
+            <h3 style="text-align: left;">What is Sidekick in terma of EDS?</h3>
+            <p>In the context of AEM Edge Delivery Service (EDS), the term "Sidekick" does not have a defined or standard meaning as it does in classic AEM. However, if you are referencing a "sidekick" in general, it could imply a supportive utility, feature, or tool designed to aid in managing or delivering content efficiently in the edge delivery context.</p>
+            <p>In sidekick we can create two types of buttons.</p>
+            <div class="image-container">
+            <img src="../images/sidekick-customization/types-of-buttons.webp" style="width: 50%;  margin-top: 15px;" alt="types-of-buttons"/>
+            </div>
+            <p>So to explain the Customization of sidekick we will add two buttons in it one is google assist Action button and another is Action container which will contain youtube as a Action button</p>
+            <h3 style="text-align: left;">Steps to customize the sidekick.</h3>
+            <ol class="ff_ul">
+               <li><p>So to customize the sidekick we need to create the folder called tools in our github repository and under that we need to create a folder called sidekick.</p></li>
+               <div class="image-container">
+            <img src="../images/sidekick-customization/github-folder-structure.webp" style="width: 30%;  margin-top: 15px;" alt="github-folder-structure"/>
+            </div>
+               <li><p>Inside the sidekick folder we need to create a file called config.json</p></li>
+               <div class="image-container">
+            <img src="../images/sidekick-customization/config-json-file.webp" style="width: 30%;  margin-top: 15px;" alt="config-json-file"/>
+            </div>
+            <li><p>Inside that file we need to create the json structure as shown in the below image in that we need to add our json under the plugin object. Action means single button and Action container means dropdown type so we are creating the google-assist Action button and also we are creating Action container tools and under tools we are creating youtube as a Action.</p></li>
+            <div class="image-container">
+            <img src="../images/sidekick-customization/config-file.webp" style="width: 70%;  margin-top: 15px;" alt="config-file"/>
+            </div>
+            <p>In the above image there are some terms will explain that.</p>
+            <ul class="ff_ul">
+               <li>id: In this we need to provide id this is main thing as it is useful while creating Action container</li>
+               <li>Title: it is shown on sidekick</li>
+               <li>Environments: here we specify on which environment we wanted to display that button</li>
+               <li>Url: like what action should be performed on the click of that button</li>
+               <li>passConfig: with this property whenever we go the url provided we can see all the information such as repo, owner and branch of our git hub in the url means it passes all the configuration.</li>
+               <div class="image-container">
+            <img src="../images/sidekick-customization/passconfig.webp" style="width: 100%;  margin-top: 15px;" alt="passconfig"/>
+            </div>
+               <li>passReferrer: by default it is false if not provide, if it is true it will display that from which URL you have came to the current URL as shown below.</li>
+               <div class="image-container">
+            <img src="../images/sidekick-customization/passReference.webp" style="width: 100%;  margin-top: 15px;" alt="passReference"/>
+            </div>
+               <li>excludePaths: This will disable the Action that we have created on that particular pages under that path we have provided.</li>
+               <li>IncludePaths: Here we provide the path on which that Action to be displayed.</li>
+            </ul>
+            </ol>
+            <p>This is how we customized the sidekick as you can see in the below image buttons have been added.</p>
+            <div class="image-container">
+            <img src="../images/sidekick-customization/final-sidekick.webp" style="width: 100%;  margin-top: 15px;" alt="final-sidekick"/>
+            </div>
+            <p>Thanks fo reading 😄</p>
+         </div>
+         </div>
+         <hr style="margin-top: 30px;"/>
+                <div class="author-details">
+                    <div id="like-icon" class="like-icon">
+                       <span id="like-count" class="like-count">0</span>
+                       <span id="like-btn" class="like-btn">
+                       <img src="/images/clap.webp" alt="Like">
+                       </span>
+                    </div>
+                    <div>
+                       <span class="author-name">Owais Pathan | </span>
+                       <span class="author-designation">AEM Developer</span>
+                    </div>
+                 </div>
+      </section>
+      <div class="social-icons">
+         <a href="https://www.linkedin.com/company/infodales-tech-solution/" class="linkedin"><img src="/images/linkedin.webp" alt="LinkedIn"></a>
+         <a href="mailto:info@infodales.com" class="email"><img src="/images/email.webp" alt="Email"></a>
+      </div>
+      <!--  Footer --->
+      <div class="copyright-area">
+         <div class="footer">
+            <div class="row" style="margin-top: 0px;">
+               <div class="col-xl-4 col-lg-4 text-center text-lg-left">
+                  <div class="copyright-text">
+                     <p>Copyright &copy; 2024, All Right Reserved <a href="/index.html">Infodales Tech
+                        Solution</a>
+                     </p>
+                  </div>
+               </div>
+               <div class="col-xl-4 col-lg-4 d-none d-lg-block text-right">
+                  <div class="footer-menu" style="margin-top:10px;">
+                     <ul>
+                        <li><a href="/index.html">Home</a></li>
+                        <li><a href="/about.html">About</a></li>
+                        <li><a href="/contact.html">Contact</a></li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!--- Java Script-->
+      <script>
+         var navLinks = document.getElementById("navLinks");
+         
+         function showMenu() {
+         	navLinks.style.right = "0";
+         }
+         
+         function hideMenu() {
+         	navLinks.style.right = "-200px";
+         }
+         
+         document.addEventListener("DOMContentLoaded", () => {
+           const likeBtn = document.getElementById('like-btn');
+           const likeCount = document.getElementById('like-count');
+         
+           let count = parseInt(localStorage.getItem('clapCount')) || 0;
+           likeCount.textContent = count;
+         
+           likeBtn.addEventListener('click', () => {
+               count++;
+               likeCount.textContent = count;
+               localStorage.setItem('clapCount', count);
+         
+               const likeAnimation = document.createElement('div');
+               likeAnimation.classList.add('like-animation');
+               likeAnimation.innerHTML = '🎉';
+               document.getElementById('like-icon').appendChild(likeAnimation);
+               likeAnimation.addEventListener('animationend', () => {
+                   likeAnimation.remove();
+               });
+           });
+         });
+      </script>
+   </body>
+</html>
