@@ -67,19 +67,21 @@
                 <h3 style="text-align: left;">What is Edge Delivery Services</h3>
                 <p>Edge delivery service is a part of AEM as a cloud service It is an individual module/functionality in AEM as a cloud service and not dependent on AEM You can Build, Run and Author a website using Edge Delivery service without AEM It can be integrated with AEM author to create content/site authoring however, AEM authoring is not mandatory for content authoring It supports two way of authoring one is document-based authoring and another one is WYSIWYG(What You See Is What you Get) authoring.</p>
 					<h3 style="text-align: left;">Edge Delivery Service Architecture</h3>
-					<p><li>Franklin /Edge Delivery Service is based on a serverless micro-services architecture.</li>
-                    <li>Each individual service is designed to be single-purpose. The connections between the
-                      different services make up the overall architecture.</li>
-                    <li>All inter-service communication is based on HTTPS.</li>
-                    <li>It is a composable set of services that enables a rapid development environment.</li>
-                    <img src="/images/EDS/Architecture-picture.png" style="width: 80%;  margin-top: 15px;" alt="properties"/></p>
+					<ul class="ff_ul">
+                    <li><p>Franklin /Edge Delivery Service is based on a serverless micro-services architecture.</p></li>
+                    <li><p>Each individual service is designed to be single-purpose. The connections between the
+                      different services make up the overall architecture.</p></li>
+                    <li><p>All inter-service communication is based on HTTPS.</p></li>
+                    <li><p>It is a composable set of services that enables a rapid development environment.</p></li>
+                    <img src="/images/EDS/Architecture-picture.png" style="width: 80%;  margin-top: 15px;" alt="properties"/></ul>
                     <p>The architecture is typically composed of three layers.
                         <h3 style="text-align: left;">Authoring Layer:</h3>
-                        <p>In this we create content for edge delivery service, we have following ways to create content
-                            <li>AEM authoring using universal editor</li>
-                            <li>We can create content using google docs or Microsoft docs or spreadsheet with teams and slack you can take help of adobe and build channels to ask for the help as it is a new product.</li>
-                            <li>your code and configuration always stay in GitHub and that code is moved to edge delivery services when needed.</li>
-                        </p>
+                        <p>In this we create content for edge delivery service, we have following ways to create content</p>
+                        <ul class="ff_ul">
+                            <li><p>AEM authoring using universal editor</p></li>
+                            <li><p>We can create content using google docs or Microsoft docs or spreadsheet with teams and slack you can take help of adobe and build channels to ask for the help as it is a new product.</p></li>
+                            <li><p>your code and configuration always stay in GitHub and that code is moved to edge delivery services when needed.</p></li>
+                        </ul>
                         <h3 style="text-align: left;">Edge Delivery Layer:</h3>
                         <p>It is micro service based serverless infrastructure build on cloud.</p>
                         <h3 style="text-align: left;">Client infrastructure:</h3>
@@ -90,14 +92,18 @@
                     <img src="/images/EDS/implementation.png" style="width: 80%;  margin-top: 15px;" alt="properties"/></p>
                     <h3 style="text-align: left;">AWS</h3>
                     <p>In AWS there are three components AWS-S3, Lambda and Fastly</p>
-                    <li>AWS s3 is used for storage or content hub</li>
-                    <li>Lambda is used for processing and computing</li>
-                    <li>Fastly is used as CDN for this stack</li>
+                    <ul class="ff_ul">
+                    <li><p>AWS s3 is used for storage or content hub</p></li>
+                    <li><p>Lambda is used for processing and computing</p></li>
+                    <li><p>Fastly is used as CDN for this stack</p></li>
+                    </ul>
                     <h3 style="text-align: left;">CloudFlare</h3>
                     <p>In CloudFlare there are three components R2, Worker and Cloudflare-CDN</p>
-                    <li>R2 is used for the storage.</li>
-                    <li>Worker is used for the computing.</li>
-                    <li>CloudFlare-CDN is used for the CDN</li>
+                    <ul class="ff_ul">
+                    <li><p>R2 is used for the storage.</p></li>
+                    <li><p>Worker is used for the computing.</p></li>
+                    <li><p>CloudFlare-CDN is used for the CDN</p></li>
+                    </ul>
                     <p>There are bascially following 4 main parts involved in Edge Delivery Service(EDS):</p>
                     <img src="/images/EDS/FourMainPartsofEDS.png" style="width: 80%;  margin-top: 15px;" alt="properties"/></p>
                     <p>I will explain each and every part in detail</p>
