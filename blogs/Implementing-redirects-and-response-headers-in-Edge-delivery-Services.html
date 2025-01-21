@@ -61,26 +61,26 @@
             <p>Redirects in AEM Edge Delivery Service (EDS) are mechanisms to route user requests from one URL to another at the edge server level, reducing latency and improving performance. These redirects occur before requests reach the AEM origin server, ensuring faster response times and efficient content delivery.</p>
             <p>Redirects can be done for internal links as well external links.</p>
             <ol>
-               <li>Internal links- redirects within the website</li>
-               <li>External links- redirects to the external webistes</li>
+               <li><p>Internal links- redirects within the website.</p></li>
+               <li><p>External links- redirects to the external webistes.</p></li>
             </ol>
             <h3 style="text-align: left;">Internal redirect</h3>
             <p>Redirects within the website pages is basically internal redirects.</p>
             <h3 style="text-align: left;">Steps to create Internal redirects</h3>
             <ul class="ff_ul">
-            <li>So, for the redirect rules you need to create the excel sheet with the name redirects in the root folder of the project</li>
+            <li><p>So, for the redirect rules you need to create the excel sheet with the name redirects in the root folder of the project.</p></li>
             <div class="image-container">
                <img src="../images/Redirects-in-EDS/redirects-excel-created.webp" style="width: 70%;  margin-top: 15px;" alt="redirects-excel-created"/>
             </div>
-            <li>Inside the sheet we need to create 2 columns with headers as "Source" and "Destination" as shown in the below image.In the source we will add source url and in destination we will add the url where it should redirects to.</li>
+            <li><p>Inside the sheet we need to create 2 columns with headers as "Source" and "Destination" as shown in the below image.In the source we will add source url and in destination we will add the url where it should redirects to.</p></li>
             <div class="image-container">
                <img src="../images/Redirects-in-EDS/redirects-excel-properties.webp" style="width: 70%;  margin-top: 15px;" alt="redirects-excel-properties"/>
             </div>
-            <li>Before the redirects rules when we hit /dm in the url we got 404 not found as you can see in the below image.</li>
+            <li><p>Before the redirects rules when we hit /dm in the url we got 404 not found as you can see in the below image.</p></li>
             <div class="image-container">
                <img src="../images/Redirects-in-EDS/404-not-found.webp" style="width: 70%;  margin-top: 15px;" alt="404-not-found"/>
             </div>
-            <li>After creating the redirect rules we can see that it is redirecting to /demo/demo1 url</li>
+            <li><p>After creating the redirect rules we can see that it is redirecting to /demo/demo1 url.</p></li>
             <div class="image-container">
                <img src="../images/Redirects-in-EDS/redirect-url.webp" style="width: 70%;  margin-top: 15px;" alt="redirect-url"/>
             </div>
@@ -94,36 +94,34 @@
             <p>HTTP response headers in Adobe Experience Manager (AEM) Edge Delivery Service (EDS) are metadata sent back from the server to the client (usually a web browser) in response to an HTTP request. These headers provide information about the server's response, including status codes, content details, cache directives, and security policies. In the context of AEM EDS, headers play a critical role in controlling and optimizing the delivery of content at the edge.</p>
             <h3 style="text-align: left;">Steps to add the response headers to the page</h3>
             <ol class="ff_ul">
-               <li>To add headers to the pages we need to create a folder with name “.helix” under the root folder of our project.</li>
+               <li><p>To add headers to the pages we need to create a folder with name “.helix” under the root folder of our project.</p></li>
                <div class="image-container">
                <img src="../images/Redirects-in-EDS/helix-folder.webp" style="width: 70%;  margin-top: 15px;" alt="external-redirects-excel"/>
                </div>
-               <li>Inside that folder we need to create the excel sheet with name as "headers"</li>
+               <li><p>Inside that folder we need to create the excel sheet with name as "headers".</p></li>
                <div class="image-container">
                <img src="../images/Redirects-in-EDS/headers-file.webp" style="width: 70%;  margin-top: 15px;" alt="headers-file"/>
                </div>
-               <li>In that sheet there will be three columns url, key and value
+               <li><p>In that sheet there will be three columns url, key and value.</p>
                   <ul class="ff_ul">
-                     <li>url: in this column there will be path of folder and the header will be applied to the pages present under that folder.</li>
-                     <li>key: it will have the key of the header.</li>
-                     <li>value: the value column will contain the value of the header.</li>
+                     <li><p>url: in this column there will be path of folder and the header will be applied to the pages present under that folder.</p></li>
+                     <li><p>key: it will have the key of the header.</p></li>
+                     <li><p>value: the value column will contain the value of the header.</p></li>
                   </ul>
                </li>
                <div class="image-container">
                <img src="../images/Redirects-in-EDS/headers-file-properties.webp" style="width: 70%;  margin-top: 15px;" alt="headers-file-properties"/>
                </div>
-               <li>In the above image the header author will be applied to all the pages in the website and "cms" will be applied to the page present under the cms folder.</li>
+               <li><p>In the above image the header author will be applied to all the pages in the website and "cms" will be applied to the page present under the cms folder.</p></li>
                <div class="image-container">
                <img src="../images/Redirects-in-EDS/headers-added.webp" style="width: 50%;  margin-top: 15px;" alt="headers-file-properties"/>
                </div>
-               <li>One more thing whenever you create this headers sheet you will get the option of activate and not publish this is due to security reasons.</li>
+               <li><p>One more thing whenever you create this headers sheet you will get the option of activate and not publish this is due to security reasons.</p></li>
                <div class="image-container">
                <img src="../images/Redirects-in-EDS/Activating-headers-sheet.webp" style="width: 50%;  margin-top: 15px;" alt="headers-file-properties"/>
                </div>
             </ol>
-
-
-            <p>Thanks fo reading 😄</p>
+            <p>Thanks for reading 😄</p>
          </div>
          </div>
          <hr style="margin-top: 30px;"/>
