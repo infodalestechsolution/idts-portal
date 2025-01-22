@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <title>Blogs | Sidekick Library in Edge Delivery Services</title>
+      <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="description" content="Welcome to the blog designed for developers new to the Edge delivery service concepts. In this blog we will see how we can create the sidekick library.">
+      <meta name="keywords" content="Infodales, how to add placeholder in EDS, how to implement placeholders in EDS, placeholders in EDS, placeholders in franklin">
+      <meta property="og:locale" content="en_US" />
+      <meta property="og:type" content="website" />
+      <meta property="og:title" content="Blogs | Sidekick Library in Edge Delivery Services" />
+      <meta property="og:description" content="Welcome to the blog designed for developers new to the Edge delivery service concepts. In this blog we will see how we can create the sidekick library." />
+      <meta property="og:url" content="https://infodales.com/spa-getting-started.html" />
+      <meta property="og:site_name" content="Blogs | Sidekick Library in Edge Delivery Services" />
+      <link rel="stylesheet" href="/style.css">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;600;700&display=swap"
+         rel="stylesheet">
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+   </head>
+   <body>
+      <!-- Header -->
+      <section class="sub-header"
+         style="background-image: linear-gradient(rgba(4, 9, 30, 0.5), rgba(4, 9, 30, 0.5)), url('/images/Cover\ EDS.jpg');">
+         <nav>
+         <a href="/index.html"><img src="/images/infodales/Info Dales Main Logo 03.webp" alt="logo">
+         </a>
+         <div class="nav-links" id="navLinks">
+            <i class="fa fa-times" onclick="hideMenu()"></i>
+            <ul>
+            <li><a href="/index.html">HOME</a></li>
+            <li><a href="/about.html">ABOUT</a></li>
+            <li><a href="/services.html">SERVICES</a></li>
+            <li><a href="/blogs.html">BLOGS</a></li>
+            <li><a href="/career.html">CAREER</a></li>
+            <li><a href="/contact.html">CONTACT</a></li>
+            <ul>
+         </div>
+         <i class="fa fa-bars" onclick="showMenu()"></i>
+      </section>
+      <!--  Blog Page Content --->
+      <section class="blog-content">
+         <div>
+         <div class="blog spa-blog">
+         <p style="color: rgb(133, 133, 133); padding: 0 0 10px 0;"><a href="/blogs.html" style="text-decoration: none; cursor: pointer;">Blogs</a> <span> > </span>Sidekick Library in Edge Delivery Services</p>
+         <p class="edsTag" style="margin-top: 7px; margin-bottom: 7px; font-size: 13px; border-radius: 20px; 
+            width: fit-content; padding: 3px 15px;">AEM EDS</p>
+         <h1 class="title">Sidekick Library in Edge Delivery Services</h1>
+         <span class="author">Infodales Tech Solutions</span> |
+         <span class="date">January 10, 2025</span>
+         <div class="share-icons">
+            <a href="https://www.linkedin.com/company/infodales-tech-solution/" target="_blank" class="linkedin-icon"><i class="fa fa-linkedin"></i></a>
+            <a href="mailto:info@infodales.com" target="_blank" class="email-icon"><i class="fa fa-envelope"></i></a>
+         </div>
+         <hr style="margin: 20px 0 10px 0;">
+         <div class="blog-items">
+         <div>
+            <p style="margin-top: 0%;">Happy to find you here. Welcome to another learning.</p>
+            <h3 style="text-align: left;">What is Sidekick Library?</h3>
+            <p style="margin-top: 0%;">In AEM Edge Delivery Service (EDS), the Sidekick Library is a set of utilities, tools, or pre-defined functions provided to enhance and simplify the development, management, and customization of edge delivery configurations. The Sidekick Library acts as a support framework, enabling developers to work more efficiently with EDS by offering reusable components, patterns, and APIs tailored for edge delivery use cases.</p>
+            <p>To create a sidekick library we need to do the setup in two places first is in github code/config in git repo and second is file/content setup in content repository</p>
+            <div class="image-container">
+               <img src="../images/sidekick-library/setup-list.webp" style="width: 70%;  margin-top: 15px;" alt="setup-list"/>
+               </div>
+            <h3 style="text-align: left;">Steps to create sidekick library</h3>
+            <ul class="ff_ul">
+                <li>So the first setp is we ned to create a file called library.html under the tools/sidekick folder in our github repo.</li>
+                <div class="image-container">
+               <img src="../images/sidekick-library/library-html-file.webp" style="width: 50%;  margin-top: 15px;" alt="library-html-file"/>
+               </div>
+                <li><p>Inside the library.html file we need to add the html code provided by adobe you can get that code in the below link.</p><a href="https://experienceleague.adobe.com/en/docs/experience-manager-cloud-service/content/edge-delivery/resources/sidekick/sidekick-library#sidekick-plugin-setup" target="_blank"> https://experienceleague.adobe.com/en/docs/experience-manager-cloud-service/content/edge-delivery/resources/sidekick/sidekick-library#sidekick-plugin-setup</a>
+                <p>Code looks like as shown in the below image</p></li>
+                <div class="image-container">
+               <img src="../images/sidekick-library/library-html-code.webp" style="width: 50%;  margin-top: 15px;" alt="library-html-code"/>
+               </div>
+                <li><p>Next is we need to create the action button in our sidekick so we will be adding the below json in config.json file under tools/sidekick folder. In the below json in URL we will be providing the path of library.html file.</p></li>
+                <div class="image-container">
+               <img src="../images/sidekick-library/config-json.webp" style="width: 50%;  margin-top: 15px;" alt="config-json"/>
+               </div>
+               <li><p>Next is we need to create a folder hierarchy as tools/sidekick in the root folder of project in google drive or sharepoint inside that we need to create excel file with the name library</p></li>
+               <div class="image-container">
+               <img src="../images/sidekick-library/library-excel.webp" style="width: 50%;  margin-top: 15px;" alt="library-excel"/>
+               </div>
+               <li><p>Inside same hierarchy we will be creating a folder called blocks in which we will be keeping all the blocks that we needed in the sidekick library.</p></li>
+               <div class="image-container">
+               <img src="../images/sidekick-library/blocks-folder.webp" style="width: 50%;  margin-top: 15px;" alt="blocks-folder"/>
+               </div>
+               <li><p>Inside the blocks folder we will be creating the documents for each blocks in this case i will only take the example of cards block.</p></li>
+               <div class="image-container">
+               <img src="../images/sidekick-library/cards-document.webp" style="width: 60%;  margin-top: 15px;" alt="cards-document"/>
+               </div>
+               <li><p>In this cards document we will be adding the cards block.</p></li>
+               <div class="image-container">
+               <img src="../images/sidekick-library/cards-block.webp" style="width: 60%;  margin-top: 15px;" alt="cards-block"/>
+               </div>
+               <li><p>Next is we will be adding the path each block document(in his case it is cards) in the library excel that we have created.In this excel there will two columns one is name and other is path. "name" column will have the name of the block that needs to be displayed and "path" will contain the path of block document</p></li>
+               <div class="image-container">
+               <img src="../images/sidekick-library/library-excel-properties.webp" style="width: 60%;  margin-top: 15px;" alt="library-excel-properties"/>
+               </div>
+               <li><p>Now if you click on the sidekick-library button in the sidekick you will see that new pallet has been opened.</p></li>
+               <div class="image-container">
+               <img src="../images/sidekick-library/library-pallet.webp" style="width: 60%;  margin-top: 15px;" alt="library-pallet"/>
+               </div>
+               <p>you can see that you got the option of cards under that you can see whatever card I have added it is showing up on the right hand side and there is option of copy . You can copy that and paste in any of the document.</p>
+            </ul>
+            <p>You can also create the variation of the blocks and that too can be visible in the sidekick library, So to create the variations you need to follow the below steps.</p>
+            <ol class="ff_ul">
+                <li><p>First thing is you need to seperate the two variations with the seperator which is a horizontal line or a 3 times "-"(hypen)</p></li>
+                <div class="image-container">
+               <img src="../images/sidekick-library/variations-seperator.webp" style="width: 60%;  margin-top: 15px;" alt="variations-seperator"/>
+               </div>
+               <li><p>After that you need to add the table with the heading library metadata in each section in that we can add name and description so that both variation should have different names and easy to choose</p></li>
+               <div class="image-container">
+               <img src="../images/sidekick-library/library-metadata.webp" style="width: 60%;  margin-top: 15px;" alt="library-metadata"/>
+               </div>
+               <li><p>Now you can see in the sidekick library pallet two variations have been added you can choose anyone from both the variations.</li>
+               <div class="image-container">
+               <img src="../images/sidekick-library/varation-sidekick-library.webp" style="width: 60%;  margin-top: 15px;" alt="varation-sidekick-library"/>
+               </div>
+            </ul>
+            <p>Thanks for reading 😄</p>
+         </div>
+         </div>
+         <hr style="margin-top: 30px;"/>
+                <div class="author-details">
+                    <div id="like-icon" class="like-icon">
+                       <span id="like-count" class="like-count">0</span>
+                       <span id="like-btn" class="like-btn">
+                       <img src="/images/clap.webp" alt="Like">
+                       </span>
+                    </div>
+                    <div>
+                       <span class="author-name">Owais Pathan | </span>
+                       <span class="author-designation">AEM Developer</span>
+                    </div>
+                 </div>
+      </section>
+      <div class="social-icons">
+         <a href="https://www.linkedin.com/company/infodales-tech-solution/" class="linkedin"><img src="/images/linkedin.webp" alt="LinkedIn"></a>
+         <a href="mailto:info@infodales.com" class="email"><img src="/images/email.webp" alt="Email"></a>
+      </div>
+      <!--  Footer --->
+      <div class="copyright-area">
+         <div class="footer">
+            <div class="row" style="margin-top: 0px;">
+               <div class="col-xl-4 col-lg-4 text-center text-lg-left">
+                  <div class="copyright-text">
+                     <p>Copyright &copy; 2024, All Right Reserved <a href="/index.html">Infodales Tech
+                        Solution</a>
+                     </p>
+                  </div>
+               </div>
+               <div class="col-xl-4 col-lg-4 d-none d-lg-block text-right">
+                  <div class="footer-menu" style="margin-top:10px;">
+                     <ul>
+                        <li><a href="/index.html">Home</a></li>
+                        <li><a href="/about.html">About</a></li>
+                        <li><a href="/contact.html">Contact</a></li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!--- Java Script-->
+      <script>
+         var navLinks = document.getElementById("navLinks");
+         
+         function showMenu() {
+         	navLinks.style.right = "0";
+         }
+         
+         function hideMenu() {
+         	navLinks.style.right = "-200px";
+         }
+         
+         document.addEventListener("DOMContentLoaded", () => {
+           const likeBtn = document.getElementById('like-btn');
+           const likeCount = document.getElementById('like-count');
+         
+           let count = parseInt(localStorage.getItem('clapCount')) || 0;
+           likeCount.textContent = count;
+         
+           likeBtn.addEventListener('click', () => {
+               count++;
+               likeCount.textContent = count;
+               localStorage.setItem('clapCount', count);
+         
+               const likeAnimation = document.createElement('div');
+               likeAnimation.classList.add('like-animation');
+               likeAnimation.innerHTML = '🎉';
+               document.getElementById('like-icon').appendChild(likeAnimation);
+               likeAnimation.addEventListener('animationend', () => {
+                   likeAnimation.remove();
+               });
+           });
+         });
+      </script>
+   </body>
+</html>
