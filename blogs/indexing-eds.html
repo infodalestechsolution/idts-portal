@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <title>Blogs | Indexing in Edge Delivery Services</title>
+      <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="description" content="Welcome to the blog designed for developers new to the Edge delivery service concepts. In this blog we will see how we can perform indexing in EDS.">
+      <meta name="keywords" content="Infodales, indexing in edge delivery services, indexing in eds, indexing, AEM EDS, Adobe Experience Manager, Indexing in AEM, Edge Delivery Services, JSON indexing, Query-index.xlsx, Raw index sheet, Metadata indexing, Website indexing, AEM indexing guide, Response headers indexing, Noindex property, Metadata block in AEM, Robots noindex tag, AEM page metadata, Indexing properties in AEM, Structured data in AEM, Content indexing guide, CMS indexing, AEM content repository, Indexing spreadsheets in AEM, Optimizing search in AEM, Site indexing with EDS, Meta tag properties indexing, Last modified property in AEM, AEM developer guide, AEM metadata tutorial, AEM search optimization, AEM JSON response, AEM indexing properties, AEM publishing and indexing, Automating indexing in AEM, AEM noindex metadata, Search engine optimization in AEM, Custom indexing properties, Excel for indexing in AEM, Dynamic indexing in AEM, Content retrieval in EDS, Metadata-driven indexing, Indexing sections in AEM, Indexing web pages in AEM, Search performance in EDS, Metadata properties in CMS, Custom query index in AEM, Raw index for AEM, Index publishing workflow, AEM indexing best practices, EDS for AEM indexing, Content delivery optimization, Infodales Tech indexing guide">
+      <meta property="og:locale" content="en_US" />
+      <meta property="og:type" content="website" />
+      <meta property="og:title" content="Blogs | Indexing in Edge Delivery Services" />
+      <meta property="og:description" content="Welcome to the blog designed for developers new to the Edge delivery service concepts. In this blog we will see how we can perform indexing in EDS." />
+      <meta property="og:url" content="https://infodales.com/spa-getting-started.html" />
+      <meta property="og:site_name" content="Blogs | Indexing in Edge Delivery Services" />
+      <link rel="stylesheet" href="/style.css">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;600;700&display=swap"
+         rel="stylesheet">
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+   </head>
+   <body>
+      <!-- Header -->
+      <section class="sub-header"
+         style="background-image: linear-gradient(rgba(4, 9, 30, 0.5), rgba(4, 9, 30, 0.5)), url('/images/Cover\ EDS.jpg');">
+         <nav>
+         <a href="/index.html"><img src="/images/infodales/Info Dales Main Logo 03.webp" alt="logo">
+         </a>
+         <div class="nav-links" id="navLinks">
+            <i class="fa fa-times" onclick="hideMenu()"></i>
+            <ul>
+            <li><a href="/index.html">HOME</a></li>
+            <li><a href="/about.html">ABOUT</a></li>
+            <li><a href="/services.html">SERVICES</a></li>
+            <li><a href="/blogs.html">BLOGS</a></li>
+            <li><a href="/career.html">CAREER</a></li>
+            <li><a href="/contact.html">CONTACT</a></li>
+            <ul>
+         </div>
+         <i class="fa fa-bars" onclick="showMenu()"></i>
+      </section>
+      <!--  Blog Page Content --->
+      <section class="blog-content">
+         <div>
+         <div class="blog spa-blog">
+         <p style="color: rgb(133, 133, 133); padding: 0 0 10px 0;"><a href="/blogs.html" style="text-decoration: none; cursor: pointer;">Blogs</a> <span> > </span>Indexing in Edge Delivery Services</p>
+         <p class="edsTag" style="margin-top: 7px; margin-bottom: 7px; font-size: 13px; border-radius: 20px; 
+            width: fit-content; padding: 3px 15px;">AEM EDS</p>
+         <h1 class="title">Indexing in Edge Delivery Services</h1>
+         <span class="author">Infodales Tech Solutions</span> |
+         <span class="date">January 15, 2025</span>
+         <div class="share-icons">
+            <a href="https://www.linkedin.com/company/infodales-tech-solution/" target="_blank" class="linkedin-icon"><i class="fa fa-linkedin"></i></a>
+            <a href="mailto:info@infodales.com" target="_blank" class="email-icon"><i class="fa fa-envelope"></i></a>
+         </div>
+         <hr style="margin: 20px 0 10px 0;">
+         <div class="blog-items">
+         <div>
+            <p style="margin-top: 0%;">Happy to find you here. Welcome to another learning.</p>
+            <h3 style="text-align: left;">What is Indexing ?</h3>
+            <p style="margin-top: 0%;">Indexing is the process of organizing data in a way that makes it faster and more efficient to search, retrieve, and access specific information. In the context of databases, search engines, or content management systems like Adobe Experience Manager (AEM), indexing involves creating a structured data representation that allows queries to execute more quickly.</p>
+            <p>In AEM EDS it keeps this indexes in a spreadsheet and offers access to it using JSON.In this you can index entire site you can index specific section of your website or you can add what kind of property you wanted to index from a page.You can also index particular section from a page as well</p>
+            <h3 style="text-align: left;">Steps to perform indexing</h3>
+            <ul class="ff_ul">
+                <li><p>Create a excel file with the name “query-index.xlsx”  in root folder of your project.</p></li>
+                <div class="image-container">
+               <img src="../images/indexing-EDS/query-index-file.webp" style="width: 50%;  margin-top: 15px;" alt="query-index-file"/>
+               </div>
+                <li><p>Inside this file crate a sheet with the name "raw_index"</p></li>
+                <div class="image-container">
+               <img src="../images/indexing-EDS/raw-index-sheet.webp" style="width: 40%;  margin-top: 15px;" alt="raw-index-sheet"/>
+               </div>
+                <li><p>Next in that sheet add path as a header and you can add the other properties that you wanted to index like suppose you wanted to index on the basis of metadata then you add title it will pick og:title and similarly you can add response header as well.</p></li>
+                <div class="image-container">
+               <img src="../images/indexing-EDS/headers-raw-index-sheet.webp" style="width: 100%;  margin-top: 15px;" alt="headers-raw-index-sheet"/>
+               </div>
+               <p>Following highlighted properties can be added as a header in the document and the properties metioned on the right hand side will be picked from the meta tags.And these are not limited to the above mentioned properties whatever property you add in meta tag that can be added in the query-index excel file and it will pick that property from meta tag.</p>
+               <p>“Last modified” is the only property that is picked from response header.</p>
+               <div class="image-container">
+               <img src="../images/indexing-EDS/meta-tag-properties.webp" style="width: 70%;  margin-top: 15px;" alt="meta-tag-properties"/>
+               </div>
+               <li><p><span style="background-color: yellow; padding: 5px;">Now the content will only index when you publish the page</span>.I have page named test under the cms folder I will publish that page as soon I publish it will reflect under the query-index excel and also it has picked the metadata property available in the page as you can see in the below image.</p></li>
+               <div class="image-container">
+               <img src="../images/indexing-EDS/displaying-index-properties.webp" style="width: 70%;  margin-top: 15px;" alt="displaying-index-properties"/>
+               </div>
+            </ul>
+            <p>If you do not want to index a particular page then for that you need to create metadata block and in that you need to add the property as <span style="background-color: yellow; padding: 5px;">"Robots" and value as "noindex".</span></p>
+            <div class="image-container">
+               <img src="../images/indexing-EDS/metadata-block.webp" style="width: 70%;  margin-top: 15px;" alt="metadata-block"/>
+               </div>
+            <p>Thanks for reading 😄</p>
+         </div>
+         </div>
+         <hr style="margin-top: 30px;"/>
+                <div class="author-details">
+                    <div id="like-icon" class="like-icon">
+                       <span id="like-count" class="like-count">0</span>
+                       <span id="like-btn" class="like-btn">
+                       <img src="/images/clap.webp" alt="Like">
+                       </span>
+                    </div>
+                    <div>
+                       <span class="author-name">Owais Pathan | </span>
+                       <span class="author-designation">AEM Developer</span>
+                    </div>
+                 </div>
+      </section>
+      <div class="social-icons">
+         <a href="https://www.linkedin.com/company/infodales-tech-solution/" class="linkedin"><img src="/images/linkedin.webp" alt="LinkedIn"></a>
+         <a href="mailto:info@infodales.com" class="email"><img src="/images/email.webp" alt="Email"></a>
+      </div>
+      <!--  Footer --->
+      <div class="copyright-area">
+         <div class="footer">
+            <div class="row" style="margin-top: 0px;">
+               <div class="col-xl-4 col-lg-4 text-center text-lg-left">
+                  <div class="copyright-text">
+                     <p>Copyright &copy; 2024, All Right Reserved <a href="/index.html">Infodales Tech
+                        Solution</a>
+                     </p>
+                  </div>
+               </div>
+               <div class="col-xl-4 col-lg-4 d-none d-lg-block text-right">
+                  <div class="footer-menu" style="margin-top:10px;">
+                     <ul>
+                        <li><a href="/index.html">Home</a></li>
+                        <li><a href="/about.html">About</a></li>
+                        <li><a href="/contact.html">Contact</a></li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!--- Java Script-->
+      <script>
+         var navLinks = document.getElementById("navLinks");
+         
+         function showMenu() {
+         	navLinks.style.right = "0";
+         }
+         
+         function hideMenu() {
+         	navLinks.style.right = "-200px";
+         }
+         
+         document.addEventListener("DOMContentLoaded", () => {
+           const likeBtn = document.getElementById('like-btn');
+           const likeCount = document.getElementById('like-count');
+         
+           let count = parseInt(localStorage.getItem('clapCount')) || 0;
+           likeCount.textContent = count;
+         
+           likeBtn.addEventListener('click', () => {
+               count++;
+               likeCount.textContent = count;
+               localStorage.setItem('clapCount', count);
+         
+               const likeAnimation = document.createElement('div');
+               likeAnimation.classList.add('like-animation');
+               likeAnimation.innerHTML = '🎉';
+               document.getElementById('like-icon').appendChild(likeAnimation);
+               likeAnimation.addEventListener('animationend', () => {
+                   likeAnimation.remove();
+               });
+           });
+         });
+      </script>
+   </body>
+</html>
