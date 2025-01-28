@@ -2575,3 +2575,19 @@ details[open] .accordion-icon {
 .pre-large-snippet{
   width: 100% 
 }
+
+/* ETC Mapping*/
+.text-color{
+background-color: yellow;
+}
+
+.node-structure-image img{
+  width: 40%;
+  margin-left: 90px;
+}
+
+.migration-journey-images img{
+width: 100%;
+margin: 0px;
+padding-top: 5px;
+}

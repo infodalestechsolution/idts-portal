@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Blogs | Content Fragments in AEM</title>
+	<link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="In Adobe Experience Manager (AEM), Content Fragments are pieces of content that are created in a structured way and can be reused across different pages, apps, and channels. Think of them as building blocks for content that can be shared and used consistently, whether you’re working on a website, a mobile app, or even an email campaign.">
+  	<meta name="keywords" content="infodales, content fragments, graphql, content fragment model, api">
+	<meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Blogs | Content Fragments in AEM" />
+    <meta property="og:description" content="In Adobe Experience Manager (AEM), Content Fragments are pieces of content that are created in a structured way and can be reused across different pages, apps, and channels. Think of them as building blocks for content that can be shared and used consistently, whether you’re working on a website, a mobile app, or even an email campaign." />
+    <meta property="og:url" content="https://infodales.com/spa-getting-started.html" />
+    <meta property="og:site_name" content="Blogs | Content Fragments in AEM" />
+	<link rel="stylesheet" href="/style.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;600;700&display=swap"
+		rel="stylesheet">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+
+	<!-- Header -->
+	<section class="sub-header"
+		style="background-image: linear-gradient(rgba(4, 9, 30, 0.5), rgba(4, 9, 30, 0.5)), url('/images/Cover\ Sites.jpg');">
+		<nav>
+			<a href="/index.html"><img src="/images/infodales/Info Dales Main Logo 03.webp" alt="logo"></a>
+			<div class="nav-links" id="navLinks">
+				<i class="fa fa-times" onclick="hideMenu()"></i>
+				<ul>
+					<li><a href="/index.html">HOME</a></li>
+					<li><a href="/about.html">ABOUT</a></li>
+					<li><a href="/services.html">SERVICES</a></li>
+					<li><a href="/blogs.html">BLOGS</a></li>
+					<li><a href="/career.html">CAREER</a></li>
+					<li><a href="/contact.html">CONTACT</a></li>
+					<ul>
+			</div>
+			<i class="fa fa-bars" onclick="showMenu()"></i>
+		</nav>
+		
+	</section>
+	<!--  Blog Page Content --->
+	<section class="blog-content">
+		<div>
+			<div class="blog spa-blog">
+				
+				<p style="color: rgb(133, 133, 133); padding: 0 0 10px 0;"><a href="/blogs.html" style="text-decoration: none; cursor: pointer;">Blogs</a> <span> > </span>Content Fragments in AEM</p>
+
+				<p class="sitesTag" style="margin-top: 7px; margin-bottom: 7px; font-size: 13px; border-radius: 20px; 
+				width: fit-content; padding: 3px 15px;">AEM Sites</p>
+				<h1 class="title">Content Fragments in AEM</h1>
+      				<span class="author">Infodales Tech Solutions</span> |
+      				<span class="date">October 10, 2024</span>
+    			
+					<div class="share-icons">
+					<a href="https://www.linkedin.com/company/infodales-tech-solution/" target="_blank" class="linkedin-icon"><i class="fa fa-linkedin"></i></a>
+                    <a href="mailto:info@infodales.com" target="_blank" class="email-icon"><i class="fa fa-envelope"></i></a>
+					</div>
+
+				<hr style="margin: 20px 0 10px 0;">
+                <div class="blog-items">
+
+                
+                <p>Hi, welcome to another blog.</p>
+                <h3 style="text-align: left; margin: 0px 0">Content fragments in AEM</h3>
+                <p>
+                    today we will be focusing upon what is a content fragment, why is it used and how exactly can we create one.
+                </p>
+                <h3 style="text-align: left; margin: 0px 0">Introduction</h3>
+
+                <p>
+                    In Adobe Experience Manager (AEM), Content Fragments are pieces of content that are created in a structured way and can be reused across different pages, apps, and channels. Think of them as building blocks for content that can be shared and used consistently, whether you’re working on a website, a mobile app, or even an email campaign.
+                </p>
+                <p>
+                    A Content Fragment Model is essentially a template that defines what kind of content you can have in a fragment — like text, numbers, dates, and so on. It helps organize and structure content so it can be reused easily across your platforms. 
+                </p>
+                
+                <h3 style="text-align: left; margin: 0px 0">Aids Content Fragments Provide</h3>
+                <p>
+                   Content fragments actually make work alot easy by providing 
+                </p>
+                <ul class="ff_ul">
+                    <li>
+                        <p>
+                            <b>Structured Content</b> : Instead of just throwing in random text, content fragments are organized by fields like titles, body text, dates, and more. This structure makes it easy to manage and reuse.
+                        </p>
+                        
+                    </li>
+                    <li>
+                        <p>
+                            <b>Reusability</b> : Content fragments aren’t limited to one page or project. Once you create one, you can use it anywhere—on a website, in an app, or in emails. This saves you from copying and pasting the same content over and over.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                           <b>API Access</b> : Need to pull content from AEM into another system? No problem. Content fragments can be accessed through AEM's GraphQL API or REST APIs to serve content everywhere.
+                        </p>
+                        
+                    </li>
+                </ul>
+                <p>Hence, they help in dynamic content injection, maintain consistency and multichanel delivery.</p>
+                
+                <h3 style="text-align: left; margin: 0px 0">Creation of Content Fragments</h3>
+                <p>Now having an idea of this powerful feature of aem, lets try and create one. We will be creating a for the purpose of storing data of varios stars.</p>
+                <ul class="ff_ul">
+                    <li>
+                        <p>
+                            First we need to create a Content Fragment Model. Navigate to content fragment model from tools.
+                        </p>
+                        <div class="image-container">
+                            <image class="center" style="width: 100%;" src="../images/cf/cfmodel.webp"/>
+                        </div>
+                        <br/>
+                        <div class="image-container">
+                            <image class="center" style="width: 100%;" src="../images/cf/createcfmodel.webp"/>
+                        </div>
+                    </li>
+                    <li>
+                        <p>
+                            In this model, we need to add the fields of the content fragments. We can specify the field labels, their data types, property types and various other properties. 
+                        </p>
+                        <div class="image-container">
+                            <image class="center" style="width: 100%;" src="../images/cf/cfmodelraw.webp"/>
+                        </div>
+                    </li>
+                    <li>
+                        <p>
+                            Here we have a text field, a multifield, a boolean field, a date field and a numfield.
+                        </p>
+                        <div class="image-container">
+                            <image class="center" style="width: 100%;" src="../images/cf/completecfmodel.webp"/>
+                        </div>
+                    </li>
+                    <li>
+                        <p>
+                            After creating a model we are ready to create various content fragments using this model. In order to do so, navigate to Assets and create a folder stars.
+                        </p>
+                        <div class="image-container">
+                            <image class="center" style="width: 100%;" src="../images/cf/assets.webp"/>
+                        </div>
+                        <br/>
+                        <div class="image-container">
+                            <image class="center" style="width: 100%;" src="../images/cf/starsfolder.webp"/>
+                        </div>
+                    </li>
+                    <li>
+                        <p>
+                            Now we need to add cloud configurations to this folder so that it allows the creation of content fragments. To do so go to its properties, navigate to cloud configurations tab and then add the path of the folder in which we have our content fragment model.
+                        </p>
+                        <div class="image-container">
+                            <image class="center" style="width: 100%;" src="../images/cf/properties1.webp"/>
+                        </div>
+                        <br/>
+                        <div class="image-container">
+                            <image class="center" style="width: 100%;" src="../images/cf/properties2.webp"/>
+                        </div>
+                        <br/>
+                        <div class="image-container">
+                            <image class="center" style="width: 100%;" src="../images/cf/cloudconfigurations.webp"/>
+                        </div>
+                    </li>
+                    <li>
+                        <p>
+                          Having added the cloud configurations, simply create the content fragment using the model and add the respective data.  
+                        </p>
+                        <div class="image-container">
+                            <image class="center" style="width: 30%;" src="../images/cf/createcf1.webp"/>
+                        </div>
+                        <br/>
+                        <div class="image-container">
+                            <image class="center" style="width: 100%;" src="../images/cf/createcf2.webp"/>
+                        </div>
+                        <br/>
+                        <div class="image-container">
+                            <image class="center" style="width: 100%;" src="../images/cf/createcf3.webp"/>
+                        </div>
+                        <br/>
+                        <div class="image-container">
+                            <image class="center" style="width: 100%;" src="../images/cf/createcf4.webp"/>
+                        </div>
+                        <br/>
+                        <div class="image-container">
+                            <image class="center" style="width: 100%;" src="../images/cf/allcf.webp"/>
+                        </div>
+                    </li>
+                    
+                </ul>
+                
+                <h3 style="text-align: left; margin: 0px 0">Conclusion</h3>
+                <p>
+                    This is how we create content fragments whose data can be exported by graphql or as a REST API.
+                </p>
+                <p>
+                    I hope you ejoyed this learning. 
+                </p>
+                </div>
+                <hr style="margin-top: 30px;"/>
+                <div class="author-details">
+                    <div id="like-icon" class="like-icon">
+                       <span id="like-count" class="like-count">0</span>
+                       <span id="like-btn" class="like-btn">
+                       <img src="/images/clap.webp" alt="Like">
+                       </span>
+                    </div>
+                    <div>
+                       <span class="author-name">Shruti Meshram | </span>
+                       <span class="author-designation">AEM Developer</span>
+                    </div>
+                 </div>
+			</div>
+		</div>
+	</section>
+
+<div class="social-icons">
+         
+        <a href="https://www.linkedin.com/company/infodales-tech-solution/" class="linkedin"><img src="/images/linkedin.webp" alt="LinkedIn"></a>
+        <a href="mailto:info@infodales.com" class="email"><img src="/images/email.webp" alt="Email"></a>
+    </div>
+
+	<!--  Footer --->
+	<div class="copyright-area">
+		<div class="footer">
+			<div class="row" style="margin-top: 0px;">
+				<div class="col-xl-4 col-lg-4 text-center text-lg-left">
+					<div class="copyright-text">
+						<p>Copyright &copy; 2024, All Right Reserved <a href="/index.html">Infodales Tech
+								Solution</a></p>
+					</div>
+				</div>
+				
+				<div class="col-xl-4 col-lg-4 d-none d-lg-block text-right">
+					<div class="footer-menu" style="margin-top:10px;">
+						<ul>
+							<li><a href="/index.html">Home</a></li>
+							<li><a href="/about.html">About</a></li>
+							<li><a href="/contact.html">Contact</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<!--- Java Script-->
+	<script>
+		var navLinks = document.getElementById("navLinks");
+
+		function showMenu() {
+			navLinks.style.right = "0";
+		}
+
+		function hideMenu() {
+			navLinks.style.right = "-200px";
+		}
+
+		document.addEventListener("DOMContentLoaded", () => {
+    const likeBtn = document.getElementById('like-btn');
+    const likeCount = document.getElementById('like-count');
+
+    let count = parseInt(localStorage.getItem('clapCount')) || 0;
+    likeCount.textContent = count;
+
+    likeBtn.addEventListener('click', () => {
+        count++;
+        likeCount.textContent = count;
+        localStorage.setItem('clapCount', count);
+
+        const likeAnimation = document.createElement('div');
+        likeAnimation.classList.add('like-animation');
+        likeAnimation.innerHTML = '🎉';
+        document.getElementById('like-icon').appendChild(likeAnimation);
+        likeAnimation.addEventListener('animationend', () => {
+            likeAnimation.remove();
+        });
+    });
+});
+
+
+
+	</script>
+
+</body>
+
+</html>

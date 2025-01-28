@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Blogs | ETC Mapping in AEM </title>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content=" ETC Mapping in AEM ">
+    <meta name="keywords" content="Understanding and implenting ETC Mapping in AEM">
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Blogs | ETC Mapping in AEM" />
+    <meta property="og:description" content="Understanding and implenting ETC Mapping in AEM." />
+    <meta property="og:url" content="https://infodales.com/blogs/etc-mapping.html" />
+    <meta property="og:site_name" content="Blogs | ETC Mapping in AEM" />
+    <link rel="stylesheet" href="/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+
+    <!-- Header -->
+    <section class="sub-header"
+        style="background-image: linear-gradient(rgba(4, 9, 30, 0.5), rgba(4, 9, 30, 0.5)), url('/images/Cover\ Sites.jpg');">
+        <nav>
+            <a href="/index.html"><img src="/images/infodales/Info Dales Main Logo 03.webp" alt="logo"></a>
+            <div class="nav-links" id="navLinks">
+                <i class="fa fa-times" onclick="hideMenu()"></i>
+                <ul>
+                    <li><a href="/index.html">HOME</a></li>
+                    <li><a href="/about.html">ABOUT</a></li>
+                    <li><a href="/services.html">SERVICES</a></li>
+                    <li><a href="/blogs.html">BLOGS</a></li>
+                    <li><a href="/career.html">CAREER</a></li>
+                    <li><a href="/contact.html">CONTACT</a></li>
+                </ul>
+            </div>
+            <i class="fa fa-bars" onclick="showMenu()"></i>
+        </nav>
+        <!-- <h1>Blogs</h1> -->
+    </section>
+    <!--  Blog Page Content --->
+    <section class="blog-content">
+        <div>
+            <div class="blog">
+
+                <p style="color: rgb(133, 133, 133); padding: 0 0 10px 0;"><a href="/blogs.html"
+                        style="text-decoration: none; cursor: pointer;">Blogs</a> <span> > </span> ETC Mapping in AEM
+                </p>
+
+                <p class="sitesTag" style="margin-top: 7px; margin-bottom: 7px; font-size: 13px; border-radius: 20px; 
+				width: fit-content; padding: 3px 15px;">AEM Sites</p>
+                <h1 class="title"> ETC Mapping in AEM </h1>
+                <span class="author">Infodales Tech Solutions | </span>
+                <span class="date">October 25, 2024</span>
+
+                <div class="share-icons">
+                    <a href="https://www.linkedin.com/company/infodales-tech-solution/" target="_blank"
+                        class="linkedin-icon"><i class="fa fa-linkedin"></i></a>
+                    <a href="mailto:info@infodales.com" target="_blank" class="email-icon"><i
+                            class="fa fa-envelope"></i></a>
+                </div>
+
+                <hr style="margin: 20px 0 10px 0;">
+
+                <div class="blog-items">
+                    <h3 style="text-align: left; margin: 0px 0">Overview</h3>
+                    <p>
+                        In AEM (Adobe Experience Manager), ETC Mapping is primarily used for routing or transforming
+                        content based on a defined mapping between the source and the destination locations in the
+                        repository. The term ETC refers to "Experience Targeted Content", which is used to manage how
+                        content is structured, served, or redirected within AEM.</p>
+                    <h4 style="text-align: left; margin: 0px 0">What is ETC Mapping in AEM ?</h4>
+                    <p>In the context of Adobe Experience Manager (AEM), ETC Mapping typically refers to the Experience
+                        Targeted Content (ETC) system, which is used to map content or redirect requests to different
+                        locations or resources based on specific conditions, such as user profile, geographical
+                        location, or language preferences.
+                        However, ETC Mapping is not a standard, widely recognized term in AEM documentation. It might be
+                        referring to a specific implementation within your organization or an alias for content mapping
+                        used in certain workflows.</p>
+                    <h4 style="text-align: left; margin: 5px 0">Request-Resource Mapping</h4>
+                    <div style=" margin-left: 20px;">
+                        <ul style="margin-top: 10px; width: 95%;" class="description-txt">
+                            <div class="migration-journey-images">
+                                <img src="../images/Migration-Journey/request-resource-mapping.webp"
+                                    alt="resource-request-mapping" />
+                            </div>
+                            <h4 style="text-align: left; margin: 5px 0">Local Domain Setup:</h4>
+                            <div style=" margin-left: 20px;">
+                                <ul style="padding-left: 20px; width: 95%;" class="description-txt">
+                                    <li>
+                                        <p>In the setup, a local domain is configured.</p>
+                                    </li>
+                                    <li>
+                                        <p>A user requests this domain in their browser.</p>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <h4 style="text-align: left; margin: 5px 0">Request Reaches Apache Server:</h4>
+                            <div style=" margin-left: 20px;">
+                                <ul style="padding-left: 20px; width: 95%;" class="description-txt">
+                                    <li>
+                                        <p>The request is first directed to the Apache server.</p>
+                                    </li>
+                                    <li>
+                                        <p>However, the Apache server does not know what specific content should be
+                                            served
+                                            for the requested domain.</p>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <h4 style="text-align: left; margin: 5px 0">Request Moves to AEM:</h4>
+                            <div style=" margin-left: 20px;">
+                                <ul style="padding-left: 20px; width: 95%;" class="description-txt">
+                                    <li>
+                                        <p>Since Apache lacks this information, it forwards the request to the AEM
+                                            server.
+                                        </p>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <h4 style="text-align: left; margin: 5px 0">AEM Resolves the Content:</h4>
+                            <div style=" margin-left: 20px;">
+                                <ul style="padding-left: 20px; width: 95%;" class="description-txt">
+                                    <li>
+                                        <p>AEM serves the identified content back to the client (browser).</p>
+                                    </li>
+                                    <li>
+                                        <p>This completes the request-response cycle.</p>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="migration-journey-images">
+                                <img src="../images/Migration-Journey/request-resource-mapping-with-url.webp"
+                                    alt="request-resource-mapping-with-url" />
+                            </div>
+                            <h4 style="text-align: left; margin: 5px 0">Client Request:</h4>
+                            <div style=" margin-left: 20px;">
+                                <ul style="padding-left: 20px; width: 95%;" class="description-txt">
+                                    <li>
+                                        <p>The client requests a page using the URL: <span
+                                                class="text-color">public:4503/women.html</span>.</p>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <h4 style="text-align: left; margin: 5px 0">Request Reaches Apache Server:</h4>
+                            <div style=" margin-left: 20px;">
+                                <ul style="padding-left: 20px; width: 95%;" class="description-txt">
+                                    <li>
+                                        <p>The request is first directed to the Apache server.</p>
+                                    </li>
+                                    <li>
+                                        <p>The Apache server, however, does not know what specific content should be
+                                            served
+                                            for the requested URL</p>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <h4 style="text-align: left; margin: 5px 0">Request Forwarded to AEM:</h4>
+                            <div style=" margin-left: 20px;">
+                                <ul style="padding-left: 20px; width: 95%;" class="description-txt">
+                                    <li>
+                                        <p>Since the Apache server cannot resolve the content, it forwards the request
+                                            to
+                                            the AEM server for handling.</p>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <h4 style="text-align: left; margin: 5px 0">AEM Resolves the Content Path</h4>
+                            <div style=" margin-left: 20px;">
+                                <ul style="padding-left: 20px; width: 95%;" class="description-txt">
+                                    <li>
+                                        <p>In AEM, the requested URL <span class="text-color">/women.html </span>is
+                                            mapped
+                                            to the actual content path: <span
+                                                class="text-color">/content/we-retail/us/en/women.html.</span></p>
+                                    </li>
+                                    <li>
+                                        <p>This mapping ensures that AEM serves the correct content for the requested
+                                            page.
+                                        </p>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <h4 style="text-align: left; margin: 5px 0">URL Rewriting:</h4>
+                            <div style=" margin-left: 20px;">
+                                <ul style="padding-left: 20px; width: 95%;" class="description-txt">
+                                    <li>
+                                        <p>AEM automatically hides the internal content structure
+                                            (/content/we-retail/us/en)
+                                            in the URL, presenting a cleaner and user-friendly URL (/women.html) to the
+                                            client.</p>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <h4 style="text-align: left; margin: 5px 0">Response Sent to Client:</h4>
+                            <div style=" margin-left: 20px;">
+                                <ul style="padding-left: 20px;width: 95%;" class="description-txt">
+                                    <li>
+                                        <p>AEM serves the content at <span
+                                                class="text-color">/content/we-retail/us/en/women.html </span>back to
+                                            the
+                                            client, but the client sees the cleaner URL public:4503/women.html.</p>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <h4 style="text-align: left; margin: 5px 0">How ETC Mapping Works:</h4>
+                            <div style=" margin-left: 20px;">
+                                <ul style="padding-left: 20px; width: 95%;" class="description-txt">
+                                    <li>
+                                        <p>ETC Mapping in AEM facilitates this process by defining the rules for mapping
+                                            short, user-friendly URLs to the actual internal content paths..</p>
+                                    </li>
+                                    <li>
+                                        <p>This process is also known as URL rewriting in AEM.</p>
+                                    </li>
+                                </ul>
+                            </div>
+
+                        </ul>
+                    </div>
+                    <h4 style="text-align: left; margin: 0px 0">For the local setup, add the domain to the host file:
+                    </h4>
+                    <div style=" margin-left: 20px;">
+                        <ul style="margin: auto; width: 95%;" class="description-txt">
+                            <li>
+                                <p>Navigate to <span class="text-color">C:\Windows\System32\Drivers\etc\hosts</span>.
+                                <p>
+                            </li>
+                            <li>
+                                <p>Add the following entry:
+                                    127.0.0.1 publish.4503.
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+                    <h4 style="text-align: left; margin: 5px 0">Steps to Create ETC Mapping in AEM</h4>
+                    <div style=" margin-left: 20px;">
+                        <ul style="margin: auto; width: 95%;" class="description-txt">
+                            <li>
+                                <p>Login in to the publish instance
+                                </p>
+                            </li>
+                            <li>
+                                <p>Open the CRX/DE Lite interface in your browser:
+                                </p>
+                            </li>
+                            <li>
+                                <p><span class="text-color">http://localhost:4503/crx/de/index.jsp.</span></p>
+                            </li>
+                        </ul>
+                    </div>
+                    <h4 style="text-align: left; margin: 5px 0">Navigate to the ETC Mapping Node:</h4>
+                    <div style=" margin-left: 20px;">
+                        <ul style="margin: auto; width: 95%;" class="description-txt">
+                            <li>
+                                <p>Go to the path: <span class="text-color">/etc/map.</span>
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+                    <h4 style="text-align: left; margin: 5px 0">Create a New Node for the Domain:</h4>
+                    <div style=" margin-left: 20px;">
+                        <ul style="margin: auto; width: 95%;" class="description-txt">
+                            <li>
+                                <p>Under <span class="text-color">/etc/map</span>, create a new node for the domain (if
+                                    it does not exist).</p>
+                            </li>
+                            <li>
+                                <p>Example: If your domain is public, create a node named http (for HTTP domains) or
+                                    https (for HTTPS domains).</p>
+                            </li>
+                            <li>
+                                <p>Inside this node, create another node for the specific domain this node should be of
+                                    type “sling:Mapping”, e.g., public.</p>
+                            </li>
+                            <div class="node-structure-image">
+                                <img src="../images/Migration-Journey/etc-map-node-path.webp" alt="etc-map-node-path" />
+                            </div>
+                        </ul>
+                    </div>
+                    <h4 style="text-align: left; margin: 15px 0">Configure Properties for the Mapping Node:</h4>
+                    <div style=" margin-left: 20px;">
+                        <ul style="margin: auto; width: 95%;" class="description-txt">
+                            <div class="migration-journey-images">
+                                <img src="../images/Migration-Journey/publish-4503-home.webp" alt="AEM-tools-page" />
+                            </div>
+                        </ul>
+                    </div>
+                    <p>Add the following properties to the mapping node:</p>
+                    <div style=" margin-left: 20px;">
+                        <ul style="margin: auto; width: 95%;" class="description-txt">
+                            <li>
+                                <p>sling:internalRedirect: If the domain name matches the node name, we use
+                                    sling:internalRedirect. When you enter the domain name in the browser, it internally
+                                    redirects to the specified content path.</p>
+                            </li>
+
+                        </ul>
+                    </div>
+
+                    <h4 style="text-align: left; margin: 5px 0">Create a node for Clientlibs:</h4>
+                    <p>Create a new node under the publish node, and name it, for example, etc_clientlibs.
+                        Add the following properties to the mapping node:</p>
+                    <div style=" margin-left: 20px;">
+                        <ul style="margin: auto; width: 95%;" class="description-txt">
+                            <li>
+                                <p>Set the value of sling:match to <span
+                                        class="text-color">etc[.]clientlibs/(.+)</span>.
+                                </p>
+                             
+                            </li>
+                            <li>
+                                <p>Set the value of sling:internalRedirect to <span
+                                    class="text-color">/etc.clientlibs/$1</span>.</p>
+                            </li>
+
+                        </ul>
+                    </div>
+
+                    <p>When the node name does not match the domain name, we use the sling:match property. In this case,
+                        sling:match captures everything after the domain (matching etc[.]clientlibs/(.+)) and stores it
+                        in a variable. This variable ($1) is then resolved and appended in the sling:internalRedirect
+                        property, such as in /etc.clientlibs/$1. Here, $1 corresponds to whatever matches (.+) in the
+                        sling:match property.</p>
+                    <div style=" margin-left: 20px;">
+                        <ul style="margin: auto; width: 95%;" class="description-txt">
+                            <div class="migration-journey-images">
+                                <img src="../images/Migration-Journey/etc_clientlibs_image.webp"
+                                    alt="etc-map-node-path" />
+                            </div>
+                        </ul>
+                    </div>
+                    <p>Click Save All.
+                        Then, access http://publish:4503 in your browser, and you will be redirected to the home page.
+                    </p>
+                    <div style=" margin-left: 20px;">
+                        <ul style="margin: auto; width: 95%;" class="description-txt">
+                            <div class="migration-journey-images">
+                                <img src="../images/Migration-Journey/home-html-image.webp" alt="home-html-image" />
+                            </div>
+                        </ul>
+                    </div>
+                    <p>Create a node under the http folder, for example, named publish_home (of type sling:mapping).</p>
+                    <p>Add the following properties to this node:</p>
+                    <div style=" margin-left: 20px;">
+                        <ul style="margin: auto; width: 95%;" class="description-txt">
+                            <li>
+                                <p><b>sling:internalRedirect</b>: <span
+                                        class="text-color">/content/we-retail/us/en/home.html</span>.</p>
+
+                            </li>
+                            <li>
+                                <p><b>sling:match :</b> <span class="text-color"> publish.4503/$</span>.</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <p><span class="text-color">Explanation</span>: As discussed earlier, any request that matches the
+                        sling:match value (in this case,
+                        publish.4503/$) will resolve to the content path specified in the sling:internalRedirect
+                        property.</p>
+                    <div style=" margin-left: 20px;">
+                        <ul style="margin: auto; width: 95%;" class="description-txt">
+                            <div class="migration-journey-images">
+                                <img src="../images/Migration-Journey/publish_home_image.webp"
+                                    alt="publish_home_image" />
+                            </div>
+                        </ul>
+                    </div>
+                    <p>Create a configuration for the rest of the pages.</p>
+                    <p>Now, let's assume you are accessing domain/page.html in the browser. The path should resolve to
+                        /content/page.html, but the /content part will be hidden, displaying only /page.html. This
+                        approach is known as URL rewriting in AEM.</p>
+                    <p>Modify the <span class="text-color">publish.4503</span> node.</p>
+                    <p>Add the following values to the sling:internalRedirect property:</p>
+                    <div style=" margin-left: 20px;">
+                        <ul style="margin: auto; width: 95%;" class="description-txt">
+                            <li>
+                                <p><span class="text-color">/content/we-retail/us/en</span></p>
+                            </li>
+                            <li>
+                                <p><span class="text-color">/</span></p>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <p><b>Explanation</b>: Whenever you access publish.4503/pagename.html, the system will automatically
+                        resolve the path starting with /content/we-retail/us/en or /, hiding this part of the path. As a
+                        result, only publish.4503/pagename.html will be displayed in the browser.</p>
+                    <div style=" margin-left: 20px;">
+                        <ul style="margin: auto; width: 95%;" class="description-txt">
+                            <div class="migration-journey-images">
+                                <img src="../images/Migration-Journey/modified_publish_node.webp"
+                                    alt="modified_publish_node" />
+                            </div>
+                        </ul>
+                    </div>
+                    <p>Now, if you access http://publish:4503/women.html in the browser… it looks like</p>
+                    <div style=" margin-left: 20px;">
+                        <ul style="margin: auto; width: 95%;" class="description-txt">
+                            <div class="migration-journey-images">
+                                <img src="../images/Migration-Journey/women_html_image.webp" alt="women_html_image" />
+                            </div>
+                        </ul>
+                    </div>
+                    <p><b>Conclusion</b>:</p>
+                    <p>ETC mapping in AEM is a powerful tool for optimizing URL structures, enhancing user experience,
+                        and simplifying content management by effectively handling internal redirects and URL rewriting.
+                        By leveraging properties like sling:match and sling:internalRedirect, you can create clean,
+                        user-friendly URLs that align with your project’s requirements while maintaining seamless
+                        backend functionality.
+                    </p>
+                </div>
+            <hr style="margin-top: 30px;">
+
+            <div class="author-details">
+                <div id="like-icon" class="like-icon">
+                    <span id="like-count" class="like-count">0</span>
+                    <span id="like-btn" class="like-btn">
+                        <img src="/images/clap.webp" alt="Like">
+                    </span>
+                </div>
+                <div>
+                    <span class="author-name">Yash Sakharkar | </span>
+                    <span class="author-designation">AEM Developer</span>
+                </div>
+            </div>
+            </div>
+
+
+        </div>
+        </div>
+    </section>
+
+    <div class="social-icons">
+
+        <a href="https://www.linkedin.com/company/infodales-tech-solution/" class="linkedin"><img
+                src="/images/linkedin.webp" alt="LinkedIn"></a>
+        <a href="mailto:info@infodales.com" class="email"><img src="/images/email.webp" alt="Email"></a>
+    </div>
+
+    <!--  Footer --->
+    <div class="copyright-area">
+        <div class="footer">
+            <div class="row" style="margin-top: 0px;">
+                <div class="col-xl-4 col-lg-4 text-center text-lg-left">
+                    <div class="copyright-text">
+                        <p>Copyright &copy; 2023, All Right Reserved <a href="/index.html">Infodales Tech
+                                Solution</a></p>
+                    </div>
+                </div>
+
+                <div class="col-xl-4 col-lg-4 d-none d-lg-block text-right">
+                    <div class="footer-menu" style="margin-top:10px;">
+                        <ul>
+                            <li><a href="/index.html">Home</a></li>
+                            <li><a href="/about.html">About</a></li>
+                            <li><a href="/contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--- Java Script-->
+    <script>
+        var navLinks = document.getElementById("navLinks");
+
+        function showMenu() {
+            navLinks.style.right = "0";
+        }
+
+        function hideMenu() {
+            navLinks.style.right = "-200px";
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const likeBtn = document.getElementById('like-btn');
+            const likeCount = document.getElementById('like-count');
+
+            let count = parseInt(localStorage.getItem('clapCount')) || 0;
+            likeCount.textContent = count;
+
+            likeBtn.addEventListener('click', () => {
+                count++;
+                likeCount.textContent = count;
+                localStorage.setItem('clapCount', count);
+
+                const likeAnimation = document.createElement('div');
+                likeAnimation.classList.add('like-animation');
+                likeAnimation.innerHTML = '🎉';
+                document.getElementById('like-icon').appendChild(likeAnimation);
+                likeAnimation.addEventListener('animationend', () => {
+                    likeAnimation.remove();
+                });
+            });
+        });
+
+        // function relatedFilter() {
+        // 	var retString = localStorage.getItem("allBlogs");
+        // 	console.log(retString);
+        // }
+
+
+    </script>
+
+</body>
+
+</html>
