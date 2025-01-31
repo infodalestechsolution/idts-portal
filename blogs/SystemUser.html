@@ -109,6 +109,58 @@
                             <image class="center smallscreenfull" style="width: 30%;" src="../images/user/homefolder.webp"/>
                         </div>
                     </li>
+                    <li>
+                        <p>
+                            System users can also be created using configurations. In <a href="http://localhost:4502/system/console/configMgr">configMgr</a>, search for an ACS configuration factory called Ensure Service User. This is a configuration factory that actually creates the system user and adds permissions to it. Here we have created a system user called aem-service-bot within aembots folder. Also we have added permisions to it.
+                        </p>
+                        <div class="image-container">
+                            <image class="center" style="width: 100%;" src="../images/user/ensureserviceuser.webp"/>
+                        </div>
+                        <br/>
+                        <div class="image-container">
+                            <image class="center" style="width: 100%;" src="../images/user/permissionsconfig.webp"/>
+                        </div>
+                        <br/>
+                        
+                    </li>
+                    <li>
+                        <p>
+                            <b>type=allow</b> says that the permissions are being granted (deny could be used) and <b>privileges=jcr:read,jcr:all,rep:write</b> defines for what the permissions are actually granted.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <b>jcr:read</b> grants reading permision.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <b>jcr:all</b> grants all the permissions like read, write, delete, modify etc.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <b>rep:write</b> grants the permission of write.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <b>path=/content/local-project</b> being the repository location where the granted permissions are exercised.
+                        </p>
+                    </li>
+                    <li>
+                        <p>There are some more commonly used permissions like <b>jcr:modifyProperties, jcr:addChildNodes, jcr:removeChildNodes, rep:readProperties, rep:readNodes and crx:replicate</b> with selfexplainatory names.</p>  
+                    </li>
+                    <li>
+                        <p>
+                            This created system user can be loacted in crx/de under home folder.
+                        </p>
+                        <div class="image-container">
+                            <image class="center smallscreenfull" style="width: 50%;" src="../images/user/configurationstore.webp"/>
+                        </div>
+                        
+                    </li>
+
                 </ul>
 
                 <h3 style="text-align: left; margin: 0px 0">Configuring System User</h3>
@@ -140,7 +192,7 @@
                 </p>
                 <div>
                     <pre style="width: 100%; height:100%">
-                        <code class="center code-flow" style="width: 80%; height:100%">
+                        <code class="center code-flow">
                             package com.infodales.aem.core.util;
 
                             import org.apache.sling.api.resource.LoginException;
@@ -165,7 +217,7 @@
                 </div>
                 <h3 style="text-align: left; margin: 0px 0">Conclusion</h3>
                 <p>
-                    Here we have sucessfully created a system user, provided permissions to it and have configured it. We have also consumed the system user. 
+                    Here we have sucessfully created a system user, provided permissions to it via explorer and ensure user configurations and have configured it. We have also consumed the system user via a parameter map that returns a resource resolver which can be used to access a recource in the provided path and perform permitted operations on it.
                 </p>
                 
                 <p>
