@@ -76,10 +76,10 @@
                 <p>
                     Let us understand the concept of templates in AEM by creating one.   
                 </p>
-                <ul>
+                <ul class="ff_ul">
                     <li>
                         <p>
-                            Inorder to create a template, we need to have a template type. Here we are using a page as a template type. To do so navigate to tools, general, templates and create one template. 
+                            In order to create a template, we need to have a template type. Here we are using a page as a template type. To do so navigate to tools, general, templates and create one template. 
                         </p>
                         <div class="image-container">
                             <image class="center" style="width: 100%;" src="../images/editabletemplates/templatesUIfolder.webp"/>
@@ -179,10 +179,95 @@
                     </li>
                     
                 </ul>
-                
+                <h3 style="text-align: left; margin: 0px 0">Custom Template Types</h3>
+                <p>We can even create our own custom template type for the purpose of creation of a template. Simply copy the predefined template type and configure it. Let us understand how do we actually configure it.</p>
+                <ul class="ff_ul">
+                    <li>
+                        <p>
+                            In inital jcr:content, we need to add the sling:resourceType as our page component of the project. Also we can predefine the template to which the template type will be configured. 
+                        </p>
+                        <div class="image-container">
+                            <image class="center smallscreenfull" style="width: 30%;" src="../images/editabletemplates/customtemplatetype.webp"/>
+                        </div>
+                        <br/>
+                        <div class="image-container">
+                            <image class="center" style="width: 100%;" src="../images/editabletemplates/initialjcrcontent.webp"/>
+                        </div>
+                    </li>
+                    <li>
+                        <p>
+                            Similarly to root and container of the inital, we need to add the sling:resourceType property that points to the container comnponent of the project.
+                        </p>
+                        <div class="image-container">
+                            <image class="center" style="width: 100%;" src="../images/editabletemplates/initialcontainer.webp"/>
+                        </div>
+                    </li>
+                    <li>
+                        <p>
+                            In jcr:content of the template type, we need to add the description as well as the title of the template type. 
+                        </p>
+                        <div class="image-container">
+                            <image class="center" style="width: 100%;" src="../images/editabletemplates/title.webp"/>
+                        </div>
+                    </li>
+                    <li>
+                        <p>
+                            In jcr:content of policies, we need to add the cq:policies that points to project level page policies and leaving the sling:resourceType pointing to core components policy mapping untouched.
+                        </p>
+                        <div class="image-container">
+                            <image class="center" style="width: 100%;" src="../images/editabletemplates/policiesjcr.webp"/>
+                        </div>
+                    </li>
+                    <li>
+                        <p>
+                            In structure jcr:content, root and container, we need to add sling:resourceType pointing to the same page component.
+                        </p>
+                        <div class="image-container">
+                            <image class="center" style="width: 100%;" src="../images/editabletemplates/structurejcrcontent.webp"/>
+                        </div>
+                        <br/>
+                        <div class="image-container">
+                            <image class="center" style="width: 100%;" src="../images/editabletemplates/structurejcrcontainer.webp"/>
+                        </div>
+                    </li>
+                    <li>
+                        <p>
+                            This ensures completion of creation of a custom template type for the p[urpose of creation of the template. When you navigate to tools then to templates and then to your project wherein you have specified the template type, you ca start to create a template with the custom template type now.
+                        </p>
+                        <div class="image-container">
+                            <image class="center" style="width: 100%;" src="../images/editabletemplates/customtemplateavailable.webp"/>
+                        </div>
+                    </li>
+                </ul>
+                <h3 style="text-align: left; margin: 0px 0">Template Content Policies and Page Policies</h3>
+                <p>
+                    Policies in templates as discussed earlier are indeed the configurations which describe the set of components allowed as well as design and style configured.
+                </p>
+                <p>
+                    <b>cq:policy</b>, in created templates is an important property that provides a reference to the content policy for paragraph system of the page along with the references to the actual components whereas the actual policy definations are stored under <b>/settings/wcm/policies/wcm/foundation/components</b>. Pages policies are the content policies for the main parsys container of the page.
+                </p>
+                <div class="image-container">
+                    <image class="center smallscreenfull" style="width: 30%;" src="../images/editabletemplates/contentpolicies.webp"/>
+                </div>
+                <h3 style="text-align: left; margin: 0px 0">Unavailibility of Templates while Creating a Page</h3>
+                <p>There comes a scenario that having created a template successfully, you may not be able to find one while crerating a page in project hierarchy. There could be two reasons, either it is in draft state or the template is not allowed in the hierarchy. If it is in draft state, you need to enable it as discussed above but what if we need to allow it in a hierarchy.</p>
+                <p>
+                    Suppose you need to create a page in we-retail site hierarchy with your custom template. Despite being enabled, this custom template is not available in the hierarchy. This is because the template is not allowed in the hierarchy. To allow it, select the page within which you need to allow the template and click on the properties. Here you can see the advance tab. In advance tab, you will find template settings, allowed templates, add the path of the template in the allowed paths and there you go. You have the template available for creatinf the page.
+                </p>
+                <div class="image-container">
+                    <image class="center" style="width: 100%;" src="../images/editabletemplates/weretailhierarchy.webp"/>
+                </div>
+                <br/>
+                <div class="image-container">
+                    <image class="center" style="width: 100%;" src="../images/editabletemplates/allowedtemplate.webp"/>
+                </div>
+                <br/>
+                <div class="image-container">
+                    <image class="center" style="width: 100%;" src="../images/editabletemplates/templateavailable.webp"/>
+                </div>
                 <h3 style="text-align: left; margin: 0px 0">Conclusion</h3>
                 <p>
-                    We have successfully created a template and a page out of it. We also have a clear idea of structure, inital content and layout as well as we have a clear idea of where exactly this is stored in the crx/de. 
+                    We have successfully created a template and a page out of it. We also have a clear idea of structure, inital content and layout as well as we have a clear idea of where exactly this is stored in the crx/de. We have also understood the creation and configuration of custom template types what content and page policies are how to troubleshood unavailibility of termplates in the hierarchy. 
                 </p>
                 <p>
                     I hope you enjoyed the learing and have found the blog informative. 

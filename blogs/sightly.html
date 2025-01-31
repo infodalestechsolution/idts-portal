@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -104,8 +105,23 @@
                     </li>
                 </ul>
                 
-                <h3 style="text-align: left;">Tags used in Slightly</h3>
+                <h3 style="text-align: left;">Commonly Used Tags used in Slightly</h3>
                 <ul class="ff_ul" >
+                    
+                    <li>
+                        <p>
+                            <b>data-sly-use</b> is used to include sling models in slightly.
+                        </p>
+                        <div>
+                            <pre style="width: 100%; height: 100%">
+                                <code class="center code-flow" style="width: 80%; height: 100%">
+        &lt;sly data-sly-use.model=&quot;com.infodales.aem.core.models.HelloWorldModel&quot;&gt;
+            ${model.message} 
+        &lt;/sly&gt;
+                                </code>
+                            </pre>
+                        </div>
+                    </li>
                     <li>
                         <p>
                             <b>data-sly-test</b> is a basic sly tag more over used like an if-else statement. It is used to test the condition and render the data accordingly.
@@ -114,14 +130,49 @@
                             <pre style="width: 100%; height:100%">
                                 <code class="center code-flow" style="width: 80%; height:100%">
                                     <!-- Escape the <sly> block to display it as code -->
-                                    &lt;sly data-sly-test=&quot;${condition}&quot;&gt;
-                                        &lt;p&gt;If condition is true, render this.&lt;/p&gt;
-                                    &lt;/sly&gt;
+        &lt;sly data-sly-test=&quot;${condition}&quot;&gt;
+            &lt;p&gt;If condition is true, render this.&lt;/p&gt;
+        &lt;/sly&gt;
                                 </code>
                             </pre>
                         </div>
                             
                         
+                    </li>
+                    <li>
+                        <p>This is how we can actually use datasly-test to render the condition. It displays the name of the author if currentPage.author is not null</p> 
+                        <div>
+                            <pre style="width: 100%; height:100%">
+                                <code class="center code-flow" style="width: 80%; height:100%">
+        &lt;sly data-sly-test.authorName=&quot;${currentPage.author}&quot;&gt;
+        &lt;p&gt;Author: ${authorName}&lt;/p&gt;
+        &lt;/sly&gt;
+        &lt;sly data-sly-test=&quot;${!currentPage.author}&quot;&gt;
+            &lt;p&gt;No author found&lt;/p&gt;
+        &lt;/sly&gt;
+                                </code>
+                            </pre>
+                        </div>
+                            
+                    </li>
+                    <li>
+                        <p>
+                            <b>data-sly-choose</b> Is again a form of if-else statement that chooses the data to be rendered conditionally. Here we are using it to display the page title.
+                        </p>
+                        <div>
+                            <pre style="width: 100%; height: 100%">
+                                <code class="center code-flow" style="width: 80%; height: 100%">
+        &lt;sly data-sly-choose&gt;
+        &lt;sly data-sly-test=&quot;${page.title}&quot;&gt;
+            &lt;h1&gt;${page.title}&lt;/h1&gt;
+        &lt;/sly&gt;
+        &lt;sly data-sly-test=&quot;${!page.title}&quot;&gt;
+            &lt;p&gt;No title available&lt;/p&gt;
+        &lt;/sly&gt;
+        &lt;/sly&gt;
+                                </code>
+                            </pre>
+                        </div>
                     </li>
                     <li>
                         <p>
@@ -133,11 +184,11 @@
                                     <code class="center code-flow" style="width: 80%; height: 100%">
                                         <!-- Escape the <sly> block -->
                                         <sly data-sly-test="${true}">
-                                            &lt;sly data-sly-unwrap&gt;
-                                                &lt;div&gt;
-                                                    &lt;p&gt;Unwrap this div&lt;/p&gt;
-                                                &lt;/div&gt;
-                                            &lt;/sly&gt;
+        &lt;sly data-sly-unwrap&gt;
+            &lt;div&gt;
+                &lt;p&gt;Unwrap this div&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/sly&gt;
                                         </sly>
                                     </code>
                                 </pre>
@@ -156,7 +207,7 @@
                             <pre style="width: 100%; height: 100%">
                                 <code class="center code-flow" style="width: 80%; height: 100%">
                                     <!-- Escape the <sly> block -->
-                                    &lt;sly data-sly-call=&quot;${'template.html'}&quot;&gt;&lt;/sly&gt;
+        &lt;sly data-sly-call=&quot;${'template.html'}&quot;&gt;&lt;/sly&gt;
                                 </code>
                             </pre>
                         </div>
@@ -169,9 +220,9 @@
                             <pre style="width: 100%; height: 100%">
                                 <code class="center code-flow" style="width: 80%; height: 100%">
                                     <!-- Escape the <sly> block -->
-                                    &lt;sly data-sly-set.hello=&quot;Hello World&quot;&gt;
-                                        ${hello}
-                                    &lt;/sly&gt;
+        &lt;sly data-sly-set.hello=&quot;Hello World&quot;&gt;
+            ${hello}
+        &lt;/sly&gt;
                                 </code>
                             </pre>
                             
@@ -185,7 +236,7 @@
                             <pre style="width: 100%; height: 100%">
                                 <code class="center code-flow" style="width: 80%; height: 100%">
                                     <!-- Escape the <sly> block -->
-                                    &lt;div data-sly-attribute.class=&quot;${'container-class'}&quot;&gt;&lt;/div&gt;
+        &lt;div data-sly-attribute.class=&quot;${'container-class'}&quot;&gt;&lt;/div&gt;
                                 </code>
                             </pre>
                         </div>    
@@ -198,7 +249,7 @@
                             <pre style="width: 100%; height: 100%">
                                 <code class="center code-flow" style="width: 80%; height: 100%">
                                     <!-- Escape the <sly> block -->
-                                    &lt;div data-sly-text=&quot;${'Hello World'}&quot;&gt;&lt;/div&gt;
+        &lt;div data-sly-text=&quot;${'Hello World'}&quot;&gt;&lt;/div&gt;
                                 </code>
                             </pre>
                         </div>    
@@ -211,7 +262,7 @@
                             <pre style="width: 100%; height: 100%">
                                 <code class="center code-flow" style="width: 80%; height: 100%">
                                     <!-- Escape the <sly> block -->
-                                    &lt;sly data-sly-include=&quot;${'header.html'}&quot;&gt;&lt;/sly&gt;
+        &lt;sly data-sly-include=&quot;${'header.html'}&quot;&gt;&lt;/sly&gt;
                                 </code>
                             </pre>
                         </div>    
@@ -224,19 +275,103 @@
                             <pre style="width: 100%; height: 100%">
                                 <code class="center code-flow" style="width: 80%; height: 100%">
                                     <!-- Escape the <sly> block -->
-                                    &lt;ul&gt;
-                                        &lt;sly data-sly-repeat=&quot;${items}&quot;&gt;
-                                            &lt;li&gt;${item}&lt;/li&gt;
-                                        &lt;/sly&gt;
-                                    &lt;/ul&gt;
+        &lt;ul&gt;
+            &lt;sly data-sly-repeat=&quot;${items}&quot;&gt;
+                &lt;li&gt;${item}&lt;/li&gt;
+            &lt;/sly&gt;
+        &lt;/ul&gt;
                                 </code>
                             </pre>
                         </div>    
                     </li>
+                    <li>
+                        <p>
+                            <b>data-sly-template</b> Is used to add a resuable template in the current file.
+                        </p>
+                        <div>
+                            <pre style="width: 100%; height: 100%">
+                                <code class="center code-flow" style="width: 80%; height: 100%">
+                                    <!-- Escape the <sly> block -->
+        &lt;sly data-sly-template.myTemplate&gt;
+        &lt;div class="testComponent"&gt;${componentData}&lt;/div&gt;
+        &lt;/sly&gt;
+        
+        &lt;sly data-sly-call=&quot;${testTemplate @componentData='Data'}&quot;&gt;&lt;/sly&gt;
+                                </code>
+                            </pre>
+                        </div>
+                    </li>
+                    <li>
+                        <p>
+                            <b>data-sly-resource</b> is used to include another component and path manipulations. Here we are including customtext component and naming it as customText. Also we are performing path manipulations that produces <b>path/before/this/path</b> and <b>path/after/this/path</b> respectively.
+                        </p>
+                        <pre style="width: 100%; height: 100%">
+                            <code class="center code-flow" style="width: 80%; height: 100%">
+                                <!-- Escape the <sly> block -->
+        &lt;div data-sly-resource=&quot;${'customText' @ resourceType='/apps/local-project/components/content/customtext'}&quot;&gt;&lt;/div&gt; 
+        &lt;section data-sly-resource=&quot;${'path/before' @ appendPath='this/path'}&quot;&gt;&lt;/section&gt;  
+        &lt;section data-sly-resource=&quot;${'path/after' @ prependPath='this/path'}&quot;&gt;&lt;/section&gt;                              
+                            </code>
+                        </pre>
+                        
+                    </li>
+                    
+                    
+                    <li>
+                        <p>
+                            <b>data-sly-skip</b> In order to skip all the unwanted code when false id returned this tag is used.
+                        </p>
+                        <div>
+                            <pre style="width: 100%; height: 100%">
+                                <code class="center code-flow" style="width: 80%; height: 100%">
+        &lt;sly data-sly-skip=&quot;${!page.title}&quot;&gt;
+            &lt;h1&gt;${page.title}&lt;/h1&gt;
+        &lt;/sly&gt;
+                                </code>
+                            </pre>
+                        </div>
+                    </li>
+                    <li>
+                        <p>
+                            <b>data-sly-append</b> Is used to append the content of an element or a variable.
+                        </p>
+                        <div>
+                            <pre style="width: 100%; height: 100%">
+                                <code class="center code-flow" style="width: 80%; height: 100%">
+        &lt;sly data-sly-append=&quot; ${page.description}&quot;&gt;&lt;/sly&gt;
+                                </code>
+                            </pre>
+                        </div>
+                    </li>
+                    <li>
+                        <p>
+                            <b>@context</b> is one of the freqently used slightly attribute. <b>@context = 'html'</b> escapes the specail characters ensuring the content is treated as html.<b>@context='url'</b> ensures that the url is encoded properly. <b>@context='text'</b> ensures that the content is treated as plain text and <b>@context='unsafe'</b> renders the content without escaping which is really dangerous as it prone to XSS(cross-site-scripting) attacks.
+                                
+                        </p>
+                        <div>
+                            <pre style="width: 100%; height: 100%">
+                                <code class="center code-flow" style="width: 80%; height: 100%">
+        &lt;div data-sly-use.script=&quot;testscript.js&quot; data-sly-context=&quot;${'unsafe'}&quot;&gt;
+            ${script.dynamicContent}
+        &lt;/div&gt;
+
+        &lt;div data-sly-use.text=&quot;markuptext&quot; data-sly-context=&quot;${'html'}&quot;&gt;
+            ${text.htmlContent}
+        &lt;/div&gt;
+
+        &lt;a href=&quot;${homepage.url @ context='url'}&quot;&gt;Home Page&lt;/a&gt;
+
+        &lt;div data-sly-use.text=&quot;plaintext&quot; @context=&quot;text&quot;&gt;
+            ${text.plainTextContent}
+        &lt;/div&gt;
+                                </code>
+                            </pre>
+                        </div>
+                    </li>
                     </ul>
                 
                 
-                <h2>Conclusion</h2>
+                <h3 style="text-align: left;">Conclusion</h3>
                 <p>
                     Here we come to the conclusion of the blog where we have understood how we can produce a frontent scripts using Slightly with some commonly used sly tags and their syntax.
                 </p>
