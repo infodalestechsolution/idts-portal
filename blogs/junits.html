@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Blogs | Unit Testing in AEM</title>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Unit testing in AEM is essential to ensure that your Sling models, services, and servlets work correctly before deployment. AEM supports unit testing using frameworks like JUnit 5, Mockito, and io.wcm.testing.mock.aem (AEM Mocks).">
+    <meta name="keywords"
+        content="infodales, AEM JUnit Testing, Unit Testing in AEM, AEM JUnit 5 Example, AEM Sling Model Unit Test, Mock AEM Context in JUnit, Testing AEM OSGi Services, AEM Servlet Unit Testing, AEM Testing Framework, JUnit 5 AEM Best Practices, Mockito in AEM Unit Tests, AEM Mock Testing with JUnit, io.wcm AEM Mock Examples, Writing Unit Tests for AEM Components, Test-Driven Development (TDD) in AEM, AEM Integration Testing vs Unit Testing, AEM JUnit Mock Resource Resolver, AEM Service Testing with Mockito, How to test Sling Models in AEM, AEM JSON Resource Provider in Tests, Best practices for JUnit in AEM, AEM Component Testing, Sling Resource Adaptation in Unit Tests, AEM CQ Component Testing with JUnit, AEM Repository Content Mocking, AEM Page Rendering Tests, AEM HTL Model Unit Tests, Mockito for AEM Service Implementations, AEM Model Adaptation Testing">
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Blogs | Unit Testing in AEM" />
+    <meta property="og:description"
+        content="Unit testing in AEM is essential to ensure that your Sling models, services, and servlets work correctly before deployment. AEM supports unit testing using frameworks like JUnit 5, Mockito, and io.wcm.testing.mock.aem (AEM Mocks)." />
+    <meta property="og:url" content="https://infodales.com/blogs/junits.html" />
+    <meta property="og:site_name" content="Blogs | Unit Testing in AEM" />
+    <link rel="stylesheet" href="/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+
+    <!-- Header -->
+    <section class="sub-header"
+        style="background-image: linear-gradient(rgba(4, 9, 30, 0.5), rgba(4, 9, 30, 0.5)), url('/images/Cover\ Sites.jpg');">
+        <nav>
+            <a href="/index.html"><img src="/images/infodales/Info Dales Main Logo 03.webp" alt="logo"></a>
+            <div class="nav-links" id="navLinks">
+                <i class="fa fa-times" onclick="hideMenu()"></i>
+                <ul>
+                    <li><a href="/index.html">HOME</a></li>
+                    <li><a href="/about.html">ABOUT</a></li>
+                    <li><a href="/services.html">SERVICES</a></li>
+                    <li><a href="/blogs.html">BLOGS</a></li>
+                    <li><a href="/career.html">CAREER</a></li>
+                    <li><a href="/contact.html">CONTACT</a></li>
+                    <ul>
+            </div>
+            <i class="fa fa-bars" onclick="showMenu()"></i>
+        </nav>
+
+    </section>
+    <!--  Blog Page Content --->
+    <section class="blog-content">
+        <div>
+            <div class="blog spa-blog">
+
+                <p style="color: rgb(133, 133, 133); padding: 0 0 10px 0;"><a href="/blogs.html"
+                        style="text-decoration: none; cursor: pointer;">Blogs</a> <span> > </span>Unit Testing in AEM
+                </p>
+
+                <p class="sitesTag" style="margin-top: 7px; margin-bottom: 7px; font-size: 13px; border-radius: 20px; 
+				width: fit-content; padding: 3px 15px;">AEM Sites</p>
+                <h1 class="title">Unit Testing in AEM</h1>
+                <span class="author">Infodales Tech Solutions</span> |
+                <span class="date">February 10, 2023</span>
+
+                <div class="share-icons">
+                    <a href="https://www.linkedin.com/company/infodales-tech-solution/" target="_blank"
+                        class="linkedin-icon"><i class="fa fa-linkedin"></i></a>
+                    <a href="mailto:info@infodales.com" target="_blank" class="email-icon"><i
+                            class="fa fa-envelope"></i></a>
+                </div>
+
+                <hr style="margin: 20px 0 10px 0;">
+                <div class="blog-items">
+
+
+                    <p>Hi, hope you are doing well. Welcome to another blog.</p>
+
+                    <h3 style="text-align: left; margin: 0px 0">What is Unit Testing</h3>
+                    <p>
+                        Unit testing in Java is the process of testing individual methods or classes in isolation to
+                        verify their correctness. It ensures that each unit of code works as expected, improving
+                        reliability and supporting Test-Driven Development (TDD). Frameworks like JUnit and TestNG are
+                        commonly used for writing and automating unit tests using assertions to validate expected
+                        outputs.For unit testing in java a framework is used called <span
+                            style="background-color: yellow; padding: 3px;">Junit 5</span>.
+                    </p>
+                    <p>Lets have a look on how we can perform unit testing in AEM for that we will take the example of
+                        sling model and perform unit testing on it. We are using Junit5 framework specifically.</p>
+                    <p>I have a component in which i have <span style="color: red;">title</span><span
+                            style="color: red;">, description</span> and a
+                        <span style="color: red;">multifield</span> naming tags in which we can add
+                        multiple tags and below is the sling model for the component
+                    </p>
+                    <pre style="width: 100%; height:100%;">
+                        <code class="center code-flow">
+                                    package com.infodales.core.models;
+                                    
+                                    import com.infodales.core.pojo.SamplePojo;
+                                    import org.apache.sling.api.resource.Resource;
+                                    import org.apache.sling.models.annotations.DefaultInjectionStrategy;
+                                    import org.apache.sling.models.annotations.Model;
+                                    import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
+                                    
+                                    import javax.inject.Inject;
+                                    import java.util.List;
+                                    
+                                    @Model(adaptables = Resource.class, 
+                                    defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
+                                    public class SampleModel {
+                                    
+                                    @ValueMapValue
+                                    private String title;
+                                    
+                                    @Inject
+                                    private List&ltSamplePojo&gt castInfo;
+                                    
+                                        public String getTitle() {
+                                        return title;
+                                        }
+                                    
+                                        public List&ltSamplePojo&gt getCastInfo() {
+                                            return castInfo;
+                                            }
+                                    }
+
+                        </code>
+                    </pre>
+                    <p>And below is the pojo class "SamplePojo"</p>
+                    <pre style="width: 100%; height:100%;">
+                        <code class="center code-flow">
+                                    package com.infodales.core.pojo;
+                                    
+                                    import org.apache.sling.api.resource.Resource;
+                                    import org.apache.sling.models.annotations.Model;
+                                    import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
+                                    
+                                    
+                                    @Model(adaptables = Resource.class)
+                                    public class SamplePojo {
+                                    
+                                    @ValueMapValue
+                                    private String cardTitle;
+                                    
+                                    @ValueMapValue
+                                    private String cardImage;
+                                    
+                                    public String getCardTitle() {
+                                    return cardTitle;
+                                    }
+                                    
+                                    public String getCardImage() {
+                                    return cardImage;
+                                    }
+                        }
+                        </code>
+                    </pre>
+                    <p>In the above code we need to test the getter's and setter's of the fields, So to write the Junits
+                        for the above code we will create a class called SampleModelTest, In that
+                        we will be using "AemContextExtension" it is a JUnit 5 extension provided by the AEM Mocks
+                        library (io.wcm.testing.mock.aem.junit5). It is used to simplify and enhance unit testing of
+                        Adobe Experience Manager (AEM) components, services, and Sling models by automatically managing
+                        an instance of AemContext.</p>
+                    <p>Also we need to generate the json of the component that we have created as i have create the card
+                        component which has one textfield for title and one multifield inside that multifield we have
+                        cardTitle and cardImage, below is the json for that, this json needs to kept in the code under
+                        the resources folder under test package</p>
+                    <div class="image-container">
+                        <image class="center smallscreenfull" style="width: 70%;" src="../images/Junits/json.webp" />
+                    </div>
+                    <P>Below is the final Test class for our class.</P>
+                    <pre style="width: 100%; height:100%;">
+                        <code class="center code-flow">
+                                package com.infodales.core.models;
+                                
+                                import com.infodales.core.pojo.SamplePojo;
+                                import com.infodales.core.testcontext.AppAemContext;
+                                import io.wcm.testing.mock.aem.junit5.AemContext;
+                                import io.wcm.testing.mock.aem.junit5.AemContextExtension;
+                                import org.apache.sling.api.resource.Resource;
+                                import org.junit.jupiter.api.BeforeEach;
+                                import org.junit.jupiter.api.Test;
+                                import org.junit.jupiter.api.extension.ExtendWith;
+                                import org.mockito.junit.jupiter.MockitoExtension;
+                                
+                                import java.util.List;
+                                
+                                import static junit.framework.Assert.assertEquals;
+                                
+                                @ExtendWith(AemContextExtension.class)
+                                public class SampleModelTest {
+                                
+                                private final AemContext aemContext = AppAemContext.newAemContext();
+                                
+                                private SampleModel sampleModel;
+                                
+                                
+                                @BeforeEach
+                                void setUp() {
+                                aemContext.addModelsForClasses(SampleModel.class);
+                                aemContext.load()
+                                .json("/content/techcombank/web/vn/en/samplejson.json", "/content");
+                                aemContext.currentResource("/content/sample");
+                                Resource resource = aemContext.request().getResource();
+                                sampleModel = resource.adaptTo(SampleModel.class);
+                                }
+                                
+                                @Test
+                                void testTitle() {
+                                String expectedTitle = "Companies";
+                                assertEquals(expectedTitle, sampleModel.getTitle());
+                                }
+                                
+                                @Test
+                                void testCastInfo() {
+                                List<SamplePojo> castInfo = sampleModel.getCardInfo();
+                                    SamplePojo samplePojo = castInfo.get(0);
+                                
+                                    String ExpectedCardTitle = "Infodales";
+                                    assertEquals(ExpectedCardTitle, samplePojo.getCardTitle());
+                                
+                                    String ExpectedCardImage = "/content/dam/Infodales/actress/Infodales.jpg";
+                                    assertEquals(ExpectedCardImage, samplePojo.getCardImage());
+                                    }
+                                
+                                
+                                }
+
+                        </code>
+                    </pre>
+                    <ul class="ff_ul">
+                        <li>
+                            <p>In the above code first of all we need to annotate our class with
+                                @ExtendWith(AemContextExtension.class) it Integrates AEM Mocks into JUnit 5.</p>
+                        </li>
+                        <li>
+                            <p>Next is we have initialize AEM Context and SampleModel.AppAemContext.newAemContext() is a
+                                custom method (from AppAemContext) that creates an AemContext instance.</p>
+                        </li>
+                        <li>
+                            <p>Next we added the setup method it runs before each test method, inisde that method
+                            <ol class="ff_ul">
+                                <li>
+                                    <p>First we have loaded test data from a JSON file (samplejson.json), simulating
+                                        content in AEM.</p>
+                                </li>
+                                <li>
+                                    <p>We have registered SampleModel as a Sling model using addModelsForClasses().</p>
+                                </li>
+                                <li>
+                                    <p>Next is we have set the current resource to /content/sample, meaning sampleModel
+                                        adapts from this resource.</p>
+                                </li>
+                                <li>
+                                    <p>The method adaptTo(SampleModel.class) Converts the resource into a SampleModel
+                                        instance.</p>
+                                </li>
+                                <li>
+                                    <p>Now the json has adapted to our sling model.</p>
+                                </li>
+                            </ol>
+                            </p>
+                        </li>
+                        <li>
+                            <p>@Test it is used to mark a method as test method in testTitle() method we are checking
+                                weather our expected value is similar to that of the value form the json for that we use
+                                assertEquals method</p>
+                            <div class="image-container">
+                                <image class="center smallscreenfull" style="width: 100%;"
+                                    src="../images/Junits/TestTitleMethod.webp" />
+                            </div>
+                        </li>
+                        <li>
+                            <p>Similarly in the testCastInfo() method we are testing card title and cardImage values
+                                weather they are similar to that of present in the json as in json we only added one
+                                value
+                                so we will test that only.</p>
+                            <div class="image-container">
+                                <image class="center smallscreenfull" style="width: 100%;"
+                                    src="../images/Junits/cardInfoTest.webp" />
+                            </div>
+                        </li>
+                    </ul>
+                    <p>Now we will run the junit class by clicking on run button as shown in the below image</p>
+                    <div class="image-container">
+                        <image class="center smallscreenfull" style="width: 100%;"
+                            src="../images/Junits/testclass.webp" />
+                    </div>
+                    <p>As you can see the above test cases have passed.</p>
+                    <div class="image-container">
+                        <image class="center smallscreenfull" style="width: 100%;"
+                            src="../images/Junits/passedtestcases.webp" />
+                    </div>
+                    <p>
+                        Thanks for reading 😄
+                    </p>
+                </div>
+                <hr style="margin-top: 30px;" />
+                <div class="author-details">
+                    <div id="like-icon" class="like-icon">
+                        <span id="like-count" class="like-count">0</span>
+                        <span id="like-btn" class="like-btn">
+                            <img src="/images/clap.webp" alt="Like">
+                        </span>
+                    </div>
+                    <div>
+                        <span class="author-name">Owais Pathan | </span>
+                        <span class="author-designation">AEM Developer</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="social-icons">
+
+        <a href="https://www.linkedin.com/company/infodales-tech-solution/" class="linkedin"><img
+                src="/images/linkedin.webp" alt="LinkedIn"></a>
+        <a href="mailto:info@infodales.com" class="email"><img src="/images/email.webp" alt="Email"></a>
+    </div>
+
+    <!--  Footer --->
+    <div class="copyright-area">
+        <div class="footer">
+            <div class="row" style="margin-top: 0px;">
+                <div class="col-xl-4 col-lg-4 text-center text-lg-left">
+                    <div class="copyright-text">
+                        <p>Copyright &copy; 2024, All Right Reserved <a href="/index.html">Infodales Tech
+                                Solution</a></p>
+                    </div>
+                </div>
+
+                <div class="col-xl-4 col-lg-4 d-none d-lg-block text-right">
+                    <div class="footer-menu" style="margin-top:10px;">
+                        <ul>
+                            <li><a href="/index.html">Home</a></li>
+                            <li><a href="/about.html">About</a></li>
+                            <li><a href="/contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--- Java Script-->
+    <script>
+        var navLinks = document.getElementById("navLinks");
+
+        function showMenu() {
+            navLinks.style.right = "0";
+        }
+
+        function hideMenu() {
+            navLinks.style.right = "-200px";
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const likeBtn = document.getElementById('like-btn');
+            const likeCount = document.getElementById('like-count');
+
+            let count = parseInt(localStorage.getItem('clapCount')) || 0;
+            likeCount.textContent = count;
+
+            likeBtn.addEventListener('click', () => {
+                count++;
+                likeCount.textContent = count;
+                localStorage.setItem('clapCount', count);
+
+                const likeAnimation = document.createElement('div');
+                likeAnimation.classList.add('like-animation');
+                likeAnimation.innerHTML = '🎉';
+                document.getElementById('like-icon').appendChild(likeAnimation);
+                likeAnimation.addEventListener('animationend', () => {
+                    likeAnimation.remove();
+                });
+            });
+        });
+
+
+
+    </script>
+
+</body>
+
+</html>
