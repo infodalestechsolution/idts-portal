@@ -2,177 +2,222 @@
 <html lang="en">
 
 <head>
-	<title>Blogs | Tabs and Multifield in AEM</title>
-	<link rel="icon" type="image/x-icon" href="/images/favicon.ico">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content="We will be learning how tabs are created in a component and how do we handle multifield. Also we will be focusing upon some more annotations of sling model. Here we have taken a small example of authoring product details like product name, description and product quantity. Here is the simple outlook of the dialog's xml which we are going to create in this blog.">
-  	<meta name="keywords" content="infodales, tabs and multifield, items and columns, annotations, sling model, adabptables">
-	<meta property="og:locale" content="en_US" />
+    <title>Blogs | Tabs and Multifield in AEM</title>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="We will be learning how tabs are created in a component and how do we handle multifield. Also we will be focusing upon some more annotations of sling model. Here we have taken a small example of authoring product details like product name, description and product quantity. Here is the simple outlook of the dialog's xml which we are going to create in this blog.">
+    <meta name="keywords"
+        content="infodales, tabs and multifield, items and columns, annotations, sling model, adabptables">
+    <meta property="og:locale" content="en_US" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Blogs | Tabs and Multifield in AEM" />
-    <meta property="og:description" content="                    We have created a component called tabsandmultifielddemo where you can find the jcr:title and group as provided." />
+    <meta property="og:description"
+        content="                    We have created a component called tabsandmultifielddemo where you can find the jcr:title and group as provided." />
     <meta property="og:url" content="https://infodales.com/spa-getting-started.html" />
     <meta property="og:site_name" content="Blogs | Tabs and Multifield in AEM" />
-	<link rel="stylesheet" href="/style.css">
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;600;700&display=swap"
-		rel="stylesheet">
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
 </head>
 
 <body>
 
-	<!-- Header -->
-	<section class="sub-header"
-		style="background-image: linear-gradient(rgba(4, 9, 30, 0.5), rgba(4, 9, 30, 0.5)), url('/images/Cover\ Sites.jpg');">
-		<nav>
-			<a href="/index.html"><img src="/images/infodales/Info Dales Main Logo 03.webp" alt="logo"></a>
-			<div class="nav-links" id="navLinks">
-				<i class="fa fa-times" onclick="hideMenu()"></i>
-				<ul>
-					<li><a href="/index.html">HOME</a></li>
-					<li><a href="/about.html">ABOUT</a></li>
-					<li><a href="/services.html">SERVICES</a></li>
-					<li><a href="/blogs.html">BLOGS</a></li>
-					<li><a href="/career.html">CAREER</a></li>
-					<li><a href="/contact.html">CONTACT</a></li>
-					<ul>
-			</div>
-			<i class="fa fa-bars" onclick="showMenu()"></i>
-		</nav>
-		
-	</section>
-	<!--  Blog Page Content --->
-	<section class="blog-content">
-		<div>
-			<div class="blog spa-blog">
-				
-				<p style="color: rgb(133, 133, 133); padding: 0 0 10px 0;"><a href="/blogs.html" style="text-decoration: none; cursor: pointer;">Blogs</a> <span> > </span>Tabs and Multifield in AEM</p>
+    <!-- Header -->
+    <section class="sub-header"
+        style="background-image: linear-gradient(rgba(4, 9, 30, 0.5), rgba(4, 9, 30, 0.5)), url('/images/Cover\ Sites.jpg');">
+        <nav>
+            <a href="/index.html"><img src="/images/infodales/Info Dales Main Logo 03.webp" alt="logo"></a>
+            <div class="nav-links" id="navLinks">
+                <i class="fa fa-times" onclick="hideMenu()"></i>
+                <ul>
+                    <li><a href="/index.html">HOME</a></li>
+                    <li><a href="/about.html">ABOUT</a></li>
+                    <li><a href="/services.html">SERVICES</a></li>
+                    <li><a href="/blogs.html">BLOGS</a></li>
+                    <li><a href="/career.html">CAREER</a></li>
+                    <li><a href="/contact.html">CONTACT</a></li>
+                    <ul>
+            </div>
+            <i class="fa fa-bars" onclick="showMenu()"></i>
+        </nav>
 
-				<p class="sitesTag" style="margin-top: 7px; margin-bottom: 7px; font-size: 13px; border-radius: 20px; 
+    </section>
+    <!--  Blog Page Content --->
+    <section class="blog-content">
+        <div>
+            <div class="blog spa-blog">
+
+                <p style="color: rgb(133, 133, 133); padding: 0 0 10px 0;"><a href="/blogs.html"
+                        style="text-decoration: none; cursor: pointer;">Blogs</a> <span> > </span>Tabs and Multifield in
+                    AEM</p>
+
+                <p class="sitesTag" style="margin-top: 7px; margin-bottom: 7px; font-size: 13px; border-radius: 20px; 
 				width: fit-content; padding: 3px 15px;">AEM Sites</p>
-				<h1 class="title">Tabs and Multifield in AEM</h1>
-      				<span class="author">Infodales Tech Solutions</span> |
-      				<span class="date">January 18, 2023</span>
-    			
-					<div class="share-icons">
-					<a href="https://www.linkedin.com/company/infodales-tech-solution/" target="_blank" class="linkedin-icon"><i class="fa fa-linkedin"></i></a>
-                    <a href="mailto:info@infodales.com" target="_blank" class="email-icon"><i class="fa fa-envelope"></i></a>
-					</div>
+                <h1 class="title">Tabs and Multifield in AEM</h1>
+                <span class="author">Infodales Tech Solutions</span> |
+                <span class="date">January 18, 2023</span>
 
-				<hr style="margin: 20px 0 10px 0;">
+                <div class="share-icons">
+                    <a href="https://www.linkedin.com/company/infodales-tech-solution/" target="_blank"
+                        class="linkedin-icon"><i class="fa fa-linkedin"></i></a>
+                    <a href="mailto:info@infodales.com" target="_blank" class="email-icon"><i
+                            class="fa fa-envelope"></i></a>
+                </div>
+
+                <hr style="margin: 20px 0 10px 0;">
                 <div class="blog-items">
-                <p>Hi, happy to find you here. Welcome to another blog</p>
-                <h3 style="text-align: left;">Tabs and Multifield in AEM</h3>
-                <p>
-                    We will be learning how tabs are created in a component and how do we handle multifield. Also we will be focusing upon some more annotations of sling model. Here we have taken a small example of authoring product details like product name, description and product quantity. Here is the simple outlook of the dialog's xml which we are going to create in this blog.
-                    We have created a component called tabsandmultifielddemo where you can find the jcr:title and group as provided.
-                </p>
-                <div class="image-container">
-                    <image class="center" style="width: 75%;" src="../images/tabsandmultifield/xmlstructure.webp" />
-                </div>
-                <br>
-                <div class="image-container">
-                    <image class="center" style="width: 100%;" src="../images/tabsandmultifield/componentlayout.webp"/>
-                </div>
-                <h3 style="text-align: left;">Tabs</h3>
+                    <p>Hi, happy to find you here. Welcome to another blog</p>
+                    <h3 style="text-align: left;">Tabs and Multifield in AEM</h3>
+                    <p>
+                        We will be learning how tabs are created in a component and how do we handle multifield. Also we
+                        will be focusing upon some more annotations of sling model. Here we have taken a small example
+                        of authoring product details like product name, description and product quantity. Here is the
+                        simple outlook of the dialog's xml which we are going to create in this blog.
+                        We have created a component called tabsandmultifielddemo where you can find the jcr:title and
+                        group as provided.
+                    </p>
+                    <div class="image-container">
+                        <image class="center" style="width: 75%;" src="../images/tabsandmultifield/xmlstructure.webp" />
+                    </div>
+                    <br>
+                    <div class="image-container">
+                        <image class="center" style="width: 100%;"
+                            src="../images/tabsandmultifield/componentlayout.webp" />
+                    </div>
+                    <h3 style="text-align: left;">Tabs</h3>
 
-                <p>
-                    In order to create tabs, you need to follow the following steps-    
-                </p>
-                <ul class="ff_ul">
-                    <li>
-                        <p>In items, create a node called tabs with sling:resourceType = granite/ui/components/coral/foundation/tabs</p>
-                    </li>
-                    <li>
-                        <p>Then, create items and within items will reside your tabs, here tabone and tabtwo. the sling:resourceType for both will be same as provided, the jcr:title will differ. It will be Tab One and Tab Two respectively.</p>
-                        <div>
-                            <image class="center" style="width: 100%;" src="../images/tabsandmultifield/generictabproperties.webp" />
-                        </div>
-                    </li>
-                    <li>
-                        <p>Now here you need to again add items within it columns within it again items and then columns and then in these items we can add our fields. This is because items define a container that can hold different components or fields. This allows you to structure the dialog in a hierarchical way, ensuring it’s organized and easier to manage.
-                        columns are used within items to organize fields in a specific layout (like multiple columns side by side), which is particularly useful when you want to present multiple fields on a single tab in an organized and visually appealing manner. Similarly, you need to create the same structure for tabtwo.</p>
-                        <div class="image-container">
-                            <image class="center" style="width: 50%;" src="../images/tabsandmultifield/itemscolumnsitemscolumns.webp"/>
-                        </div>
-                    </li>
-                    <li>
-                        <p>
-                            For tabone, in this the last items container node hence created, create 3 fields called productName, productPrice and productDescrition with the provided propertied.
-                        </p>
-                        <div class="image-container">
-                            <image class="center" style="width: 100%;" src="../images/tabsandmultifield/productName.webp" />
-                        </div>
-                        <br>
-                        <div class="image-container">
-                            <image class="center" style="width: 100%;" src="../images/tabsandmultifield/productDescription.webp"/>
-                        </div>
-                        <br>
-                        <div class="image-container">
-                            <image class="center" style="width: 100%;" src="../images/tabsandmultifield/productPrice.webp"/>
-                        </div>
-                        
-                    </li>
+                    <p>
+                        In order to create tabs, you need to follow the following steps-
+                    </p>
+                    <ul class="ff_ul">
+                        <li>
+                            <p>In items, create a node called tabs with sling:resourceType =
+                                granite/ui/components/coral/foundation/tabs</p>
+                        </li>
+                        <li>
+                            <p>Then, create items and within items will reside your tabs, here tabone and tabtwo. the
+                                sling:resourceType for both will be same as provided, the jcr:title will differ. It will
+                                be Tab One and Tab Two respectively.</p>
+                            <div>
+                                <image class="center" style="width: 100%;"
+                                    src="../images/tabsandmultifield/generictabproperties.webp" />
+                            </div>
+                        </li>
+                        <li>
+                            <p>Now here you need to again add items within it columns within it again items and then
+                                columns and then in these items we can add our fields. This is because items define a
+                                container that can hold different components or fields. This allows you to structure the
+                                dialog in a hierarchical way, ensuring it’s organized and easier to manage.
+                                columns are used within items to organize fields in a specific layout (like multiple
+                                columns side by side), which is particularly useful when you want to present multiple
+                                fields on a single tab in an organized and visually appealing manner. Similarly, you
+                                need to create the same structure for tabtwo.</p>
+                            <div class="image-container">
+                                <image class="center" style="width: 50%;"
+                                    src="../images/tabsandmultifield/itemscolumnsitemscolumns.webp" />
+                            </div>
+                        </li>
+                        <li>
+                            <p>
+                                For tabone, in this the last items container node hence created, create 3 fields called
+                                productName, productPrice and productDescrition with the provided propertied.
+                            </p>
+                            <div class="image-container">
+                                <image class="center" style="width: 100%;"
+                                    src="../images/tabsandmultifield/productName.webp" />
+                            </div>
+                            <br>
+                            <div class="image-container">
+                                <image class="center" style="width: 100%;"
+                                    src="../images/tabsandmultifield/productDescription.webp" />
+                            </div>
+                            <br>
+                            <div class="image-container">
+                                <image class="center" style="width: 100%;"
+                                    src="../images/tabsandmultifield/productPrice.webp" />
+                            </div>
 
-                </ul>
-                <h3 style="text-align: left;">Multifield</h3>
-                <p>Since there could be a list of products with provided set of information and creating a component for each product scpecification is a bad idea, so aem provides a facility of creating a multifield for the same same.</p>
-                <p>Multifields allow authors to input a dynamic, flexible number of values in a single field. This is ideal for situations where the number of items is not fixed or known in advance. To create the multifield, follow the following steps.</p>
-                <ul class="ff_ul">
-                    <li>
-                        <p>Create a node called multifield with sling:resourceType = granite/ui/components/coral/foundation/form/multifield. Within multifield, create a node called field. The names must be same, the property name of field is important. Here we have named it as products.</p>
+                        </li>
 
-                        <div>
-                            <image class="center" style="width: 50%;" src="../images/tabsandmultifield/multifield.webp"/>
-                        </div>
-                        
-                    </li>
-                    <li>
-                        <p>Here you can find the properties to be added in multifield and field nodes.</p>
-                        <div class="image-container">
-                            <image class="center" style="width: 100%;" src="../images/tabsandmultifield/multifieldproperties.webp"/>
-                        </div>
-                        <br>
-                        <div class="image-container">
-                            <image class="center" style="width: 100%;" src="../images/tabsandmultifield/fieldproperties.webp"/>
-                        </div>
-                    </li>
-                    <li>
-                        <p>Now create the productListNames, productListDescription and productListPrice as created for tabone. Ensure tehre are no duplicate names for any two widgets.</p>
-                        <div>
-                            <image class="center" style="width: 100%;" src="../images/tabsandmultifield/productListName.webp"/>
-                        </div>
-                        <br>
-                        <div class="image-container">
-                            <image class="center" style="width: 100%;" src="../images/tabsandmultifield/productListDescription.webp"/>
-                        </div>
-                        <br>
-                        <div class="image-container">
-                            <image class="center" style="width: 100%;" src="../images/tabsandmultifield/productListPrice.webp"/>
-                        </div>
-                        
-                    </li>
-                    <li>
-                        <p>After creating the component, drag and drop it on a page, here we have added it on Test page. The dialog box of the component hence created will look like this.</p>
-                        <div class="image-container">
-                            <image class="center" style="width: 75%;" src="../images/tabsandmultifield/authimageOne.webp"/>
-                        </div>
-                        <br>
-                        <div class="image-container">
-                            <image class="center" style="width:75%" src="../images/tabsandmultifield/authimageTwo.webp"/>
-                        </div>
-                    </li>
+                    </ul>
+                    <h3 style="text-align: left;">Multifield</h3>
+                    <p>Since there could be a list of products with provided set of information and creating a component
+                        for each product scpecification is a bad idea, so aem provides a facility of creating a
+                        multifield for the same same.</p>
+                    <p>Multifields allow authors to input a dynamic, flexible number of values in a single field. This
+                        is ideal for situations where the number of items is not fixed or known in advance. To create
+                        the multifield, follow the following steps.</p>
+                    <ul class="ff_ul">
+                        <li>
+                            <p>Create a node called multifield with sling:resourceType =
+                                granite/ui/components/coral/foundation/form/multifield. Within multifield, create a node
+                                called field. The names must be same, the property name of field is important. Here we
+                                have named it as products.</p>
 
-                </ul>
-                
-                <h3 style="text-align: left;">Sling Model</h3>
-                <p>Having authored values, we need to retrieve the values from backend. For this we need to create the sling model</p>
-                <div>
-                    <pre class="pre-large-snippet">
-                        <code class="code-flow code-large-snippet">
+                            <div>
+                                <image class="center" style="width: 50%;"
+                                    src="../images/tabsandmultifield/multifield.webp" />
+                            </div>
+
+                        </li>
+                        <li>
+                            <p>Here you can find the properties to be added in multifield and field nodes.</p>
+                            <div class="image-container">
+                                <image class="center" style="width: 100%;"
+                                    src="../images/tabsandmultifield/multifieldproperties.webp" />
+                            </div>
+                            <br>
+                            <div class="image-container">
+                                <image class="center" style="width: 100%;"
+                                    src="../images/tabsandmultifield/fieldproperties.webp" />
+                            </div>
+                        </li>
+                        <li>
+                            <p>Now create the productListNames, productListDescription and productListPrice as created
+                                for tabone. Ensure tehre are no duplicate names for any two widgets.</p>
+                            <div>
+                                <image class="center" style="width: 100%;"
+                                    src="../images/tabsandmultifield/productListName.webp" />
+                            </div>
+                            <br>
+                            <div class="image-container">
+                                <image class="center" style="width: 100%;"
+                                    src="../images/tabsandmultifield/productListDescription.webp" />
+                            </div>
+                            <br>
+                            <div class="image-container">
+                                <image class="center" style="width: 100%;"
+                                    src="../images/tabsandmultifield/productListPrice.webp" />
+                            </div>
+
+                        </li>
+                        <li>
+                            <p>After creating the component, drag and drop it on a page, here we have added it on Test
+                                page. The dialog box of the component hence created will look like this.</p>
+                            <div class="image-container">
+                                <image class="center" style="width: 75%;"
+                                    src="../images/tabsandmultifield/authimageOne.webp" />
+                            </div>
+                            <br>
+                            <div class="image-container">
+                                <image class="center" style="width:75%"
+                                    src="../images/tabsandmultifield/authimageTwo.webp" />
+                            </div>
+                        </li>
+
+                    </ul>
+
+                    <h3 style="text-align: left;">Sling Model</h3>
+                    <p>Having authored values, we need to retrieve the values from backend. For this we need to create
+                        the sling model</p>
+                    <div>
+                        <pre style="width: 100%; height:100%">
+                        <code class="center code-flow">
                             package com.local.core.models;
     
                             import com.adobe.xmp.schema.service.StandardRelaxNGProvider;
@@ -260,37 +305,41 @@
     
                         </code>
                     </pre>
-                </div>
-                <ul class="ff_ul">
-                    <li>
-                        <p>Here we have added SlingHttpServletRequest as adaptables, this is to recieve those objects which cannot be recieved directly from Resource.</p>
-                    </li>
-                    <li>
-                        <p>@Inject is used to map the values for tabs and multifield exclusively.</p>
-                    </li>
-                    <li>
-                        <p>@Via is here used to map the field through resource.</p>
-                    </li>
-                    <li>
-                        <p>
-                            Here we have not added defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL, rather have added annotations @Required and @Optional here.
-                        </p>
-                    </li>
-                    <li>
-                        <p>
-                            @Named is used to map the field name to a substitue name referred in the backend.
-                        </p>
-                    </li>
-                    <li>
-                        To add the multifield, we need to create a pojo class annoted with model, having field names same as that of the name property and applied @Inject to it.
-                    </li>
-                    <li>
-                        Here the list of pojo needs to be named with that of the field name and here in our case it is products.
-                    </li>
-                    
+                    </div>
+                    <ul class="ff_ul">
+                        <li>
+                            <p>Here we have added SlingHttpServletRequest as adaptables, this is to recieve those
+                                objects which cannot be recieved directly from Resource.</p>
+                        </li>
+                        <li>
+                            <p>@Inject is used to map the values for tabs and multifield exclusively.</p>
+                        </li>
+                        <li>
+                            <p>@Via is here used to map the field through resource.</p>
+                        </li>
+                        <li>
+                            <p>
+                                Here we have not added defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL,
+                                rather have added annotations @Required and @Optional here.
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                @Named is used to map the field name to a substitue name referred in the backend.
+                            </p>
+                        </li>
+                        <li>
+                            To add the multifield, we need to create a pojo class annoted with model, having field names
+                            same as that of the name property and applied @Inject to it.
+                        </li>
+                        <li>
+                            Here the list of pojo needs to be named with that of the field name and here in our case it
+                            is products.
+                        </li>
+
                         <div>
-                            <pre class="pre-large-snippet">
-                                <code class="code-flow code-large-snippet">
+                            <pre style="width: 100%; height:100%">
+                                <code class="center code-flow">
                                     package com.local.core.pojo;
 
                                     import org.apache.sling.api.resource.Resource;
@@ -324,117 +373,123 @@
                                 </code>
                             </pre>
                         </div>
-                        
-                    <li>
-                        <p>Here info string provides the collective values hence retrieved and processed from a method annoted with @PostConstruct, which gets called only after all the authoring is complete.</p>
-                    </li>
-                    <li> 
-                        <p>The values is hence recieved from Slightly using the following snippet in the .html file.</p>
-                        <div class="image-container">
-                            <image class="center" style="width: 100%;" src="../images/tabsandmultifield/htl.webp" />
-                        </div>
-                    </li>
-                    <li>
-                        <p>The final output looks like this:</p>
-                        <div class="image-container">
-                            <image class="center" style="width: 100%;" src="../images/tabsandmultifield/output.webp"/>
-                        </div>
-                    </li>
-                </ul>
-                 
-                 
-                 
-                
-                <h3 style="text-align: left;">Conclusion</h3>
-                <p>
-                    We have created a component having multifield and tabs. Also we have learnt some more annotaions, the role of pojo and how exactlymultifield and tabs are rendered.
-                </p>
-                <p>
-                    I hope you enjoyed the learing and have found the blog informative. 
-                </p>
+
+                        <li>
+                            <p>Here info string provides the collective values hence retrieved and processed from a
+                                method annoted with @PostConstruct, which gets called only after all the authoring is
+                                complete.</p>
+                        </li>
+                        <li>
+                            <p>The values is hence recieved from Slightly using the following snippet in the .html file.
+                            </p>
+                            <div class="image-container">
+                                <image class="center" style="width: 100%;" src="../images/tabsandmultifield/htl.webp" />
+                            </div>
+                        </li>
+                        <li>
+                            <p>The final output looks like this:</p>
+                            <div class="image-container">
+                                <image class="center" style="width: 100%;"
+                                    src="../images/tabsandmultifield/output.webp" />
+                            </div>
+                        </li>
+                    </ul>
+
+
+
+
+                    <h3 style="text-align: left;">Conclusion</h3>
+                    <p>
+                        We have created a component having multifield and tabs. Also we have learnt some more
+                        annotaions, the role of pojo and how exactlymultifield and tabs are rendered.
+                    </p>
+                    <p>
+                        I hope you enjoyed the learing and have found the blog informative.
+                    </p>
                 </div>
-                <hr style="margin-top: 30px;"/>
+                <hr style="margin-top: 30px;" />
                 <div class="author-details">
                     <div id="like-icon" class="like-icon">
-                       <span id="like-count" class="like-count">0</span>
-                       <span id="like-btn" class="like-btn">
-                       <img src="/images/clap.webp" alt="Like">
-                       </span>
+                        <span id="like-count" class="like-count">0</span>
+                        <span id="like-btn" class="like-btn">
+                            <img src="/images/clap.webp" alt="Like">
+                        </span>
                     </div>
                     <div>
-                       <span class="author-name">Shruti Meshram | </span>
-                       <span class="author-designation">AEM Developer</span>
+                        <span class="author-name">Shruti Meshram | </span>
+                        <span class="author-designation">AEM Developer</span>
                     </div>
-                 </div>
-			</div>
-		</div>
-	</section>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<div class="social-icons">
-         
-        <a href="https://www.linkedin.com/company/infodales-tech-solution/" class="linkedin"><img src="/images/linkedin.webp" alt="LinkedIn"></a>
+    <div class="social-icons">
+
+        <a href="https://www.linkedin.com/company/infodales-tech-solution/" class="linkedin"><img
+                src="/images/linkedin.webp" alt="LinkedIn"></a>
         <a href="mailto:info@infodales.com" class="email"><img src="/images/email.webp" alt="Email"></a>
     </div>
 
-	<!--  Footer --->
-	<div class="copyright-area">
-		<div class="footer">
-			<div class="row" style="margin-top: 0px;">
-				<div class="col-xl-4 col-lg-4 text-center text-lg-left">
-					<div class="copyright-text">
-						<p>Copyright &copy; 2024, All Right Reserved <a href="/index.html">Infodales Tech
-								Solution</a></p>
-					</div>
-				</div>
-				
-				<div class="col-xl-4 col-lg-4 d-none d-lg-block text-right">
-					<div class="footer-menu" style="margin-top:10px;">
-						<ul>
-							<li><a href="/index.html">Home</a></li>
-							<li><a href="/about.html">About</a></li>
-							<li><a href="/contact.html">Contact</a></li>
-						</ul>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+    <!--  Footer --->
+    <div class="copyright-area">
+        <div class="footer">
+            <div class="row" style="margin-top: 0px;">
+                <div class="col-xl-4 col-lg-4 text-center text-lg-left">
+                    <div class="copyright-text">
+                        <p>Copyright &copy; 2024, All Right Reserved <a href="/index.html">Infodales Tech
+                                Solution</a></p>
+                    </div>
+                </div>
+
+                <div class="col-xl-4 col-lg-4 d-none d-lg-block text-right">
+                    <div class="footer-menu" style="margin-top:10px;">
+                        <ul>
+                            <li><a href="/index.html">Home</a></li>
+                            <li><a href="/about.html">About</a></li>
+                            <li><a href="/contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
-	<!--- Java Script-->
-	<script>
-		var navLinks = document.getElementById("navLinks");
+    <!--- Java Script-->
+    <script>
+        var navLinks = document.getElementById("navLinks");
 
-		function showMenu() {
-			navLinks.style.right = "0";
-		}
+        function showMenu() {
+            navLinks.style.right = "0";
+        }
 
-		function hideMenu() {
-			navLinks.style.right = "-200px";
-		}
+        function hideMenu() {
+            navLinks.style.right = "-200px";
+        }
 
-		document.addEventListener("DOMContentLoaded", () => {
-    const likeBtn = document.getElementById('like-btn');
-    const likeCount = document.getElementById('like-count');
+        document.addEventListener("DOMContentLoaded", () => {
+            const likeBtn = document.getElementById('like-btn');
+            const likeCount = document.getElementById('like-count');
 
-    let count = parseInt(localStorage.getItem('clapCount')) || 0;
-    likeCount.textContent = count;
+            let count = parseInt(localStorage.getItem('clapCount')) || 0;
+            likeCount.textContent = count;
 
-    likeBtn.addEventListener('click', () => {
-        count++;
-        likeCount.textContent = count;
-        localStorage.setItem('clapCount', count);
+            likeBtn.addEventListener('click', () => {
+                count++;
+                likeCount.textContent = count;
+                localStorage.setItem('clapCount', count);
 
-        const likeAnimation = document.createElement('div');
-        likeAnimation.classList.add('like-animation');
-        likeAnimation.innerHTML = '🎉';
-        document.getElementById('like-icon').appendChild(likeAnimation);
-        likeAnimation.addEventListener('animationend', () => {
-            likeAnimation.remove();
+                const likeAnimation = document.createElement('div');
+                likeAnimation.classList.add('like-animation');
+                likeAnimation.innerHTML = '🎉';
+                document.getElementById('like-icon').appendChild(likeAnimation);
+                likeAnimation.addEventListener('animationend', () => {
+                    likeAnimation.remove();
+                });
+            });
         });
-    });
-});
-	</script>
+    </script>
 
 </body>
 
