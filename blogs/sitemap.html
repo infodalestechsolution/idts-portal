@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>SiteMap Implementation in AEM</title>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SiteMap Implementation in AEM">
+    <meta name="keywords"
+        content="In AEM, a sitemap is an XML file that provides a structured list of a website's pages, helping search engines like Google index the site efficiently. AEM supports SEO-friendly sitemaps using the Sitemap Generator feature in AEM 6.5.">
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Context Aware Configuration" />
+    <meta property="og:description"
+        content="In AEM, a sitemap is an XML file that provides a structured list of a website's pages, helping search engines like Google index the site efficiently. AEM supports SEO-friendly sitemaps using the Sitemap Generator feature in AEM 6.5." />
+    <meta property="og:url" content="https://infodales.com/blogs/sitemap.html" />
+    <meta property="og:site_name" content="SiteMap Implementation in AEM" />
+    <link rel="stylesheet" href="/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+
+    <!-- Header -->
+    <section class="sub-header"
+        style="background-image: linear-gradient(rgba(4, 9, 30, 0.5), rgba(4, 9, 30, 0.5)), url('/images/Cover\ Sites.jpg');">
+        <nav>
+            <a href="/index.html"><img src="/images/infodales/Info Dales Main Logo 03.webp" alt="logo"></a>
+            <div class="nav-links" id="navLinks">
+                <i class="fa fa-times" onclick="hideMenu()"></i>
+                <ul>
+                    <li><a href="/index.html">HOME</a></li>
+                    <li><a href="/about.html">ABOUT</a></li>
+                    <li><a href="/services.html">SERVICES</a></li>
+                    <li><a href="/blogs.html">BLOGS</a></li>
+                    <li><a href="/career.html">CAREER</a></li>
+                    <li><a href="/contact.html">CONTACT</a></li>
+                    <ul>
+            </div>
+            <i class="fa fa-bars" onclick="showMenu()"></i>
+        </nav>
+    </section>
+    <!--  Blog Page Content --->
+    <section class="blog-content">
+        <div>
+            <div class="blog">
+
+                <p style="color: rgb(133, 133, 133); padding: 0 0 10px 0;"><a href="/blogs.html"
+                        style="text-decoration: none; cursor: pointer;">Blogs</a> <span> > </span>SiteMap Implementation
+                    in AEM</p>
+                <p class="sitesTag" style="margin-top: 7px; margin-bottom: 7px; font-size: 13px; border-radius: 20px; 
+				width: fit-content; padding: 3px 15px;">AEM Sites</p>
+                <h1 class="title">SiteMap Implementation in AEM</h1>
+                <span class="author">Infodales Tech Solutions | </span>
+                <span class="date">December 12, 2024</span>
+
+                <div class="share-icons">
+                    <a href="https://www.linkedin.com/company/infodales-tech-solution/" target="_blank"
+                        class="linkedin-icon"><i class="fa fa-linkedin"></i></a>
+                    <a href="mailto:info@infodales.com" target="_blank" class="email-icon"><i
+                            class="fa fa-envelope"></i></a>
+                </div>
+
+                <hr style="margin: 20px 0 10px 0;">
+                <!-- <div class="image-container">
+					<img src="images/cover.webp" alt="Image Description">
+				</div> -->
+                <div class="blog-items">
+                    <h4 style="text-align: left; margin: 0px 0">What is a sitemap ?
+                    </h4>
+                    <p>
+                        In AEM (Adobe Experience Manager), a sitemap is a structured XML file that lists the URLs of a
+                        website to help search engines like Google and Bing crawl and index the content efficiently. AEM
+                        provides multiple ways to generate and manage sitemaps, including sitemap.xml for search engines
+                        and HTML sitemaps for users.
+
+                        .</p>
+                    <h4 style="text-align: left; margin: 0px 0">Why Are Sitemaps Important?
+                    </h4>
+                    <div style=" margin-left: 20px;">
+                        <ul style="margin: auto; width: 95%;" class="description-txt">
+                            <li>
+                                <p> Better SEO (Search Engine Optimization) – Helps search engines find and index
+                                    content faster.</p>
+                            </li>
+                            <li>
+                                <p> Improves Website Crawling – Ensures all important pages are discovered, even those
+                                    not well-linked.</p>
+                            </li>
+                            <li>
+                                <p> Enhances User Experience – HTML sitemaps help users navigate large websites easily.
+                                </p>
+                            </li>
+                            <li>
+                                <p> Supports Multiple Content Types – Video, images, news, and e-commerce sites benefit
+                                    from specialized sitemaps.</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <h4 style="text-align: left; margin: 5px 0">
+                        XML Sitemap (For Search Engines)
+                    </h4>
+                    <div style=" margin-left: 20px;">
+                        <ul style="margin: auto; width: 95%;" class="description-txt">
+                            <li>
+                                <p>Used primarily by search engines like Google, Bing, and Yahoo.</p>
+                            </li>
+                            <li>
+                                <p> Helps search engines crawl and index the website efficiently.</p>
+                            </li>
+                            <li>
+                                <p> Enhances User Experience – HTML sitemaps help users navigate large websites easily.
+                                </p>
+                            </li>
+                            <li>
+                                <p> For e.g we have the url for google
+                                    ,<a href="https://www.google.com/sitemap.xml">https://www.google.com/sitemap.xml</a>
+                                </p>
+                            </li>
+                            <div class="migration-journey-images">
+                                <img src="../images/slingjobs/googlesitemap.webp" alt="google-sitemap-image" />
+                            </div>
+                            <p>Similarly we can create the site map for our site created on AEM.</p>
+                        </ul>
+                    </div>
+                    <h4 style="text-align: left; margin: 0px 0">
+                        How to implement Sitemap on Author Instance
+                    </h4>
+                    <div style=" margin-left: 20px; margin-top: 10px;">
+                        <ul style="margin: auto; width: 95%;" class="description-txt">
+                            <li>
+                                <p>Navigate to <span
+                                        class="text-color">http://localhost:4502/system/console/configMgr.</span> </p>
+                            </li>
+                            <li>
+                                <p>Search for the <span
+                                        class="text-color">org.apache.sling.sitemap.impl.SitemapGeneratorManagerImpl</span>
+                                </p>
+                            </li>
+                            <li>
+                                <p> Checked on All on-demand checkbox.
+                                </p>
+                            </li>
+                            <li>
+                                <p> Save the changes
+                                </p>
+                            </li>
+                            <div class="migration-journey-images">
+                                <img src="../images/slingjobs/sitemap-generator-image.webp"
+                                    alt="sitemap-generator-image" />
+                            </div>
+                            <li>
+                                <p> Checking on All on Demand will allow you to create the sitemap . </p>
+                            </li>
+                            <li>
+                                <p>Note : allOnDemand configuration is having a drawback as it processes data and
+                                    generates a sitemap everytime we hit the URL to generate a sitemap. </p>
+                            </li>
+                            <li>
+                                <p>Similarly search for <span class="text-color">PageTreeSitemapGeneratorImpl</span> in
+                                    config manager. </p>
+                            </li>
+                            <li>
+                                <p>This configuration allows you to add the last modified date and also will represent
+                                    data in xml format. </p>
+                            </li>
+                            <div class="migration-journey-images">
+                                <img src="../images/slingjobs/page-tre--sitemap-generator-image.webp"
+                                    alt="page-tre--sitemap-generator-image" />
+                            </div>
+                            <li>
+                                <p>Navigate to <span class="text-color">http://localhost:4502/sites.html/content</span>
+                                    open page properties , on
+                                    Advanced check the Generated Sitemap check box.
+                                </p>
+                            </li>
+                            <li>
+                                <p>Now on the browser hit this url <span
+                                        class="text-color">http://localhost:4502/content/sample.sitemap.xml</span>.
+
+                                </p>
+                            </li>
+                            <pre style="width: 100%; height:auto; margin-bottom: -30px;">
+                                <code class="center code-flow" style="width: 100%; height:auto">
+This XML file does not appear to have any style information associated with it. The document tree is shown below.
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
+<url>
+<loc>/content/sample.html</loc>
+<lastmod>2019-02-11T17:34:23.056Z</lastmod>
+</url>
+<url>
+<loc>/content/sample/en.html</loc>
+<lastmod>2024-03-27T17:17:13.153Z</lastmod>
+</url>
+<url>
+<loc>/content/sample/en/contact-us.html</loc>
+<lastmod>2020-02-06T17:29:33.318Z</lastmod>
+</url>
+<url>
+<loc>/content/sample/en/faq.html</loc>
+<lastmod>2021-01-26T20:47:39.275Z</lastmod>
+</url>
+<url>
+<loc>/content/sample/en/faq/who-is-csa.html</loc>
+<lastmod>2022-05-25T20:13:01.403Z</lastmod>
+</url>
+<url>
+<loc>/content/sample/en/faq/do-i-need-travel-protection.html</loc>
+<lastmod>2022-05-25T19:44:14.081Z</lastmod>
+</url>
+<url>
+<loc>/content/sample/en/faq/when-can-i-buy-travel-protection-.html</loc>
+<lastmod>2019-03-13T17:05:47.527Z</lastmod>
+</url>
+<url>
+<loc>/content/sample/en/faq/when-does-coverage-begin.html</loc>
+<lastmod>2019-03-13T17:07:39.002Z</lastmod>
+</url>
+<url>
+<loc>/content/sample/en/faq/maximum-trip-length.html</loc>
+<lastmod>2019-03-13T17:08:54.688Z</lastmod>
+</url>
+<url>
+<loc>/content/sample/en/faq/can-my-traveling-companions-and-i-be-insured-on-the-same-plan-.html</loc>
+<lastmod>2019-03-13T17:09:55.142Z</lastmod>
+</url>
+
+                                </code>
+                            </pre>
+                            <p>Similarly you can create SiteMap on publish instances too.</p>
+                            <h4 style="text-align: left; margin: 0px 0">
+                                Dispatcher Configuration for SiteMap
+                            </h4>
+                            <div style=" margin-left: 20px;">
+                                <ul style="margin: auto; width: 95%;" class="description-txt">
+                                    <li>
+                                        <p>Include the following entry in the <span
+                                                class="text-color">dispatcher/src/conf.dispatcher.d/filters/filters.any</span>
+                                            file.</p>
+                                    </li>
+                                    <pre style="width: 100%; height:auto; margin-bottom: -30px;">
+                                        <code class="center code-flow" style="width: 100%; height:auto">
+                                            /0201 { /type "allow" /path "/content/*" /selectors '(sitemap-index|sitemap)' /extension "xml" }
+                                        </code>
+                                    </pre>
+                                    <li>
+                                        <p>Include the .xml extension in the rewrite rules within the <span
+                                                class="text-color">dispatcher/src/conf.d/rewrites/rewrite.rules</span>
+                                            file.
+                                        </p>
+                                    </li>
+                                    <pre style="width: 100%; height:auto; margin-bottom: -30px;">
+                                        <code class="center code-flow" style="width: 100%; height:auto">
+                                            RewriteCond %{REQUEST_URI} (.html|.jpe?g|.webp|.svg|.xml)$
+
+                                        </code>
+                                    </pre>
+                                </ul>
+                            </div>
+                        </ul>
+                    </div>
+
+                </div>
+                <hr style="margin-top: 30px;">
+
+                <div class="author-details">
+                    <div id="like-icon" class="like-icon">
+                        <span id="like-count" class="like-count">0</span>
+                        <span id="like-btn" class="like-btn">
+                            <img src="/images/clap.webp" alt="Like">
+                        </span>
+                    </div>
+                    <div>
+                        <span class="author-name">Yash Sakharkar | </span>
+                        <span class="author-designation">AEM Developer</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <div class="social-icons">
+
+        <a href="https://www.linkedin.com/company/infodales-tech-solution/" class="linkedin"><img
+                src="/images/linkedin.webp" alt="LinkedIn"></a>
+        <a href="mailto:info@infodales.com" class="email"><img src="/images/email.webp" alt="Email"></a>
+    </div>
+
+    <!--  Footer --->
+    <div class="copyright-area">
+        <div class="footer">
+            <div class="row" style="margin-top: 0px;">
+                <div class="col-xl-4 col-lg-4 text-center text-lg-left">
+                    <div class="copyright-text">
+                        <p>Copyright &copy; 2023, All Right Reserved <a href="/index.html">Infodales Tech
+                                Solution</a></p>
+                    </div>
+                </div>
+
+                <div class="col-xl-4 col-lg-4 d-none d-lg-block text-right">
+                    <div class="footer-menu" style="margin-top:10px;">
+                        <ul>
+                            <li><a href="/index.html">Home</a></li>
+                            <li><a href="/about.html">About</a></li>
+                            <li><a href="/contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--- Java Script-->
+    <script>
+        var navLinks = document.getElementById("navLinks");
+
+        function showMenu() {
+            navLinks.style.right = "0";
+        }
+
+        function hideMenu() {
+            navLinks.style.right = "-200px";
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const likeBtn = document.getElementById('like-btn');
+            const likeCount = document.getElementById('like-count');
+
+            let count = parseInt(localStorage.getItem('clapCount')) || 0;
+            likeCount.textContent = count;
+
+            likeBtn.addEventListener('click', () => {
+                count++;
+                likeCount.textContent = count;
+                localStorage.setItem('clapCount', count);
+
+                const likeAnimation = document.createElement('div');
+                likeAnimation.classList.add('like-animation');
+                likeAnimation.innerHTML = '🎉';
+                document.getElementById('like-icon').appendChild(likeAnimation);
+                likeAnimation.addEventListener('animationend', () => {
+                    likeAnimation.remove();
+                });
+            });
+        });
+
+        // function relatedFilter() {
+        // 	var retString = localStorage.getItem("allBlogs");
+        // 	console.log(retString);
+        // }
+
+
+    </script>
+
+</body>
+
+</html>

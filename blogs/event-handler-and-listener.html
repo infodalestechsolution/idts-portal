@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title> Event Handler and Event Listener in AEM</title>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Event Handler and Event Listener in AEM">
+    <meta name="keywords"
+        content="In AEM, an Event Handler and Event Listener are used to respond to changes in the JCR repository or other system events.">
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Event Handler and Event Listener in AEM" />
+    <meta property="og:description"
+        content="In AEM, an Event Handler and Event Listener are used to respond to changes in the JCR repository or other system events." />
+    <meta property="og:url" content="https://infodales.com/blogs/event-handler-and-listener.html" />
+    <meta property="og:site_name" content="Event Handler and Event Listener in AEM" />
+    <link rel="stylesheet" href="/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+
+    <!-- Header -->
+    <section class="sub-header"
+        style="background-image: linear-gradient(rgba(4, 9, 30, 0.5), rgba(4, 9, 30, 0.5)), url('/images/Cover\ Sites.jpg');">
+        <nav>
+            <a href="/index.html"><img src="/images/infodales/Info Dales Main Logo 03.webp" alt="logo"></a>
+            <div class="nav-links" id="navLinks">
+                <i class="fa fa-times" onclick="hideMenu()"></i>
+                <ul>
+                    <li><a href="/index.html">HOME</a></li>
+                    <li><a href="/about.html">ABOUT</a></li>
+                    <li><a href="/services.html">SERVICES</a></li>
+                    <li><a href="/blogs.html">BLOGS</a></li>
+                    <li><a href="/career.html">CAREER</a></li>
+                    <li><a href="/contact.html">CONTACT</a></li>
+                    <ul>
+            </div>
+            <i class="fa fa-bars" onclick="showMenu()"></i>
+        </nav>
+    </section>
+    <!--  Blog Page Content --->
+    <section class="blog-content">
+        <div>
+            <div class="blog">
+
+                <p style="color: rgb(133, 133, 133); padding: 0 0 10px 0;"><a href="/blogs.html"
+                        style="text-decoration: none; cursor: pointer;">Blogs</a> <span> > </span> Event Handler and
+                    Event Listener in AEM</p>
+
+                <p class="sitesTag" style="margin-top: 7px; margin-bottom: 7px; font-size: 13px; border-radius: 20px; 
+				width: fit-content; padding: 3px 15px;">AEM Sites</p>
+                <h1 class="title"> Event Handler and Event Listener in AEM</h1>
+                <span class="author">Infodales Tech Solutions | </span>
+                <span class="date">November 28, 2024</span>
+
+                <div class="share-icons">
+                    <a href="https://www.linkedin.com/company/infodales-tech-solution/" target="_blank"
+                        class="linkedin-icon"><i class="fa fa-linkedin"></i></a>
+                    <a href="mailto:info@infodales.com" target="_blank" class="email-icon"><i
+                            class="fa fa-envelope"></i></a>
+                </div>
+
+                <hr style="margin: 20px 0 10px 0;">
+                <!-- <div class="image-container">
+					<img src="images/cover.webp" alt="Image Description">
+				</div> -->
+                <div class="blog-items">
+                    <h4 style="text-align: left; margin: 0px 0">Overview
+                    </h4>
+                    <p>
+                        An Event Handler manages events at the Sling level, while an Event Listener handles events at
+                        the JCR level. Both are responsible for executing actions when an event occurs.
+                        .</p>
+                    <h4 style="text-align: left; margin: 0px 0">Event Handler (OSGi Event Handler) in AEM:
+                    </h4>
+                    <p>An OSGi Event Handler listens for OSGi events, including resource modifications, workflow events,
+                        and system events. It is implemented using org.osgi.service.event.EventHandler and registered
+                        via OSGi service properties.
+                    </p>
+                    <h4 style="text-align: left; margin: 0px 0">Syntax </h4>
+                    <pre style="width: 100%; height:auto; margin-bottom: -30px;">
+                        <code class="center code-flow" style="width: 100%; height:auto">
+                            @Component(service = EventHandler.class,
+                            immediate = true,
+                            property = {
+                            EventConstants.EVENT_TOPIC + "=org/apache/sling/api/resource/Resource/ADDED",
+                            EventConstants.EVENT_TOPIC + "=org/apache/sling/api/resource/Resource/REMOVED",
+                            EventConstants.EVENT_FILTER + "+(path=/content/we-retail/us/en/*)"
+                            })
+                            public class SampleEventHandler implements EventHandler {
+                        </code>
+                    </pre>
+                    <h4 tyle="text-align: left; margin: 0px 0">How to create Event Handler In AEM </h4>
+                    <pre style="width: 100%; height:auto; margin-bottom: -30px;">
+                        <code class="center code-flow" style="width: 100%; height:auto">
+                            package com.sample.core.listeners;
+
+
+                            import org.apache.sling.api.SlingConstants;
+                            import org.osgi.service.component.annotations.Component;
+                            import org.osgi.service.event.Event;
+                            import org.osgi.service.event.EventConstants;
+                            import org.osgi.service.event.EventHandler;
+                            import org.slf4j.Logger;
+                            import org.slf4j.LoggerFactory;
+                            
+                            
+                            @Component(service = EventHandler.class,
+                            immediate = true,
+                            property = {
+                                  EventConstants.EVENT_TOPIC + "=org/apache/sling/api/resource/Resource/ADDED",
+                                  EventConstants.EVENT_TOPIC + "=org/apache/sling/api/resource/Resource/REMOVED",
+                                           EventConstants.EVENT_FILTER + "+(path=/content/we-retail/us/en/*)"
+                            })
+                            public class SampleEventHandler implements EventHandler {
+                            private final Logger logger = LoggerFactory.getLogger(getClass());
+                            @Override
+                            public void handleEvent(Event event) {
+                            logger.info("Event Topic" + event.getTopic(),event.getProperty(SlingConstants.PROPERTY_PATH));
+                            }
+                            }
+                            
+                        </code>
+                    </pre>
+                    <h4>Logs</h4>
+                    <div class="migration-journey-images">
+                        <img src="../images/slingjobs/eventhandler.webp" alt="Event-Listener-image">
+                    </div>
+                    <p>In the example above, we created a class named SampleEventHandler, which implements the
+                        EventHandler interface and overrides the handleEvent method. Additionally, we have defined the
+                        event topics that should trigger the event.</p>
+                    <h4 style="text-align: left; margin: 0px 0">Event Listener (JCR Event Listener) in AEM
+                    </h4>
+                    <p>A JCR Event Listener listens for changes in the JCR repository, such as node additions,
+                        modifications, or deletions. It is implemented using javax.jcr.observation.EventListener and
+                        registered via ObservationManager.</p>
+                    <h4 style="text-align: left; margin: 0px 0">Syntax </h4>
+                    <pre style="width: 100%; height:auto; margin-bottom: -30px;">
+                        <code class="center code-flow" style="width: 100%; height:auto">
+                            @Component(service = EventListener.class,
+                            immediate = true)
+                            public class SampleEventListener implements EventListener {                          
+                        </code>
+                    </pre>
+                    <h4 style="text-align: left; margin: 0px 0">How to create Event Listener In AEM
+                    </h4>
+                    <pre style="width: 100%; height:auto; margin-bottom: -30px;">
+                        <code class="center code-flow" style="width: 100%; height:auto">
+                            package com.sample.core.listeners;
+                            import org.apache.sling.api.resource.LoginException;
+                            import org.apache.sling.api.resource.ResourceResolver;
+                            import org.apache.sling.api.resource.ResourceResolverFactory;
+                            import org.osgi.service.component.annotations.Activate;
+                            import org.osgi.service.component.annotations.Component;
+                            import org.osgi.service.component.annotations.Modified;
+                            import org.osgi.service.component.annotations.Reference;
+                            import org.slf4j.Logger;
+                            import org.slf4j.LoggerFactory;
+                            import javax.jcr.RepositoryException;
+                            import javax.jcr.Session;
+                            import javax.jcr.observation.Event;
+                            import javax.jcr.observation.EventIterator;
+                            import javax.jcr.observation.EventListener;
+                            import java.util.HashMap;
+                            import java.util.Map;
+                            
+                            
+                            @Component(service = EventListener.class,
+                            immediate = true)
+                            public class SampleEventListener implements EventListener {
+                            private final Logger logger = LoggerFactory.getLogger(getClass());
+                            
+                            
+                            @Reference
+                            private ResourceResolverFactory resourceResolverFactory;
+                            @Activate
+                            @Modified
+                            protected void Activate() throws LoginException, RepositoryException {
+                               Map<String,Object> map = new HashMap<>();
+                               map.put(ResourceResolverFactory.SUBSERVICE,"test");
+                                ResourceResolver resourceResolver = resourceResolverFactory.getServiceResourceResolver(map);
+                                Session session = resourceResolver.adaptTo(Session.class);
+                                session.getWorkspace().getObservationManager().addEventListener(this,
+                                      Event.PROPERTY_ADDED | Event.NODE_ADDED | Event.NODE_REMOVED | Event.PROPERTY_CHANGED,
+                                      "/content/we-retail/us/en",
+                                      true,
+                                      null,null,false
+                                      );
+                                logger.info("--Property Changed Or removed --");
+                            }
+                            @Override
+                            public void onEvent(EventIterator events) {
+                               logger.info("Event Listener Called");
+                               while (events.hasNext()){
+                                  try {
+                                     logger.info("Event Path is " + events.nextEvent().getPath());
+                                  } catch (RepositoryException e) {
+                                     throw new RuntimeException(e);
+                                  }
+                               }
+                            }
+                            }
+                                                
+                        </code>
+                    </pre>
+                    <p>In the example above, we created SampleEventListener, which implements the EventListener
+                        interface and overrides the onEvent method. Using ObservationManager, we can add an event
+                        listener and define event types such as PROPERTY_ADDED, PROPERTY_CHANGED, and NODE_ADDED to
+                        trigger the event.
+                    </p>
+                    <h4 style="text-align: left; margin: 0px 0">ResourceChangeListener in AEM
+                    </h4>
+                    <p>The ResourceChangeListener in AEM listens for changes in Sling resources (e.g., content
+                        modifications in /content, configuration updates in /conf, etc.). It is more efficient than JCR
+                        Event Listeners because it operates at the Sling level rather than directly in the JCR
+                        repository.
+                    </p>
+                    <h4 style="text-align: left; margin: 0px 0">Syntax
+                    </h4>
+                    <pre style="width: 100%; height:auto; margin-bottom: -30px;">
+                        <code class="center code-flow" style="width: 100%; height:auto">
+                            @Component(service = ResourceChangeListener.class,
+                            immediate = true,
+                            property = {
+                                  ResourceChangeListener.PATHS + "=" + "/content/we-retail/us/en",
+                                  ResourceChangeListener.CHANGES + "=" + "ADDED",
+                                  ResourceChangeListener.CHANGES + "=" + "CHANGED",
+                                  ResourceChangeListener.CHANGES + "=" + "REMOVED"
+                            })
+                            @ServiceDescription("SampleResourceChangeListener")
+                            public class SampleResourceChangeListener implements ResourceChangeListener {
+                                                
+                        </code>
+                    </pre>
+                    <h4 style="text-align: left; margin: 0px 0">How to create ResourceChangeListener In AEM
+                    </h4>
+                    <pre style="width: 100%; height:auto; margin-bottom: -30px;">
+                        <code class="center code-flow" style="width: 100%; height:auto">
+                            package com.sample.core.listeners;
+                            import org.apache.sling.api.resource.observation.ResourceChange;
+                            import org.apache.sling.api.resource.observation.ResourceChangeListener;
+                            import org.osgi.service.component.annotations.Component;
+                            import org.osgi.service.component.propertytypes.ServiceDescription;
+                            import org.slf4j.Logger;
+                            import org.slf4j.LoggerFactory;
+                            
+                            
+                            import java.util.List;
+                            
+                            
+                            
+                            
+                            @Component(service = ResourceChangeListener.class,
+                            immediate = true,
+                            property = {
+                                  ResourceChangeListener.PATHS + "=" + "/content/we-retail/us/en",
+                                  ResourceChangeListener.CHANGES + "=" + "ADDED",
+                                  ResourceChangeListener.CHANGES + "=" + "CHANGED",
+                                  ResourceChangeListener.CHANGES + "=" + "REMOVED"
+                            })
+                            @ServiceDescription("SampleResourceChangeListener")
+                            public class SampleResourceChangeListener implements ResourceChangeListener {
+                            private final Logger logger = LoggerFactory.getLogger(getClass());
+                            @Override
+                            public void onChange( List<ResourceChange> list) {
+                             list.forEach(resourceChange -> {
+                                 logger.info("Event Type = {}", resourceChange.getType());
+                                 logger.info("Event Path = {}", resourceChange.getPath());
+                                 logger.info("Event External = {}", resourceChange.isExternal());
+                             });
+                            }
+                            }                                                              
+                      </code>
+                    </pre>
+                    <div class="migration-journey-images">
+                        <img src="../images/slingjobs/resourcelistener.webp" alt="resource-listener-image" />
+                    </div>
+                    <p>In the example above we have created the SampleResourceChangeListener which implements
+                        ResourceChangeListener and overrides onChange event , the event will get triggered when we
+                        change , add , remove the Node .</p>
+                </div>
+                <hr style="margin-top: 30px;">
+
+                <div class="author-details">
+                    <div id="like-icon" class="like-icon">
+                        <span id="like-count" class="like-count">0</span>
+                        <span id="like-btn" class="like-btn">
+                            <img src="/images/clap.webp" alt="Like">
+                        </span>
+                    </div>
+                    <div>
+                        <span class="author-name">Yash Sakharkar | </span>
+                        <span class="author-designation">AEM Developer</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <div class="social-icons">
+
+        <a href="https://www.linkedin.com/company/infodales-tech-solution/" class="linkedin"><img
+                src="/images/linkedin.webp" alt="LinkedIn"></a>
+        <a href="mailto:info@infodales.com" class="email"><img src="/images/email.webp" alt="Email"></a>
+    </div>
+
+    <!--  Footer --->
+    <div class="copyright-area">
+        <div class="footer">
+            <div class="row" style="margin-top: 0px;">
+                <div class="col-xl-4 col-lg-4 text-center text-lg-left">
+                    <div class="copyright-text">
+                        <p>Copyright &copy; 2023, All Right Reserved <a href="/index.html">Infodales Tech
+                                Solution</a></p>
+                    </div>
+                </div>
+
+                <div class="col-xl-4 col-lg-4 d-none d-lg-block text-right">
+                    <div class="footer-menu" style="margin-top:10px;">
+                        <ul>
+                            <li><a href="/index.html">Home</a></li>
+                            <li><a href="/about.html">About</a></li>
+                            <li><a href="/contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--- Java Script-->
+    <script>
+        var navLinks = document.getElementById("navLinks");
+
+        function showMenu() {
+            navLinks.style.right = "0";
+        }
+
+        function hideMenu() {
+            navLinks.style.right = "-200px";
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const likeBtn = document.getElementById('like-btn');
+            const likeCount = document.getElementById('like-count');
+
+            let count = parseInt(localStorage.getItem('clapCount')) || 0;
+            likeCount.textContent = count;
+
+            likeBtn.addEventListener('click', () => {
+                count++;
+                likeCount.textContent = count;
+                localStorage.setItem('clapCount', count);
+
+                const likeAnimation = document.createElement('div');
+                likeAnimation.classList.add('like-animation');
+                likeAnimation.innerHTML = '🎉';
+                document.getElementById('like-icon').appendChild(likeAnimation);
+                likeAnimation.addEventListener('animationend', () => {
+                    likeAnimation.remove();
+                });
+            });
+        });
+
+        // function relatedFilter() {
+        // 	var retString = localStorage.getItem("allBlogs");
+        // 	console.log(retString);
+        // }
+
+
+    </script>
+
+</body>
+
+</html>
