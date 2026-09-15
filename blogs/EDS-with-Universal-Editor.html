@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <title>Edge Delivery Services (EDS) & The Universal Editor: A Complete Overview | Infodales</title>
+   <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+   <link rel="canonical" href="https://infodales.com/blogs/edge-delivery-overview.html">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta name="description"
+      content="A deep, developer-level overview of Adobe Edge Delivery Services (EDS) - the code bus/content bus/media bus architecture, blocks and JSON models, project setup, and how the Universal Editor works under the hood.">
+   <meta name="keywords"
+      content="Edge Delivery Services, what is Edge Delivery Services, Adobe EDS overview, AEM Edge Delivery, Universal Editor, aem.live, aem-boilerplate, aem-boilerplate-xwalk, AEM Code Sync, Sidekick, Helix admin, code bus content bus media bus, component-models.json, paths.json, Infodales AEM blog">
+   <meta property="og:locale" content="en_US" />
+   <meta property="og:type" content="article" />
+   <meta property="og:title" content="Edge Delivery Services (EDS) & The Universal Editor: A Complete Overview" />
+   <meta property="og:description"
+      content="A deep, developer-level overview of Adobe Edge Delivery Services and the Universal Editor - architecture, project setup, blocks, and how it fits with classic AEM." />
+   <meta property="og:url" content="https://infodales.com/blogs/edge-delivery-overview.html" />
+   <meta property="og:image"
+      content="https://infodales.com/images/edge-delivery-overview/eds-architecture-diagram.png" />
+   <meta property="og:site_name" content="Infodales Tech Solutions" />
+   <meta name="twitter:card" content="summary_large_image">
+   <link rel="stylesheet" href="/style.css">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;600;700&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+   <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Edge Delivery Services (EDS) & The Universal Editor: A Complete Overview",
+        "description": "A deep, developer-level overview of Adobe Edge Delivery Services and the Universal Editor - architecture, project setup, blocks, and how it fits with classic AEM.",
+        "image": "https://infodales.com/images/edge-delivery-overview/eds-architecture-diagram.png",
+        "author": {
+          "@type": "Organization",
+          "name": "Infodales Tech Solutions",
+          "url": "https://infodales.com"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Infodales Tech Solutions",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://infodales.com/images/infodales/Info%20Dales%20Main%20Logo%2003.webp"
+          }
+        },
+        "datePublished": "2026-09-09",
+        "dateModified": "2026-09-10",
+        "mainEntityOfPage": "https://infodales.com/blogs/edge-delivery-overview.html"
+      }
+      </script>
+</head>
+
+<body>
+   <!-- Header -->
+   <section class="sub-header"
+      style="background-image: linear-gradient(rgba(4, 9, 30, 0.55), rgba(4, 9, 30, 0.55)), url('/images/Cover\ EDS.jpg');">
+      <nav>
+         <a href="/index.html"><img src="/images/infodales/Info Dales Main Logo 03.webp"
+               alt="Infodales Tech Solutions logo">
+         </a>
+         <div class="nav-links" id="navLinks">
+            <i class="fa fa-times" onclick="hideMenu()"></i>
+            <ul>
+               <li><a href="/index.html">HOME</a></li>
+               <li><a href="/about.html">ABOUT</a></li>
+               <li><a href="/services.html">SERVICES</a></li>
+               <li><a href="/blogs.html">BLOGS</a></li>
+               <li><a href="/career.html">CAREER</a></li>
+               <li><a href="/contact.html">CONTACT</a></li>
+            </ul>
+         </div>
+         <i class="fa fa-bars" onclick="showMenu()"></i>
+      </nav>
+   </section>
+
+   <!-- Blog Page Content -->
+   <section class="blog-content">
+      <div>
+         <div class="blog spa-blog">
+            <p style="color: rgb(133, 133, 133); padding: 0 0 10px 0;">
+               <a href="/blogs.html" style="text-decoration: none; cursor: pointer;">Blogs</a> <span> > </span>Edge
+               Delivery Services (EDS) & The Universal Editor: A Complete Overview
+            </p>
+            <p class="edsTag" style="margin-top: 7px; margin-bottom: 7px; font-size: 13px; border-radius: 20px;
+            width: fit-content; padding: 3px 15px;">AEM EDS</p>
+            <h1 class="title">Edge Delivery Services (EDS) & The Universal Editor: A Complete Overview</h1>
+            <span class="author">Infodales Tech Solutions</span> |
+            <span class="date">September 10, 2026</span>
+            <div class="share-icons">
+               <a href="https://www.linkedin.com/company/infodales-tech-solution/" target="_blank"
+                  class="linkedin-icon"><i class="fa fa-linkedin"></i></a>
+               <a href="mailto:info@infodales.com" target="_blank" class="email-icon"><i class="fa fa-envelope"></i></a>
+            </div>
+            <hr style="margin: 20px 0 10px 0;">
+
+            <div class="blog-items">
+               <div>
+
+                  <p>If you've been anywhere near the Adobe Experience Manager ecosystem in the last couple of years,
+                     you've heard the term "Edge Delivery Services" thrown around a lot - often alongside claims of
+                     perfect Lighthouse scores and sites that go live in weeks. Most overviews stop at the marketing
+                     pitch. This one doesn't - we're going one level deeper into how a request actually flows through
+                     EDS, what a real project looks like, and how the Universal Editor connects to it under the hood.
+                  </p>
+
+                  <h2 style="text-align: left;">Part 1: What Is Edge Delivery Services?</h2>
+                  <p>Edge Delivery Services (EDS), formerly known internally as "Helix" or "Franklin" - names you'll
+                     still see scattered across tool and repository names - is Adobe's modern content delivery
+                     framework, built directly into Adobe Experience Manager as a Cloud Service. Its core idea is
+                     simple: separate authoring from rendering. Content is authored somewhere - a document, or an AEM
+                     page through the Universal Editor - converted into clean, semantic HTML, and served straight from
+                     Adobe's edge network with no server-side application logic at request time.</p>
+                  <p>It's worth being precise about one thing: EDS is <strong>not</strong> a CDN replacement. It's
+                     designed to sit on top of your existing CDN, or Adobe's own managed CDN, and handle how content is
+                     authored, assembled, and shipped to that CDN.</p>
+
+                  <h3 style="text-align: left;">How a Page Actually Gets Served</h3>
+                  <p>This is the part most overviews skip, and it's the part that actually explains why EDS feels so
+                     fast to develop on. Every EDS project is built from three separate "buses":</p>
+                  <ul class="ff_ul">
+                     <li>
+                        <p><strong>Code Bus</strong> - your HTML, CSS, and JavaScript, synced directly from your
+                           GitHub repository via the AEM Code Sync GitHub App.</p>
+                     </li>
+                     <li>
+                        <p><strong>Content Bus</strong> - your actual page content, pulled from wherever you author it
+                           - an AEM as a Cloud Service content source when the project uses the Universal Editor, or a
+                           connected Google Drive/SharePoint folder for document-based authoring.</p>
+                     </li>
+                     <li>
+                        <p><strong>Media Bus</strong> - images and other binary assets, optimized and served
+                           separately from the content that references them.</p>
+                     </li>
+                  </ul>
+                  <p>When a visitor requests a page, Helix Admin pulls the code from the code bus, the content from the
+                     content bus, and the assets from the media bus, merges them on the fly, and hands the result to
+                     the CDN. Your JavaScript only ever enhances DOM that is already valid, readable HTML - nothing is
+                     client-render-blocking, which is a large part of why EDS scores so well on Core Web Vitals. There's
+                     no build step and no deploy pipeline in between - pushing a commit to your repo, or publishing a
+                     change from your content source, updates the live site within seconds.</p>
+
+                  <img src="../images/EDS/architecture.webp" style="width: 90%; margin-top: 15px;"
+                     alt="Edge Delivery Services architecture diagram showing Experience Delivery, Content Management, CDN, and authoring layers" />
+
+                  <p>You'll also come across two URL types once you set a project up: an <strong>aem.page</strong> URL,
+                     which is your preview environment showing unpublished changes, and an <strong>aem.live</strong>
+                     URL, which is the actual published site your visitors hit. Both sit behind the same code and
+                     content buses - the difference is simply which version of the content each one is pointed at.</p>
+
+                  <h3 style="text-align: left;">Two Ways to Author, One Rendering Engine</h3>
+                  <p>It's a common misconception that EDS only means "writing content in a Word or Google document."
+                     That's one valid authoring mode - document-based authoring - but it's not the only one. A project
+                     built on the <strong>Universal Editor / xwalk</strong> variant of Adobe's boilerplate is authored
+                     visually against a real AEM as a Cloud Service content source instead, and EDS renders that
+                     published AEM content through exactly the same block-based pipeline either way. The two modes
+                     differ mainly in one config file:</p>
+                  <ul class="ff_ul">
+                     <li>
+                        <p><strong>fstab.yaml</strong> - used by document-based projects to mount a Google Drive
+                           folder or SharePoint site as the content root.</p>
+                     </li>
+                     <li>
+                        <p><strong>paths.json</strong> - used by Universal Editor / xwalk projects to map a real AEM
+                           content path (e.g. /content/your-site/) to the site root instead.</p>
+                     </li>
+                  </ul>
+                  <p>A project only needs one of these, not both - unless you're deliberately building a hybrid setup
+                     where some sections are authored in AEM and others as plain documents, which is a valid but
+                     distinct architecture decision.</p>
+
+                  <h3 style="text-align: left;">Blocks: The Building Blocks of an EDS Page</h3>
+                  <p>Content needs a way to render as more than plain text - a carousel, an accordion, a hero banner -
+                     and that's what <strong>blocks</strong> are for. A block is a structured, named section of
+                     content; EDS turns it into a corresponding div in the page's DOM, and a matching
+                     JavaScript/CSS pair in your repo's /blocks folder decorates it into the real UI. In a
+                     Universal Editor project, each block folder also carries a small JSON model file describing its
+                     authoring fields - more on that in Part 2. A typical block folder looks like this:</p>
+                  <ul class="ff_ul">
+                     <li>
+                        <p>/blocks/hero/hero.js and hero.css</p>
+                     </li>
+                     <li>
+                        <p>/blocks/cards/cards.js and cards.css</p>
+                     </li>
+                     <li>
+                        <p>/styles, /scripts, head.html</p>
+                     </li>
+                  </ul>
+                  <p>Adobe maintains a small set of blocks in its boilerplate templates that ship with every new
+                     project, plus a larger, open-source <strong>Block Collection</strong> of commonly needed blocks
+                     (carousels, tabs, accordions, and similar) that you can pull in as a starting point and then fully
+                     restyle. Neither is meant to be used unmodified - the value is the content structure they define,
+                     not the exact CSS. <em>(Curious how a block actually gets built end to end? We'll walk through
+                        creating one from scratch, field by field, in an upcoming post - <a href="/blogs/Block-Creation-in-Eds-Universal-editor.html">blog creation in universal editor</a>.)</em>
+                  </p>
+
+                  <h3 style="text-align: left;">Why Teams Are Actually Adopting EDS</h3>
+                  <p><strong>Performance that shows up in Lighthouse, not just marketing slides.</strong> EDS sites are
+                     built performance-first from the ground up - minimal JavaScript, no heavy client-side framework,
+                     unbundled CSS/JS shipped as-is, and a rendering pipeline optimized for Core Web Vitals. A 100
+                     Lighthouse score, which used to take serious specialist effort on a traditional stack, becomes a
+                     realistic default here.</p>
+                  <p><strong>SEO - and now GEO - by default.</strong> Fast, semantic, server-rendered HTML has always
+                     been good for traditional search engine optimization (SEO). What's newer is that the same
+                     properties - clean markup, fast load times, clear content structure - also make a site easier for
+                     AI-driven "answer engines" to read and cite, which Adobe refers to as generative engine
+                     optimization (GEO).</p>
+                  <p><strong>Development speed - no build step, no bundler.</strong> There are no Maven builds, no
+                     Cloud Manager pipelines, and no OSGi bundles to manage. Developers write plain HTML, modern CSS,
+                     and vanilla JavaScript, and a published change goes live within seconds. That simplicity also
+                     happens to make EDS codebases very approachable for AI coding assistants, since there's no complex
+                     build graph to reason about.</p>
+                  <p><strong>Plays well with classic AEM.</strong> EDS doesn't require a rip-and-replace project. EDS
+                     and classic AEM Sites can run side by side on the same domain, which is common on larger sites
+                     where only certain sections (like a blog, or a campaign microsite) move to EDS first, with content
+                     flowing both ways between the two. EDS also integrates with Adobe Target for personalization and
+                     experimentation, and with Adobe Launch/Tags.</p>
+
+                  <h2 style="text-align: left;">Part 2: Authoring with the Universal Editor</h2>
+                  <p>The Universal Editor is a visual, what-you-see-is-what-you-get (WYSIWYG) editor built as a genuine
+                     <strong>editor-as-a-service</strong> - it works in tandem with AEM to author content, but runs
+                     independently of any specific front end rather than being baked into it. That's a deliberate
+                     design choice: it supports true decoupling of the implementation, letting developers use virtually
+                     any framework or architecture they want without imposing any SDK or technology constraint. Adobe
+                     positions it as the natural successor to the older Page Editor and SPA Editor for AEM in-context
+                     authoring going forward.
+                  </p>
+
+                  <h3 style="text-align: left;">How the Connection Actually Works</h3>
+                  <p>The Universal Editor doesn't render your page itself - it loads your live application in a remote
+                     frame and connects to it via a small JavaScript library embedded in your page. That library is
+                     what lets the editor detect editable regions, report the page's structure back as a content tree,
+                     and push authoring changes back into AEM in real time. For an EDS project, AEM renders the HTML but
+                     pulls in the scripts, styles, icons, and other resources straight from Edge Delivery Services - so
+                     everything an author edits is persisted back to AEM, while everything a visitor sees is still
+                     served through the same fast EDS pipeline described in Part 1.</p>
+
+                  <img src="../images/EDS/universaleditorsidepanel.webp" style="width: 100%; margin-top: 15px;"
+                     alt="Universal Editor canvas showing a page's content tree alongside a live in-context preview" />
+
+                  <p>The content tree on the right mirrors the exact component structure of the page, so an author can
+                     jump straight to any component instead of hunting for it visually. Selecting a component - here,
+                     an image and heading inside a Hero block - opens its properties directly in a side panel, letting
+                     you swap an asset, edit alt text, or change copy without ever leaving the visual preview.</p>
+
+                     <img src="../images/EDS/universaleditorpanel.webp" style="width: 100%; margin-top: 15px;"
+                        alt="Universal Editor properties panel for editing an image and text component in-context" />
+               
+                  <h3 style="text-align: left;">What Defines the Editable Fields</h3>
+                  <p>The fields you see in that properties panel aren't generated automatically - they come from a
+                     small set of JSON model files that live alongside each block in the repository, and are merged
+                     into three root files the Universal Editor reads directly from the published site:</p>
+                  <ul class="ff_ul">
+                     <li>
+                        <p><strong>component-definition.json</strong> - what the editor's "Insert component" panel is
+                           built from, listing every component available to authors.</p>
+                     </li>
+                     <li>
+                        <p><strong>component-models.json</strong> - the actual editable fields for each component (text,
+                           rich text, image, boolean, select, and more) - this is what turns into the form you see in
+                           the side panel.</p>
+                     </li>
+                     <li>
+                        <p><strong>component-filters.json</strong> - controls which child components are allowed inside
+                           a given container, so an author can't drop a component somewhere it was never designed to
+                           go.</p>
+                     </li>
+                  </ul>
+                  <p>These three root files are never hand-edited - they're generated from smaller fragment files, one
+                     per block, and rebuilt with a single command whenever a block's model changes. That's matched on
+                     the front end by the corresponding block's own CSS and JS, which decide how the same field
+                     actually renders once the page is live. Any field exposed this way shows up automatically in the
+                     Universal Editor - which is also how developers extend the editor for their own custom
+                     components.</p>
+
+                  <h3 style="text-align: left;">Getting Started as a Developer</h3>
+                  <p>For EDS projects specifically, Adobe provides a dedicated starter template built for exactly this
+                     Universal-Editor-plus-EDS combination, so you don't have to wire the connection up by hand.
+                     Instrumenting a fully custom, non-EDS AEM application instead is more involved - it means
+                     announcing the Universal Editor's service endpoint, loading its embed script, and defining a
+                     persistence connection back to your content source - but for a standard EDS project, the starter
+                     template handles nearly all of it out of the box.</p>
+
+                  <h2 style="text-align: left;">Privacy-Respecting Operational Telemetry</h2>
+                  <p>To help diagnose performance issues and measure experiments, EDS-powered sites collect a limited
+                     set of operational data - but only a small, sampled slice of total page views, and with personally
+                     identifiable information deliberately excluded. It's built for troubleshooting, not for tracking
+                     individual visitors.</p>
+
+                  <h2 style="text-align: left;">Frequently Asked Questions</h2>
+
+                  <h3 style="text-align: left;">Is Edge Delivery Services free?</h3>
+                  <p>EDS is included as part of Adobe Experience Manager as a Cloud Service - it isn't a separately
+                     licensed add-on product.</p>
+
+                  <h3 style="text-align: left;">What are the code bus, content bus, and media bus?</h3>
+                  <p>They're the three sources merged to build every page on request: the code bus holds your
+                     HTML/CSS/JS from GitHub, the content bus holds authored content, and the media bus holds images
+                     and other binary assets. Splitting them apart is what lets a content change go live without any
+                     code redeploy.</p>
+
+                  <h3 style="text-align: left;">Do I need to set up my own CDN?</h3>
+                  <p>Not necessarily. New EDS projects are reachable on .aem.page (preview) and
+                     .aem.live (published) domains immediately, backed by Adobe's own CDN. You can layer
+                     your own CDN on top of that if you need custom caching rules or a branded domain, but it isn't
+                     required to get started.</p>
+
+                  <h3 style="text-align: left;">Do I need to know classic AEM to use the Universal Editor?</h3>
+                  <p>Not necessarily. The Universal Editor's WYSIWYG interface lets authors publish content confidently
+                     without deep AEM experience, while developers work in plain HTML/CSS/JS and simple JSON field
+                     definitions, rather than traditional AEM-specific component APIs.</p>
+
+                  <h3 style="text-align: left;">Can I try it before committing to a project?</h3>
+                  <p>Yes - Adobe provides a ready-made tutorial environment for hands-on exploration, as well as a
+                     self-guided tutorial that walks through setting up a project from scratch in under half an hour.
+                  </p>
+
+                  <h2 style="text-align: left;">Where to Go From Here</h2>
+                  <p>If you want to get hands-on, Adobe's <a href="https://www.aem.live" target="_blank"
+                        rel="noopener">aem.live</a> documentation is the canonical source for EDS, alongside
+                     Experience League's Universal Editor documentation for the AEM side of things. Support is
+                     available through the Experience League Community, a Discord channel for quick questions, and
+                     formal support tickets for teams with a contractual SLA once their site is registered in Cloud
+                     Manager.</p>
+                 
+               </div>
+            </div>
+            <hr style="margin-top: 30px;" />
+            <div class="author-details">
+               <div id="like-icon" class="like-icon">
+                  <span id="like-count" class="like-count">0</span>
+                  <span id="like-btn" class="like-btn">
+                     <img src="/images/clap.webp" alt="Like">
+                  </span>
+               </div>
+               <div>
+                  <span class="author-name">Ayush Khandekar | </span>
+                  <span class="author-designation">AEM Developer</span>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+   <div class="social-icons">
+      <a href="https://www.linkedin.com/company/infodales-tech-solution/" class="linkedin"><img
+            src="/images/linkedin.webp" alt="LinkedIn"></a>
+      <a href="mailto:info@infodales.com" class="email"><img src="/images/email.webp" alt="Email"></a>
+   </div>
+
+   <!-- Footer -->
+   <div class="copyright-area">
+      <div class="footer">
+         <div class="row" style="margin-top: 0px;">
+            <div class="col-xl-4 col-lg-4 text-center text-lg-left">
+               <div class="copyright-text">
+                  <p>Copyright &copy; 2026, All Right Reserved <a href="/index.html">Infodales Tech
+                        Solution</a>
+                  </p>
+               </div>
+            </div>
+            <div class="col-xl-4 col-lg-4 d-none d-lg-block text-right">
+               <div class="footer-menu" style="margin-top:10px;">
+                  <ul>
+                     <li><a href="/index.html">Home</a></li>
+                     <li><a href="/about.html">About</a></li>
+                     <li><a href="/contact.html">Contact</a></li>
+                  </ul>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+
+   <!-- Java Script -->
+   <script>
+      var navLinks = document.getElementById("navLinks");
+
+      function showMenu() {
+         navLinks.style.right = "0";
+      }
+
+      function hideMenu() {
+         navLinks.style.right = "-200px";
+      }
+
+      document.addEventListener("DOMContentLoaded", () => {
+         const likeBtn = document.getElementById('like-btn');
+         const likeCount = document.getElementById('like-count');
+
+         let count = parseInt(localStorage.getItem('clapCount')) || 0;
+         likeCount.textContent = count;
+
+         likeBtn.addEventListener('click', () => {
+            count++;
+            likeCount.textContent = count;
+            localStorage.setItem('clapCount', count);
+
+            const likeAnimation = document.createElement('div');
+            likeAnimation.classList.add('like-animation');
+            likeAnimation.innerHTML = '🎉';
+            document.getElementById('like-icon').appendChild(likeAnimation);
+            likeAnimation.addEventListener('animationend', () => {
+               likeAnimation.remove();
+            });
+         });
+      });
+   </script>
+</body>
+
+</html>

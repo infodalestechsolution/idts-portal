@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Blogs | Create Blocks with Universal Editor</title>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="In EDS, a block is the fundamental unit of authorable, styleable, and scriptable content on a page — the EDS equivalent of a component.">
+    <meta name="keywords"
+        content="Infodales, eds blocks, universal editor json model, component-definition.json, component-models.json, component-filters.json, build:json, edge delivery services blocks">
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Blogs | Create Blocks with Universal Editor" />
+    <meta property="og:description"
+        content="In EDS, a block is the fundamental unit of authorable, styleable, and scriptable content on a page — the EDS equivalent of a component." />
+    <meta property="og:url" content="https://infodales.com/blogs/eds-blocks-json-model-pipeline.html" />
+    <meta property="og:site_name" content="Blogs | Create Blocks with Universal Editor" />
+    <link rel="stylesheet" href="/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+       
+        pre.flow {
+            background: #f5f5f5;
+            padding: 5px;
+            border-radius: 6px;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+            font-size: 13px;
+            line-height: 1.6;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid #ddd;
+        }
+
+        th,
+        td {
+            padding: 10px;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        th {
+            background: #f5f5f5;
+        }
+
+        .mental-box {
+            background: #eef4ff;
+            border-left: 4px solid #1a56db;
+            padding: 12px 16px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+
+        .note-box {
+            background: #fff8e1;
+            border-left: 4px solid #f9a825;
+            padding: 12px 16px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+
+        code {
+            background: #f0f0f0;
+            padding: 2px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <section class="sub-header"
+        style="background-image: linear-gradient(rgba(4, 9, 30, 0.5), rgba(4, 9, 30, 0.5)), url('/images/Cover%20EDS.jpg');">
+        <nav>
+            <a href="/index.html"><img src="/images/infodales/Info Dales Main Logo 03.webp" alt="logo"></a>
+            <div class="nav-links" id="navLinks">
+                <i class="fa fa-times" onclick="hideMenu()"></i>
+                <ul>
+                    <li><a href="/index.html">HOME</a></li>
+                    <li><a href="/about.html">ABOUT</a></li>
+                    <li><a href="/services.html">SERVICES</a></li>
+                    <li><a href="/blogs.html">BLOGS</a></li>
+                    <li><a href="/career.html">CAREER</a></li>
+                    <li><a href="/contact.html">CONTACT</a></li>
+                </ul>
+            </div>
+            <i class="fa fa-bars" onclick="showMenu()"></i>
+        </nav>
+    </section>
+
+    <!-- Blog Page Content -->
+    <section class="blog-content">
+        <div>
+            <div class="blog spa-blog">
+                <p style="color: rgb(133, 133, 133); padding: 0 0 10px 0;">
+                    <a href="/blogs.html" style="text-decoration: none; cursor: pointer;">Blogs</a>
+                    <span> &gt; </span>EDS Blocks &amp; Create Blocks with Universal Editor
+                </p>
+                <p class="edsTag" style="margin-top: 7px; margin-bottom: 7px; font-size: 13px; border-radius: 20px;
+                    width: fit-content; padding: 3px 15px;">AEM EDS</p>
+                <h1 class="title">Create a Block in AEM Edge Delivery Services (EDS) with Universal Editor
+                    Authoring</h1>
+                <span class="author">Infodales Tech Solutions</span> |
+                <span class="date">Reference Guide</span>
+                <div class="share-icons">
+                    <a href="https://www.linkedin.com/company/infodales-tech-solution/" target="_blank"
+                        class="linkedin-icon"><i class="fa fa-linkedin"></i></a>
+                    <a href="mailto:info@infodales.com" target="_blank" class="email-icon"><i
+                            class="fa fa-envelope"></i></a>
+                </div>
+                <hr style="margin: 20px 0 10px 0;">
+
+                <div class="blog-items">
+                    <div>
+                        <h2 style="text-align: left;">What Is a Block?</h2>
+                        <p style="margin-top: 0%;">In Edge Delivery Services (EDS), a <b>block</b> is the
+                            fundamental unit of authorable, styleable, and scriptable content on a page — the EDS
+                            equivalent of a "component." An author never writes HTML or JSON directly; they build a
+                            page in a document (Word / Google Doc) or in the Universal Editor, and EDS converts
+                            whatever they authored into a predictable chunk of DOM that a matching JavaScript file then
+                            decorates.</p>
+
+                        <!-- 📸 IMAGE 1: Universal Editor showing a block being inserted on a page -->
+                        <img src="/images/EDS/block-insert-ue.webp" alt="Block being inserted in Universal Editor"
+                            style="width:100%; border-radius:8px; margin: 15px 0; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+
+                        <p>From the Universal Editor's point of view, a block is defined by three cooperating pieces,
+                            not just code:</p>
+                        <ul class="ff_ul">
+                            <li>
+                                <p><strong>Component-Definition</strong> — what shows up in the Insert panel (title,
+                                    icon /
+                                    group) and which AEM resourceType backs it, so the editor knows how to render an
+                                    authoring outline for it.</p>
+                            </li>
+                            <li>
+                                <p><strong>Component-Model</strong> — the authorable schema: which fields (text,
+                                    richtext, image
+                                    reference, boolean, select…) an author can fill in, and their labels / order in the
+                                    properties panel.</p>
+                            </li>
+                            <li>
+                                <p><strong>Component-Filter</strong> — the rules for where the block is allowed to be
+                                    used
+                                    (e.g. only inside a Section) and, for container blocks, what child components it is
+                                    allowed to contain.</p>
+                            </li>
+                        </ul>
+
+                        <p>Once an author drops the block onto a page and fills in its fields inside the Universal
+                            Editor, EDS renders that authored content as plain semantic HTML on the page. The block's
+                            own <b>decorate()</b> function then receives that raw, EDS-generated markup and reshapes
+                            it into its final presentational structure, while the block's CSS scopes styling to just
+                            that block.</p>
+
+                        <div class="mental-box">
+                            <p style="margin: 0;"><strong>Mental model:</strong> the model / definition / filter JSON
+                                is the authoring contract that tells the Universal Editor how to let an author create
+                                and configure the block. The JS / CSS is the runtime behaviour that tells the browser
+                                how to actually render it. A block is incomplete until both sides exist and agree on
+                                the same block id.</p>
+                        </div>
+                        <!-- how to create a block -->
+                        <h2 style="text-align: left;">How Block Folder Structure Look Like ?</h2>
+                        <img src="/images/EDS/block-folder-structure.webp" alt="Block being inserted in Universal Editor"
+                            style="width:100%; border-radius:8px; margin: 15px 0; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+
+                        <h3 style="text-align: left;">Steps to Create a Block</h3>
+
+                        <h2 style="text-align: left;">Step 1 — Create the Block Folder</h2>
+                        <p style="text-align: left;">Create folder with name of block the way mentioned in image and
+                            inside that folder create below mentioned files</p>
+
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>File</th>
+                                    <th>Purpose</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <p>_teaser.json</h6>
+                                        </p>
+                                    <td>Defines the Universal Editor model for the block — registers it as an authorable
+                                        component (definitions) and specifies which fields (image, title, button link,
+                                        etc.) an author can fill in, along with their labels and order in the authoring
+                                        panel.</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p>teaser.js</p>
+                                    </td>
+                                    <td>Contains the <b>decorate()</b> logic that transforms the authored DOM
+                                        into the final markup.</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p>teaser.css</p>
+                                    </td>
+                                    <td>Contains styles scoped to the block.</td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+
+                        <h2 style="text-align: left;">Step 2 — Add below line of code in _teaser.json file </h2>
+                        <p>The model describes the fields available to the author. For example, a teaser can
+                            contain an image, title</p>
+                        <img src="/images/EDS/teaser-json-example.json.webp" alt="_teaser.json model opened in VS Code"
+                            style="width:100%; border-radius:8px; margin: 15px 0; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+
+                        <h3 style="text-align: left;">The Important Part: Model ID</h3>
+                        <p style="margin-top: 0%;">The model has an ID such as <b>"teaser"</b>. That ID
+                            connects the model to the block's Universal Editor registration.</p>
+                        <pre style="height: 130px;" class="flow"><p>Block
+  |
+  +--&gt; model: "teaser"
+          |
+          +--&gt; fields: image, title, body, ...</p></pre>
+
+                        <h2 style="text-align: left;">Step 3 — How the Three JSON Files Fit Together</h2>
+                        <p style="margin-top: 0%;">Once the model exists, the block needs to be registered in
+                            three areas.</p>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>File</th>
+                                    <th>Purpose</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <p>component-definition.json</p>
+                                    </td>
+                                    <td>Registers the block as an available authorable component and contains
+                                        information such as title/group and model reference.</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p>component-models.json</p>
+                                    </td>
+                                    <td>Provides the model/schema used by Universal Editor to understand the fields
+                                        and authoring structure.</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p>component-filters.json</p>
+                                    </td>
+                                    <td>Controls where the component is allowed to be added, such as a
+                                        section/container filter.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <h2 style="text-align: left;">Step 4 — Why Do We Run <b>npm run build:json</b></h2>
+                        <p style="margin-top: 0%;">Your block's model — <b>_teaser.json</b> — lives inside the block's
+                            own
+                            folder and is the file you actually edit day to day. But Universal Editor doesn't read files
+                            inside individual block folders directly. It reads three consolidated root files:</p>
+
+                        <ul class="ff_ul">
+                            <li>
+                                <p><b>component-definition.json</b></p>
+                            </li>
+                            <li>
+                                <p><b>component-models.json</b></p>
+                            </li>
+                            <li>
+                                <p><b>component-filters.json</b></p>
+                            </li>
+                        </ul>
+
+                        <p>Running <b>npm run build:json</b> scans every block's model file, merges the relevant entries
+                            into these three root files, and keeps them in sync with what you've authored at the block
+                            level. In short: you edit the small, block-scoped file; this command "compiles" it into the
+                            big project-level files that the Universal Editor actually consumes.
+                        </p>
+
+                        <img src="/images/EDS/npm-build-json.webp" alt="_teaser.json model opened in VS Code"
+                            style="width:100%; border-radius:8px; margin: 15px 0; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+
+                        <div class="mental-box">
+                            <p style="margin: 0;"><strong>Run this command every time you:</strong></p>
+                            <ul class="ff_ul" style="margin-bottom: 0;">
+                                <li>
+                                    <p>Add or remove a field from a block's model</p>
+                                </li>
+                                <li>
+                                    <p>Change a model's ID</p>
+                                </li>
+                                <li>
+                                    <p>Add a new block that needs to appear in the Insert panel</p>
+                                </li>
+                                <li>
+                                    <p>Change filter/definition rules for a block</p>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="note-box">
+                            <p style="margin: 0;"><strong>If you skip this step,</strong> your changes will exist
+                                locally
+                                in the block folder but won't show up in the Universal Editor, since the editor never
+                                reads the block-level file directly.</p>
+                        </div>
+
+                        <!-- npm run lint -->
+                        <h2 style="text-align: left;">Step 5 — Why Do We Run <b>npm run lint</b></h2>
+                        <p style="margin-top: 0%;">Linting checks the project for configured formatting and
+                            code-quality problems. A block can work in the browser and still contain problems that
+                            the repository's CI checks reject.</p>
+                        <p>If fixable issues are reported:<br>
+                            <br>npm run lint
+                            <br>npm run lint:fix
+                        </p>
+                        <div class="note-box">
+                            <p style="margin: 0;"><strong>Always run lint again after the automatic fix.</strong>
+                                Some issues require manual correction.</p>
+                        </div>
+
+                        <h3 style="text-align: left;">Why Fix Lint Before Committing?</h3>
+                        <p style="margin-top: 0%;">Lint can be part of the automated checks that run when a Pull
+                            Request is opened. Committing obvious lint problems can therefore create an avoidable
+                            CI failure.
+                        </p>
+                        <img src="/images/EDS/npm run lint fix.webp" alt="_teaser.json model opened in VS Code"
+                            style="width:100%; border-radius:8px; margin: 15px 0; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                        <p>A clean lint result means the code meets the repository's configured quality rules, CI
+                            is less likely to fail for avoidable reasons, and reviewers can focus on
+                            functionality.
+                        </p>
+                        <!-- step^ commit and push -->
+
+                        <h2 style="text-align: left;">Step 6 — Commit and Push</h2>
+                        <pre style="height: auto;"><code>git checkout -b feature/hero-banner-block
+git add .
+git commit -m "feat: add hero-banner block with model, definition &amp; filter entries"
+git push origin feature/hero-banner-block</code></pre>
+                        <p style="margin-top: 0%;">Then open a Pull Request against <b>main</b>.</p>
+
+                        <h2 style="text-align: left;">What Happens in the Pull Request?</h2>
+                        <p style="margin-top: 0%;">Once a PR is opened, EDS doesn't just run your repository's own
+                            lint/build/test
+                            checks — it also triggers two additional automated checks that are specific to Edge Delivery
+                            Services:
+                            <b>GitHub Actions</b> and <b>Adobe Code Sync</b>. Both must complete, and both can block the
+                            merge if
+                            they fail.
+                        </p>
+
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Check</th>
+                                    <th>What It Verifies</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <p>GitHub Actions</p>
+                                    </td>
+                                    <td>Runs your repo's configured lint, build, and test scripts against the changed
+                                        files —
+                                        the same checks you ran locally, now enforced in CI so nothing gets merged that
+                                        breaks
+                                        the pipeline.</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p>Adobe Code Sync</p>
+                                    </td>
+                                    <td>Syncs your branch to a live <b>.page</b> preview environment and, on many
+                                        repos, runs
+                                        a <b>Lighthouse</b> audit against that preview — checking performance,
+                                        accessibility, best
+                                        practices, and SEO scores for the pages/blocks affected by the PR.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <!-- 📸 IMAGE: GitHub Actions checks passing on the PR -->
+                        <img src="/images/EDS/Adobe-code-sync-check.webp"
+                            alt="GitHub Actions checks passing on the Pull Request"
+                            style="width:100%; border-radius:8px; margin: 15px 0; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+
+                        <h3 style="text-align: left;">Why You Must Add a Test URL in the PR Comment</h3>
+                        <p style="margin-top: 0%;">Adobe Code Sync deploys every PR branch to its own preview
+                            environment, but it
+                            doesn't automatically know <i>which page</i> a reviewer should check to see your new block
+                            working.
+                            That's why the workflow requires you to manually add a comment on the PR with the test URL,
+                            pointing to
+                            the actual page where the block is authored and rendered:</p>
+
+                        <pre
+                            style="height: auto;"><code>https://main--&lt;repo&gt;--&lt;owner&gt;.aem.page/&lt;path-to-test-page&gt;</code></pre>
+
+                        <div class="mental-box">
+                            <p style="margin: 0;"><strong>Why this matters:</strong> without a test URL, a reviewer (or
+                                the CI
+                                bot, on repos where this is enforced) has no direct way to confirm the block actually
+                                renders
+                                correctly on a live page. The lint/build/test checks only confirm the code is
+                                <i>valid</i> — they
+                                don't confirm the block <i>looks and behaves right when authored</i>. The test URL is
+                                what closes
+                                that gap.
+                            </p>
+                        </div>
+
+                        <img src="/images/EDS/added the url for adobe sync check.webp"
+                            alt="Test URL added as a comment on the Pull Request"
+                            style="width:100%; border-radius:8px; margin: 15px 0; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+
+                        <h3 style="text-align: left;">What Happens If You Don't Add It?</h3>
+                        <div class="note-box">
+                            <p style="margin: 0;"><strong>On repos where a test URL comment is a required step,</strong>
+                                the PR
+                                can be blocked from merging even if GitHub Actions and Adobe Code Sync both pass. A
+                                green CI status
+                                only proves the code compiles and passes automated checks — it doesn't prove the
+                                authored content
+                                renders correctly, so reviewers (or an automated required-comment check) will hold the
+                                merge until
+                                a working test URL is posted.</p>
+                        </div>
+                        <p>In practice this usually shows up as one of the following:</p>
+                        <ul class="ff_ul">
+                            <li>
+                                <p>The PR sits with all checks green but is still not merge-eligible because a required
+                                    review
+                                    comment/checklist item is unchecked.</p>
+                            </li>
+                            <li>
+                                <p>A reviewer requests changes simply asking "what's the test URL?" before they'll
+                                    approve, since
+                                    they have no way to visually verify the block.</p>
+                            </li>
+                            <li>
+                                <p>If the branch preview was never verified, a broken block (wrong field mapping,
+                                    missing CSS,
+                                    decorate() error) can slip through even though lint/build/tests all passed — because
+                                    none of
+                                    those checks actually render the page.</p>
+                            </li>
+                        </ul>
+
+                        <h3 style="text-align: left;">What Happens After Adding the Test URL Comment</h3>
+                        <p style="margin-top: 0%;">Once the comment with the working <b>.page</b> URL is added:
+                        </p>
+                        <ul class="ff_ul">
+                            <li>
+                                <p>Reviewers can open the link directly and see the block rendered with real authored
+                                    content,
+                                    not just read the code diff.</p>
+                            </li>
+                            <li>
+                                <p>They can confirm styling, field mapping, and behavior all match what was intended —
+                                    closing
+                                    the loop that automated checks can't cover.</p>
+                            </li>
+                            <li>
+                                <p>The PR becomes fully mergeable once GitHub Actions, Adobe Code Sync, and the manual
+                                    visual
+                                    verification via the test URL are all satisfied.</p>
+                            </li>
+                        </ul>
+
+                        <h2 style="text-align: left;">What Happens After Merging to main</h2>
+                        <p style="margin-top: 0%;">Verify the post-merge checks. The supplied workflow also
+                            describes Adobe AEM Code Sync verification using a <b>.page</b> /
+                            <b>.live</b> test URL.
+                        </p>
+                        <pre
+                            style="height: auto;"><code>https://main--&lt;repo&gt;--&lt;owner&gt;.aem.page/&lt;path-to-test-page&gt;</code></pre>
+                        <p>Verify that the block appears, authored content is present, styling works, and the
+                            rendered output matches what was authored. as show in Starting of Block
+                        </p>
+
+                        <h2 style="text-align: left;">Quick Command Reference</h2>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Command</th>
+                                    <th>Purpose</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>npm run build:json</td>
+                                    <td>Regenerates consolidated component JSON from model files.</td>
+                                </tr>
+                                <tr>
+                                    <td>npm run lint</td>
+                                    <td>Runs lint/code-quality checks.</td>
+                                </tr>
+                                <tr>
+                                    <td>npm run lint:fix</td>
+                                    <td>Automatically fixes lintable issues; run lint again afterward.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <hr style="margin-top: 30px;" />
+                <div class="author-details">
+                    <div id="like-icon" class="like-icon">
+                        <span id="like-count" class="like-count">0</span>
+                        <span id="like-btn" class="like-btn">
+                            <img src="/images/clap.webp" alt="Like">
+                        </span>
+                    </div>
+                    <div>
+                        <span class="author-name">Harshal Farkade | </span>
+                        <span class="author-designation">AEM Developer</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="social-icons">
+        <a href="https://www.linkedin.com/company/infodales-tech-solution/" class="linkedin"><img
+                src="/images/linkedin.webp" alt="LinkedIn"></a>
+        <a href="mailto:info@infodales.com" class="email"><img src="/images/email.webp" alt="Email"></a>
+    </div>
+
+    <!-- Footer -->
+    <div class="copyright-area">
+        <div class="footer">
+            <div class="row" style="margin-top: 0px;">
+                <div class="col-xl-4 col-lg-4 text-center text-lg-left">
+                    <div class="copyright-text">
+                        <p>Copyright &copy; 2024, All Right Reserved <a href="/index.html">Infodales Tech
+                                Solution</a></p>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-4 d-none d-lg-block text-right">
+                    <div class="footer-menu" style="margin-top:10px;">
+                        <ul>
+                            <li><a href="/index.html">Home</a></li>
+                            <li><a href="/about.html">About</a></li>
+                            <li><a href="/contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Java Script -->
+    <script>
+        var navLinks = document.getElementById("navLinks");
+
+        function showMenu() {
+            navLinks.style.right = "0";
+        }
+
+        function hideMenu() {
+            navLinks.style.right = "-200px";
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const likeBtn = document.getElementById('like-btn');
+            const likeCount = document.getElementById('like-count');
+
+            let count = 0;
+            try {
+                count = parseInt(sessionStorage.getItem('edsClapCount')) || 0;
+            } catch (e) { /* storage unavailable */ }
+            likeCount.textContent = count;
+
+            likeBtn.addEventListener('click', () => {
+                count++;
+                likeCount.textContent = count;
+                try {
+                    sessionStorage.setItem('edsClapCount', count);
+                } catch (e) { /* storage unavailable */ }
+
+                const likeAnimation = document.createElement('div');
+                likeAnimation.classList.add('like-animation');
+                likeAnimation.innerHTML = '🎉';
+                document.getElementById('like-icon').appendChild(likeAnimation);
+                likeAnimation.addEventListener('animationend', () => {
+                    likeAnimation.remove();
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

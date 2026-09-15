@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Blogs | Project Structure in Edge Delivery Services</title>
+  <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A beginner-friendly walkthrough of the folder structure of an Edge Delivery Services (EDS) project - what each folder does, how head.html, aem.js and scripts.js work together, and how a page actually loads.">
+  <meta name="keywords" content="Infodales, eds project structure, aem eds folder structure, project structure in edge delivery services, aem.js, scripts.js, edge delivery services">
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Blogs | Project Structure in Edge Delivery Services" />
+  <meta property="og:description" content="A beginner-friendly walkthrough of the folder structure of an Edge Delivery Services (EDS) project - what each folder does, how head.html, aem.js and scripts.js work together, and how a page actually loads." />
+  <meta property="og:url" content="https://infodales.com/blogs/project-structure-in-eds.html" />
+  <meta property="og:site_name" content="Blogs | Project Structure in Edge Delivery Services" />
+  <link rel="stylesheet" href="/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+  .image-container img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 15px auto;
+  }
+
+  @media (max-width: 992px) {
+    .image-container img {
+      width: 50% !important;
+    }
+  }
+
+  @media (max-width: 850px) {
+    .image-container img {
+      width: 60% !important;
+    }
+  }
+
+  @media (max-width: 700px) {
+    .image-container img {
+      width: 75% !important;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .image-container img {
+      width: 95% !important;
+    }
+  }
+</style>
+</head>
+<body>
+
+  <!-- Header -->
+  <section class="sub-header" style="background-image: linear-gradient(rgba(4, 9, 30, 0.5), rgba(4, 9, 30, 0.5)), url('/images/Cover\ EDS.jpg');">
+    <nav>
+      <a href="/index.html"><img src="/images/infodales/Info Dales Main Logo 03.webp" alt="logo"></a>
+      <div class="nav-links" id="navLinks">
+        <i class="fa fa-times" onclick="hideMenu()"></i>
+        <ul>
+          <li><a href="/index.html">HOME</a></li>
+          <li><a href="/about.html">ABOUT</a></li>
+          <li><a href="/services.html">SERVICES</a></li>
+          <li><a href="/blogs.html">BLOGS</a></li>
+          <li><a href="/career.html">CAREER</a></li>
+          <li><a href="/contact.html">CONTACT</a></li>
+        <ul>
+      </div>
+      <i class="fa fa-bars" onclick="showMenu()"></i>
+    </nav>
+  </section>
+
+  <!-- Blog Page Content -->
+  <section class="blog-content">
+    <div>
+      <div class="blog spa-blog">
+        <p style="color: rgb(133, 133, 133); padding: 0 0 10px 0;">
+          <a href="/blogs.html" style="text-decoration: none; cursor: pointer;">Blogs</a>
+          <span> > </span>Project Structure in Edge Delivery Services
+        </p>
+        <p class="edsTag" style="margin-top: 7px; margin-bottom: 7px; font-size: 13px; border-radius: 20px; width: fit-content; padding: 3px 15px;">AEM EDS</p>
+        <h1 class="title">Project Structure in Edge Delivery Services</h1>
+        <span class="author">Infodales Tech Solutions</span> |
+        <span class="date">September 10, 2026</span>
+
+        <div class="share-icons">
+          <a href="https://www.linkedin.com/company/infodales-tech-solution/" target="_blank" class="linkedin-icon"><i class="fa fa-linkedin"></i></a>
+          <a href="mailto:info@infodales.com" target="_blank" class="email-icon"><i class="fa fa-envelope"></i></a>
+        </div>
+
+        <hr style="margin: 20px 0 10px 0;">
+
+        <div class="blog-items">
+          <div>
+            <p style="margin-top: 0%;">Happy to find you here. Welcome to another learning.</p>
+            <p style="margin-top: 0%;">If you have opened an EDS project for the first time, the folder structure can look a little confusing. There is no <b>components</b> folder like we are used to in AEM Sites, no OSGi bundles, and no <b>ui.apps</b>. Instead you will find folders like <b>blocks</b>, <b>scripts</b> and <b>styles</b> sitting right at the root of the project. In this blog we will go through every important folder and file in an EDS project, understand what each one is responsible for, and see how a page actually loads from the moment a user opens it to the moment it is fully rendered on the screen.</p>
+
+            <h3 style="text-align: left;">1. Project Structure Overview</h3>
+            <p style="margin-top: 0%;">A typical EDS project looks like this:</p>
+            <div class="image-container"></div>
+            <p>Each of these folders has a clear, single responsibility, so let's break them down one by one before we look at how they work together.</p>
+            <ul class="ff_ul">
+              <li><p><strong>scripts/</strong> - Controls the page runtime and overall loading lifecycle. This is where the main JavaScript logic of the EDS project sits, including page decoration, block discovery, block loading, and execution of common site functionality. Files such as scripts.js act as the main entry point for processing the page.</p></li>
+              <li><p><strong>blocks/</strong> - Contains reusable page components such as hero banners, cards, columns, and custom blocks. Each block typically has its own JavaScript (.js) for behavior and CSS (.css) for styling. Blocks are identified from the page HTML and dynamically loaded during page processing.</p></li>
+              <li><p><strong>styles/</strong> - Contains global styles that apply across the whole website, such as common layouts, typography, spacing, variables, and shared design rules. Unlike block-specific CSS, these styles are generally used across multiple pages and components.</p></li>
+              <li><p><strong>fonts/</strong> - Contains the font files and related resources used by the website. These fonts are loaded and applied through the project's global styling configuration to maintain consistent typography.</p></li>
+              <li><p><strong>icons/</strong> - Contains reusable icon assets referenced throughout the website. These can be used by blocks or common site functionality without duplicating the same assets in multiple components.</p></li>
+              <li><p><strong>models/</strong> - Contains the source configuration and definitions used by Universal Editor for content authoring. These configurations define components, fields, properties, and authoring behavior, helping Universal Editor understand what content authors can create and edit.</p></li>
+              <li><p><strong>Root configuration files</strong> - Contains project-level configuration files that control different aspects of the EDS project, such as paths, metadata, sitemap and index configuration, component definitions, filters, and other project behavior. These files help connect the codebase, authoring setup, and EDS runtime configuration together.</p></li>
+            </ul>
+            <p>Out of all of these, the relationship between <strong>head.html</strong>, the files inside <strong>scripts/</strong>, and the blocks loaded from <strong>blocks/</strong> is the most important one to understand, because that is what actually decides how fast and how correctly your page loads.</p>
+
+            <h3 style="text-align: left;">2. Page Request and Runtime Flow</h3>
+            <p style="margin-top: 0%;">When a user opens a page, the browser first receives the page HTML and then starts loading the resources that the project needs. At a high level, this is what happens:</p>
+            <p>When a user opens a page, EDS delivers the page HTML, after which head.html provides the global resources and aem.js and scripts.js are loaded. This starts the page processing lifecycle, where the page sections and blocks are identified and prepared, the required block CSS and JavaScript resources are loaded, and finally the processed and decorated content is displayed to the user as the final page UI.</p>
+            <div class="image-container"></div>
+            <p>This entire runtime flow is controlled by two JavaScript files - <b>scripts/aem.js</b> and <b>scripts/scripts.js</b>. Both files get loaded on every page, but they do not do the same job, so let's understand each one separately.</p>
+
+            <h3 style="text-align: left;">3. head.html - Loading Global Resources</h3>
+            <p style="margin-top: 0%;"><b>head.html</b> is the very first thing that gets pulled in, and it is responsible for making sure the global resources are available before anything else runs.</p>
+            <div class="image-container">
+              <img src="../images/EDS/project_structure_head.webp" style="width: 30%; margin-top: 15px;" alt="head-html-structure"/>
+            </div>
+            <p>Think of <b>head.html</b> as the doorway - it does not decide how the page behaves, it simply makes sure the door is open and the right files are in the room before the actual work starts.</p>
+
+            <h3 style="text-align: left;">4. scripts/aem.js - Core EDS Utilities</h3>
+            <p style="margin-top: 0%;"><b>aem.js</b> provides the core, reusable utility functions that are used to process a page. It does not know anything specific about your project - it just knows how to read metadata, prepare sections and load blocks. Some of its important functions are:</p>
+            <ul class="ff_ul">
+              <li><p><strong>getMetadata()</strong> - Reads metadata values defined for the current page, such as the page title, description, template-related information, navigation settings, or other custom metadata used during page processing and rendering</p></li>
+              <li><p><strong>decorateSections()</strong> - Identifies the sections present inside the main page content and prepares them by adding the required structure and classes. Once sections are identified, EDS can treat each section as a separate unit and load or process them at different stages of the page lifecycle.</p></li>
+              <li><p><strong>decorateBlocks()</strong> - Identifies the blocks available within the page sections and prepares them for further processing. It recognizes the block structure from the page HTML and ensures that each block can later be loaded with its corresponding resources.</p></li>
+              <li><p><strong>decorateBlock()</strong> - Prepares an individual block by adding the required classes, attributes, and block-specific information so that EDS can correctly identify, load, and render that block.</p></li>
+              <li><p><strong>decorateButtons()</strong> - Identifies links or elements in the page content that are intended to behave as buttons and applies the required button-related classes, allowing them to receive consistent button styling across the site.</p></li>
+              <li><p><strong>decorateIcons()</strong> - Identifies icon references within the page content and replaces or transforms them into the appropriate icon elements, making the required icon assets available for rendering.</p></li>
+              <li><p><strong>loadBlock()</strong> - Loads the CSS and JavaScript required for an individual block and then executes the block's decorate() function to transform the original block HTML into its final UI. This acts as the main connection between the EDS runtime and the corresponding component files inside the blocks/ folder.</p></li>
+              <li><p><strong>loadSection()</strong> - Loads and processes the blocks contained within a single section. This allows EDS to handle the page section by section rather than requiring all page content to be processed in exactly the same way or at the same time.</p></li>
+              <li><p><strong>loadSections()</strong> - Loads and processes multiple sections across the page, coordinating their loading so that the page content can be progressively prepared and rendered as part of the overall page lifecycle.</p></li>
+            </ul>
+            <p>The overall role of <b>aem.js</b> can be represented like this:</p>
+            <div class="image-container"></div>
+
+            <h3 style="text-align: left;">5. scripts/scripts.js - Project Page Lifecycle</h3>
+            <p style="margin-top: 0%;">While <b>aem.js</b> gives you the reusable EDS utilities, <b>scripts.js</b> is where your project decides how a page actually gets processed. Its main lifecycle looks like this:</p>
+            <div class="image-container">
+              <img src="../images/EDS/project_structure_loadpage.webp" style="width: 15%; margin-top: 15px;" alt="scriptsjs-lifecycle"/>
+            </div>
+            <p>This divides page loading into three phases - <strong>Eager, Lazy and Delayed</strong> - and each phase loads a different set of resources depending on how important they are for the initial experience.</p>
+
+            <h3 style="text-align: left;">6. Eager Loading</h3>
+            <p style="margin-top: 0%;">The eager phase handles the content that is required the moment the page opens. It starts with <b>loadEager(document)</b>, and the goal is simple - get the most important content on screen as fast as possible.</p>
+            <div class="image-container">
+              <p>The Eager Loading phase handles the content that needs to be available immediately when the page opens. Its main goal is to make the most important content visible to the user as quickly as possible.
+
+The process starts when loadEager() is executed. First, the page is prepared for processing. The main content of the page is then decorated so that the page structure can be properly identified and organized.
+
+After decorating the main content, the system processes the sections and blocks present on the page. During the eager phase, priority is given to the first section because it generally contains the content that the user sees immediately when the page loads.
+
+The required blocks inside this important section are loaded and decorated, allowing their HTML, CSS, and JavaScript to be processed. Once this processing is complete, the important content becomes visible to the user.</p>
+            </div>
+
+            <h3 style="text-align: left;">7. decorateMain() - Preparing the Main Page Content</h3>
+            <p style="margin-top: 0%;">During the eager phase, the main page content is processed through <b>decorateMain()</b>, which internally runs these steps in order:</p>
+            <div class="image-container"></div>
+            <ul class="ff_ul">
+              <li><p><strong>decorateButtons()</strong> - Identifies eligible links or page elements that should be displayed as buttons and applies the required classes and structure. This ensures that buttons are styled consistently across the page and behave according to the project's design.</p></li>
+              <li><p><strong>decorateIcons()</strong> - Identifies icon references in the page content and converts them into actual icon elements. The required icon files are typically loaded from the icons/ folder, for example icons/search.svg, allowing icons to be displayed consistently throughout the website.</p></li>
+              <li><p><strong>buildAutoBlocks()</strong> - Provides an extension point for automatically generating blocks based on the page content. In a fresh EDS project, this function usually exists as a placeholder, but developers can add custom logic to automatically convert specific content patterns into blocks.</p></li>
+              <li><p><strong>decorateSections()</strong> and <strong>decorateBlocks()</strong> - Work together to identify and prepare the structure of the page. decorateSections() identifies the different sections in the page content, while decorateBlocks() identifies the individual blocks inside those sections. This allows the EDS runtime to determine which blocks are present and load the required CSS and JavaScript resources for them.</p></li>
+            </ul>
+            <p>By the end of this process, EDS knows which sections exist on the page, which blocks live inside each section, and which block resources still need to be fetched.</p>
+
+            <h3 style="text-align: left;">8. Runtime Block Lifecycle</h3>
+            <p style="margin-top: 0%;">Once decoration is complete, blocks get loaded as part of the section loading process. Put together, the full lifecycle of an existing block looks like this:</p>
+            <p>When the browser first loads the page HTML, the scripts.js file starts the page processing lifecycle and calls decorateMain() to prepare and organize the main content. The page content is then divided into sections, and the blocks inside each section are identified and prepared for processing. Each section and its blocks are processed, and for every individual block, loadBlock() is called to load the required block CSS and import the corresponding block JavaScript. The block's decorate() function is then executed, transforming the original block HTML into the required structure, styling, and behavior. After all the required sections and blocks have been processed, the transformed content is rendered and displayed to the user as the final page interface.</p>
+            <div class="image-container"></div>
+            <p>Notice the division of responsibility here - the runtime is responsible for loading and executing a block, while the block's own JavaScript is responsible for transforming its own content. A typical block file looks as simple as this:</p>
+            <p style="color: gray;">export default function decorate(block) {</p>
+            <p style="color: gray;">// Transform the block DOM</p>
+
+            <h3 style="text-align: left;">9. Lazy Loading</h3>
+            <p style="margin-top: 0%;">After the critical content is displayed, EDS loads the remaining page content and resources in the Lazy phase. This is important because loading every section, block, image, style, and other resource immediately would increase the amount of work the browser has to perform during the initial page load. Moving non-critical work to Lazy allows EDS to prioritize what the user needs first and process the rest afterward.</p>
+            <div class="image-container">
+              <p>The loadLazy() phase loads the remaining content that is not required immediately when the page first opens. It processes the remaining sections and blocks, and then loads additional page elements such as the header and footer. Lazy styles and fonts are also loaded during this phase, allowing the most important content to appear first while less critical resources are loaded afterward.</p>
+            </div>
+
+            <h3 style="text-align: left;">10. Header and Footer Loading</h3>
+            <p style="margin-top: 0%;">The Header and Footer are not treated like regular page content - they are loaded separately, during this same lazy phase, and they can rely on page metadata to decide exactly what to load:</p>
+            <div class="image-container">
+              <img src="../images/EDS/project_structure_header_footer.webp" style="width: 25%; margin-top: 15px;" alt="header-footer-metadata-flow"/>
+            </div>
+            <p>If no metadata is configured, the implementation simply falls back to sensible default paths. So although Header and Footer are very much part of the runtime, they are handled a little differently from the blocks that live inside your main page content.</p>
+            <p>The header and footer can contain a significant amount of content and resources, such as navigation links, icons, images, menus, and other site-wide elements. Loading all of this during the initial page processing could add unnecessary work before the main page content becomes visible. Therefore, EDS loads the Header and Footer during the Lazy phase, allowing the main page content to get priority while these shared site elements are loaded afterward.</p>
+
+            <h3 style="text-align: left;">11. Delayed Loading</h3>
+            <p style="margin-top: 0%;">The last phase is the delayed phase, started using <b>loadDelayed()</b>. This is where <b>scripts/delayed.js</b> is loaded, well after the initial content has already been processed. This phase is meant for things that do not affect what the user sees first, such as analytics, third-party integrations, tracking scripts, and other non-critical functionality. Put together, the complete loading strategy of an EDS page is:</p>
+            <div class="image-container">
+              <li><p><strong>Eager</strong> Critical page content</p></li>
+              <li><p><strong>LAZY</strong> Remaining page resources</p></li>
+              <li><p><strong>DELAYED</strong> Non-critical functionality</p></li>
+            </div>
+
+            <h3 style="text-align: left;">12. The blocks/ Folder</h3>
+            <p style="margin-top: 0%;">The blocks/ folder contains the reusable components used to build different sections of an EDS page. Each component, such as a Hero, Cards, Columns, Header, or Footer, is maintained as an independent block.</p>
+            <div class="image-container"></div>
+            <p>Each block usually carries its own small set of files:</p>
+            <div class="image-container"></div>
+            <ul class="ff_ul">
+              <li><p><strong>.js</strong> - Contains the JavaScript that processes the block, transforms its HTML, and adds the required functionality and behavior.</p></li>
+              <li><p><strong>.css</strong> - Contains the styles specific to that block, including its layout, appearance, spacing, and responsive behavior.</p></li>
+              <li><p><strong>.json</strong> - Contains the block configuration used for Universal Editor authoring, defining how the component is exposed to authors and what content or fields can be configured.</p></li>
+            </ul>
+
+            <h3 style="text-align: left;">13. The styles/ Folder</h3>
+            <p style="margin-top: 0%;">This folder holds the global project styles, split across three files that each load at a different point:</p>
+            <div class="image-container"></div>
+            <ul class="ff_ul">
+              <li><p><strong>styles.css</strong> - Contains the global and critical styles, loaded as part of the initial page resources. This is where you typically find your CSS variables, base page styling, typography, responsive rules and common layout rules.</p></li>
+              <li><p><strong>lazy-styles.css</strong> - Contains styles that are not needed for the first render, so it is loaded during the lazy phase instead.</p></li>
+              <li><p><strong>fonts.css</strong> - Contains your <b>@font-face</b> declarations, which point to the actual font files kept in the <b>fonts/</b> folder.</p></li>
+            </ul>
+
+            <h3 style="text-align: left;">14. The fonts/ and icons/ Folders</h3>
+            <p style="margin-top: 0%;">The <b>fonts/</b> folder simply holds the font files referenced from <b>styles/fonts.css</b>:</p>
+            <div class="image-container"></div>
+            <p>And the <b>icons/</b> folder holds the reusable icon assets that get picked up and rendered by the project's components:</p>
+            <div class="image-container"></div>
+
+            <h3 style="text-align: left;">15. Universal Editor Runtime Support</h3>
+            <p style="margin-top: 0%;">Along with running the published site, an EDS project also carries scripts that support the page when it is opened inside Universal Editor:</p>
+            <div class="image-container"></div>
+            <p><strong>editor-support.js</strong> - Normally, when an author changes something in Universal Editor, the page does not need a full reload. Instead, Universal Editor fires content update events, and this script listens for them and updates just the affected part of the page:</p>
+            <p>When an author edits content in Universal Editor, the editor sends an update event, which is received by editor-support.js. The affected DOM element is then identified, and the updated content is processed before the affected region is replaced with the new content. The relevant content is then decorated again so that the updated element or block receives the required EDS structure, styling, and behavior without requiring the entire page to be reloaded.</p>
+            <div class="image-container"></div>
+            <p>The script listens for events like <b>aue:content-patch</b>, <b>aue:content-update</b>, <b>aue:content-add</b>, <b>aue:content-move</b>, <b>aue:content-remove</b> and <b>aue:content-copy</b>, which together let the author preview updates without a full page refresh.</p>
+            <p><strong>editor-support-rte.js</strong> - Rich text fields often contain more than one DOM element - a heading, a couple of paragraphs and a link.</p>
+            <div class="image-container"></div>
+            <p>This script groups those related elements together so that Universal Editor can treat them as one single editable rich text region instead of several disconnected pieces.</p>
+
+            <h3 style="text-align: left;">16. Published Page vs Universal Editor</h3>
+            <p style="margin-top: 0%;">The same EDS project can run in two different contexts: a published website and the Universal Editor authoring environment. In both cases, the core EDS runtime is responsible for processing the page, identifying sections and blocks, and loading the required block resources. The main difference is that, in Universal Editor, additional editor support scripts enable authors to edit content directly and handle content changes dynamically without following the normal published-page experience.</p>
+            <div class="image-container">
+              <img src="../images/EDS/project_structure_comparison.webp" style="width: 30%; margin-top: 15px;" alt="published-vs-ue"/>
+            </div>
+            <p>The regular EDS lifecycle is always what processes the page - the editor support scripts simply add the extra behavior needed for live editing on top of it.</p>
+
+            <h3 style="text-align: left;">17. The models/ Folder</h3>
+            <p style="margin-top: 0%;">This folder contains the source configuration used by Universal Editor:</p>
+            <div class="image-container">
+              <img src="../images/EDS/project_structure_model.webp" style="width: 18%; margin-top: 15px;" alt="models-folder-tree"/>
+            </div>
+            <p>These files define things like the available components, their fields, how and where they can be placed, page metadata and section configuration. From these source files, the actual configuration files get generated at the project root i.e. component-definition.json, component-models.json, component-filters.json</p>
+            <div class="image-container"></div>
+            <p>Block level configuration and component authoring deserve a blog of their own, so here we are only covering where these files sit in the project and how they connect to Universal Editor.</p>
+
+            <h3 style="text-align: left;">18. Other Important Root Files</h3>
+            <p style="margin-top: 0%;">A few more files at the project root round out the configuration:</p>
+            <ul class="ff_ul">
+              <li><p><strong>paths.json</strong> - Maps content paths to public site paths, and can also hold mappings for project configuration and metadata resources.<br>It follows AEM content path to path mapping to public URL.</p></li>
+              <div class="image-container"></div>
+              <li><p><strong>helix-query.yaml</strong> - Defines the configuration for the project's query index, which powers things like search, content listings, related content and sitemap generation.</p></li>
+              <li><p><strong>helix-sitemap.yaml</strong> - Configures sitemap generation, based on the page information already captured by the query index.</p></li>
+              <li><p><strong>package.json</strong> - Holds the project's development configuration - its dependencies, dev dependencies, and the npm scripts used for tasks like JavaScript linting, CSS linting, automatic lint fixing, JSON generation and other development tooling.</p></li>
+            </ul>
+
+            <p>Thanks for reading 😄</p>
+          </div>
+        </div>
+
+        <hr style="margin-top: 30px;"/>
+
+        <div class="author-details">
+          <div id="like-icon" class="like-icon">
+            <span id="like-count" class="like-count">0</span>
+            <span id="like-btn" class="like-btn">
+              <img src="/images/clap.webp" alt="Like">
+            </span>
+          </div>
+          <div>
+            <span class="author-name">Shruti Kawadkar | </span>
+            <span class="author-designation">AEM Developer</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="social-icons">
+    <a href="https://www.linkedin.com/company/infodales-tech-solution/" class="linkedin"><img src="/images/linkedin.webp" alt="LinkedIn"></a>
+    <a href="mailto:info@infodales.com" class="email"><img src="/images/email.webp" alt="Email"></a>
+  </div>
+
+  <!-- Footer -->
+  <div class="copyright-area">
+    <div class="footer">
+      <div class="row" style="margin-top: 0px;">
+        <div class="col-xl-4 col-lg-4 text-center text-lg-left">
+          <div class="copyright-text">
+            <p>Copyright &copy; 2024, All Right Reserved <a href="/index.html">Infodales Tech Solution</a></p>
+          </div>
+        </div>
+        <div class="col-xl-4 col-lg-4 d-none d-lg-block text-right">
+          <div class="footer-menu" style="margin-top:10px;">
+            <ul>
+              <li><a href="/index.html">Home</a></li>
+              <li><a href="/about.html">About</a></li>
+              <li><a href="/contact.html">Contact</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Java Script -->
+  <script>
+    var navLinks = document.getElementById("navLinks");
+
+    function showMenu() {
+      navLinks.style.right = "0";
+    }
+
+    function hideMenu() {
+      navLinks.style.right = "-200px";
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const likeBtn = document.getElementById('like-btn');
+      const likeCount = document.getElementById('like-count');
+
+      let count = parseInt(localStorage.getItem('clapCount')) || 0;
+      likeCount.textContent = count;
+
+      likeBtn.addEventListener('click', () => {
+        count++;
+        likeCount.textContent = count;
+        localStorage.setItem('clapCount', count);
+
+        const likeAnimation = document.createElement('div');
+        likeAnimation.classList.add('like-animation');
+        likeAnimation.innerHTML = '🎉';
+        document.getElementById('like-icon').appendChild(likeAnimation);
+        likeAnimation.addEventListener('animationend', () => {
+          likeAnimation.remove();
+        });
+      });
+    });
+  </script>
+</body>
+</html>
