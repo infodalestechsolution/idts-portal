@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Blogs | AEM Dispatcher vs Edge Delivery Services CDN</title>
+	<link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="In AEM as a Cloud Service's traditional Sites architecture, Dispatcher and Publish are still there, doing the same caching, load-balancing, and security job they always did.">
+  	<meta name="keywords" content="Infodales, AEM Dispatcher vs Edge Delivery Services CDN, EDS, Edge Delivery, dispatcher, CDN, Caching, url shortening">
+	<meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Blogs | AEM Dispatcher vs Edge Delivery Services CDN" />
+    <meta property="og:description" content="In AEM as a Cloud Service's traditional Sites architecture, Dispatcher and Publish are still there, doing the same caching, load-balancing, and security job they always did." />
+    <meta property="og:url" content="https://infodales.com/spa-getting-started.html" />
+    <meta property="og:site_name" content="Blogs | AEM Dispatcher vs Edge Delivery Services CDN" />
+	<link rel="stylesheet" href="/style.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;600;700&display=swap"
+		rel="stylesheet">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+
+	<!-- Header -->
+	<section class="sub-header"
+		style="background-image: linear-gradient(rgba(4, 9, 30, 0.5), rgba(4, 9, 30, 0.5)), url('/images/Cover\ EDS.jpg');">
+		<nav>
+			<a href="/index.html"><img src="/images/infodales/Info Dales Main Logo 03.webp" alt="logo"></a>
+			<div class="nav-links" id="navLinks">
+				<i class="fa fa-times" onclick="hideMenu()"></i>
+				<ul>
+					<li><a href="/index.html">HOME</a></li>
+					<li><a href="/about.html">ABOUT</a></li>
+					<li><a href="/services.html">SERVICES</a></li>
+					<li><a href="/blogs.html">BLOGS</a></li>
+					<li><a href="/career.html">CAREER</a></li>
+					<li><a href="/contact.html">CONTACT</a></li>
+					<ul>
+			</div>
+			<i class="fa fa-bars" onclick="showMenu()"></i>
+		</nav>
+	</section>
+	<!--  Blog Page Content --->
+	<section class="blog-content">
+		<div>
+			<div class="blog spa-blog">
+				
+				<p style="color: rgb(133, 133, 133); padding: 0 0 10px 0;"><a href="/blogs.html" style="text-decoration: none; cursor: pointer;">Blogs</a> <span> > </span>AEM Dispatcher vs Edge Delivery Services CDN</p>
+
+				<p class="edsTag" style="margin-top: 7px; margin-bottom: 7px; font-size: 13px; border-radius: 20px; 
+				width: fit-content; padding: 3px 15px;">AEM EDS</p>
+				<h1 class="title">AEM Dispatcher vs Edge Delivery Services CDN</h1>
+      				<span class="author">Infodales Tech Solutions</span> |
+      				<span class="date">September 9, 2026</span>
+    			
+					<div class="share-icons">
+					<a href="https://www.linkedin.com/company/infodales-tech-solution/" target="_blank" class="linkedin-icon"><i class="fa fa-linkedin"></i></a>
+                    <a href="mailto:info@infodales.com" target="_blank" class="email-icon"><i class="fa fa-envelope"></i></a>
+					</div>
+
+				<hr style="margin: 20px 0 10px 0;">
+                <div class="blog-items">
+                <p>Glad to have you here. Let’s dive into another exciting learning experience.</p>
+                <h3 style="text-align: left;">Where Did the Dispatcher Go?</h3>
+                <p>In AEM as a Cloud Service's traditional Sites architecture, Dispatcher and Publish are still there, doing the same caching, load-balancing, and security job they always did. But with Edge Delivery Services, that whole tier disappears: content is pre-rendered to static HTML/JSON ahead of time, and delivery happens straight from Adobe's managed CDN (Fastly) with stateless, auto-scaling edge compute standing in for what Publish used to render on demand. So the Dispatcher didn't get replaced by an equivalent component — its three jobs got absorbed and redistributed: caching moved to the CDN, load balancing became a property of Fastly's global anycast network rather than something you configure, and security moved to CDN-level rules and access control.</p>
+				<img src="/images/EDS/dispatcher_vs_eds_cdn.webp" style="width: 80%;  margin-top: 15px;" alt="edsvsdispatcher"/>
+                    <h3 style="text-align: left;">How load balancing actually happens in EDS</h3>
+					<ul class="ff_ul">
+                    <li><p>Classic AEM needed load balancing because Dispatcher sits in front of a fixed set of Publish instances that can get overwhelmed under traffic spikes.</p></li>
+                    <li><p>EDS removes that problem at the root: pages are pre-rendered to static HTML/JSON ahead of time, so there's no render step left to bottleneck.</p></li>
+                    <li><p>The only "compute" left — turning a doc into HTML, applying blocks — runs as stateless, serverless edge functions on Fastly's network, not on a fixed server fleet.</p></li>
+                    <li><p>Fastly's anycast routing automatically sends each request to the nearest healthy point of presence (PoP) — there's no manual routing decision to make.</p></li>
+                    <li><p>Those edge functions scale horizontally on demand at each PoP, independent of every other region.</p></li>
+                    <li><p>Net effect: load balancing stops being something you configure (no /renders list, no dispatcher farm) and becomes a built-in property of the CDN's global architecture.</p></li>
+                    <img src="/images/EDS/eds_anycast_load_balancing.webp" style="width: 80%;  margin-top: 15px;" alt="edsvsdispatcher"/></ul>
+                        <h3 style="text-align: left;">Caching in Edge Delivery Services</h3>
+                        <p>Let's understand how caching in dispatcher happens.</p>
+                        <ul class="ff_ul">
+                            <li><p>Rendered HTML/JSON/media sits at up to three layers — the browser, the outer/BYO CDN (if you have one), and Adobe's inner CDN (Fastly). Each layer has its own copy, keyed by full URL.</p></li>
+                            <li><p>When an author hits Publish, EDS calls the CDN's purge API directly and clears just the URLs/cache keys that actually changed — nothing else in the cache is touched.</p></li>
+                            <li><p>If push invalidation isn't wired up for your CDN vendor, EDS just falls back to short TTLs (5 minutes) so staleness self-heals quickly instead of being purged explicitly.</p></li>
+                            <li><p>There's no filesystem cache tied to a specific server instance — cache lives in the CDN's distributed edge network, so there's no "flush all instances" step.</p></li>
+                        </ul>
+                        <h3 style="text-align: left;">How this differs from Dispatcher caching:</h3>
+                        <ul class="ff_ul">
+                            <li><p>Dispatcher caches on the local disk of each web server instance in front of Publish. EDS caches across a globally distributed CDN network — no per-instance disk, no risk of one instance serving stale content while another is fresh.</p></li>
+                            <li><p>Dispatcher relies on a flush agent — a replication agent configured on Publish that sends an HTTP flush request to Dispatcher whenever a page is activated. EDS calls the CDN's purge API directly as part of the publish pipeline — no separate agent to configure or troubleshoot.</p></li>
+                            <li><p>Classic Dispatcher setups often flush by path hierarchy (invalidate a page and everything beneath it, /*), which can over-purge. EDS purges by exact URL/cache key, which is more surgical.</p></li>
+                            <li><p>Dispatcher caching is essentially one tier (in front of Publish). EDS caching is multi-tier by design — CDN and browser both cache, each with their own TTL, so freshness is tuned per layer rather than one flat rule.</p></li>
+                        </ul>
+                        <img src="/images/EDS/dispatcher_vs_eds_caching.webp" style="width: 80%;  margin-top: 15px;" alt="edsvsdispatcher"/></p>
+                        </p>
+					<h3 style="text-align: left;">Shortening URLs in EDS</h3>
+                    <ul class="ff_ul">
+                            <li><p>Path mapping (paths.yaml / paths.json) decides what public URL a piece of content gets at publish time — it's not a runtime rewrite, it's baked into how the content gets indexed and served.</p></li>
+                            <li><p>The mapping works as a mountpoints-style rule: a content source path (e.g. a Google Drive folder, or /content/site/en/products/x when AEM is the source) is mapped to a shorter external path (/products/x).</p></li>
+                            <li><p>Multiple mappings can coexist — you can shorten one section of the site while leaving another untouched, and even mount different content sources at different path prefixes.</p></li>
+                            <li><p>When AEM is the source, this file is paths.json; when it's Google Drive/SharePoint, it's paths.yaml — same concept, different format depending on the authoring surface.</p></li>
+                        </ul>
+                    <h3 style="text-align: left;">Redirects</h3>
+                    <ul class="ff_ul">
+                    <li><p>Redirects are authored, not coded: a spreadsheet (or a redirects tab in the site's content sheet) with two columns — source path and destination.</p></li>
+                    <li><p>On publish, this sheet becomes a redirects.json file, and the delivery pipeline checks it on every incoming request before rendering — so a match returns a 301 immediately, no deploy needed.</p></li>
+                    <li><p>Destinations can be relative (redirect within the same site) or fully-qualified external URLs (redirect off-site).</p></li>
+                    </ul>
+                    <h3 style="text-align: left;">Domain entry</h3>
+                    <ul class="ff_ul">
+                        <li><p>The inner CDN (aem.page / aem.live) always exists by default — a custom domain sits in front of it, it doesn't replace it.</p></li>
+                        <li><p>If you're using the Adobe-managed CDN, the domain is attached through Cloud Manager's Custom Domains screen: you supply the domain, Adobe gives you a CNAME target, and you either bring your own TLS certificate or let Adobe auto-provision one (renews automatically).</p></li>
+                        <li><p>If you're on a BYO CDN (Cloudflare, Akamai, CloudFront, your own Fastly), the domain is configured on your CDN vendor's side, then pointed at your aem.live origin — and the config file (cdn.prod.host key) tells EDS which hostname is the "production" one for cache-header and push-invalidation purposes.</p></li>
+                        <li><p>Each git branch can carry its own domain mapping (helix-config.yaml), so main → your production domain, while other branches map to staging/preview domains automatically.</p></li>    
+                    </ul>
+                    <img src="/images/EDS/eds_url_and_domain_flow.webp" style="width: 80%;  margin-top: 15px;" alt="edsvsdispatcher"/></p>
+                    <hr style="margin-top: 30px;">
+                    <div class="author-details">
+                    <div id="like-icon" class="like-icon">
+                        <span id="like-count" class="like-count">0</span>
+                        <span id="like-btn" class="like-btn">
+                        <img src="/images/clap.webp" alt="Like">
+                        </span>
+                    </div>
+                    <div>
+                        <span class="author-name">Shruti Meshram | </span>
+                        <span class="author-designation">AEM Developer</span>
+                    </div>
+                    </div>
+                    </div>
+		</div>
+	</section>
+
+<div class="social-icons">
+         
+        <a href="https://www.linkedin.com/company/infodales-tech-solution/" class="linkedin"><img src="/images/linkedin.webp" alt="LinkedIn"></a>
+        <a href="mailto:info@infodales.com" class="email"><img src="/images/email.webp" alt="Email"></a>
+    </div>
+
+	<!--  Footer --->
+	<div class="copyright-area">
+		<div class="footer">
+			<div class="row" style="margin-top: 0px;">
+				<div class="col-xl-4 col-lg-4 text-center text-lg-left">
+					<div class="copyright-text">
+						<p>Copyright &copy; 2024, All Right Reserved <a href="/index.html">Infodales Tech
+								Solution</a></p>
+					</div>
+				</div>
+				
+				<div class="col-xl-4 col-lg-4 d-none d-lg-block text-right">
+					<div class="footer-menu" style="margin-top:10px;">
+						<ul>
+							<li><a href="/index.html">Home</a></li>
+							<li><a href="/about.html">About</a></li>
+							<li><a href="/contact.html">Contact</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<!--- Java Script-->
+	<script>
+		var navLinks = document.getElementById("navLinks");
+
+		function showMenu() {
+			navLinks.style.right = "0";
+		}
+
+		function hideMenu() {
+			navLinks.style.right = "-200px";
+		}
+
+		document.addEventListener("DOMContentLoaded", () => {
+    const likeBtn = document.getElementById('like-btn');
+    const likeCount = document.getElementById('like-count');
+
+    let count = parseInt(localStorage.getItem('clapCount')) || 0;
+    likeCount.textContent = count;
+
+    likeBtn.addEventListener('click', () => {
+        count++;
+        likeCount.textContent = count;
+        localStorage.setItem('clapCount', count);
+
+        const likeAnimation = document.createElement('div');
+        likeAnimation.classList.add('like-animation');
+        likeAnimation.innerHTML = '🎉';
+        document.getElementById('like-icon').appendChild(likeAnimation);
+        likeAnimation.addEventListener('animationend', () => {
+            likeAnimation.remove();
+        });
+    });
+});
+
+		// function relatedFilter() {
+		// 	var retString = localStorage.getItem("allBlogs");
+		// 	console.log(retString);
+		// }
+
+
+	</script>
+
+</body>
+
+</html>
