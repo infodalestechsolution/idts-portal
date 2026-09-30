@@ -2,11 +2,26 @@
 <html lang="en">
 
 <head>
+  <script>
+  (function () {
+    var path = window.location.pathname;
+
+    if (path.endsWith(".html")) {
+      var cleanPath = path.slice(0, -5);
+
+      window.history.replaceState(
+        null,
+        "",
+        cleanPath + window.location.search + window.location.hash
+      );
+    }
+  })();
+</script>
   <meta charset="UTF-8" />
   <link rel="icon" type="image/svg+xml" href="/assets/favicon-D7wTbFaC.ico" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Infodales Tech Solutions | AEM, Cypress &amp; Salesforce</title>
-  <script type="module" crossorigin src="/assets/index-zVbruq9s.js"></script>
+  <script type="module" crossorigin src="/assets/index-BdnTFWTn.js"></script>
   <link rel="stylesheet" crossorigin href="/assets/index-C7f-NLRP.css">
 </head>
 
